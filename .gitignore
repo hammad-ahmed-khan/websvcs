@@ -1,13 +1,16 @@
+# SVN metadata
+.svn/
+
 # Java compiled files
 *.class
+
+# Java WAR files
+*.war
 
 # Build output
 target/
 build/
 out/
-
-# SVN metadata
-.svn/
 
 # IDE files
 .idea/
