@@ -1,7 +1,0 @@
-app.name=CustomerOrder
-server.url=prodrib-app1.extrastores.com
-server.port=7701
-weblogic.oms.jndi.name=jdbc/oms
-weblogic.das.jndi.name=jdbc/das
-weblogic.sim.jndi.name=jdbc/sim
-app.log.directory=/u00/oracle/Weblogic/user_projects/domains/OMSDomain/servers/AdminServer/logs

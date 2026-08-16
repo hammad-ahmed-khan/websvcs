@@ -1,3 +1,0 @@
-build.app.name=@app.name@
-ServerUrl=@server.url@
-port=@server.port@

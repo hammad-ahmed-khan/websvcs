@@ -1,19 +1,17 @@
-# Compiled Java classes
+# Java compiled files
 *.class
 
-# Build directories
+# Build output
 target/
 build/
 out/
 
+# SVN metadata
+.svn/
+
 # IDE files
 .idea/
 *.iml
-.vscode/
 .classpath
 .project
 .settings/
-
-# OS files
-.DS_Store
-Thumbs.db

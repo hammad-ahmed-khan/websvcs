@@ -1,6 +1,0 @@
-app.name=CustomerOrder
-server.url=licrpap14-extra.logicindia.com
-server.port=8014
-weblogic.oms.jndi.name=jdbc/oms
-weblogic.das.jndi.name=jdbc/das
-app.log.directory=/u01/app/orrib/product/10.3.6/user_projects/domains/RSB_DOMAIN/servers/oms_server/logs

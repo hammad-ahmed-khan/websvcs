@@ -1,1 +1,0 @@
-ant -logfile ../logs/build-dev-log.log -buildfile ../build.xml -Darg=dev
