@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StrAdjRsnDesc/v1">
+  <xs:element name="StrAdjRsnDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reason_id" type="xs:long"/>
+        <xs:element name="reason_code" type="xs:int"/>
+        <xs:element name="description" type="xs:string"/>
+        <xs:element name="disposition_desc" type="xs:string"/>
+        <xs:element name="to_nonsellable_qty_type_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="from_nonsellable_qty_type_id" type="xs:long" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

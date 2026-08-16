@@ -1,0 +1,1460 @@
+2019-04-03 15:39:15,717 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-03 15:39:15,742 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-03 15:39:15,742 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-03 15:39:15,742 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-03 15:39:15,743 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-03 15:39:15,743 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-03 15:39:15,757 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-03 15:39:15,757 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-03 15:39:15,758 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-03 15:39:15,758 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-03 15:39:15,758 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-03 15:39:15,758 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-03 15:39:15,758 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-03 15:39:15,758 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-03 15:39:15,759 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-03 15:39:15,759 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-03 15:39:15,760 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-03 15:39:15,760 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-03 15:39:15,761 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-03 15:39:15,763 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-03 15:39:15,764 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 15:39:17,463 - com.db.util.GetDBConnection - ERROR - SQLException at getConnection java.sql.SQLRecoverableException: IO Error: Unknown host specified 
+2019-04-03 15:39:17,463 - com.order.notification.service.StoreManagerNotification - ERROR - Error :java.lang.Exception: Exception occured while opening the db connection: IO Error: Unknown host specified 
+2019-04-03 15:39:17,466 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-03 15:46:33,043 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-03 15:46:33,047 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-03 15:46:33,047 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-03 15:46:33,048 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-03 15:46:33,048 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-03 15:46:33,048 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-03 15:46:33,050 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-03 15:46:33,051 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-03 15:46:33,051 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-03 15:46:33,051 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-03 15:46:33,051 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-03 15:46:33,051 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-03 15:46:33,051 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-03 15:46:33,051 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-03 15:46:33,051 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-03 15:46:33,052 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-03 15:46:33,053 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-03 15:46:33,054 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-03 15:46:33,054 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-03 15:46:33,061 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-03 15:46:33,061 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 15:47:23,902 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 15:47:23,903 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-03 15:47:23,904 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 15:47:53,947 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 15:47:54,418 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-03 15:48:17,308 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-03 17:11:12,455 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-03 17:11:12,458 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-03 17:11:12,458 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-03 17:11:12,459 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-03 17:11:12,459 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-03 17:11:12,459 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-03 17:11:12,461 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-03 17:11:12,462 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-03 17:11:12,462 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-03 17:11:12,462 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-03 17:11:12,462 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-03 17:11:12,462 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-03 17:11:12,462 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-03 17:11:12,462 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-03 17:11:12,462 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-03 17:11:12,463 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-03 17:11:12,464 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-03 17:11:12,465 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-03 17:11:12,465 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-03 17:11:12,471 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-03 17:11:12,471 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:11:25,288 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:11:25,289 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-03 17:11:25,289 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:11:41,494 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:11:41,641 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-03 17:11:52,936 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-03 17:14:51,279 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-03 17:14:51,282 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-03 17:14:51,282 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-03 17:14:51,282 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-03 17:14:51,282 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-03 17:14:51,282 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-03 17:14:51,284 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-03 17:14:51,285 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-03 17:14:51,287 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-03 17:14:51,287 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-03 17:14:51,287 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-03 17:14:51,289 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-03 17:14:51,289 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:15:07,987 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:15:07,988 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-03 17:15:07,988 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:15:23,487 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:15:23,645 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-03 17:15:51,380 - com.order.notification.mail.EmailNotification - ERROR - Email Notification sent succesfully to stor manager: HBS000063053
+2019-04-03 17:15:54,584 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N'
+2019-04-03 17:15:59,109 - com.order.notification.mail.EmailNotification - ERROR - Email Notification sent succesfully to stor manager: WEB900063056
+2019-04-03 17:16:00,882 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N'
+2019-04-03 17:16:06,203 - com.order.notification.mail.EmailNotification - ERROR - Email Notification sent succesfully to stor manager: WEB900063060
+2019-04-03 17:16:09,134 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N'
+2019-04-03 17:16:14,213 - com.order.notification.mail.EmailNotification - ERROR - Email Notification sent succesfully to stor manager: WEB900063054
+2019-04-03 17:16:17,372 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N'
+2019-04-03 17:20:22,567 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to stor manager: HBS000063054
+2019-04-03 17:20:24,577 - com.order.notification.mail.EmailNotification - ERROR - Email Notification sent succesfully to stor manager: WEB900063058
+2019-04-03 17:20:25,294 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N'
+2019-04-03 17:20:26,418 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: HBS000063053
+2019-04-03 17:20:27,546 - com.db.util.GetDBConnection - ERROR - SMS Notification failde for Order Number: WEB900063056
+2019-04-03 17:20:27,960 - com.order.notification.service.StoreManagerNotification - ERROR - Error :java.lang.NullPointerException
+2019-04-03 17:20:29,506 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-03 17:23:24,313 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-03 17:23:24,316 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-03 17:23:24,317 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-03 17:23:24,317 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-03 17:23:24,317 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-03 17:23:24,317 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-03 17:23:24,320 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-03 17:23:24,321 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-03 17:23:24,321 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-03 17:23:24,321 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-03 17:23:24,321 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-03 17:23:24,321 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-03 17:23:24,321 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-03 17:23:24,321 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-03 17:23:24,321 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-03 17:23:24,322 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-03 17:23:24,323 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-03 17:23:24,323 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-03 17:23:24,324 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-03 17:23:24,330 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-03 17:23:24,330 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:23:30,879 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:23:30,880 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-03 17:23:30,880 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:23:38,552 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:23:38,706 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-03 17:27:50,923 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to stor manager: HBS000063053Response status code200
+2019-04-03 17:27:53,162 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N'
+2019-04-03 17:31:55,074 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to stor manager: WEB900063060Response status code200
+2019-04-03 17:34:31,971 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-03 17:34:31,975 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-03 17:34:31,975 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-03 17:34:31,975 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-03 17:34:31,976 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-03 17:34:31,976 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-03 17:34:31,978 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-03 17:34:31,978 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-03 17:34:31,978 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-03 17:34:31,978 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-03 17:34:31,978 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-03 17:34:31,979 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-03 17:34:31,979 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-03 17:34:31,979 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-03 17:34:31,979 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-03 17:34:31,979 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-03 17:34:31,981 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-03 17:34:31,981 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-03 17:34:31,982 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-03 17:34:31,991 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-03 17:34:31,991 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:34:39,242 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:34:39,242 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-03 17:34:39,243 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:34:45,572 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:34:45,724 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-03 17:38:58,880 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: HBS000063053Response status code200
+2019-04-03 17:39:01,841 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N' 
+2019-04-03 17:43:03,375 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900063060Response status code200
+2019-04-03 17:47:06,023 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900063054Response status code200
+2019-04-03 17:49:03,975 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-03 17:49:03,980 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-03 17:49:03,981 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-03 17:49:03,981 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-03 17:49:03,981 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-03 17:49:03,983 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-03 17:49:03,984 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-03 17:49:03,984 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-03 17:49:03,984 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-03 17:49:03,984 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-03 17:49:03,984 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-03 17:49:03,984 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-03 17:49:03,984 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-03 17:49:03,985 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-03 17:49:03,985 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-03 17:49:03,985 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-03 17:49:03,987 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-03 17:49:03,987 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-03 17:49:03,987 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-03 17:49:03,987 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-03 17:49:03,987 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:49:09,793 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:49:09,793 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-03 17:49:09,793 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 17:49:14,446 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 17:49:14,651 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-03 17:49:23,216 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 7
+2019-04-03 17:49:23,216 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  7
+2019-04-03 17:49:29,279 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N' 
+2019-04-03 17:53:30,714 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900063063Response status code200
+2019-04-03 17:53:32,380 - com.order.notification.service.StoreManagerNotification - ERROR - STATUS Flag chnaged to 'N' 
+2019-04-03 17:57:33,585 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900063060Response status code200
+2019-04-03 18:01:36,073 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900063054Response status code200
+2019-04-03 18:05:37,985 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-03 18:05:37,994 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-03 18:05:37,994 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-03 18:05:37,995 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-03 18:05:37,995 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-03 18:05:37,997 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-03 18:05:37,998 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-03 18:05:37,998 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-03 18:05:37,998 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-03 18:05:37,998 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-03 18:05:37,998 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-03 18:05:37,998 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-03 18:05:37,999 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-03 18:05:37,999 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-03 18:05:37,999 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-03 18:05:37,999 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-03 18:05:38,001 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-03 18:05:38,001 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-03 18:05:38,001 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-03 18:05:38,001 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-03 18:05:38,001 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 18:05:43,528 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 18:05:43,528 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-03 18:05:43,528 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-03 18:05:47,465 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-03 18:05:47,614 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-03 18:05:52,223 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 2
+2019-04-03 18:05:52,223 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  2
+2019-04-03 18:05:52,224 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number HBS000063053
+2019-04-03 18:09:54,679 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: HBS000063053Response status code200
+2019-04-03 18:09:54,680 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no HBS000063053
+2019-04-03 18:09:54,949 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900063063
+2019-04-03 18:13:57,315 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900063063Response status code200
+2019-04-03 18:13:57,316 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900063063
+2019-04-03 18:13:57,731 - com.db.util.GetDBConnection - INFO - sendsms executing with order number HBS000063053
+2019-04-03 18:13:59,800 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: HBS000063053 Response status code :200
+2019-04-03 18:13:59,800 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number HBS000063053
+2019-04-03 18:14:00,078 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900063063
+2019-04-03 18:14:01,095 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900063063 Response status code :200
+2019-04-03 18:14:01,096 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEB900063063
+2019-04-03 18:14:02,828 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 12:30:41,439 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 12:30:41,445 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 12:30:41,446 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 12:30:41,446 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 12:30:41,446 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 12:30:41,450 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 12:30:41,450 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 12:30:41,450 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 12:30:41,451 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 12:30:41,451 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 12:30:41,451 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 12:30:41,451 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 12:30:41,451 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 12:30:41,451 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 12:30:41,451 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 12:30:41,452 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 12:30:41,453 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 12:30:41,453 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 12:30:41,453 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 12:30:41,453 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 12:30:41,453 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 12:30:49,337 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 12:30:49,337 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 12:30:49,338 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 12:30:53,641 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 12:30:54,182 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 12:31:03,777 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 3
+2019-04-04 12:31:03,778 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  3
+2019-04-04 12:31:03,779 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065015
+2019-04-04 12:31:09,212 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065015Response status code200
+2019-04-04 12:31:09,213 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065015
+2019-04-04 12:31:10,228 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065013
+2019-04-04 12:33:19,556 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065013Response status code200
+2019-04-04 12:33:19,557 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065013
+2019-04-04 12:33:20,194 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065012
+2019-04-04 12:37:22,408 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065012Response status code200
+2019-04-04 12:37:22,409 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065012
+2019-04-04 12:37:22,717 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065015
+2019-04-04 12:37:24,661 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065015 Response status code :200
+2019-04-04 12:37:24,661 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEB900065015
+2019-04-04 12:37:24,967 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065013
+2019-04-04 12:37:25,994 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065013 Response status code :200
+2019-04-04 12:37:25,995 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEB900065013
+2019-04-04 12:37:26,204 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065012
+2019-04-04 12:37:27,223 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065012 Response status code :200
+2019-04-04 12:37:27,224 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEB900065012
+2019-04-04 12:37:28,861 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 12:58:28,087 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 12:58:28,095 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 12:58:28,096 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 12:58:28,096 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 12:58:28,096 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 12:58:28,101 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 12:58:28,101 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 12:58:28,102 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 12:58:28,102 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 12:58:28,102 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 12:58:28,102 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 12:58:28,103 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 12:58:28,103 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 12:58:28,103 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 12:58:28,103 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 12:58:28,103 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 12:58:28,106 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 12:58:28,106 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 12:58:28,107 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 12:58:28,107 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 12:58:28,107 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 12:58:34,379 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 12:58:34,380 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 12:58:34,380 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 12:58:38,315 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 12:58:38,589 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 12:58:38,589 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 12:59:47,066 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 12:59:47,072 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 12:59:47,072 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 12:59:47,072 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 12:59:47,073 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 12:59:47,074 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 12:59:47,074 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 12:59:47,075 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 12:59:47,075 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 12:59:47,075 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 12:59:47,075 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 12:59:47,075 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 12:59:47,075 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 12:59:47,075 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 12:59:47,075 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 12:59:47,076 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 12:59:47,077 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 12:59:47,077 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 12:59:47,078 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 12:59:47,078 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 12:59:47,078 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 12:59:52,362 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 12:59:52,363 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 12:59:52,364 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 12:59:55,947 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 12:59:56,084 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 12:59:56,084 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 13:00:02,809 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 3
+2019-04-04 13:00:02,810 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  3
+2019-04-04 13:00:02,811 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065015
+2019-04-04 13:04:05,846 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEB900065015 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065015 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 13:04:05,847 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065015Response status code200
+2019-04-04 13:04:05,847 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065015
+2019-04-04 13:04:06,174 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065013
+2019-04-04 13:08:09,000 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEB900065013 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065013 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 13:08:09,001 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065013Response status code200
+2019-04-04 13:08:09,002 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065013
+2019-04-04 13:08:09,284 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065012
+2019-04-04 13:12:11,208 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEB900065012 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065012 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 13:12:11,210 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065012Response status code200
+2019-04-04 13:12:11,210 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065012
+2019-04-04 13:12:11,416 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065015
+2019-04-04 13:12:18,693 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"966535814378","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065015 ready for customer to pick up ASAP."}}
+2019-04-04 13:12:18,693 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065015 Response status code :504
+2019-04-04 13:12:18,693 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 13:12:18,902 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 13:12:18,902 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065013
+2019-04-04 13:12:23,584 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919379455733","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065013 ready for customer to pick up ASAP."}}
+2019-04-04 13:12:23,584 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065013 Response status code :504
+2019-04-04 13:12:23,584 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 13:12:23,890 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 13:12:23,890 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065012
+2019-04-04 13:12:29,011 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065012 ready for customer to pick up ASAP."}}
+2019-04-04 13:12:29,011 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065012 Response status code :504
+2019-04-04 13:12:29,011 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 13:12:29,320 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 13:12:30,445 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 14:44:53,736 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 14:44:53,741 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 14:44:53,742 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 14:44:53,742 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 14:44:53,742 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 14:44:53,744 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 14:44:53,744 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 14:44:53,744 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 14:44:53,745 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 14:44:53,745 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 14:44:53,745 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 14:44:53,745 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 14:44:53,745 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 14:44:53,745 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 14:44:53,745 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 14:44:53,746 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 14:44:53,747 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 14:44:53,748 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 14:44:53,748 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 14:44:53,748 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 14:44:53,748 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 14:44:59,579 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 14:44:59,580 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 14:44:59,581 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 14:45:04,805 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 14:45:05,422 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 14:45:05,422 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 14:45:08,393 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 14:45:11,050 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 3
+2019-04-04 14:45:11,052 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  3
+2019-04-04 14:45:11,052 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065015
+2019-04-04 14:45:15,208 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"966535814378","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065015 ready for customer to pick up ASAP."}}
+2019-04-04 14:45:15,209 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065015 Response status code :200
+2019-04-04 14:45:15,209 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEB900065015
+2019-04-04 14:45:15,454 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065013
+2019-04-04 14:45:16,579 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919379455733","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065013 ready for customer to pick up ASAP."}}
+2019-04-04 14:45:16,580 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065013 Response status code :200
+2019-04-04 14:45:16,580 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEB900065013
+2019-04-04 14:45:16,895 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEB900065012
+2019-04-04 14:45:18,023 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065012 ready for customer to pick up ASAP."}}
+2019-04-04 14:45:18,024 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEB900065012 Response status code :200
+2019-04-04 14:45:18,024 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEB900065012
+2019-04-04 14:45:18,229 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065015
+2019-04-04 14:45:19,556 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEB900065015 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065015 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 14:45:19,557 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065015Response status code200
+2019-04-04 14:45:19,557 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065015
+2019-04-04 14:45:20,269 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065013
+2019-04-04 14:45:21,500 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEB900065013 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065013 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 14:45:21,500 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065013Response status code200
+2019-04-04 14:45:21,501 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065013
+2019-04-04 14:45:21,807 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEB900065012
+2019-04-04 14:45:22,835 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEB900065012 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEB900065012 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 14:45:22,836 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEB900065012Response status code200
+2019-04-04 14:45:22,837 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEB900065012
+2019-04-04 14:45:24,368 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 15:55:07,582 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 15:55:07,589 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 15:55:07,589 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 15:55:07,590 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 15:55:07,590 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 15:55:07,592 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 15:55:07,592 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 15:55:07,593 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 15:55:07,593 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 15:55:07,593 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 15:55:07,593 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 15:55:07,593 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 15:55:07,593 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 15:55:07,593 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 15:55:07,593 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 15:55:07,594 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 15:55:07,595 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 15:55:07,596 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 15:55:07,596 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 15:55:07,596 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 15:55:07,596 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 15:55:12,989 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 15:55:12,990 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 15:55:12,990 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 15:55:17,189 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 15:55:17,358 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 15:55:17,359 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 15:55:21,898 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 15:55:25,380 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 3
+2019-04-04 15:55:25,381 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  3
+2019-04-04 15:55:25,381 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0113
+2019-04-04 15:55:27,730 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0113 ready for customer to pick up ASAP."}}
+2019-04-04 15:55:27,732 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0113 Response status code :200
+2019-04-04 15:55:27,733 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0113
+2019-04-04 15:55:28,044 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0111
+2019-04-04 15:55:29,273 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0111 ready for customer to pick up ASAP."}}
+2019-04-04 15:55:29,274 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0111 Response status code :200
+2019-04-04 15:55:29,274 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0111
+2019-04-04 15:55:29,582 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0112
+2019-04-04 15:55:30,687 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0112 ready for customer to pick up ASAP."}}
+2019-04-04 15:55:30,688 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0112 Response status code :200
+2019-04-04 15:55:30,688 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0112
+2019-04-04 15:55:30,910 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0113
+2019-04-04 15:56:04,214 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0113 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0113 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 15:56:04,215 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0113Response status code200
+2019-04-04 15:56:04,215 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0113
+2019-04-04 15:56:28,704 - com.db.util.GetDBConnection - ERROR - Error while updating the ORDER_PICK_STATUS in OMSjava.sql.SQLRecoverableException: IO Error: Software caused connection abort: recv failed
+2019-04-04 15:56:28,835 - com.db.util.GetDBConnection - ERROR - Error while updating the ORDER_PICK_STATUS in OMSjava.sql.SQLRecoverableException: IO Error: Software caused connection abort: recv failed
+2019-04-04 15:56:28,835 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0111
+2019-04-04 15:57:35,350 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0111 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0111 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 15:57:35,351 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0111Response status code200
+2019-04-04 15:57:35,352 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0111
+2019-04-04 15:57:35,353 - com.db.util.GetDBConnection - ERROR - Error while updating the ORDER_PICK_STATUS in OMSjava.sql.SQLRecoverableException: Closed Connection
+2019-04-04 15:57:35,355 - com.db.util.GetDBConnection - ERROR - Error while updating the ORDER_PICK_STATUS in OMSjava.sql.SQLRecoverableException: Closed Connection
+2019-04-04 15:57:35,356 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0112
+2019-04-04 15:59:01,908 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 15:59:01,914 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 15:59:01,915 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 15:59:01,915 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 15:59:01,915 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 15:59:01,918 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 15:59:01,918 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 15:59:01,918 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 15:59:01,919 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 15:59:01,919 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 15:59:01,919 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 15:59:01,919 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 15:59:01,919 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 15:59:01,919 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 15:59:01,920 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 15:59:01,920 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 15:59:01,921 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 15:59:01,921 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 15:59:01,921 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 15:59:01,921 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 15:59:01,921 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 15:59:09,777 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 15:59:09,778 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 15:59:09,778 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 15:59:14,900 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 15:59:15,059 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 15:59:15,059 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 15:59:18,334 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 15:59:19,917 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 3
+2019-04-04 15:59:19,917 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  0
+2019-04-04 15:59:19,918 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0113
+2019-04-04 15:59:26,329 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 15:59:26,329 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 15:59:26,329 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0111
+2019-04-04 15:59:31,182 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 15:59:31,182 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 15:59:31,183 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0112
+2019-04-04 15:59:36,098 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 15:59:36,098 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 15:59:37,327 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 15:59:46,601 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 15:59:46,610 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 15:59:46,611 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 15:59:46,611 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 15:59:46,611 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 15:59:46,614 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 15:59:46,614 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 15:59:46,614 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 15:59:46,614 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 15:59:46,615 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 15:59:46,615 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 15:59:46,616 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 15:59:46,616 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 15:59:46,616 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 15:59:46,616 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 15:59:46,616 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 15:59:46,618 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 15:59:46,618 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 15:59:46,618 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 15:59:46,619 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 15:59:46,619 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 15:59:52,894 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 15:59:52,895 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 15:59:52,895 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 15:59:57,501 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 15:59:57,656 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 15:59:57,656 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 16:00:00,882 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 16:00:02,418 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 3
+2019-04-04 16:00:02,419 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  0
+2019-04-04 16:00:02,420 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0113
+2019-04-04 16:04:04,439 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0113 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0113 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 16:04:04,440 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0113Response status code200
+2019-04-04 16:04:04,440 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0113
+2019-04-04 16:04:04,733 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0111
+2019-04-04 16:09:18,118 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:09:18,127 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:09:18,127 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:09:18,128 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:09:18,128 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:09:18,131 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:09:18,131 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:09:18,131 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:09:18,131 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:09:18,131 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:09:18,131 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:09:18,131 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:09:18,132 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:09:18,132 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:09:18,132 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:09:18,132 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:09:18,134 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:09:18,134 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:09:18,134 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:09:18,135 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:09:18,135 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:09:23,865 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:09:23,865 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:09:23,866 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:09:29,397 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:09:29,566 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 16:09:29,566 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 16:09:32,778 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 16:09:34,969 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 16:09:34,969 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 16:09:34,969 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:09:41,262 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 16:09:41,262 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 16:09:41,263 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 16:09:45,819 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 16:09:45,820 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 16:09:46,845 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:10:55,910 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:10:55,919 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:10:55,919 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:10:55,920 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:10:55,920 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:10:55,923 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:10:55,923 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:10:55,923 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:10:55,923 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:10:55,923 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:10:55,923 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:10:55,924 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:10:55,924 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:10:55,924 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:10:55,924 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:10:55,924 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:10:55,926 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:10:55,926 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:10:55,926 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:10:55,926 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:10:55,926 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:11:01,981 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:11:01,982 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:11:01,982 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:11:06,283 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:11:06,439 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 16:11:06,440 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 16:11:09,762 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 16:11:11,607 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 16:11:11,607 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 16:11:11,608 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:11:17,663 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 16:11:17,664 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 16:11:17,664 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 16:11:22,366 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 16:11:22,367 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 16:11:24,308 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:12:16,247 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:12:16,253 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:12:16,253 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:12:16,253 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:12:16,253 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:12:16,255 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:12:16,255 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:12:16,256 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:12:16,258 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:12:16,258 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:12:16,258 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:12:16,258 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:12:16,258 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:12:23,043 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:12:23,043 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:12:23,044 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:12:27,204 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:12:27,336 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 16:12:27,336 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 16:12:29,663 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 16:12:32,414 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 16:12:32,415 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 16:12:32,416 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:12:35,178 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 16:12:35,179 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 16:12:35,179 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 16:12:35,999 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 16:16:37,809 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0115 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 16:16:37,810 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0115Response status code200
+2019-04-04 16:16:37,810 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0115
+2019-04-04 16:16:39,952 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:17:29,584 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:17:29,590 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:17:29,590 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:17:29,591 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:17:29,591 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:17:29,593 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:17:29,593 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:17:29,593 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:17:29,593 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:17:29,593 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:17:29,593 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:17:29,594 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:17:29,594 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:17:29,594 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:17:29,594 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:17:29,594 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:17:29,596 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:17:29,596 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:17:29,596 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:17:29,596 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:17:29,596 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:17:35,874 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:17:35,875 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:17:35,876 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:17:40,175 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:17:40,325 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-04 16:17:43,661 - com.db.util.GetDBConnection - INFO - ***getOrderReminderSmsInfo start getting executed***
+2019-04-04 16:17:46,981 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for REMINDER 1
+2019-04-04 16:17:46,981 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for REMINDER  1
+2019-04-04 16:17:46,982 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:17:50,013 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 16:17:50,014 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 16:17:50,015 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 16:17:50,564 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 16:17:50,565 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 16:21:53,019 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number %s1 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 16:21:53,021 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0115Response status code200
+2019-04-04 16:21:53,022 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0115
+2019-04-04 16:21:54,782 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:25:30,921 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:25:30,927 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:25:30,927 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:25:30,928 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:25:30,928 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:25:30,929 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:25:30,930 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:25:30,930 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:25:30,930 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:25:30,930 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:25:30,930 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:25:30,930 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:25:30,930 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:25:30,930 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:25:30,931 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:25:30,931 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:25:30,932 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:25:30,932 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:25:30,933 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:25:30,933 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:25:30,933 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:25:36,512 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:25:36,512 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:25:36,513 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:25:40,775 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:25:40,923 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-04 16:25:43,384 - com.db.util.GetDBConnection - INFO - ***getOrderReminderSmsInfo start getting executed***
+2019-04-04 16:25:45,522 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for REMINDER 0
+2019-04-04 16:25:45,523 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for REMINDER  1
+2019-04-04 16:25:45,524 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:25:48,288 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 16:25:48,288 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 16:25:48,288 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 16:25:48,594 - com.order.notification.service.StoreManagerNotification - ERROR - Error :java.lang.NullPointerException
+2019-04-04 16:25:50,135 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:26:49,568 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:26:49,575 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:26:49,575 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:26:49,575 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:26:49,576 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:26:49,579 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:26:49,579 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:26:49,579 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:26:49,579 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:26:49,579 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:26:49,579 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:26:49,579 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:26:49,580 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:26:49,580 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:26:49,580 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:26:49,580 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:26:49,582 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:26:49,582 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:26:49,582 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:26:49,583 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:26:49,583 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:26:55,882 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:26:55,883 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:26:55,884 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:27:00,799 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:27:00,954 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-04 16:27:03,683 - com.db.util.GetDBConnection - INFO - ***getOrderReminderSmsInfo start getting executed***
+2019-04-04 16:27:06,535 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for REMINDER 0
+2019-04-04 16:27:06,535 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for REMINDER  1
+2019-04-04 16:27:06,536 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:27:09,763 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 16:27:09,764 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 16:27:09,764 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 16:27:11,496 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:30:39,433 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:30:39,440 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:30:39,441 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:30:39,441 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:30:39,441 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:30:39,445 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:30:39,445 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:30:39,445 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:30:39,446 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:30:39,446 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:30:39,446 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:30:39,446 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:30:39,446 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:30:39,446 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:30:39,447 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:30:39,447 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:30:39,448 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:30:39,448 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:30:39,448 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:30:39,449 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:30:39,449 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:30:45,092 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:30:45,092 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:30:45,093 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:30:50,519 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:30:50,675 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-04 16:30:52,583 - com.db.util.GetDBConnection - INFO - ***getOrderReminderSmsInfo start getting executed***
+2019-04-04 16:30:54,719 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for REMINDER 0
+2019-04-04 16:30:54,720 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for REMINDER  1
+2019-04-04 16:30:54,721 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:31:01,285 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 16:31:01,286 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 16:31:02,813 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:31:40,171 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:31:40,177 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:31:40,178 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:31:40,178 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:31:40,178 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:31:40,181 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:31:40,181 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:31:40,181 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:31:40,181 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:31:40,182 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:31:40,182 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:31:40,182 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:31:40,182 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:31:40,182 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:31:40,182 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:31:40,183 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:31:40,184 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:31:40,184 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:31:40,184 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:31:40,185 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:31:40,185 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:31:45,936 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:31:45,937 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:31:45,938 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:31:50,330 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:31:50,485 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-04 16:31:53,011 - com.db.util.GetDBConnection - INFO - ***getOrderReminderSmsInfo start getting executed***
+2019-04-04 16:31:56,175 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for REMINDER 0
+2019-04-04 16:31:56,175 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for REMINDER  1
+2019-04-04 16:31:56,176 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:32:02,222 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 16:32:02,223 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 16:32:03,444 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:32:21,338 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:32:21,345 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:32:21,345 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:32:21,345 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:32:21,345 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:32:21,348 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:32:21,348 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:32:21,349 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:32:21,351 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:32:21,351 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:32:21,351 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:32:21,351 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:32:21,352 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:32:27,712 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:32:27,713 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:32:27,713 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:32:32,226 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:32:32,375 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-04 16:32:34,491 - com.db.util.GetDBConnection - INFO - ***getOrderReminderSmsInfo start getting executed***
+2019-04-04 16:32:37,244 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for REMINDER 0
+2019-04-04 16:32:37,245 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for REMINDER  1
+2019-04-04 16:32:37,245 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:32:42,571 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 16:32:42,571 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 16:32:43,808 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:34:48,071 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:34:48,078 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:34:48,079 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:34:48,079 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:34:48,079 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:34:48,082 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:34:48,082 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:34:48,083 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:34:48,083 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:34:48,083 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:34:48,083 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:34:48,083 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:34:48,083 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:34:48,083 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:34:48,084 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:34:48,084 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:34:48,085 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:34:48,085 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:34:48,085 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:34:48,085 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:34:48,085 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:34:54,279 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:34:54,280 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:34:54,281 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:34:58,985 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:34:59,123 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-04 16:35:00,837 - com.db.util.GetDBConnection - INFO - ***getOrderReminderSmsInfo start getting executed***
+2019-04-04 16:35:04,008 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for REMINDER 0
+2019-04-04 16:35:04,009 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for REMINDER  1
+2019-04-04 16:35:04,009 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 16:35:06,574 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"918050787239","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 16:35:06,574 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 16:35:06,575 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 16:35:07,179 - com.order.notification.service.StoreManagerNotification - INFO - SMS_PROCESS_IND changed to 'Y' for orderNumber: WEBSRQA0115
+2019-04-04 16:35:08,713 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 16:35:57,120 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 16:35:57,128 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 16:35:57,128 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 16:35:57,128 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 16:35:57,128 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 16:35:57,130 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 16:35:57,130 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 16:35:57,132 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 16:35:57,134 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 16:35:57,134 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 16:35:57,134 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 16:35:57,134 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 16:35:57,135 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:36:04,326 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:36:04,326 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 16:36:04,327 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 16:36:09,548 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 16:36:09,702 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for reminder flow excution
+2019-04-04 16:36:11,815 - com.db.util.GetDBConnection - INFO - ***getOrderReminderSmsInfo start getting executed***
+2019-04-04 16:36:13,033 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for REMINDER 0
+2019-04-04 16:36:13,035 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for REMINDER  0
+2019-04-04 16:36:14,204 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 17:49:53,419 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 17:49:53,425 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 17:49:53,426 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 17:49:53,426 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 17:49:53,426 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 17:49:53,429 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 17:49:53,429 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 17:49:53,429 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 17:49:53,429 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 17:49:53,429 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 17:49:53,429 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 17:49:53,429 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 17:49:53,430 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 17:49:53,430 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 17:49:53,430 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 17:49:53,430 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 17:49:53,431 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 17:49:53,431 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 17:49:53,431 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 17:49:53,432 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 17:49:53,432 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 17:50:00,687 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 17:50:00,688 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 17:50:00,689 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 17:50:07,036 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 17:50:07,196 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 17:50:07,196 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 17:50:09,973 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 17:50:12,445 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 17:50:12,447 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 17:50:12,448 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 17:50:18,557 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 17:50:18,558 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 17:50:18,559 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 17:50:23,335 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 17:50:23,335 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 17:50:24,802 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 17:50:37,626 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 17:50:37,632 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 17:50:37,632 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 17:50:37,632 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 17:50:37,633 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 17:50:37,635 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 17:50:37,635 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 17:50:37,636 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 17:50:37,638 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 17:50:37,638 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 17:50:37,638 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 17:50:37,638 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 17:50:37,638 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 17:50:44,210 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 17:50:44,211 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 17:50:44,211 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 17:50:49,843 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 17:50:49,996 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 17:50:49,997 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 17:50:51,961 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 17:50:54,143 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 17:50:54,144 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 17:50:54,145 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 17:51:00,092 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 17:51:00,092 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 17:51:00,092 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 17:51:04,758 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 17:51:04,759 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 17:51:06,328 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 17:51:28,075 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 17:51:28,081 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 17:51:28,081 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 17:51:28,082 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 17:51:28,082 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 17:51:28,085 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 17:51:28,085 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 17:51:28,085 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 17:51:28,086 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 17:51:28,086 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 17:51:28,086 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 17:51:28,086 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 17:51:28,086 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 17:51:28,086 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 17:51:28,087 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 17:51:28,087 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 17:51:28,088 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 17:51:28,089 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 17:51:28,089 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 17:51:28,089 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 17:51:28,089 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 17:51:34,479 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 17:51:34,479 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 17:51:34,480 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 17:51:40,630 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 17:51:40,783 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 17:51:40,784 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 17:51:43,100 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 17:51:46,880 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 17:51:46,881 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 17:51:46,882 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 17:51:52,208 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 17:51:52,209 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 17:51:52,209 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 17:51:56,776 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 17:51:56,776 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 17:51:57,940 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 17:53:03,731 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 17:53:03,741 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 17:53:03,742 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 17:53:03,742 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 17:53:03,742 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 17:53:03,746 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 17:53:03,746 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 17:53:03,746 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 17:53:03,746 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 17:53:03,746 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 17:53:03,746 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 17:53:03,746 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 17:53:03,747 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 17:53:03,747 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 17:53:03,747 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 17:53:03,747 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 17:53:03,749 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 17:53:03,749 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 17:53:03,749 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 17:53:03,750 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 17:53:03,750 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 17:53:09,927 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 17:53:09,927 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 17:53:09,927 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 17:53:15,455 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 17:53:15,624 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 17:53:15,624 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 17:53:17,588 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 17:53:19,415 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 17:53:19,416 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 17:53:19,416 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 17:53:25,699 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 17:53:25,700 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 17:53:25,700 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 17:53:30,412 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 17:53:30,412 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 17:53:31,942 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 18:22:20,391 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 18:22:20,397 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 18:22:20,398 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 18:22:20,398 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 18:22:20,398 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 18:22:20,400 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 18:22:20,401 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 18:22:20,401 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 18:22:20,401 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 18:22:20,401 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 18:22:20,402 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 18:22:20,402 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 18:22:20,402 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 18:22:20,402 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 18:22:20,402 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 18:22:20,403 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 18:22:20,405 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 18:22:20,405 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 18:22:20,405 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 18:22:20,405 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 18:22:20,406 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:22:26,082 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:22:26,083 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 18:22:26,083 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:22:29,954 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:22:30,095 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 18:22:30,095 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 18:22:31,945 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 18:22:33,530 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 18:22:33,530 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 18:22:33,531 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 18:22:39,402 - com.db.util.GetDBConnection - ERROR - Failed : HTTP error code : 504
+2019-04-04 18:22:39,403 - com.order.notification.service.StoreManagerNotification - ERROR - Order STATUS Failed SMS 
+2019-04-04 18:22:39,403 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 18:22:44,060 - com.order.notification.mail.EmailNotification - ERROR - Failed : HTTP error code : 504
+2019-04-04 18:22:44,060 - com.order.notification.service.StoreManagerNotification - ERROR - Order status failed For Email Notification
+2019-04-04 18:22:45,096 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 18:28:05,251 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 18:28:05,258 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 18:28:05,259 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 18:28:05,259 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 18:28:05,259 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 18:28:05,261 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 18:28:05,262 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 18:28:05,262 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 18:28:05,262 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 18:28:05,262 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 18:28:05,262 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 18:28:05,263 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 18:28:05,263 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 18:28:05,263 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 18:28:05,263 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 18:28:05,263 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 18:28:05,265 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 18:28:05,265 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 18:28:05,265 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 18:28:05,265 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 18:28:05,266 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:28:11,112 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:28:11,113 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 18:28:11,113 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:28:18,414 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:28:18,556 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 18:28:18,556 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 18:28:20,589 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 18:28:23,646 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 18:28:23,646 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 18:28:23,647 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 18:28:25,887 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"966111111111","body":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 18:28:25,888 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 18:28:25,888 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 18:28:26,626 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 18:32:28,071 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0115 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 18:32:28,071 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0115Response status code200
+2019-04-04 18:32:28,071 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0115
+2019-04-04 18:32:30,002 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 18:49:30,705 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 18:49:30,711 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 18:49:30,712 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 18:49:30,712 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 18:49:30,713 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 18:49:30,715 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 18:49:30,715 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 18:49:30,715 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 18:49:30,715 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 18:49:30,715 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 18:49:30,715 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 18:49:30,716 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 18:49:30,716 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 18:49:30,716 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 18:49:30,716 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 18:49:30,716 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 18:49:30,717 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 18:49:30,717 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 18:49:30,718 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 18:49:30,718 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 18:49:30,718 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:49:36,027 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:49:36,027 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 18:49:36,027 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:49:40,938 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:49:41,089 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 18:49:41,089 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 18:49:43,106 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 18:49:44,757 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 18:49:44,758 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 18:49:44,758 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 18:49:47,301 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"966111111111","body":"Dear %s Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 18:49:47,302 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 18:49:47,302 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 18:49:47,571 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 18:53:48,826 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0115 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 18:53:48,827 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0115Response status code200
+2019-04-04 18:53:48,827 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0115
+2019-04-04 18:53:50,465 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 18:57:27,834 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 18:57:27,842 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 18:57:27,843 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 18:57:27,843 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 18:57:27,843 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 18:57:27,846 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 18:57:27,846 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 18:57:27,846 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 18:57:27,846 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 18:57:27,846 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 18:57:27,847 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 18:57:27,847 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 18:57:27,847 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 18:57:27,847 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 18:57:27,847 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 18:57:27,847 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 18:57:27,849 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 18:57:27,849 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 18:57:27,849 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 18:57:27,849 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 18:57:27,849 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:57:33,739 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:57:33,740 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 18:57:33,740 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:57:38,204 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:57:38,339 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 18:57:38,339 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 18:57:40,619 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 18:57:43,201 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 0
+2019-04-04 18:57:43,202 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  0
+2019-04-04 18:57:44,437 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 18:58:03,484 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 18:58:03,489 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 18:58:03,490 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 18:58:03,490 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 18:58:03,490 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 18:58:03,492 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 18:58:03,492 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 18:58:03,492 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 18:58:03,493 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 18:58:03,493 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 18:58:03,493 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 18:58:03,493 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 18:58:03,493 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 18:58:03,493 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 18:58:03,493 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 18:58:03,493 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 18:58:03,495 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 18:58:03,495 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 18:58:03,495 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 18:58:03,496 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 18:58:03,496 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:58:09,162 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:58:09,162 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 18:58:09,162 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 18:58:13,342 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 18:58:13,482 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 18:58:13,482 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 18:58:15,459 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 18:58:17,174 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 18:58:17,175 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 18:58:17,175 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 18:58:19,563 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"966111111111","body":"Dear \\n, Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 18:58:19,563 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 18:58:19,564 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 18:58:19,848 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 19:02:21,123 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0115 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 19:02:21,123 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0115Response status code200
+2019-04-04 19:02:21,123 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0115
+2019-04-04 19:02:22,997 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 19:03:39,905 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 19:03:39,914 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 19:03:39,915 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 19:03:39,915 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 19:03:39,916 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 19:03:39,918 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 19:03:39,919 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 19:03:39,919 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 19:03:39,919 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 19:03:39,919 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 19:03:39,919 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 19:03:39,919 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 19:03:39,919 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 19:03:39,919 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 19:03:39,920 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 19:03:39,920 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 19:03:39,921 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 19:03:39,922 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 19:03:39,922 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 19:03:39,922 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 19:03:39,922 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 19:03:46,101 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 19:03:46,102 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 19:03:46,102 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 19:03:52,821 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 19:03:52,960 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 19:03:52,960 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 19:04:17,902 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 19:04:17,908 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 19:04:17,908 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 19:04:17,908 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 19:04:17,909 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 19:04:17,910 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 19:04:17,911 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 19:04:17,912 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 19:04:17,913 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 19:04:17,913 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 19:04:17,913 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 19:04:17,914 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 19:04:17,914 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 19:04:23,726 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 19:04:23,728 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 19:04:23,728 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 19:04:29,076 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 19:04:29,223 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 19:04:29,223 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 19:04:32,372 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 19:04:34,299 - com.db.util.GetDBConnection - INFO - Message is Dear 
+, Please make sure to make the Order number %s1 ready for customer to pick up ASAP.
+2019-04-04 19:04:35,052 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 19:04:35,053 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 19:04:35,053 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 19:04:37,669 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"966111111111","body":"Dear \n, Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 19:04:37,669 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 19:04:37,669 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 19:04:38,095 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 19:07:42,923 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 19:07:42,930 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 19:07:42,931 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 19:07:42,931 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 19:07:42,931 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 19:07:42,934 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 19:07:42,934 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 19:07:42,935 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 19:07:42,935 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 19:07:42,935 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 19:07:42,935 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 19:07:42,935 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 19:07:42,935 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 19:07:42,935 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 19:07:42,935 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 19:07:42,936 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 19:07:42,938 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 19:07:42,938 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 19:07:42,938 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 19:07:42,938 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 19:07:42,939 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 19:07:49,354 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 19:07:49,354 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 19:07:49,354 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 19:07:54,118 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 19:07:54,260 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 19:07:54,260 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 19:07:56,565 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 19:07:58,224 - com.db.util.GetDBConnection - INFO - Message is Dear, 
+ Please make sure to make the Order number %s1 ready for customer to pick up ASAP.
+2019-04-04 19:07:58,552 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 19:07:58,552 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 19:07:58,553 - com.db.util.GetDBConnection - INFO - sendsms executing with order number WEBSRQA0115
+2019-04-04 19:08:01,095 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"919003734082","fromNumber":"966111111111","body":"Dear, \n Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP."}}
+2019-04-04 19:08:01,095 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: WEBSRQA0115 Response status code :200
+2019-04-04 19:08:01,095 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number WEBSRQA0115
+2019-04-04 19:08:01,428 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number WEBSRQA0115
+2019-04-04 19:08:39,519 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0115 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 19:08:39,519 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0115Response status code200
+2019-04-04 19:08:39,519 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0115
+2019-04-04 19:08:41,162 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 19:12:02,773 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number WEBSRQA0115 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number WEBSRQA0115 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 19:12:02,774 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: WEBSRQA0115Response status code200
+2019-04-04 19:12:02,774 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no WEBSRQA0115
+2019-04-04 19:12:04,505 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-04 19:18:02,847 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-04 19:18:02,854 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-04 19:18:02,855 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-04 19:18:02,855 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-04 19:18:02,855 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-04 19:18:02,858 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-04 19:18:02,858 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-04 19:18:02,858 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-04 19:18:02,858 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-04 19:18:02,858 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-04 19:18:02,858 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-04 19:18:02,859 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-04 19:18:02,859 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-04 19:18:02,859 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-04 19:18:02,859 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-04 19:18:02,859 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-04 19:18:02,860 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-04 19:18:02,860 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-04 19:18:02,861 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-04 19:18:02,861 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-04 19:18:02,861 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 19:18:09,497 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 19:18:09,497 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesOMS
+2019-04-04 19:18:09,497 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-04 19:18:15,202 - com.db.util.GetDBConnection - INFO -  Connected driver Version:12.1.0.2.0
+2019-04-04 19:18:15,347 - com.order.notification.service.StoreManagerNotification - INFO - Fetching data for normal flow excution
+2019-04-04 19:18:15,347 - com.db.util.GetDBConnection - INFO - ***getOrderEmailInfo start executing ***
+2019-04-04 19:18:18,794 - com.db.util.GetDBConnection - INFO - ***getOrderSmsInfo start executing***
+2019-04-04 19:18:20,528 - com.db.util.GetDBConnection - INFO - Message is Dear, 
+ Please make sure to make the Order number %s1 ready for customer to pick up ASAP.
+2019-04-04 19:18:20,876 - com.order.notification.service.StoreManagerNotification - INFO -  The Email size is  for NORMAL 1
+2019-04-04 19:18:20,877 - com.order.notification.service.StoreManagerNotification - INFO -  The Sms  Size is  for NORMAL  1
+2019-04-04 19:18:20,877 - com.db.util.GetDBConnection - INFO - sendsms executing with order number HYBQATEST001
+2019-04-04 19:18:23,480 - com.db.util.GetDBConnection - INFO - request json body: {"smsData":{"toNumber":"966535814378","fromNumber":"966111111111","body":"Dear, \n Please make sure to make the Order number HYBQATEST001 ready for customer to pick up ASAP."}}
+2019-04-04 19:18:23,480 - com.db.util.GetDBConnection - INFO - SMS Notification sent successfullt to StoreManager: HYBQATEST001 Response status code :200
+2019-04-04 19:18:23,481 - com.order.notification.service.StoreManagerNotification - INFO - updateSmsFlag with order number HYBQATEST001
+2019-04-04 19:18:23,821 - com.order.notification.mail.EmailNotification - INFO - sendMail executing for order number HYBQATEST001
+2019-04-04 19:22:25,781 - com.order.notification.mail.EmailNotification - INFO - request json body: {"email":{"from":"webmaster@extra.com","fromName":"Rabindra Choudhary","subject":"Order number HYBQATEST001 to be made ready","text":"Dear \u003cbr\u003e Please make sure to make the Order number HYBQATEST001 ready for customer to pick up ASAP.","recipients":{"to":[{"email":"jameeluddin.k@extra.com"}]}}}
+2019-04-04 19:22:25,782 - com.order.notification.mail.EmailNotification - INFO - Email Notification sent succesfully to store manager: HYBQATEST001Response status code200
+2019-04-04 19:22:25,782 - com.order.notification.service.StoreManagerNotification - INFO - updateEmailFlag with order no HYBQATEST001
+2019-04-04 19:22:27,964 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------
+2019-04-05 11:43:15,229 - com.order.notification.service.StoreManagerNotification - INFO - --------Start OrderEmailSmsNotification batch-----------
+2019-04-05 11:43:15,236 - com.db.util.PropertiesReader - INFO - -----------------All the loaded properties---------------
+2019-04-05 11:43:15,237 - com.db.util.PropertiesReader - INFO - sim14.db.jdbc-url
+2019-04-05 11:43:15,237 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.EMAIL.TEMPLATE
+2019-04-05 11:43:15,237 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.NORMAL
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - xml.file.loc.store
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - SmsNotification_URI
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - sim14.db.user
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.EMAIL
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - xml.file.loc.inv
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - oms.db.password
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.REMINDER
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.ORDER.SMS.TEMPLATE
+2019-04-05 11:43:15,240 - com.db.util.PropertiesReader - INFO - oms.db.jdbc-url
+2019-04-05 11:43:15,241 - com.db.util.PropertiesReader - INFO - ORDER.NOTIFICATION.FROM.PHONE.NUMBER
+2019-04-05 11:43:15,241 - com.db.util.PropertiesReader - INFO - EmailNotification_URI
+2019-04-05 11:43:15,242 - com.db.util.PropertiesReader - INFO - oms.db.user
+2019-04-05 11:43:15,242 - com.db.util.PropertiesReader - INFO - sim14.db.password
+2019-04-05 11:43:15,242 - com.db.util.PropertiesReader - INFO - xml.file.loc.trickle
+2019-04-05 11:43:15,243 - com.db.util.GetDBConnection - INFO - Loaded Database Connection  PropertiesSIM14
+2019-04-05 11:43:15,243 - com.db.util.GetDBConnection - INFO - Starting connection
+2019-04-05 11:43:15,666 - com.db.util.GetDBConnection - ERROR - SQLException at getConnection java.sql.SQLRecoverableException: IO Error: Unknown host specified 
+2019-04-05 11:43:15,667 - com.order.notification.service.StoreManagerNotification - ERROR - Error :java.lang.Exception: Exception occured while opening the db connection: IO Error: Unknown host specified 
+2019-04-05 11:43:15,726 - com.order.notification.service.StoreManagerNotification - INFO - --------Successfully stoped OrderEmailSmsNotification batch -----------

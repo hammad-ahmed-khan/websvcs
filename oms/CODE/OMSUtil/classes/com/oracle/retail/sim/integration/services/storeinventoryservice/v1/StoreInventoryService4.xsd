@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StrInvDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StrInvDesc/v1">
+  <xs:element name="StrInvDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="item_id" type="xs:string"/>
+        <xs:element name="store_id" type="xs:long"/>
+        <xs:element name="is_ranged" type="xs:boolean"/>
+        <xs:element name="is_estimated" type="xs:boolean"/>
+        <xs:element name="uom_code" type="xs:string"/>
+        <xs:element name="case_size" type="xs:decimal"/>
+        <xs:element name="stock_on_hand_qty" type="xs:decimal"/>
+        <xs:element name="back_room_qty" type="xs:decimal"/>
+        <xs:element name="shop_floor_qty" type="xs:decimal"/>
+        <xs:element name="delivery_bay_qty" type="xs:decimal"/>
+        <xs:element name="available_qty" type="xs:decimal"/>
+        <xs:element name="unavailable_qty" type="xs:decimal"/>
+        <xs:element name="nonsell_total_qty" type="xs:decimal"/>
+        <xs:element name="on_order_qty" type="xs:decimal"/>
+        <xs:element name="in_transit_qty" type="xs:decimal"/>
+        <xs:element name="cust_reserved_qty" type="xs:decimal"/>
+        <xs:element name="transfer_reserved_qty" type="xs:decimal"/>
+        <xs:element name="vendor_return_qty" type="xs:decimal"/>
+        <xs:element name="allocation_total_qty" type="xs:decimal"/>
+        <xs:element ref="tns:StrInvNslQty" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StrInvNslQty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nonsell_qty_type_id" type="xs:long"/>
+        <xs:element name="quantity" type="xs:decimal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

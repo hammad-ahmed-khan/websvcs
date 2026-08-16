@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://com.logicinfo.oms/services/" targetNamespace="http://com.logicinfo.oms/services/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+           xmlns:jaxb="http://java.sun.com/xml/ns/jaxb">
+    <!-- Key Top Elements -->
+    <xs:element name="SparePartsConfirmation" type="tns:SparePartsConfirmation"/>
+    <xs:element name="SparePartsConfirmationResponse" type="tns:SparePartsConfirmationResponse"/>
+    <!--  Service Confirmation Request Data Type -->
+    <xs:complexType name="SparePartsConfirmation">
+        <xs:sequence>
+            <xs:element name="ServiceRequestId" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ServiceConfirmationId" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ServiceConfirmationDetail" type="tns:ServiceConfirmationDetailType" minOccurs="1"
+                        maxOccurs="100" nillable="false"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Service Confirmation Details Data Type (Part of Request) -->
+    <xs:complexType name="ServiceConfirmationDetailType">
+        <xs:sequence>
+            <xs:element name="ItemID" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="25"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Quantity" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                         <xs:minExclusive value="0"/>
+                        <xs:totalDigits value="12"/>
+                        <xs:fractionDigits value="4"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ReasonCode" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="4"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="omsServiceReqSeqId" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Service Confirmation Response Data Type -->
+    <xs:complexType name="SparePartsConfirmationResponse">
+        <xs:sequence>
+            <xs:element name="ServiceRequestId" minOccurs="1" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="Status" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="2"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="SparePartsConfirmationResponseDetail" type="tns:ServiceConfDetailsResponseType"
+                        minOccurs="0" maxOccurs="100" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ServiceConfDetailsResponseType">
+        <xs:sequence>
+            <xs:element name="SequenceId" minOccurs="1" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="OMSServiceId" minOccurs="1" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                        <xs:totalDigits value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ItemID" minOccurs="1" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="25"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ReasonCode" minOccurs="1" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="4"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="MsgCode" minOccurs="1" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="MsgDesc" minOccurs="1" maxOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="1000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

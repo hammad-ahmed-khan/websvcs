@@ -1,0 +1,190 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebService xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webservice">
+   <list n="CHILD_NODES">
+      <url path="../../../../../public_html/WEB-INF/wsdl/OMSCustomerOrderWebService.wsdl"/>
+      <url path="CustomerOrderAddress.java"/>
+      <url path="CustomerOrderResponseItems.java"/>
+      <url path="CustomerOrderTenders.java"/>
+      <url path="CustomerOrder.java"/>
+      <url path="CustomerOrderItems.java"/>
+      <url path="package-info.java"/>
+      <url path="CustomerOrderResponse.java"/>
+      <url path="ObjectFactory.java"/>
+      <url path="OMSCustomerOrderWebServiceImpl.java"/>
+      <url path="UnavailableItems.java"/>
+      <url path="CustomerOrderResponseItemFulfillment.java"/>
+      <url path="BackOrderResponse.java"/>
+      <url path="BackOrderRequest.java"/>
+      <url path="CustOrdItemDisc.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="BD_">
+         <hash>
+            <value n="BD_DEFAULT_DOCUMENT_WRAPPED" v="false"/>
+            <value n="BOUND_PORT_TYPE" v="{http://com.logicinfo.oms/model/}OMSCustomerOrderWebService"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+            <value n="NAME" v="{http://com.logicinfo.oms/model/}OMSCustomerOrderWebServicePortBinding"/>
+            <list n="OP_BINDINGS">
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="return"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="processNewOrderResp"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="USE_OWNER_TNS"/>
+                  <value n="BOUND_OPERATION" v="com.logicinfo.oms.model.CustomerOrderResponse.processNewOrder.com.logicinfo.oms.model.CustomerOrder"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="backOrderResponse"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="processBackOrderResp"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="USE_OWNER_TNS"/>
+                  <value n="BOUND_OPERATION" v="com.logicinfo.oms.model.BackOrderResponse.processBackOrder.com.logicinfo.oms.model.BackOrderRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+         </hash>
+      </list>
+      <list n="BINDING_FILES"/>
+      <value n="GENERATE_TOP_DOWN" v="TRUE"/>
+      <value n="GENERATION_OPTION" v="ANNOTATIONS_WSDL"/>
+      <value n="GUID" v="3e4b9af9-014a-1000-800c-c0a80289e6d4"/>
+      <value n="LAST_GENERATION_BOTTOM_UP" v="false"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaWebService"/>
+      <list n="PO_">
+         <hash>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+            <value n="NAME" v="OMSCustomerOrderWebService"/>
+            <value n="PORT_BINDING_NAME" v="{http://com.logicinfo.oms/model/}OMSCustomerOrderWebServicePortBinding"/>
+            <list n="PORT_OPS">
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="com.logicinfo.oms.model.CustomerOrderResponse.processNewOrder.com.logicinfo.oms.model.CustomerOrder"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="com.logicinfo.oms.model.BackOrderResponse.processBackOrder.com.logicinfo.oms.model.BackOrderRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="URL" protocol="http" host="localhost" port="7777" path="/services/OMS/OMSCustomerOrder/OMSCustomerOrderWebService"/>
+         </hash>
+      </list>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="com.logicinfo.oms.model"/>
+            <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="com.logicinfo.oms.model"/>
+         </hash>
+      </hash>
+      <list n="PT_">
+         <hash>
+            <value n="AUTO_SERVICE_INTERFACE"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+            <value n="NAME" v="{http://com.logicinfo.oms/model/}OMSCustomerOrderWebService"/>
+            <list n="OP_">
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="processNewOrder"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="input"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="processNewOrderReq"/>
+                        <value n="PA_WSDL_PART_NAME" v="input"/>
+                        <value n="TARGET_NAMESPACE" v="USE_OWNER_TNS"/>
+                        <value n="TYPE" v="com.logicinfo.oms.model.CustomerOrder"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="com.logicinfo.oms.model.CustomerOrderResponse"/>
+                  <value n="OP_NAME" v="processNewOrder"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="processBackOrder"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="backOrderRequest"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="processBackOrderReq"/>
+                        <value n="PA_WSDL_PART_NAME" v="backOrderRequest"/>
+                        <value n="TARGET_NAMESPACE" v="USE_OWNER_TNS"/>
+                        <value n="TYPE" v="com.logicinfo.oms.model.BackOrderRequest"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="com.logicinfo.oms.model.BackOrderResponse"/>
+                  <value n="OP_NAME" v="processBackOrder"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <value n="PT_CLASS" v="com.logicinfo.oms.model.OMSCustomerOrderWebServiceImpl"/>
+            <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="com.logicinfo.oms.model.OMSCustomerOrderWebService"/>
+         </hash>
+      </list>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <url n="TARGET_PROJECT" path="../../../../../OMSCustomerOrder.jpr"/>
+      <value n="TOPDOWN_GENERATION_OPTION" v="JAVA"/>
+      <value n="WS_CREATE_ONEWAY_OPERATIONS" v="true"/>
+      <list n="WS_DEPENDENT_VALUE_TYPES"/>
+      <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+      <url n="WS_REFERENCE_WSDL" path="../../../../../public_html/WEB-INF/wsdl/OMSCustomerOrderWebService.wsdl"/>
+      <value n="WS_TARGET_NAMESPACE" v="http://com.logicinfo.oms/model/"/>
+      <value n="WS_URI" v="OMSCustomerOrderWebService"/>
+      <url n="WS_WSDL_FILE" path="../../../../../public_html/WEB-INF/wsdl/OMSCustomerOrderWebService.wsdl"/>
+      <value n="WS_WSDL_LOC_ON_SEI" v="false"/>
+      <value n="WS_WSDL_LOC_VALUE" v="/WEB-INF/wsdl/OMSCustomerOrderWebService.wsdl"/>
+   </hash>
+</jdevws:WebService>

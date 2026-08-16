@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StrAdjRef/v1">
+  <xs:element name="StrAdjRef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="adjustment_id" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

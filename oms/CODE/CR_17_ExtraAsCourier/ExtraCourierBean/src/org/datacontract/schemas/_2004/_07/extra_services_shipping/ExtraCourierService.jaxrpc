@@ -1,0 +1,117 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebService xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webservice">
+   <list n="CHILD_NODES">
+      <url path="../../../../../../../public_html/WEB-INF/wsdl/ExtraCourierService.wsdl"/>
+      <url path="Address.java"/>
+      <url path="package-info.java"/>
+      <url path="ObjectFactory.java"/>
+      <url path="Shipment.java"/>
+      <url path="Product.java"/>
+      <url path="ArrayOfProduct.java"/>
+      <url path="ShipmentOrder.java"/>
+      <url path="CreateShipment.java"/>
+      <url path="Carrier.java"/>
+      <url path="ShipmentResponse.java"/>
+      <url path="Customer.java"/>
+      <url path="ExtraCourierWebServiceImpl.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="BD_">
+         <hash>
+            <value n="BD_DEFAULT_DOCUMENT_WRAPPED" v="false"/>
+            <value n="BD_SOAP_VERSION" v="1.2"/>
+            <value n="BOUND_PORT_TYPE" v="{USE_OWNER_TNS}ExtraCourierWebService"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+            <value n="NAME" v="{http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto}ExtraCourierWebServiceSOAP12Binding"/>
+            <list n="OP_BINDINGS">
+               <hash>
+                  <value n="BD_DOCUMENT_WRAPPED" v="false"/>
+                  <value n="BD_RESPONSE_PART" v="return"/>
+                  <value n="BD_SOAP_ACTION" v="http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto/CreateShipment"/>
+                  <value n="BD_WSDL_RETURN_NAME" v="CreateShipmentResponse"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="USE_OWNER_TNS"/>
+                  <value n="BOUND_OPERATION" v="org.datacontract.schemas._2004._07.extra_services_shipping.ShipmentResponse.createShipment.org.datacontract.schemas._2004._07.extra_services_shipping.Shipment"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+         </hash>
+      </list>
+      <list n="BINDING_FILES"/>
+      <value n="GENERATION_OPTION" v="ANNOTATIONS_WSDL"/>
+      <value n="GUID" v="66d00de6-0169-1000-8001-c0a8fd02b3db"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaWebService"/>
+      <list n="PO_">
+         <hash>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+            <value n="NAME" v="ExtraCourierWebService"/>
+            <value n="PORT_BINDING_NAME" v="{http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto}ExtraCourierWebServiceSOAP12Binding"/>
+            <list n="PORT_OPS">
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="org.datacontract.schemas._2004._07.extra_services_shipping.ShipmentResponse.createShipment.org.datacontract.schemas._2004._07.extra_services_shipping.Shipment"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="URL" protocol="http" host="localhost" port="7777" path="/services/extra/ExtraCourierBean/ExtraCourierCreateShipment"/>
+         </hash>
+      </list>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_UNWRAP_PARAMETERS" v="false"/>
+         </hash>
+      </hash>
+      <list n="PT_">
+         <hash>
+            <value n="AUTO_SERVICE_INTERFACE"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+            <value n="NAME" v="{USE_OWNER_TNS}ExtraCourierWebService"/>
+            <list n="OP_">
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <value n="OP_JAVA_NAME" v="createShipment"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="input"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="Shipment"/>
+                        <value n="PA_WSDL_PART_NAME" v="input"/>
+                        <value n="TARGET_NAMESPACE" v="USE_OWNER_TNS"/>
+                        <value n="TYPE" v="org.datacontract.schemas._2004._07.extra_services_shipping.Shipment"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="org.datacontract.schemas._2004._07.extra_services_shipping.ShipmentResponse"/>
+                  <value n="OP_NAME" v="CreateShipment"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <value n="PT_CLASS" v="org.datacontract.schemas._2004._07.extra_services_shipping.ExtraCourierWebServiceImpl"/>
+         </hash>
+      </list>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <url n="TARGET_PROJECT" path="../../../../../../../ExtraCourierBean.jpr"/>
+      <value n="TOPDOWN_GENERATION_OPTION" v="JAVA"/>
+      <list n="WS_DEPENDENT_VALUE_TYPES"/>
+      <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+      <url n="WS_REFERENCE_WSDL" path="../../../../../../../public_html/WEB-INF/wsdl/ExtraCourierService.wsdl"/>
+      <value n="WS_TARGET_NAMESPACE" v="http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto"/>
+      <value n="WS_URI" v="ExtraCourierService"/>
+      <url n="WS_WSDL_FILE" path="../../../../../../../public_html/WEB-INF/wsdl/ExtraCourierService.wsdl"/>
+      <value n="WS_WSDL_LOC_ON_SEI" v="false"/>
+      <value n="WS_WSDL_LOC_VALUE" v="/WEB-INF/wsdl/ExtraCourierService.wsdl"/>
+      <value n="WS_WSDL_LOCATION" v="/D:/WebServices/ExtraCourierBean/public_html/WEB-INF/wsdl/"/>
+      <list n="WSDL_DEPENDENT_FILES">
+         <url path="../../../../../../../public_html/WEB-INF/wsdl/extracourier.xsd"/>
+      </list>
+   </hash>
+</jdevws:WebService>

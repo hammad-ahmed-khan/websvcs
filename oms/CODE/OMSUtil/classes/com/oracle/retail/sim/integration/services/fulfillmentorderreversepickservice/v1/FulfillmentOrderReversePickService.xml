@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname localpart="FulfillmentOrderReversePickService"
+                     namespaceURI="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1"/>
+      <port-info>
+         <wsdl-port localpart="FulfillmentOrderReversePickPort"
+                    namespaceURI="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1"/>
+         <runtime/>
+         <operations>
+            <operation name="updateFulfillmentOrderReversePick"/>
+            <operation name="createReversePick"/>
+            <operation name="deleteReversePick"/>
+            <operation name="confirmReversePick"/>
+            <operation name="lookupReversePickHeaders"/>
+            <operation name="readReversePickDetail"/>
+            <operation name="ping"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

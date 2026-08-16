@@ -1,0 +1,447 @@
+create or replace package body       xx_refund_request_pkg is
+  procedure create_xrr_refund_request( --P_REFUND_ID                       NUMBER
+                                      P_CANCEL_HEAD_SEQ_ID   NUMBER,
+                                      P_CANCEL_TENDER_SEQ_ID NUMBER,
+                                      P_REFUND_CHANNEL       VARCHAR2,
+                                      P_TENDER_TYPE          VARCHAR2,
+                                      P_TENDER_SUBTYPE       VARCHAR2,
+                                      P_DECIMAL_ADJUSTMENT   VARCHAR2,
+                                      P_REFUND_AMOUNT        NUMBER,
+                                      P_COUNTRY              VARCHAR2,
+                                      P_CURRENCY             VARCHAR2,
+                                      P_REFUNDABLE           VARCHAR2,
+                                      P_SADAD_BANKID         VARCHAR2,
+                                      P_SADAD_UID            VARCHAR2,
+                                      P_SADAD_SPTN           VARCHAR2
+                                      -- ,P_SADAD_REFUND_ID               NUMBER
+                                     ,
+                                      P_PAYFORT_FORTID             VARCHAR2,
+                                      P_PAYFORT_MERCHANT_REFERENCE VARCHAR2,
+                                      P_TASHEEL_WALLET_CIVILID     VARCHAR2,
+                                      P_TASHEEL_WALLET_REFNUMBER   VARCHAR2,
+                                      P_TASHEEL_CARDNO             VARCHAR2,
+                                      P_REQ_ADDITIONAL_ATTRIBUTE1  VARCHAR2,
+                                      P_REQ_ADDITIONAL_ATTRIBUTE2  VARCHAR2,
+                                      P_REQ_ADDITIONAL_ATTRIBUTE3  VARCHAR2,
+                                      --  P_MANUAL_PROCESSING_FLAG     VARCHAR2
+                                      --,P_PROCESSED_FLAG                VARCHAR2
+                                      -- ,P_PROCESSED_ON                        DATE
+                                      
+                                      P_PROCESSED_BY VARCHAR2
+                                      -- ,P_ERR_CODE                        VARCHAR2
+                                      -- ,P_ERR_MSG                       VARCHAR2
+                                     ,
+                                      P_REFUND_METHOD VARCHAR2,
+                                      -- ,P_REFUND_REF_NUMBER               VARCHAR2
+                                      --,P_REFUND_STATUS                       VARCHAR2
+                                      -- ,P_REFUND_DATE                       DATE
+                                      --  ,P_RES_ADDITIONAL_ATTRIBUTE1       VARCHAR2
+                                      -- ,P_RES_ADDITIONAL_ATTRIBUTE2       VARCHAR2
+                                      -- ,P_RES_ADDITIONAL_ATTRIBUTE3       VARCHAR2
+                                      -- ,P_CREATION_DATE                       DATE
+                                      --  ,P_LAST_UPDATE_DATE                DATE
+                                      p_cust_order_no VARCHAR2,
+                                      X_REFUND_ID     OUT NUMBER,
+                                      X_STATUS_CODE   OUT VARCHAR2,
+                                      X_STATUS_MSG    OUT VARCHAR2) is
+    v_error                  varchar2(2000);
+    v_MANUAL_PROCESSING_FLAG varchar2(1);
+    v_refund_id              number;
+    v_sadad_refund_id        number;
+    v_SADAD_UID              varchar2(256);
+    v_ready_for_refund       varchar2(10);
+    v_TRANSACTION_TYPE       varchar2(100);
+    v_exp exception; -- 18-11-2020 change
+    v_chk_record  number; -- 18-11-2020 change
+    v_STATUS_CODE VARCHAR2(50); -- 18-11-2020 change
+    v_STATUS_MSG  VARCHAR2(256); -- 18-11-2020 change
+  begin
+    insert into xx_refund_request_parameters
+      select P_CANCEL_HEAD_SEQ_ID,
+             P_CANCEL_TENDER_SEQ_ID,
+             P_REFUND_CHANNEL,
+             P_TENDER_TYPE,
+             P_TENDER_SUBTYPE,
+             P_DECIMAL_ADJUSTMENT,
+             P_REFUND_AMOUNT,
+             P_COUNTRY,
+             P_CURRENCY,
+             P_REFUNDABLE,
+             P_SADAD_BANKID,
+             P_SADAD_UID,
+             P_SADAD_SPTN
+             -- ,P_SADAD_REFUND_ID               NUMBER
+            ,
+             P_PAYFORT_FORTID,
+             P_PAYFORT_MERCHANT_REFERENCE,
+             P_TASHEEL_WALLET_CIVILID,
+             P_TASHEEL_WALLET_REFNUMBER,
+             P_TASHEEL_CARDNO,
+             P_REQ_ADDITIONAL_ATTRIBUTE1,
+             P_REQ_ADDITIONAL_ATTRIBUTE2,
+             P_REQ_ADDITIONAL_ATTRIBUTE3,
+             --  P_MANUAL_PROCESSING_FLAG     VARCHAR2
+             --,P_PROCESSED_FLAG                VARCHAR2
+             -- ,P_PROCESSED_ON                        DATE
+             
+             P_PROCESSED_BY
+             -- ,P_ERR_CODE                        VARCHAR2
+             -- ,P_ERR_MSG                       VARCHAR2
+            ,
+             P_REFUND_METHOD,
+             -- ,P_REFUND_REF_NUMBER               VARCHAR2
+             --,P_REFUND_STATUS                       VARCHAR2
+             -- ,P_REFUND_DATE                       DATE
+             --  ,P_RES_ADDITIONAL_ATTRIBUTE1       VARCHAR2
+             -- ,P_RES_ADDITIONAL_ATTRIBUTE2       VARCHAR2
+             -- ,P_RES_ADDITIONAL_ATTRIBUTE3       VARCHAR2
+             -- ,P_CREATION_DATE                       DATE
+             --  ,P_LAST_UPDATE_DATE                DATE
+             p_cust_order_no,
+             sysdate,
+             user
+        from dual;
+    commit;
+  
+    select nvl(count(*), 0)
+      into v_chk_record
+      from xx_refund_request
+     where CUST_ORDER_NO = p_cust_order_no
+       and refund_amount = P_REFUND_AMOUNT;
+    if v_chk_record <> 0 then
+      v_STATUS_CODE := 'F';
+      v_STATUS_MSG  := 'Duplicate record for order#' || p_cust_order_no ||
+                       ' and refund amount ' || P_REFUND_AMOUNT;
+      raise v_exp;
+    end if;
+    -- select sys_guid() into v_SADAD_UID from dual;
+    select max(TRANSACTION_TYPE)
+      into v_TRANSACTION_TYPE
+      from EXT_cancel_head
+     where CANCEL_HEAD_SEQ_ID = P_CANCEL_HEAD_SEQ_ID;
+  
+    if v_TRANSACTION_TYPE = 'RefundOnly' OR
+       P_REQ_ADDITIONAL_ATTRIBUTE1 = 'ReadyForRefund' then
+      -- 18-11-2020 change
+    
+      v_ready_for_refund := 'Y';
+    else
+      v_ready_for_refund := 'N';
+    end if;
+    select regexp_replace(rawtohex(sys_guid()),
+                          '([A-F0-9]{8})([A-F0-9]{4})([A-F0-9]{4})([A-F0-9]{4})([A-F0-9]{12})',
+                          '\1-\2-\3-\4-\5') as FORMATTED_GUID
+      into v_SADAD_UID
+      from dual;
+  
+    select XX_RR_REFUND_ID_SEQ.Nextval into v_refund_id from sys.dual;
+    --- updated by Sharif and Elgamal 14 Sep 2020
+    if P_REFUND_CHANNEL = 'SADAD' then
+      select 134 || XX_RR_SADAD_REFUND_ID_SEQ.Nextval
+        into v_SADAD_REFUND_ID
+        from sys.dual;
+    end if;
+  
+    select nvl(max(MANUAL_PROCESSING_FLAG), 'N')
+      into v_MANUAL_PROCESSING_FLAG
+      from xx_refund_channel_config
+     where REFUND_CHANNEL = P_REFUND_CHANNEL
+       and COUNTRY = P_COUNTRY;
+  
+    --- Reviewed by : Bilal Javed 
+    --- Commeting below cursor as it is comparing OMS_CANCEL_ID with CANCEL_HEAD_SEQ_ID 
+    --- to fix this change passing cust_order_no from WS.
+    /*  select max(h.cust_ord_no)
+     into v_cust_ord_no
+     from oms_co_cancel_head h
+    where h.oms_cancel_id = P_CANCEL_HEAD_SEQ_ID; */
+  
+    insert into XX_REFUND_REQUEST
+      (refund_id,
+       cancel_head_seq_id,
+       cancel_tender_seq_id,
+       refund_channel,
+       tender_type,
+       tender_subtype,
+       decimal_adjustment,
+       refund_amount,
+       country,
+       currency,
+       refundable,
+       sadad_bankid,
+       sadad_uid,
+       sadad_sptn,
+       sadad_refund_id,
+       payfort_fortid,
+       payfort_merchant_reference,
+       tasheel_wallet_civilid,
+       tasheel_wallet_refnumber,
+       tasheel_cardno,
+       req_additional_attribute1,
+       req_additional_attribute2,
+       req_additional_attribute3,
+       manual_processing_flag,
+       processed_flag,
+       processed_on,
+       processed_by
+       -- ,err_code
+       -- ,err_msg
+      ,
+       refund_method
+       --,refund_ref_number
+      ,
+       refund_status,
+       refund_date
+       -- ,res_additional_attribute1
+       -- ,res_additional_attribute2
+       -- ,res_additional_attribute3
+      ,
+       creation_date,
+       last_update_date,
+       CUST_ORDER_NO,
+       ready_for_refund)
+    values
+      (v_refund_id,
+       P_CANCEL_HEAD_SEQ_ID,
+       P_CANCEL_TENDER_SEQ_ID,
+       P_REFUND_CHANNEL,
+       P_TENDER_TYPE,
+       P_TENDER_SUBTYPE,
+       P_DECIMAL_ADJUSTMENT,
+       P_REFUND_AMOUNT,
+       P_COUNTRY,
+       P_CURRENCY,
+       P_REFUNDABLE,
+       P_SADAD_BANKID,
+       v_SADAD_UID,
+       P_SADAD_SPTN,
+       v_SADAD_REFUND_ID,
+       P_PAYFORT_FORTID,
+       P_PAYFORT_MERCHANT_REFERENCE,
+       P_TASHEEL_WALLET_CIVILID,
+       P_TASHEEL_WALLET_REFNUMBER,
+       P_TASHEEL_CARDNO,
+       P_REQ_ADDITIONAL_ATTRIBUTE1,
+       P_REQ_ADDITIONAL_ATTRIBUTE2,
+       P_REQ_ADDITIONAL_ATTRIBUTE3,
+       -- P_MANUAL_PROCESSING_FLAG,
+       v_MANUAL_PROCESSING_FLAG,
+       'N' -- PROCESSED_FLAG           
+      ,
+       sysdate,
+       P_PROCESSED_BY
+       -- ,P_ERR_CODE                  
+       -- ,P_ERR_MSG                   
+      ,
+       P_REFUND_METHOD
+       --  ,P_REFUND_REF_NUMBER       
+      ,
+       decode(p_refund_channel, 'COD', 'NA', 'Inprogress'),
+       sysdate
+       -- ,P_RES_ADDITIONAL_ATTRIBUTE1
+       -- ,P_RES_ADDITIONAL_ATTRIBUTE2
+       -- ,P_RES_ADDITIONAL_ATTRIBUTE3
+      ,
+       sysdate,
+       sysdate,
+       p_cust_order_no,
+       v_ready_for_refund); --nvl(p_cust_order_no,v_cust_ord_no)); -- Passing the value from WS.
+    commit;
+    x_refund_id   := v_refund_id;
+    x_status_code := 'S';
+    x_status_msg  := 'Refund request careated successfully.';
+  
+  exception
+    when others then
+      x_status_code := 'F';
+      v_error       := sqlerrm;
+      x_status_msg  := 'Unexpected Error: ' || substr(v_error, 1, 19);
+  end create_xrr_refund_request;
+
+  procedure update_xrr_processing_status(p_Refund_Id                 number,
+                                         p_processed_flag            varchar2,
+                                         p_processed_by              varchar2,
+                                         p_refund_status             varchar2,
+                                         p_refund_date               date,
+                                         p_err_code                  varchar2,
+                                         p_err_msg                   varchar2,
+                                         p_RES_ADDITIONAL_ATTRIBUTE1 varchar2,
+                                         x_status_code               out varchar2,
+                                         x_status_msg                out varchar2) is
+    v_rec_count number;
+    v_error     varchar2(2000);
+    v_refund_id number;
+  begin
+  
+    insert into xx_refund_request_param_log
+      (P_REFUND_ID,
+       P_PROCESSED_FLAG,
+       P_PROCESSED_BY,
+       P_REFUND_STATUS,
+       P_REFUND_DATE,
+       P_ERR_CODE,
+       P_ERR_MSG,
+       PARAM_SOURCE,
+       CREATION_DATE)
+    values
+      (P_REFUND_ID,
+       P_PROCESSED_FLAG,
+       P_PROCESSED_BY,
+       P_REFUND_STATUS,
+       P_REFUND_DATE,
+       P_ERR_CODE,
+       P_ERR_MSG,
+       'RMS',
+       sysdate
+       
+       );
+    commit;
+    
+    if p_Refund_Id = 0 then
+     DBMS_LOCK.sleep(seconds => 3);
+      select max(refund_id)
+        into v_refund_id
+        from XX_REFUND_REQUEST
+       where RES_ADDITIONAL_ATTRIBUTE1 = p_RES_ADDITIONAL_ATTRIBUTE1;
+    else
+      v_refund_id := p_Refund_Id;
+    end if;
+  
+    select count(*)
+      into v_rec_count
+      from XX_REFUND_REQUEST xrr
+     where xrr.refund_id = v_refund_id;
+  
+    if v_rec_count = 1 then
+    
+      update XX_REFUND_REQUEST xrr
+         set xrr.processed_flag            = p_processed_flag,
+             xrr.refund_status             = p_refund_status,
+             xrr.processed_on              = sysdate,
+             xrr.res_additional_attribute1 = p_RES_ADDITIONAL_ATTRIBUTE1,
+             xrr.refund_method = case
+                                   when refund_channel in
+                                        ('Benefit',
+                                         'NBO',
+                                         'SADAD',
+                                         'Tasheel Wallet') then
+                                    refund_channel
+                                   when refund_channel = 'Payfort' and
+                                        COUNTRY = 'OM' then
+                                    'Payfort'
+                                   when refund_channel = 'Payfort' and
+                                        COUNTRY = 'SA' and
+                                        tender_subtype in ('3000', '3010') then
+                                    'Payfort - CC - V. M.'
+                                   when refund_channel = 'Payfort' and
+                                        COUNTRY = 'SA' and
+                                        tender_subtype in ('3020') then
+                                    'AMEX'
+                                   when refund_channel = 'Payfort' and
+                                        COUNTRY = 'SA' and
+                                        tender_subtype in ('8000') then
+                                    'Payfort - DC - MADA'
+                                   when refund_channel = 'FSS' and
+                                        COUNTRY = 'BH' then
+                                    'AFS'
+                                 end,
+             xrr.manual_processing_flag = case
+                                            when p_refund_status = 'Rejected' then
+                                             'Y'
+                                            else
+                                             'N'
+                                          end,
+             xrr.processed_by              = p_processed_by,
+             xrr.err_code                  = p_err_code,
+             xrr.err_msg                   = p_err_msg,
+             xrr.last_update_date          = sysdate,
+             xrr.refund_date               = sysdate
+       where xrr.refund_id = v_refund_id;
+    
+      if p_processed_flag = 'Y' and
+         p_refund_status in ('Accepted', 'Processed') then
+      
+        update XX_REFUND_REQUEST xrr
+           set xrr.refund_ref_number = case
+                                         when xrr.refund_channel = 'SADAD' then
+                                          to_char(xrr.sadad_refund_id)
+                                         when xrr.refund_channel = 'Payfort' then
+                                          xrr.payfort_merchant_reference || ' ' ||
+                                          xrr.refund_id
+                                         else
+                                          xrr.cust_order_no
+                                       end,
+               xrr.refunded_amount   = xrr.refund_amount
+         where xrr.refund_id = v_refund_id;
+      end if;
+      commit;
+      x_status_code := 'S';
+      x_status_msg  := 'Refund request has been updated successfully.';
+    
+    else
+      x_status_code := 'F';
+      x_status_msg  := 'Error getting the refund ID record';
+    
+    end if;
+  exception
+    when others then
+      x_status_code := 'F';
+      v_error       := sqlerrm;
+      x_status_msg  := 'Unexpected Error: ' || substr(v_error, 1, 2000);
+  end update_xrr_processing_status;
+  procedure update_xrr_Sadad_status(P_SADAD_REFUND_ID           NUMBER,
+                                    p_refund_status             varchar2,
+                                    p_refund_date               varchar2,
+                                    p_RES_ADDITIONAL_ATTRIBUTE1 varchar2,
+                                    p_RES_ADDITIONAL_ATTRIBUTE2 varchar2) is
+    v_refund_date date;
+  begin
+    insert into xx_refund_request_param_log
+      (P_SADAD_REFUND_ID,
+       P_REFUND_STATUS,
+       P_REFUND_DATE,
+       p_RES_ADDITIONAL_ATTRIBUTE1,
+       p_RES_ADDITIONAL_ATTRIBUTE2,
+       PARAM_SOURCE,
+       CREATION_DATE)
+    values
+      (P_SADAD_REFUND_ID,
+       P_REFUND_STATUS,
+       P_REFUND_DATE,
+       p_RES_ADDITIONAL_ATTRIBUTE1,
+       p_RES_ADDITIONAL_ATTRIBUTE2,
+       'RMS',
+       sysdate
+       
+       );
+    commit;
+  
+    v_refund_date := to_date(replace(p_refund_date, 'T', ' '),
+                             'YYYY-MM-DD HH24:MI:SS');
+    update xx_refund_request xrr
+       set xrr.refund_status             = p_refund_status,
+           xrr.refund_date               = v_refund_date,
+           xrr.res_additional_attribute1 = p_RES_ADDITIONAL_ATTRIBUTE1,
+           xrr.res_additional_attribute2 = p_RES_ADDITIONAL_ATTRIBUTE2,
+           xrr.manual_processing_flag = case
+                                          when p_refund_status = 'Expired' then
+                                           'Y'
+                                          else
+                                           'N'
+                                        end,
+           refund_method                 = refund_channel
+     where xrr.sadad_refund_id = P_SADAD_REFUND_ID;
+    commit;
+  end;
+  procedure update_gl_accounting(p_Prefund_method             VARCHAR2,
+                                 p_PRES_ADDITIONAL_ATTRIBUTE1 VARCHAR2,
+                                 p_PRES_ADDITIONAL_ATTRIBUTE2 VARCHAR2) is
+  begin
+    update xx_refund_request
+       set refund_method = p_Prefund_method,
+       RES_ADDITIONAL_ATTRIBUTE2=p_PRES_ADDITIONAL_ATTRIBUTE2
+     where RES_ADDITIONAL_ATTRIBUTE1 = p_PRES_ADDITIONAL_ATTRIBUTE1
+       and REFUND_STATUS = 'Processed';
+    commit;
+  end;
+end xx_refund_request_pkg;

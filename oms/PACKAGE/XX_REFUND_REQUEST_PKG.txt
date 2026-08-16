@@ -1,0 +1,69 @@
+create or replace package       XX_REFUND_REQUEST_PKG is
+
+  procedure create_xrr_refund_request( --P_REFUND_ID                        NUMBER
+                                      P_CANCEL_HEAD_SEQ_ID   NUMBER,
+                                      P_CANCEL_TENDER_SEQ_ID NUMBER,
+                                      P_REFUND_CHANNEL       VARCHAR2,
+                                      P_TENDER_TYPE          VARCHAR2,
+                                      P_TENDER_SUBTYPE       VARCHAR2,
+                                      P_DECIMAL_ADJUSTMENT   VARCHAR2,
+                                      P_REFUND_AMOUNT        NUMBER,
+                                      P_COUNTRY              VARCHAR2,
+                                      P_CURRENCY             VARCHAR2,
+                                      P_REFUNDABLE           VARCHAR2,
+                                      P_SADAD_BANKID         VARCHAR2,
+                                      P_SADAD_UID            VARCHAR2,
+                                      P_SADAD_SPTN           VARCHAR2
+                                      -- ,P_SADAD_REFUND_ID                        NUMBER
+                                     ,
+                                      P_PAYFORT_FORTID             VARCHAR2,
+                                      P_PAYFORT_MERCHANT_REFERENCE VARCHAR2,
+                                      P_TASHEEL_WALLET_CIVILID     VARCHAR2,
+                                      P_TASHEEL_WALLET_REFNUMBER   VARCHAR2,
+                                      P_TASHEEL_CARDNO             VARCHAR2,
+                                      P_REQ_ADDITIONAL_ATTRIBUTE1  VARCHAR2,
+                                      P_REQ_ADDITIONAL_ATTRIBUTE2  VARCHAR2,
+                                      P_REQ_ADDITIONAL_ATTRIBUTE3  VARCHAR2,
+                                      -- P_MANUAL_PROCESSING_FLAG     VARCHAR2
+                                      -- ,P_PROCESSED_FLAG                       VARCHAR2
+                                      -- ,P_PROCESSED_ON                       DATE
+                                      P_PROCESSED_BY VARCHAR2,
+                                      --,P_ERR_CODE                               VARCHAR2
+                                      -- ,P_ERR_MSG                                VARCHAR2
+                                      
+                                      P_REFUND_METHOD VARCHAR2,
+                                      p_cust_order_no VARCHAR2,
+                                      -- ,P_REFUND_REF_NUMBER                VARCHAR2
+                                      --  ,P_REFUND_STATUS                        VARCHAR2
+                                      -- ,P_REFUND_DATE                        DATE
+                                      --,P_RES_ADDITIONAL_ATTRIBUTE1        VARCHAR2
+                                      -- ,P_RES_ADDITIONAL_ATTRIBUTE2        VARCHAR2
+                                      -- ,P_RES_ADDITIONAL_ATTRIBUTE3        VARCHAR2
+                                      -- ,P_CREATION_DATE                        DATE
+                                      -- ,P_LAST_UPDATE_DATE                       DATE
+                                      
+                                      X_REFUND_ID   OUT NUMBER,
+                                      X_STATUS_CODE OUT VARCHAR2,
+                                      X_STATUS_MSG  OUT VARCHAR2);
+
+  procedure update_xrr_processing_status(P_REFUND_ID                 NUMBER,
+                                         P_PROCESSED_FLAG            VARCHAR2,
+                                         P_PROCESSED_BY              VARCHAR2,
+                                         p_refund_status             varchar2,
+                                         p_refund_date               date,
+                                         P_ERR_CODE                  VARCHAR2,
+                                         P_ERR_MSG                   VARCHAR2,
+                                         p_RES_ADDITIONAL_ATTRIBUTE1 varchar2,
+                                         X_STATUS_CODE               OUT VARCHAR2,
+                                         X_STATUS_MSG                OUT VARCHAR2);
+
+  procedure update_xrr_Sadad_status(P_SADAD_REFUND_ID           NUMBER,
+                                    p_refund_status             varchar2,
+                                    p_refund_date               varchar2,
+                                    p_RES_ADDITIONAL_ATTRIBUTE1 varchar2,
+                                    p_RES_ADDITIONAL_ATTRIBUTE2 varchar2);
+  procedure update_gl_accounting(p_Prefund_method             VARCHAR2,
+                                 p_PRES_ADDITIONAL_ATTRIBUTE1 VARCHAR2,
+                                 p_PRES_ADDITIONAL_ATTRIBUTE2 VARCHAR2);
+
+end XX_REFUND_REQUEST_PKG;

@@ -1,0 +1,2072 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+  </ID>
+  <name>OMS_CUST_ORD_HEAD</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">619ed8c7-6dcb-4a99-aeff-af2dbb3b7c7a</identifier>
+      </ID>
+      <name>CUST_ORDER_NO</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0eca0a88-1972-423b-8048-c2eb2d44258f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">48</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUST_ORDER_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_ORDER_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">36283587-a100-4be7-920d-e93384255dc2</identifier>
+      </ID>
+      <name>SUB_CUST_ORDER_NO</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ce2dfd79-c5a5-41ee-bbed-4f4f5d7c7870</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SUB_CUST_ORDER_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SUB_CUST_ORDER_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2166d3c7-a3f3-49d1-a544-36afe366a74b</identifier>
+      </ID>
+      <name>APPLICATION_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3784a973-4e57-4dec-a5d0-6453af168462</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>APPLICATION_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>APPLICATION_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">64f8c893-7fd3-4448-9278-2273e2a4f0d4</identifier>
+      </ID>
+      <name>ENTITY_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">53945d4a-4b8f-472a-aa05-e8b314a26f18</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ENTITY_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ENTITY_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c7adc1f9-3159-48a5-bafb-1e7b671a7040</identifier>
+      </ID>
+      <name>OMS_CUST_ORD_NO</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81614bd2-54d4-48e5-8bc9-3a164c43b285</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OMS_CUST_ORD_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OMS_CUST_ORD_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">92ec5a19-2a3f-4591-b9a9-37c0ea81fd63</identifier>
+      </ID>
+      <name>CUST_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e38c5070-defc-4341-9ba7-47369efd5ed0</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9952bceb-10db-4bd2-963a-d6890d5463e1</identifier>
+      </ID>
+      <name>CUST_FIRST_NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">dd9806e3-9728-48f6-b865-d8ebb4754f58</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">120</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUST_FIRST_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIRST_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">60b690e0-117e-45ee-8568-8cf33030aa1b</identifier>
+      </ID>
+      <name>CUST_LAST_NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a50d771d-907b-4a35-9263-caff8f02ada9</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">120</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUST_LAST_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_LAST_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d34832c6-1541-4afb-9ea9-383f79eed66a</identifier>
+      </ID>
+      <name>CUST_ORDER_TYPE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">217242cf-5779-423d-a2c3-ebe678a9017f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUST_ORDER_TYPE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_ORDER_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">231e259e-145a-466d-a7b1-f6e1899ed9ae</identifier>
+      </ID>
+      <name>ORDER_REQUESTOR_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">25fe08cf-a4e4-493e-a218-aaee3ea18eef</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ORDER_REQUESTOR_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ORDER_REQUESTOR_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5bb9c147-18b2-4674-a653-bdcd347c8541</identifier>
+      </ID>
+      <name>CUST_PHONE_NO</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6c0784e0-a5cf-4664-ab82-e7f456035bd6</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUST_PHONE_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_PHONE_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">fccf244d-b0b3-4630-b7dc-2536e68a398a</identifier>
+      </ID>
+      <name>DELIVERY_TYPE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f2b506b2-97ad-43c8-8afc-2d2955fca74a</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>DELIVERY_TYPE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DELIVERY_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6f772d3a-2a1b-4e0f-82ab-9d0c0ab52d79</identifier>
+      </ID>
+      <name>ORD_PAYMENT_STATUS</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4eebfcb5-8261-4088-881f-e5aa29c71280</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ORD_PAYMENT_STATUS</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ORD_PAYMENT_STATUS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">234b07cb-6528-444e-bb67-f72b7f8bd76a</identifier>
+      </ID>
+      <name>STATUS</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6e8c20b9-b4d7-49a5-9ef8-a82480b241ba</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>STATUS</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>STATUS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4e79f475-a9fe-4565-b6bb-4a788cfb0259</identifier>
+      </ID>
+      <name>ORDER_CREATE_RESERVE_IND</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8b7e3638-d008-40ff-b385-f47fda657ff3</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ORDER_CREATE_RESERVE_IND</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ORDER_CREATE_RESERVE_IND</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ff1eb8bc-8c1a-44c5-8a37-ab36be714f7d</identifier>
+      </ID>
+      <name>CUSTOMER_LANG</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e496783a-ca24-4975-b2c8-fe8c78d60672</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CUSTOMER_LANG</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_LANG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0e553dc0-3662-42b8-a475-44812a3be448</identifier>
+      </ID>
+      <name>PICK_LOC</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">61c92d6c-b538-4d3d-8fbc-b01b3b80ff52</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PICK_LOC</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PICK_LOC</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">fb06da9e-c8bb-44ff-99ba-3eb2460dc7a3</identifier>
+      </ID>
+      <name>PAY_IN_STORE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8f552640-e0ca-4dc1-9b58-df5d3356c130</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PAY_IN_STORE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PAY_IN_STORE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a7867d4e-74ba-4428-8863-b1071c1c965c</identifier>
+      </ID>
+      <name>CONSUMER_DLY_TIME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4d49c535-c797-4a41-8fe7-1c6406300864</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CONSUMER_DLY_TIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CONSUMER_DLY_TIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">225757a9-2d0c-4f36-8c3a-ce10f3753b23</identifier>
+      </ID>
+      <name>COMMENTS</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f7569b04-0959-40d7-b2f2-2b2aa68766f8</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">2000</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COMMENTS</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COMMENTS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d4d16a03-cd43-4698-8d08-ec87dbae40e0</identifier>
+      </ID>
+      <name>CREATE_DATETIME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e0e204c9-54d8-4499-8693-3b8e59e669cd</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATE_DATETIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATE_DATETIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9158eec0-0adb-48b4-9ccd-74b7348161a2</identifier>
+      </ID>
+      <name>LAST_UPDATE_DATETIME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">97cf69a6-67ac-43dc-9cf4-511aadbdcc23</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATE_DATETIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATE_DATETIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e021c795-4778-4e7a-9082-e0f144f7caca</identifier>
+      </ID>
+      <name>CLOSE_DATETIME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7334b95f-f766-4389-be59-cc705769f670</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CLOSE_DATETIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CLOSE_DATETIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">876e7603-d0c3-4d92-acd7-0ac4a12deb7c</identifier>
+      </ID>
+      <name>CANCEL_DATETIME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">13fed28c-c394-4ab4-aa0e-39e372e3482d</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CANCEL_DATETIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693352</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CANCEL_DATETIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b2281c10-e8f4-45f1-9928-e91f0fb30dab</identifier>
+      </ID>
+      <name>PK_OMS_CUST_ORD_HEAD</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CUST_ORDER_NO</name>
+          <identifier class="java.lang.String">619ed8c7-6dcb-4a99-aeff-af2dbb3b7c7a</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_CUST_ORD_HEAD</name>
+            <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+            <schemaName>OMSUSER1</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SUB_CUST_ORDER_NO</name>
+          <identifier class="java.lang.String">36283587-a100-4be7-920d-e93384255dc2</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_CUST_ORD_HEAD</name>
+            <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+            <schemaName>OMSUSER1</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>APPLICATION_ID</name>
+          <identifier class="java.lang.String">2166d3c7-a3f3-49d1-a544-36afe366a74b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_CUST_ORD_HEAD</name>
+            <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+            <schemaName>OMSUSER1</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ENTITY_ID</name>
+          <identifier class="java.lang.String">64f8c893-7fd3-4448-9278-2273e2a4f0d4</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_CUST_ORD_HEAD</name>
+            <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+            <schemaName>OMSUSER1</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PK_OMS_CUST_ORD_HEAD</name>
+        <identifier class="java.lang.String">7a0c7e75-22dc-4873-8d57-9fdad81cb3d5</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>OMS_CUST_ORD_HEAD</name>
+          <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+          <schemaName>OMSUSER1</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>OMSUSER1</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PK_OMS_CUST_ORD_HEAD</name>
+            <childObjectNames>
+              <childObjectName>CUST_ORDER_NO</childObjectName>
+              <childObjectName>SUB_CUST_ORDER_NO</childObjectName>
+              <childObjectName>APPLICATION_ID</childObjectName>
+              <childObjectName>ENTITY_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6addeb3e-d5e3-4ddc-8456-e49814d604a8</identifier>
+      </ID>
+      <name>UK_OMS_CUST_ORD_HEAD</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>OMS_CUST_ORD_NO</name>
+          <identifier class="java.lang.String">c7adc1f9-3159-48a5-bafb-1e7b671a7040</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_CUST_ORD_HEAD</name>
+            <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+            <schemaName>OMSUSER1</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>UK_OMS_CUST_ORD_HEAD</name>
+        <identifier class="java.lang.String">ef916665-6ded-49ac-ab48-9dd44881c062</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>OMS_CUST_ORD_HEAD</name>
+          <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+          <schemaName>OMSUSER1</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>OMSUSER1</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>UK_OMS_CUST_ORD_HEAD</name>
+            <childObjectNames>
+              <childObjectName>OMS_CUST_ORD_NO</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>UniqueConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7a0c7e75-22dc-4873-8d57-9fdad81cb3d5</identifier>
+      </ID>
+      <name>PK_OMS_CUST_ORD_HEAD</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">bb1e6b7e-a375-476b-b922-bbec6891e509</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">1b6e2116-8c0c-4f85-be7d-9554b14cc70f</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>CUST_ORDER_NO</name>
+              <identifier class="java.lang.String">619ed8c7-6dcb-4a99-aeff-af2dbb3b7c7a</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_CUST_ORD_HEAD</name>
+                <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_CUST_ORD_HEAD</name>
+                      <identifier class="java.math.BigDecimal">693353</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_CUST_ORD_HEAD</name>
+                        <identifier class="java.math.BigDecimal">693352</identifier>
+                        <schemaName>OMSUSER1</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693353</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_CUST_ORD_HEAD</name>
+                    <identifier class="java.math.BigDecimal">693352</identifier>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">bb1e6b7e-a375-476b-b922-bbec6891e509</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">1b6e2116-8c0c-4f85-be7d-9554b14cc70f</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SUB_CUST_ORDER_NO</name>
+              <identifier class="java.lang.String">36283587-a100-4be7-920d-e93384255dc2</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_CUST_ORD_HEAD</name>
+                <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_CUST_ORD_HEAD</name>
+                      <identifier class="java.math.BigDecimal">693353</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_CUST_ORD_HEAD</name>
+                        <identifier class="java.math.BigDecimal">693352</identifier>
+                        <schemaName>OMSUSER1</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693353</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_CUST_ORD_HEAD</name>
+                    <identifier class="java.math.BigDecimal">693352</identifier>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">bb1e6b7e-a375-476b-b922-bbec6891e509</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">1b6e2116-8c0c-4f85-be7d-9554b14cc70f</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>APPLICATION_ID</name>
+              <identifier class="java.lang.String">2166d3c7-a3f3-49d1-a544-36afe366a74b</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_CUST_ORD_HEAD</name>
+                <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_CUST_ORD_HEAD</name>
+                      <identifier class="java.math.BigDecimal">693353</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_CUST_ORD_HEAD</name>
+                        <identifier class="java.math.BigDecimal">693352</identifier>
+                        <schemaName>OMSUSER1</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693353</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_CUST_ORD_HEAD</name>
+                    <identifier class="java.math.BigDecimal">693352</identifier>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">bb1e6b7e-a375-476b-b922-bbec6891e509</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">1b6e2116-8c0c-4f85-be7d-9554b14cc70f</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ENTITY_ID</name>
+              <identifier class="java.lang.String">64f8c893-7fd3-4448-9278-2273e2a4f0d4</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_CUST_ORD_HEAD</name>
+                <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_CUST_ORD_HEAD</name>
+                      <identifier class="java.math.BigDecimal">693353</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_CUST_ORD_HEAD</name>
+                        <identifier class="java.math.BigDecimal">693352</identifier>
+                        <schemaName>OMSUSER1</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693353</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_CUST_ORD_HEAD</name>
+                    <identifier class="java.math.BigDecimal">693352</identifier>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PK_OMS_CUST_ORD_HEAD</name>
+            <identifier class="java.math.BigDecimal">693353</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>OMSUSER1</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">72c4a6e7-59cb-4883-bba7-50d13ce057fa</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PK_OMS_CUST_ORD_HEAD</name>
+                    <identifier class="java.math.BigDecimal">693353</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>OMS_CUST_ORD_HEAD</name>
+                      <identifier class="java.math.BigDecimal">693352</identifier>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>RETAIL_DATA</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>OMSUSER1</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ef916665-6ded-49ac-ab48-9dd44881c062</identifier>
+      </ID>
+      <name>UK_OMS_CUST_ORD_HEAD</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">9889c7b9-1772-4ec0-9a01-7851057a75ef</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">e4959671-5ff9-47c0-bfe6-5f9d09d42f8d</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>OMS_CUST_ORD_NO</name>
+              <identifier class="java.lang.String">c7adc1f9-3159-48a5-bafb-1e7b671a7040</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_CUST_ORD_HEAD</name>
+                <identifier class="java.lang.String">de3dd3c5-b0b6-4382-9695-516db798bea6</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>UK_OMS_CUST_ORD_HEAD</name>
+                      <identifier class="java.math.BigDecimal">693354</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_CUST_ORD_HEAD</name>
+                        <identifier class="java.math.BigDecimal">693352</identifier>
+                        <schemaName>OMSUSER1</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>UK_OMS_CUST_ORD_HEAD</name>
+                  <identifier class="java.math.BigDecimal">693354</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_CUST_ORD_HEAD</name>
+                    <identifier class="java.math.BigDecimal">693352</identifier>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>UK_OMS_CUST_ORD_HEAD</name>
+            <identifier class="java.math.BigDecimal">693354</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_CUST_ORD_HEAD</name>
+              <identifier class="java.math.BigDecimal">693352</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>OMSUSER1</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">a3a57769-44a7-49e4-9e4a-22cfb707eb77</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>UK_OMS_CUST_ORD_HEAD</name>
+                    <identifier class="java.math.BigDecimal">693354</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>OMS_CUST_ORD_HEAD</name>
+                      <identifier class="java.math.BigDecimal">693352</identifier>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>RETAIL_DATA</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>OMSUSER1</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Table to hold Customer Order Header info.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">OMS</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>OMS_CUST_ORD_HEAD</name>
+        <identifier class="java.math.BigDecimal">693352</identifier>
+        <schemaName>OMSUSER1</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">01a51c8c-72ad-41a4-a698-a80b86f209e8</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OMS_CUST_ORD_HEAD</name>
+                <identifier class="java.math.BigDecimal">693352</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>RETAIL_DATA</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>OMSUSER1</name>
+  </schema>
+</table>

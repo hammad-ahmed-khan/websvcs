@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com.siebel.retail/integration/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://com.siebel.retail/integration/" name="OMSCustomerOrderStatusUpdate">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="SiebelStatusUpdateWebService1.xsd" namespace="http://com.siebel.retail/integration/"/>
+    </xsd:schema>
+  </types>
+  <message name="processSiebelStatusUpdate">
+    <part name="input" element="tns:SiebelStatusUpdateInfo"/>
+  </message>
+  <message name="processSiebelStatusUpdateResponse">
+    <part name="return" element="tns:SiebelStatusUpdateResponse"/>
+  </message>
+  <portType name="SiebelStatusUpdateWebService">
+    <operation name="processSiebelStatusUpdate">
+      <input message="tns:processSiebelStatusUpdate"/>
+      <output message="tns:processSiebelStatusUpdateResponse"/>
+    </operation>
+  </portType>
+  <binding name="SiebelStatusUpdateWebServicePortBinding" type="tns:SiebelStatusUpdateWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="processSiebelStatusUpdate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SiebelStatusUpdateWebService">
+    <port name="SiebelStatusUpdateWebService" binding="tns:SiebelStatusUpdateWebServicePortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:8014/SiebelStatusUpdateBean/SiebelStatusUpdateWebService"/>
+    </port>
+  </service>
+</definitions>

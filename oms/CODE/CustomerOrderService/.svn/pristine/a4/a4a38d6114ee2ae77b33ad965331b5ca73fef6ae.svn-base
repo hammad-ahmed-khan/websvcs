@@ -1,0 +1,6 @@
+app.name=CustomerOrder
+server.url=ex-app03-retekdev.extrastores.com
+server.port=8200
+weblogic.oms.jndi.name=jdbc/oms
+weblogic.das.jndi.name=jdbc/das
+app.log.directory=/u00/oracle/Weblogic_RSB/user_projects/domains/RSBDomain/servers/AdminServer/logs

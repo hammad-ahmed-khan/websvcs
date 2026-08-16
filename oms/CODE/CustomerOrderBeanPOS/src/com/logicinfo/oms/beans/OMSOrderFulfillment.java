@@ -1,0 +1,1411 @@
+package com.logicinfo.oms.beans;
+
+import java.math.BigDecimal;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
+
+import javax.xml.soap.SOAPException;
+import javax.xml.ws.soap.SOAPFaultException;
+
+import org.apache.log4j.Logger;
+
+import com.logicinfo.oms.ejb.OMSUtilSessionEJB;
+import com.logicinfo.oms.ejb.OmsCoFulfillDetail;
+import com.logicinfo.oms.ejb.OmsCustOrdHead;
+import com.logicinfo.oms.ejb.OmsCustOrdItem;
+import com.logicinfo.oms.ejb.OmsFulfillMatrixExtDetail;
+import com.logicinfo.oms.ejb.OmsOrposCustOrderHead;
+import com.logicinfo.oms.ejb.OmsTempCoFo;
+import com.logicinfo.oms.ejb.OmsUnapprovedTransfers;
+import com.logicinfo.oms.util.OMSUtil;
+import com.oracle.retail.integration.base.bo.custorderdesc.v1.CustOrderDesc;
+import com.oracle.retail.integration.base.bo.fulfilordcfmcol.v1.FulfilOrdCfmCol;
+import com.oracle.retail.integration.base.bo.fulfilordcfmdesc.v1.ConfirmType;
+import com.oracle.retail.integration.base.bo.fulfilordcfmdtl.v1.FulfilOrdCfmDtl;
+import com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException;
+
+public class OMSOrderFulfillment {
+	public OMSOrderFulfillment() {
+		super();
+	}
+
+	private final static Logger log = Logger.getLogger(OMSOrderFulfillment.class.getName());
+	BigDecimal fulfilmentOrderNo = null;
+	FulfilOrdCfmCol fulfilOrdCfmCol = null;
+	FulfilOrdCfmCol pfulfilOrdCfmCol = null;
+	ConcurrentHashMap<BigDecimal, FulfilOrdCfmCol> pfulfilOrdCfmCols = new ConcurrentHashMap<BigDecimal, FulfilOrdCfmCol>();
+	ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>> xfulfilOrdCfmCols = new ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>>();
+	ConfirmType confirmType = null;
+	int retryWS = 2;
+	boolean flag = false;
+	int maxFulfilOrderNo = 0;
+	int currentFulfilOrderNo = 0;
+	OMSUtilCommons omsUtilCommons = new OMSUtilCommons();
+	ArrayList<BigDecimal> transferList = new ArrayList<BigDecimal>();
+
+	public Map<BigDecimal, ArrayList<OmsTempCoFo>> processNonSadad(TreeMap<BigDecimal, ArrayList<OmsTempCoFo>> fulfillDetailMap1, BigDecimal omsCustOrdNo, CustOrderDesc custOrderDesc,
+			BigDecimal omsOrposCustOrderId) throws SOAPException, com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalArgumentWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalArgumentWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException, com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException,
+			com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.IllegalArgumentWSFaultException,
+			com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.ValidationWSFaultException, EntityAlreadyExistsWSFaultException {
+		log.info("omsCustOrdNo " + omsCustOrdNo + "***Start : processNonSadad");
+		log.info("omsCustOrdNo " + omsCustOrdNo + "fulfilDetailMap" + fulfillDetailMap1.size());
+		log.info("------------------------------------------>");
+		OMSUtilSessionEJB session = OMSUtil.doLookup();
+		ProcessedObject processedObject = null;
+		InterfacePersistence interfacePersistence = new InterfacePersistence();
+		TreeMap<BigDecimal, ArrayList<OmsTempCoFo>> newFulfillDetailMap = null;
+		ArrayList<OmsTempCoFo> tempList = null;
+		ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>> fulfillDetailMap = new ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>>();
+		fulfillDetailMap.putAll(fulfillDetailMap1);
+		OmsCustOrdHead omsCustOrdHead1 = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+		String extCustOrdNo = omsCustOrdHead1.getCustOrderNo().trim() + omsCustOrdHead1.getSubCustOrderNo();
+		int subNo = Integer.parseInt(omsCustOrdHead1.getSubCustOrderNo().trim());
+		log.info("omsCustOrdNo " + omsCustOrdNo + "=====================SubNo=============" + subNo);
+		if (subNo == 1) {
+			log.info("omsCustOrdNo " + omsCustOrdNo + "inside subOrderN0");
+			extCustOrdNo = omsCustOrdHead1.getCustOrderNo().trim();
+		} else if (omsCustOrdHead1.getSubCustOrderNo().trim().length() < 3) {
+			log.info("omsCustOrdNo " + omsCustOrdNo + "=============inside omsCustOrdHead.getSubCustOrderNo().trim().length()==========");
+			if (omsCustOrdHead1.getSubCustOrderNo().trim().length() == 2) {
+				extCustOrdNo = omsCustOrdHead1.getCustOrderNo().trim() + "0" + omsCustOrdHead1.getSubCustOrderNo().trim();
+			} else {
+				extCustOrdNo = omsCustOrdHead1.getCustOrderNo().trim() + "00" + omsCustOrdHead1.getSubCustOrderNo().trim();
+			}
+		}
+		TreeMap<BigDecimal, ArrayList<OmsTempCoFo>> tempMap1 = new TreeMap<BigDecimal, ArrayList<OmsTempCoFo>>();
+		tempMap1.putAll(fulfillDetailMap);
+		// for (BigDecimal key : fulfillDetailMap.keySet())
+		for (int k = 1; k <= tempMap1.lastKey().intValue(); k++) {
+			BigDecimal key = new BigDecimal(k);
+			log.info("<--------------------The key value is---------------------------------------------->" + key);
+			try {
+				tempList = fulfillDetailMap.get(key);
+				if (tempList == null) {
+					continue;
+				}
+				log.info("omsCustOrdNo " + omsCustOrdNo + "inside try of process Non Sadad");
+				log.info("omsCustOrdNo " + omsCustOrdNo + "key :" + key + "---->");
+				log.info("tempList.get(0).getRmsResponseCode() " + tempList.get(0).getRmsResponseCode() + "-------***>");
+				if (tempList.get(0).getRmsResponseCode() == null || tempList.get(0).getRmsResponseCode().isEmpty()) {
+					// call of Web services of RMS and SIM
+					for (int _count = 1; _count <= 10; _count++) {
+						log.info("omsCustOrdNo " + omsCustOrdNo + "------Before calling the Web Service call --- Count Value is" + _count);
+						try {
+							log.info("omsCustOrdNo " + omsCustOrdNo + "-------------------------Calling  the web serivce -------------------");
+							processedObject = interfacePersistence.callWebservices(omsCustOrdNo, tempList, omsOrposCustOrderId, custOrderDesc.getInitiateLocId(), custOrderDesc.getShipToStore());
+							log.info("omsCustOrdNo " + omsCustOrdNo + "--------------------Successfull Happened Count Value is" + _count);
+							break;
+						} catch (Exception e) {
+							log.info("omsCustOrdNo " + omsCustOrdNo + "#################------------ Catch Exception----------------############");
+							log.info("omsCustOrdNo " + omsCustOrdNo + "<----Exception  Occured---- count-->" + _count + "---" + e.getMessage() + "-----------");
+							if (_count == 10) {
+								log.info("omsCustOrdNo " + omsCustOrdNo + "-------------------------Error Message----------" + e.getMessage());
+								throw (new RuntimeException(e.getMessage()));
+							}
+						}
+					}
+					log.info("omsCustOrdNo " + omsCustOrdNo + "Call successful ,retuned processed obeject" + "-------->");
+					fulfilOrdCfmCol = processedObject.getFulfilOrdCfmCol();
+					currentFulfilOrderNo = processedObject.getCurrentFulFillOrderNo();
+					log.info("currentFulfilOrderNo from processedObject " + currentFulfilOrderNo);
+					log.info("omsCustOrdNo " + omsCustOrdNo + "   fulfilOrdCfmCol = processedObject.getFulfilOrdCfmCol() done");
+					tempList = processedObject.getOmsTempCoFoList();
+					log.info("omsCustOrdNo " + omsCustOrdNo + "Processed object size" + tempList.size() + "----------->");
+					// Update the value of map with processing app (SIM/RMS)
+					fulfillDetailMap.put(key, tempList);
+					maxFulfilOrderNo = tempMap1.lastEntry().getKey().intValue();
+					log.info("maxFulfilOrderNo after calling RMS" + maxFulfilOrderNo);
+				} else if (tempList.get(0).getRmsResponseCode().equals("X")) {
+					log.info("<--------------------- Temp List Response code is X------------------------------------------>");
+					XResponseProcessingObj xResponseProcessingObj = processXResponse(omsCustOrdNo, tempList, maxFulfilOrderNo, newFulfillDetailMap, fulfillDetailMap, custOrderDesc,
+							omsOrposCustOrderId);
+					fulfillDetailMap = xResponseProcessingObj.getFulfillDetailMap();
+					tempMap1.putAll(fulfillDetailMap);
+					maxFulfilOrderNo = tempMap1.lastKey().intValue();
+					log.info("omsCustOrdNo " + omsCustOrdNo + "maxFulfilOrderNo after calling X response " + maxFulfilOrderNo);
+				} else {
+					log.info("omsCustOrdNo " + omsCustOrdNo + "inside else block tempList.get(0).getRmsResponseCode() " + tempList.get(0).getRmsResponseCode() + "------------>");
+					log.info("omsCustOrdNo " + omsCustOrdNo + "RmsResponseCode is not equal X or P");
+				}
+			} catch (javax.xml.ws.WebServiceException f) {
+				log.info("omsCustOrdNo " + omsCustOrdNo + "WSDL unanavailbale error" + f.getMessage());
+				custOrderDesc.setOrderDesc("OMS_ORPOS_ERROR_111"); // RMS/SIM WS is down
+				for (OmsTempCoFo omsTempCoFo : tempList) {
+					OmsCustOrdItem omsCustOrdItem = session.getOmsCustOrdItemFindByItem(omsCustOrdNo, omsTempCoFo.getItem(), omsTempCoFo.getLineNo());
+					omsCustOrdItem.setStatus("F");
+					session.mergeOmsCustOrdItem(omsCustOrdItem);
+				}
+				log.info("omsCustOrdNo " + omsCustOrdNo + "Merging omsCustORdHead");
+				OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+				omsCustOrdHead.setStatus("F");
+				session.mergeOmsCustOrdHead(omsCustOrdHead);
+				OmsOrposCustOrderHead omsOrposCustOrderHead = session.getOmsOrposCustOrderHeadFindByomsOrposCustOrderId(omsOrposCustOrderId);
+				omsOrposCustOrderHead.setStatus("F");
+				session.mergeOmsOrposCustOrderHead(omsOrposCustOrderHead);
+				return tempMap1;
+			} catch (Exception e) {
+				log.info("omsCustOrdNo " + omsCustOrdNo + "inside catch of process Non Sadad");
+				log.error("omsCustOrdNo " + omsCustOrdNo + "Error in processing fulfillment :" + e.getMessage());
+				custOrderDesc.setOrderDesc("OMS_ORPOS_ERROR_106"); // SYSTEM_ERROR
+				tempMap1.putAll(fulfillDetailMap);
+				OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+				omsCustOrdHead.setStatus("F");
+				session.mergeOmsCustOrdHead(omsCustOrdHead);
+				OmsOrposCustOrderHead omsOrposCustOrderHead = session.getOmsOrposCustOrderHeadFindByomsOrposCustOrderId(omsOrposCustOrderId);
+				omsOrposCustOrderHead.setStatus("F");
+				session.mergeOmsOrposCustOrderHead(omsOrposCustOrderHead);
+				return tempMap1;
+			}
+			log.info("<##########----------------------------------------------------------------------------##########>");
+			log.info("tempList Contains for (OmsTempCoFo tempCoFo : tempList) ");
+			String responseStatus = interfacePersistence.processWebserviceResponse(omsCustOrdNo, fulfilOrdCfmCol, tempList, omsOrposCustOrderId);
+			log.info("*****************************Response received is" + responseStatus + "--------------------");
+			// Changes are done for bug fix 2473, responseStatus.equals("C") removed
+			while (responseStatus.equals("C") == false && !"".equals(responseStatus)) {
+				log.info(" Checking Inside Response Status--->" + responseStatus + "<--------------");
+				if (responseStatus.equals("X")) {
+					log.info("omsCustOrdNo " + omsCustOrdNo + "Received X response.");
+					log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+					log.info("currentFulfilOrderNo loop " + currentFulfilOrderNo);
+					log.info("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+					for (BigDecimal mapkey : fulfillDetailMap.keySet()) {
+						tempList = fulfillDetailMap.get(mapkey);
+						for (OmsTempCoFo omsTemp : tempList) {
+							log.info("omsCustOrdNo " + omsCustOrdNo + "tempList.size() " + tempList.size());
+							log.info("omsCustOrdNo " + omsCustOrdNo + "Fulfill order No in tempList loop" + omsTemp.getFulfillOrderNo());
+							log.info("omsCustOrdNo " + omsCustOrdNo + " lineNo= " + omsTemp.getLineNo());
+							log.info("omsCustOrdNo " + omsCustOrdNo + " item= " + omsTemp.getItem());
+							log.info("omsCustOrdNo " + omsCustOrdNo + " Quantity Ordered= " + omsTemp.getOrderQty());
+							log.info("omsCustOrdNo " + omsCustOrdNo + " Fulfilmetn OrderNo=" + omsTemp.getFulfillOrderNo());
+							log.info("omsCustOrdNo " + omsCustOrdNo + " source loc id= " + omsTemp.getSourceLocId());
+							log.info("omsCustOrdNo " + omsCustOrdNo + " Fulfill loc id= " + omsTemp.getFulfillLocId());
+							log.info("omsCustOrdNo " + omsCustOrdNo + " Response code= " + omsTemp.getRmsResponseCode());
+							log.info("#############################################################################");
+						}
+					}
+					try {
+						XResponseProcessingObj xResponseProcessingObj = processXResponse(omsCustOrdNo, tempList, maxFulfilOrderNo, newFulfillDetailMap, fulfillDetailMap, custOrderDesc,
+								omsOrposCustOrderId);
+						fulfillDetailMap = xResponseProcessingObj.getFulfillDetailMap();
+						tempMap1.putAll(fulfillDetailMap);
+						maxFulfilOrderNo = tempMap1.lastKey().intValue();
+						log.info("<------------------maxFulfilOrderNo after calling X response-----------------> " + maxFulfilOrderNo);
+						log.info("<-----------------Printing fulfillDetailMap.keySet() after calling X response-----------> ");
+						for (BigDecimal tempKey : fulfillDetailMap.keySet()) {
+							log.info("tempKey " + tempKey);
+							tempList = fulfillDetailMap.get(tempKey);
+							for (OmsTempCoFo omsTemp : tempList) {
+								log.info("----------------------> iterating tempList<------------------------------");
+								// || !omsTemp.getRmsResponseCode().isEmpty()
+								if (omsTemp.getRmsResponseCode() != null && !"".equals(omsTemp.getRmsResponseCode())) {
+									log.info("omsCustOrdNo " + omsCustOrdNo + "tempList.size() inside newFulfillDetailMap " + tempList.size());
+									log.info("omsCustOrdNo " + omsCustOrdNo + "Fulfill order No in tempList loop" + omsTemp.getFulfillOrderNo());
+									log.info("omsCustOrdNo " + omsCustOrdNo + "omsCustOrdNo " + omsTemp.getOmsCustOrdNo());
+									log.info("omsCustOrdNo " + omsCustOrdNo + " lineNo= " + omsTemp.getLineNo());
+									log.info("omsCustOrdNo " + omsCustOrdNo + " item= " + omsTemp.getItem());
+									log.info("omsCustOrdNo " + omsCustOrdNo + " Quantity Ordered= " + omsTemp.getOrderQty());
+									log.info("omsCustOrdNo " + omsCustOrdNo + " Fulfilmetn OrderNo=" + omsTemp.getFulfillOrderNo());
+									log.info("omsCustOrdNo " + omsCustOrdNo + " source loc id= " + omsTemp.getSourceLocId());
+									log.info("omsCustOrdNo " + omsCustOrdNo + " Fulfill loc id= " + omsTemp.getFulfillLocId());
+									log.info("omsCustOrdNo " + omsCustOrdNo + " Quantity Confirmed= " + omsTemp.getFoConfQty());
+									log.info("omsCustOrdNo " + omsCustOrdNo + " RmsResponseCode=" + omsTemp.getRmsResponseCode());
+									responseStatus = omsTemp.getRmsResponseCode();
+									log.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+								}
+							}
+						}
+						// Need to process P Response
+						log.info("----------------- finding templist is un processed P in X Response---------------->");
+						for (BigDecimal pkey : pfulfilOrdCfmCols.keySet()) {
+							log.info("<--------------- Process One by One P map in X--pkey----->" + pkey + "<----->");
+							tempList = findUnProcessed_P_MapObject(fulfillDetailMap);
+							if (tempList != null) {
+								BigDecimal tempkey = getUnProceesedPResponsekey(fulfillDetailMap);
+								ArrayList<OmsTempCoFo> unfulfilledItems = new ArrayList<OmsTempCoFo>();
+								log.info("------------>The value of temp list is ----------------------->" + tempkey + "<----------------");
+								log.info("Calling  ProceessPResponseFulFillmentOrder  method --------------------->");
+								unfulfilledItems = ProceessPResponseFulFillmentOrder(tempList, fulfillDetailMap, omsCustOrdNo, custOrderDesc, omsOrposCustOrderId, tempMap1, tempkey);
+								if (unfulfilledItems.size() > 0) {
+									PResponseProcessingObj pResponseProcessingObj = null;
+									try {
+										pResponseProcessingObj = processPResponse(omsCustOrdNo, unfulfilledItems, fulfilOrdCfmCol, maxFulfilOrderNo, fulfillDetailMap, custOrderDesc,
+												omsOrposCustOrderId, tempMap1);
+									} catch (Exception e) {
+										log.info(" ********************Error Occured  unfulfilledItems are processed***********  ");
+										log.info(" Error Message is " + e.getMessage());
+										return tempMap1;
+									}
+									log.info(" 2.0  Execution line  Below line ");
+									log.info("pResponseProcessingObj.getNewFulfillMap()" + pResponseProcessingObj.getNewFulfillMap());
+									newFulfillDetailMap = pResponseProcessingObj.getNewFulfillMap();
+									fulfillDetailMap.putAll(newFulfillDetailMap);
+									tempMap1.putAll(fulfillDetailMap);
+									maxFulfilOrderNo = tempMap1.lastKey().intValue();
+								} // end of unfulfilledItems size
+							} // end of if condition..........
+						}
+						// need to find X Response tempList and process it ....
+						log.info("<-----------------Calling findUnProcessed_X_MapObject Method-------------------------->");
+						for (BigDecimal xKey : xfulfilOrdCfmCols.keySet()) {
+							log.info("<-------- Processing X map One to One xKey--->" + xKey + "<-------------------------------------->");
+							tempList = findUnProcessed_X_MapObject(fulfillDetailMap);
+							if (tempList != null) {
+								log.info("<------------Processing  un Processed  X Response temp list Object---------->");
+								try {
+									xResponseProcessingObj = processXResponse(omsCustOrdNo, tempList, maxFulfilOrderNo, newFulfillDetailMap, fulfillDetailMap, custOrderDesc, omsOrposCustOrderId);
+									fulfillDetailMap = xResponseProcessingObj.getFulfillDetailMap();
+									tempMap1.putAll(fulfillDetailMap);
+									maxFulfilOrderNo = tempMap1.lastKey().intValue();
+									log.info("<--------maxFulfilOrderNo-------->" + maxFulfilOrderNo + "<---------------->");
+									responseStatus = interfacePersistence.processWebserviceResponse(omsCustOrdNo, fulfilOrdCfmCol, tempList, omsOrposCustOrderId);
+								} catch (Exception e) {
+									log.error("Failed in processing X response" + e);
+									// code for updating status of head table
+									throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("SYSTEM_ERROR"));
+								}
+							}
+						}
+						log.info(" <---------------For Loop Execution Finished tempList-------------------------------->");
+					} catch (Exception e) {
+						log.error("Failed in processing X response" + e);
+						// code for updating status of head table
+						throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("SYSTEM_ERROR"));
+					}
+				} else if (responseStatus.equals("P")) {
+					log.info("<------------------------------------inside P response equals----------------------->");
+					log.info("omsCustOrdNo " + omsCustOrdNo + "Received P response.");
+					log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+					log.info("currentFulfilOrderNo loop " + currentFulfilOrderNo);
+					List<FulfilOrdCfmDtl> fulfilOrdCfmDtlList = null;
+					try {
+						if (fulfilOrdCfmCol.getFulfilOrdCfmDesc().isEmpty() && fulfilOrdCfmCol.getCollectionSize() == 0) {
+							log.info("<----------fulfilOrdCfmCol variable is null -------------->");
+							log.info("<---------------------Response code is C-----------------------------------> ");
+						} else {
+							log.info("<22222222222222222------------------------------------------------------------->");
+							fulfilOrdCfmDtlList = this.fulfilOrdCfmCol.getFulfilOrdCfmDesc().get(0).getFulfilOrdCfmDtl();
+						}
+					} catch (Exception e) {
+						log.info("-------->Error Occurred------->" + e.getMessage() + "------------->");
+					}
+					log.info("<22222222222222222------------------------------------------------------------->");
+					ArrayList<OmsTempCoFo> unfulfilledItems = new ArrayList<OmsTempCoFo>();
+					Map<String, BigDecimal> tempMap = new HashMap<String, BigDecimal>();
+					if (fulfilOrdCfmDtlList != null && fulfilOrdCfmDtlList.size() > 0) {
+						for (FulfilOrdCfmDtl fulfilOrdCfmDtl : fulfilOrdCfmDtlList) {
+							log.info("<--------------P.fulfilOrdCfmDtl.getItem()------------>" + fulfilOrdCfmDtl.getItem() + "----fulfilOrdCfmDtl.getConfirmQty()-----"
+									+ fulfilOrdCfmDtl.getConfirmQty() + "--->");
+							tempMap.put(fulfilOrdCfmDtl.getItem(), fulfilOrdCfmDtl.getConfirmQty());
+						}
+						for (BigDecimal mapkey : fulfillDetailMap.keySet()) {
+							tempList = fulfillDetailMap.get(mapkey);
+							for (OmsTempCoFo tempCoFo : tempList) {
+								log.info("<------------tempCoFo.getItem()---------------->" + tempCoFo.getItem());
+								if (tempMap.containsKey(tempCoFo.getItem()) == true && tempCoFo.getRmsResponseCode() != null && tempCoFo.getRmsResponseCode().equals("P")) {
+									log.info("tempCoFo.getRmsResponseCode() " + tempCoFo.getRmsResponseCode());
+									log.info("<-------------------key contains in tempmap--------------->");
+									log.info("maxFulfilOrderNo---->" + maxFulfilOrderNo);
+									OmsTempCoFo unfulfilledTemp = new OmsTempCoFo();
+									log.info("tempCoFo.getOrderQty()---->" + tempCoFo.getOrderQty());
+									log.info("tempCoFo.getItem()---->" + tempCoFo.getItem());
+									log.info("tempMap.get(tempCoFo.getItem())--->" + tempMap.get(tempCoFo.getItem()));
+									log.info("remaing Qty " + tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())));
+									if ((tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())).intValue() > 0)) {
+										log.info("maxFulfilOrderNo after adding " + maxFulfilOrderNo);
+										log.info("omsCustOrdNo----->" + omsCustOrdNo);
+										unfulfilledTemp.setOmsCustOrdNo(omsCustOrdNo);
+										unfulfilledTemp.setFulfillOrderNo(new BigDecimal(maxFulfilOrderNo));
+										log.info("tempCoFo.getItem()----->" + tempCoFo.getItem() + "----->");
+										unfulfilledTemp.setItem(tempCoFo.getItem());
+										log.info("tempCoFo.getLineNo()" + tempCoFo.getLineNo() + "------>");
+										unfulfilledTemp.setLineNo(tempCoFo.getLineNo());
+										log.info("tempCoFo.getOrderQty() " + tempCoFo.getOrderQty() + "----->");
+										log.info("tempCoFo.getItem()" + tempCoFo.getItem() + "----->");
+										log.info("tempMap.get(tempCoFo.getItem())" + tempMap.get(tempCoFo.getItem()) + "----->");
+										log.info("remaing Qty " + tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())));
+										log.info("<---------New Order Quantity---------->" + tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())) + "--------->");
+										unfulfilledTemp.setOrderQty(tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())));
+										log.info("<-------------tempCoFo.getSourceLocId()--------->" + tempCoFo.getSourceLocId());
+										unfulfilledTemp.setSourceLocId(tempCoFo.getSourceLocId());
+										log.info("tempCoFo.getSourceLocationType()" + tempCoFo.getSourceLocationType() + "-------->");
+										unfulfilledTemp.setSourceLocationType(tempCoFo.getSourceLocationType());
+										log.info("tempCoFo.getVirtualWH()" + tempCoFo.getVirtualWH() + "----------->");
+										unfulfilledTemp.setVirtualWH(tempCoFo.getVirtualWH());
+										log.info("tempCoFo.getCombinationId()" + tempCoFo.getCombinationId() + "<-------------->");
+										unfulfilledTemp.setCombinationId(tempCoFo.getCombinationId());
+										unfulfilledTemp.setRmsResponseCode("P");
+										log.info("Setting Response Code to P");
+										log.info("unfulfilledTemp.getSourceLocId() " + unfulfilledTemp.getSourceLocId());
+										log.info("unfulfilledTemp.getCombinationId()" + unfulfilledTemp.getCombinationId());
+										log.info("unfulfilledTemp.getRmsResponseCode()" + unfulfilledTemp.getRmsResponseCode());
+										log.info("unfulfilledTemp.getOrderQty() " + unfulfilledTemp.getOrderQty());
+										tempCoFo.setOrderQty(tempMap.get(tempCoFo.getItem()));
+										log.info("tempMap.get(tempCoFo.getItem())---->" + tempMap.get(tempCoFo.getItem()) + "---->");
+										tempCoFo.setFoConfQty(tempMap.get(tempCoFo.getItem()));
+										if (unfulfilledTemp.getItem().equals(tempCoFo.getItem())) {
+											tempCoFo.setRmsResponseCode("C");
+											log.info("<---------tempCoFo.getRmsResponseCode()" + tempCoFo.getRmsResponseCode());
+											log.info("<--------tempCoFo.orderQty----->" + tempMap.get(tempCoFo.getItem()) + "-------->");
+											log.info("<---------tempCoFo.ConfQty------->" + tempMap.get(tempCoFo.getItem()) + "--------->");
+										}
+										unfulfilledItems.add(unfulfilledTemp);
+									} else {
+										tempCoFo.setRmsResponseCode("C");
+										tempCoFo.setFoConfQty(tempCoFo.getOrderQty());
+									}
+								} else if (tempCoFo.getRmsResponseCode() != null && tempCoFo.getRmsResponseCode().equals("P")) {
+									log.info("<-----key doesnot contain in in tempmap---->");
+									log.info("passing currentFulfilOrderNo in fullfilldetailMap " + currentFulfilOrderNo);
+									tempList = fulfillDetailMap.get(new BigDecimal(currentFulfilOrderNo));
+									// for (OmsTempCoFo temp : tempList) {
+									log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+									log.info("temp.getOrderQty() " + tempCoFo.getOrderQty());
+									log.info("temp.getItem()" + tempCoFo.getItem());
+									log.info("remaing Qty " + tempCoFo.getOrderQty());
+									log.info("temp.getRmsResponseCode() " + tempCoFo.getRmsResponseCode());
+									if (tempCoFo.getOrderQty().intValue() > 0) {
+										OmsTempCoFo unfulfilledTemp = new OmsTempCoFo();
+										// maxFulfilOrderNo=maxFulfilOrderNo+1;
+										log.info("maxFulfilOrderNo after adding " + maxFulfilOrderNo);
+										log.info("<---omsCustOrdNo--->" + omsCustOrdNo + "Item" + tempCoFo.getItem() + "Line" + tempCoFo.getLineNo());
+										unfulfilledTemp.setOmsCustOrdNo(omsCustOrdNo);
+										unfulfilledTemp.setFulfillOrderNo(new BigDecimal(maxFulfilOrderNo));
+										unfulfilledTemp.setItem(tempCoFo.getItem());
+										unfulfilledTemp.setLineNo(tempCoFo.getLineNo());
+										log.info("Order Qty" + tempCoFo.getOrderQty() + "Source Loc Id" + tempCoFo.getSourceLocId() + "Source LocationType" + tempCoFo.getSourceLocationType());
+										unfulfilledTemp.setOrderQty(tempCoFo.getOrderQty());
+										unfulfilledTemp.setSourceLocId(tempCoFo.getSourceLocId());
+										unfulfilledTemp.setSourceLocationType(tempCoFo.getSourceLocationType());
+										log.info("<----VirtualWH--->" + tempCoFo.getVirtualWH() + "<--->");
+										unfulfilledTemp.setVirtualWH(tempCoFo.getVirtualWH());
+										log.info("Combination Id" + tempCoFo.getCombinationId() + "<--->");
+										unfulfilledTemp.setCombinationId(tempCoFo.getCombinationId());
+										unfulfilledTemp.setRmsResponseCode("P");
+										log.info("unfulfilledTemp.getSourceLocId() " + unfulfilledTemp.getSourceLocId());
+										log.info("unfulfilledTemp.getCombinationId()" + unfulfilledTemp.getCombinationId());
+										log.info("unfulfilledTemp.getRmsResponseCode()" + unfulfilledTemp.getRmsResponseCode());
+										log.info("unfulfilledTemp.getOrderQty() " + unfulfilledTemp.getOrderQty());
+										tempCoFo.setFoConfQty(new BigDecimal(0));
+										if (unfulfilledTemp.getItem().equals(tempCoFo.getItem())) {
+											tempCoFo.setRmsResponseCode("C");
+											log.info("temp.getRmsResponseCode()" + tempCoFo.getRmsResponseCode());
+											log.info("temp.orderQty" + tempMap.get(tempCoFo.getItem()));
+											log.info("temp.ConfQty " + tempMap.get(tempCoFo.getItem()));
+										}
+										unfulfilledItems.add(unfulfilledTemp);
+									} else {
+										tempCoFo.setRmsResponseCode("C");
+										tempCoFo.setFoConfQty(new BigDecimal(0));
+									}
+									// }
+								}
+							}
+						}
+					} // if(fulfilOrdCfmDtlList !=null && fulfilOrdCfmDtlList.size()>0)
+					log.info("--------------------->unfulfilledItems<----------------" + unfulfilledItems.size());
+					PResponseProcessingObj pResponseProcessingObj = null;
+					if (unfulfilledItems.size() > 0) {
+						try {
+							pResponseProcessingObj = processPResponse(omsCustOrdNo, unfulfilledItems, fulfilOrdCfmCol, maxFulfilOrderNo, fulfillDetailMap, custOrderDesc, omsOrposCustOrderId,
+									tempMap1);
+						} catch (Exception e) {
+							log.info(" ********************Error Occured in processNonSadad method***********  ");
+							log.info(" Error Message is " + e.getMessage());
+							return tempMap1;
+						}
+						log.info(" 1.0  Execution line  Below line ");
+						log.info("pResponseProcessingObj.getNewFulfillMap()" + pResponseProcessingObj.getNewFulfillMap());
+						newFulfillDetailMap = pResponseProcessingObj.getNewFulfillMap();
+						fulfillDetailMap.putAll(newFulfillDetailMap);
+						tempMap1.putAll(fulfillDetailMap);
+						maxFulfilOrderNo = tempMap1.lastKey().intValue();
+						// <----------------- code for nested P
+						// Response---------------------------------------------->
+						log.info("----------------- finding in a map  templist is un processed-------->");
+						for (BigDecimal pkey : pfulfilOrdCfmCols.keySet()) {
+							log.info("<---- Process P map One by One-----pkey-------------->" + pkey + "<----->");
+							tempList = findUnProcessed_P_MapObject(fulfillDetailMap);
+							if (tempList != null) {
+								// tempList contains an Response Code 'P'
+								BigDecimal tempkey = getUnProceesedPResponsekey(fulfillDetailMap);
+								log.info("------------>The value of temp list is ----------------------->" + key + "<----------------");
+								log.info("Calling  ProceessPResponseFulFillmentOrder  method --------------------->");
+								unfulfilledItems = ProceessPResponseFulFillmentOrder(tempList, fulfillDetailMap, omsCustOrdNo, custOrderDesc, omsOrposCustOrderId, tempMap1, tempkey);
+								log.info("<------------unfulfilledItems  are --------------------------------------------->");
+								if (unfulfilledItems.size() > 0) {
+									try {
+										pResponseProcessingObj = processPResponse(omsCustOrdNo, unfulfilledItems, fulfilOrdCfmCol, maxFulfilOrderNo, fulfillDetailMap, custOrderDesc,
+												omsOrposCustOrderId, tempMap1);
+									} catch (Exception e) {
+										log.info(" ********************Error Occured  unfulfilledItems are processed***********  ");
+										log.info(" Error Message is " + e.getMessage());
+										log.info(" Map size of Temp Map is " + tempMap1.size() + "....." + tempMap1.keySet());
+										return tempMap1;
+									}
+									log.info(" 2.0  Execution line  Below line ");
+									log.info("pResponseProcessingObj.getNewFulfillMap()" + pResponseProcessingObj.getNewFulfillMap());
+									newFulfillDetailMap = pResponseProcessingObj.getNewFulfillMap();
+									fulfillDetailMap.putAll(newFulfillDetailMap);
+									tempMap1.putAll(fulfillDetailMap);
+									maxFulfilOrderNo = tempMap1.lastKey().intValue();
+								}
+							} // end of P Response.
+							log.info("<------------EndProcess P Map----------------------------------------->");
+						}
+						// Need to implement X Response.
+						log.info("<-------------Calling findUnProcessed_X_MapObject method --------------->");
+						for (BigDecimal xkey : xfulfilOrdCfmCols.keySet()) {
+							log.info("<----Processing X map One By One---xkey ------->" + xkey + "<----->");
+							tempList = findUnProcessed_X_MapObject(fulfillDetailMap);
+							if (tempList != null) {
+								try {
+									log.info("<------omsCustOrdNo-------->" + omsCustOrdNo + "<----------------->");
+									XResponseProcessingObj xResponseProcessingObj = processXResponse(omsCustOrdNo, tempList, maxFulfilOrderNo, newFulfillDetailMap, fulfillDetailMap, custOrderDesc,
+											omsOrposCustOrderId);
+									fulfillDetailMap = xResponseProcessingObj.getFulfillDetailMap();
+									tempMap1.putAll(fulfillDetailMap);
+									maxFulfilOrderNo = tempMap1.lastKey().intValue();
+								} catch (Exception e) {
+									throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("SYSTEM_ERROR"));
+								}
+							}
+							log.info("<----------------------------------->");
+						}
+						log.info("maxFulfilOrderNo after calling P response " + maxFulfilOrderNo);
+					} else {
+						break;
+					}
+				}
+				log.info("------------> While Loop Ends<-------------------- Response Status------>" + responseStatus + "<------------------------");
+			} // while loop end
+			log.info("<---------------------------2.0 line Execution ------------------------------------------------------->");
+			for (BigDecimal tempKey : fulfillDetailMap.keySet()) {
+				tempList = fulfillDetailMap.get(tempKey);
+				for (OmsTempCoFo omsTemp : tempList) {
+					// || !omsTemp.getRmsResponseCode().isEmpty() ||
+					// !omsTemp.getRmsResponseCode().equals("")
+					if (omsTemp.getRmsResponseCode() != null && !"".equals(omsTemp.getRmsResponseCode())) {
+						log.info("tempKey " + tempKey);
+						log.info("omsCustOrdNo " + omsCustOrdNo + "tempList.size() inside newFulfillDetailMap " + tempList.size());
+						log.info("omsCustOrdNo " + omsCustOrdNo + "Fulfill order No in tempList loop" + omsTemp.getFulfillOrderNo());
+						log.info("omsCustOrdNo " + omsCustOrdNo + "omsCustOrdNo " + omsTemp.getOmsCustOrdNo());
+						log.info("omsCustOrdNo " + omsCustOrdNo + " lineNo= " + omsTemp.getLineNo());
+						log.info("omsCustOrdNo " + omsCustOrdNo + " item= " + omsTemp.getItem());
+						log.info("omsCustOrdNo " + omsCustOrdNo + " Quantity Ordered= " + omsTemp.getOrderQty());
+						log.info("omsCustOrdNo " + omsCustOrdNo + " Fulfilmetn OrderNo=" + omsTemp.getFulfillOrderNo());
+						log.info("omsCustOrdNo " + omsCustOrdNo + " source loc id= " + omsTemp.getSourceLocId());
+						log.info("omsCustOrdNo " + omsCustOrdNo + " Fulfill loc id= " + omsTemp.getFulfillLocId());
+						log.info("omsCustOrdNo " + omsCustOrdNo + " Quantity Confirmed= " + omsTemp.getFoConfQty());
+						log.info("omsCustOrdNo " + omsCustOrdNo + " RmsResponseCode=" + omsTemp.getRmsResponseCode());
+						responseStatus = omsTemp.getRmsResponseCode();
+					}
+				}
+			}
+		} // for loop end
+		log.info(" ---------------------->3.0  Presisting Record into  omsCoFulfillDetail Table <-------------------------------------");
+		OmsCoFulfillDetail omsCoFulfillDetail = null;
+		for (BigDecimal key : fulfillDetailMap.keySet()) {
+			log.info("omsCustOrdNo " + omsCustOrdNo + " key " + key);
+			tempList = fulfillDetailMap.get(key);
+			for (OmsTempCoFo omsTemp : tempList) {
+				if (omsTemp.getOrderQty().intValue() > 0 && omsTemp.getFoConfQty().intValue() > 0) {
+					omsCoFulfillDetail = new OmsCoFulfillDetail();
+					log.info("omsCustOrdNo " + omsCustOrdNo + "tempList.size() " + tempList.size());
+					log.info("omsCustOrdNo " + omsCustOrdNo + "Fulfill order No in tempList loop" + omsTemp.getFulfillOrderNo());
+					omsCoFulfillDetail.setFulfillOrderNo(omsTemp.getFulfillOrderNo());
+					log.info("omsCustOrdNo " + omsCustOrdNo + "Fulfillment order no is set------");
+					log.info("omsCustOrdNo " + omsCustOrdNo + "=================================");
+					log.info("omsCustOrdNo " + omsCustOrdNo + " lineNo= " + omsTemp.getLineNo() + "---->");
+					log.info("omsCustOrdNo " + omsCustOrdNo + " item= " + omsTemp.getItem() + "----->");
+					log.info("omsCustOrdNo " + omsCustOrdNo + " Quantity Ordered= " + omsTemp.getOrderQty() + "----->");
+					log.info("omsCustOrdNo " + omsCustOrdNo + " Fulfilment OrderNo=" + omsTemp.getFulfillOrderNo() + "---->");
+					log.info("omsCustOrdNo " + omsCustOrdNo + " source loc id= " + omsTemp.getSourceLocId() + "----->");
+					log.info("omsCustOrdNo " + omsCustOrdNo + " Fulfill loc id= " + omsTemp.getFulfillLocId() + "---->");
+					log.info("omsCustOrdNo " + omsCustOrdNo + " Quantity Confirmed= " + omsTemp.getFoConfQty() + "----->");
+					omsCoFulfillDetail.setFulfillLocType(omsTemp.getFulfillLocationType());
+					omsCoFulfillDetail.setFulfillLoc(omsTemp.getFulfillLocId());
+					omsCoFulfillDetail.setItem(omsTemp.getItem());
+					// changed line number code
+					omsCoFulfillDetail.setLineNo(omsTemp.getLineNo());
+					omsCoFulfillDetail.setOmsCustOrdNo(omsCustOrdNo);
+					log.info("omsCustOrdNo " + omsCustOrdNo + "omsCustOrdNo------" + omsCustOrdNo);
+					omsCoFulfillDetail.setSourceLoc(omsTemp.getSourceLocId());
+					log.info("omsCustOrdNo " + omsCustOrdNo + "Source Loc ID-------" + omsTemp.getSourceLocId());
+					omsCoFulfillDetail.setSourceLocType(omsTemp.getSourceLocationType());
+					omsCoFulfillDetail.setFulfillReqQty(omsTemp.getOrderQty());
+					omsCoFulfillDetail.setFulfillCancelQty(BigDecimal.ZERO);
+					omsCoFulfillDetail.setFulfillDeliverQty(BigDecimal.ZERO);
+					omsCoFulfillDetail.setFulfillConfQty(omsTemp.getFoConfQty());
+					omsCoFulfillDetail.setFulfillStatus("C");
+					omsCoFulfillDetail.setCreateDatetime(new Timestamp(new Date().getTime()));
+					log.info("omsCustOrdNo " + omsCustOrdNo + "omsTemp.getCombinationId() " + omsTemp.getCombinationId());
+					omsCoFulfillDetail.setCombinationId(omsTemp.getCombinationId());
+					try {
+						BigDecimal tsfNo = null;
+						log.info("omsCustOrdNo " + omsCustOrdNo + "fetching the TsfNo for " + " FulfillOrderNo " + omsCoFulfillDetail.getFulfillOrderNo() + "item " + omsCoFulfillDetail.getItem()
+								+ "lineNo " + omsCoFulfillDetail.getLineNo());
+						tsfNo = session
+								.getOrdcustFindByFulfilOrdNo(extCustOrdNo, omsCoFulfillDetail.getFulfillOrderNo().toString(), omsCoFulfillDetail.getSourceLoc(), omsCoFulfillDetail.getFulfillLoc())
+								.get(0).getTsfNo();
+						log.info("omsCustOrdNo " + omsCustOrdNo + "tsfNo " + tsfNo);
+						omsCoFulfillDetail.setTsfNo(tsfNo);
+						// if (tsfNo != null)
+						// code change for transfer look up only for St to St transfer
+						if (tsfNo != null && "ST".equals(omsTemp.getSourceLocationType())) {
+							log.info("++++++++++++++++CODE CHANGE - IF LOOP IN CASE OF ST TO ST TSF++++++++++++++++++++++++++");
+							try {
+								OMSUtilCommons oMSUtilCommons = new OMSUtilCommons();
+								String status = oMSUtilCommons.approveTransfers(tsfNo, omsTemp.getSourceLocId());
+								log.info("omsCustOrdNo " + omsCustOrdNo + "Status of transfer " + status);
+								if (status.equals("A")) {
+									// Add to one string array
+									transferList.add(tsfNo);
+									omsCoFulfillDetail.setTsfApprovalStatus("A");
+									log.info("Transfer approved succesfully");
+									log.info("omsCustOrdNo " + omsCustOrdNo + "Status of transfer " + status);
+								} else {
+									if (omsTemp.getSourceLocationType().equals("ST")) {
+										log.info("omsCustOrdNo" + omsCustOrdNo + "transferList " + transferList.toString());
+										log.info("omsCustOrdNo" + omsCustOrdNo + "tsfNo " + tsfNo);
+										if (!transferList.toString().contains(tsfNo.toString())) {
+											OmsUnapprovedTransfers omsUnapprovedTransfers = new OmsUnapprovedTransfers();
+											omsUnapprovedTransfers.setTsfNo(tsfNo);
+											omsUnapprovedTransfers.setItem(omsTemp.getItem());
+											omsUnapprovedTransfers.setLocation(omsTemp.getSourceLocId());
+											omsUnapprovedTransfers.setUnapprovedQty((omsTemp.getOrderQty()));
+											omsUnapprovedTransfers.setOmsCustOrdNo(omsCustOrdNo);
+											omsUnapprovedTransfers.setCreateDatetime(new Timestamp(new Date().getTime()));
+											session.persistOmsUnapprovedTransfers(omsUnapprovedTransfers);
+											log.info("omsCustOrdNo" + omsCustOrdNo + "Persisting into OmsUnapprovedTransfers for item =" + omsTemp.getItem() + " at location "
+													+ omsTemp.getSourceLocId() + " with qty=" + omsUnapprovedTransfers.getUnapprovedQty());
+										}
+									}
+								}
+							} catch (Exception e) {
+								log.error("Failed in approving transfer");
+							}
+						} else {
+							log.info("+++++++++++++ELSE BLOCK OF CODE CHANGE -- IF NOT ST ++++++++++++++++++");
+							omsCoFulfillDetail.setTsfApprovalStatus("A");
+							omsCoFulfillDetail.setTsfNo(tsfNo);
+						}
+					} catch (Exception e) {
+						log.info(" ********************Error Occured in processNonSadad method***********  ");
+						log.info(" Error Message is " + e.getMessage());
+					}
+					session.persistOmsCoFulfillDetail(omsCoFulfillDetail);
+				}
+			}
+		}
+		// delete the approved transfer from unapproved transfer table
+		if (transferList != null && transferList.size() > 0) {
+			OMSUtilCommons oMSUtilCommons = new OMSUtilCommons();
+			oMSUtilCommons.deleteApprovedTsffromUnapprovedTsfTable(transferList, omsCustOrdNo);
+		}
+		log.info("omsCustOrdNo " + omsCustOrdNo + "***End : processNonSadad");
+		Map<BigDecimal, ArrayList<OmsTempCoFo>> tempMap = new TreeMap<BigDecimal, ArrayList<OmsTempCoFo>>();
+		tempMap.putAll(fulfillDetailMap);
+		tempMap1.putAll(fulfillDetailMap);
+		return tempMap1;
+	}
+
+	public XResponseProcessingObj processXResponse(BigDecimal omsCustOrdNo, ArrayList<OmsTempCoFo> tempList, int maxFulfilOrderNo, TreeMap<BigDecimal, ArrayList<OmsTempCoFo>> newFulfillMap,
+			ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>> fulfillDetailMap, CustOrderDesc custOrderDesc, BigDecimal omsOrposCustOrderId)
+			throws EntityAlreadyExistsWSFaultException, com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalArgumentWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalArgumentWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException, com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException,
+			SOAPException {
+		log.info("-------------------------->inside processXResponse<--------------------------------------------");
+		OMSUtilSessionEJB session = OMSUtil.doLookup();
+		XResponseProcessingObj xResponseProcessingObj = new XResponseProcessingObj();
+		ProcessedObject processedObject = null;
+		InterfacePersistence interfacePersistence = new InterfacePersistence();
+		String responseStatus = "";
+		BigDecimal combinationId = null;
+		Map<BigDecimal, ArrayList<OmsTempCoFo>> sohMap = new HashMap<BigDecimal, ArrayList<OmsTempCoFo>>();
+		ReturnPartialResponseObject returnPartialResponse = new ReturnPartialResponseObject();
+		BigDecimal virtualWH = BigDecimal.ZERO;
+		try {
+			log.info("tempList.size() for Xresponse" + tempList.size());
+			String storeMapValue = null;
+			String srcLocfulfiLoc = null;
+			TreeMap<BigDecimal, String> storeFulFillMap = new TreeMap<BigDecimal, String>();
+			for (BigDecimal mapkey : fulfillDetailMap.keySet()) {
+				tempList = fulfillDetailMap.get(mapkey);
+				log.info("mapkey " + mapkey);
+				for (OmsTempCoFo omsTempCoFo : tempList) {
+					log.info("tempList.size()" + tempList.size());
+					log.info("checking whether the omsTempCoFo.getRmsResponseCode() is not equal to null,C and P");
+					log.info("omsTempCoFo.getRmsResponseCode() " + omsTempCoFo.getRmsResponseCode());
+					if (omsTempCoFo.getRmsResponseCode() != null && omsTempCoFo.getRmsResponseCode().equals("X")) {
+						log.info("tempCoFo.getLineNo()" + omsTempCoFo.getLineNo());
+						log.info("tempCoFo.getItem() " + omsTempCoFo.getItem());
+						log.info("tempCoFo.getFulfillOrderNo() " + omsTempCoFo.getFulfillOrderNo());
+						log.info("tempCoFo.getRmsResponseCode() " + omsTempCoFo.getRmsResponseCode());
+						log.info("tempCoFo.getOrderQty() " + omsTempCoFo.getOrderQty());
+						log.info("tempCoFo.getSourceLocId() " + omsTempCoFo.getSourceLocId());
+						log.info("tempCoFo.getSourceLocationType() " + omsTempCoFo.getSourceLocationType());
+						log.info("tempCoFo.getFulfillLocId() " + omsTempCoFo.getFulfillLocId());
+						log.info("tempCoFo.getFulfillLocationType() " + omsTempCoFo.getFulfillLocationType());
+						log.info("omsTempCoFo.getCombinationId() " + omsTempCoFo.getCombinationId());
+						String item = omsTempCoFo.getItem();
+						BigDecimal lineNo = omsTempCoFo.getLineNo();
+						long SOH = 0;
+						long pendingQty = 0;
+						long availQty = 0;
+						long orderQty = 0;
+						log.info("item " + item);
+						log.info("lineNo " + lineNo);
+						log.info("omsCustOrdNo " + omsCustOrdNo);
+						orderQty = omsTempCoFo.getOrderQty().intValue();
+						PartialResponse PartialResponse = new PartialResponse();
+						OmsFulfillMatrixExtDetail matrixDetail = null;
+						combinationId = omsTempCoFo.getCombinationId();
+						log.info("combinationId " + combinationId);
+						log.info("omsTempCoFo.getSourceLocId() " + omsTempCoFo.getSourceLocId());
+						log.info("omsTempCoFo.getVirtualWH() " + omsTempCoFo.getVirtualWH());
+						log.info("omsTempCoFo.getSourceLocationType()" + omsTempCoFo.getSourceLocationType());
+						if (omsTempCoFo.getSourceLocationType().equals("WH")) {
+							// virtualWH=new BigDecimal(1072);
+							virtualWH = omsTempCoFo.getVirtualWH();
+							matrixDetail = session.getOmsFulfillMatrixExtDetailFindPriority(combinationId, virtualWH);
+						} else {
+							matrixDetail = session.getOmsFulfillMatrixExtDetailFindPriority(combinationId, omsTempCoFo.getSourceLocId());
+						}
+						FindNextfulfillLoc findNextfulfillLoc = new FindNextfulfillLoc();
+						int priority = matrixDetail.getPriority().add(BigDecimal.ONE).intValue();
+						log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+						log.info("omsTempCoFo.getItem() " + omsTempCoFo.getItem());
+						log.info("-------->omsTempCoFo.getOrderQty()--->" + omsTempCoFo.getOrderQty());
+						// changes are done to fix 2473 not equal to zero to greater than zero.
+						log.info("-------------> Order Quanttity value=---->" + orderQty);
+						while (orderQty > 0) {
+							log.info("priority " + priority);
+							log.info("omsCustOrdNo " + omsCustOrdNo + "Finding next location with combination id " + combinationId + "and priority " + (priority));
+							matrixDetail = findNextfulfillLoc.processFulfillmentMatrix(combinationId, priority);
+							BigDecimal sourceLocId = matrixDetail.getLocation();
+							BigDecimal fulfillLocId = matrixDetail.getDeliveryFromLoc();
+							String srcLocType = matrixDetail.getLocationType();
+							String fulFillLocType = matrixDetail.getDeliveryFromLocType();
+							if (matrixDetail.getLocationType().equals("ST")) {
+								// Find SOH from SIM
+								log.info("omsCustOrdNo " + omsCustOrdNo + "Calling SIM webservice for finding SOH for item =" + omsTempCoFo.getItem() + " in store=" + sourceLocId);
+								try {
+									OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+									String applicationId = omsCustOrdHead.getApplicationId();
+									SOH = interfacePersistence.callSIMStoreInventory(item, sourceLocId, applicationId);
+									returnPartialResponse = PartialResponse.STLocation(item, sourceLocId, availQty, pendingQty, omsCustOrdNo, SOH, orderQty, maxFulfilOrderNo, sohMap, lineNo,
+											combinationId, fulFillLocType, srcLocType, fulfillLocId, virtualWH, omsTempCoFo.getOrderQty(), srcLocfulfiLoc, storeMapValue, storeFulFillMap);
+									orderQty = returnPartialResponse.getOrderQty();
+									maxFulfilOrderNo = returnPartialResponse.getMaxFulfilOrderNo();
+									sohMap = returnPartialResponse.getSohMap();
+									pendingQty = returnPartialResponse.getPendingQty();
+									log.info("---------->pending Quantity<-----------" + pendingQty);
+									omsTempCoFo.setOrderQty(new BigDecimal(pendingQty));
+									log.info("***********-------->omsTempCoFo.setOrderQty()<------" + omsTempCoFo.getOrderQty());
+									storeFulFillMap = returnPartialResponse.getStoreFulFillMap();
+									log.info("=========returnPartialResponse objects for ST=================");
+									log.info("orderQty " + orderQty);
+									log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+									log.info("pendingQty " + pendingQty);
+									log.info("storeFulFillMap " + storeFulFillMap.keySet());
+									log.info("=========returnPartialResponse objects for ST=================");
+								} catch (Exception e) {
+									throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("UNAVL_INV"));
+								}
+							}
+							if (matrixDetail.getLocationType().equals("WH")) {
+								log.info("omsCustOrdNo " + omsCustOrdNo + "inside WH ");
+								log.info("omsCustOrdNo " + omsCustOrdNo + "Started the code for Virtual Warehouse scenario");
+								List<Object[]> tempWhObject = session.getWhFindPhysicalWH(matrixDetail.getLocation());
+								BigDecimal physicalWH = BigDecimal.ZERO;
+								BigDecimal channelId = BigDecimal.ZERO;
+								for (Object[] result : tempWhObject) {
+									log.info("omsCustOrdNo " + omsCustOrdNo + "inside loop");
+									log.info("omsCustOrdNo " + omsCustOrdNo + "WH=" + result[0]);
+									physicalWH = new BigDecimal(result[0].toString());
+									channelId = new BigDecimal(result[1].toString());
+									log.info("omsCustOrdNo " + omsCustOrdNo + "channel id=" + result[1]);
+								}
+								sourceLocId = physicalWH;
+								log.info("omsCustOrdNo " + omsCustOrdNo + "sourceLocId " + sourceLocId);
+								fulfillLocId = matrixDetail.getDeliveryFromLoc();
+								virtualWH = matrixDetail.getLocation();
+								log.info("omsCustOrdNo " + omsCustOrdNo + "fulfillLocId for WH " + fulfillLocId);
+								fulFillLocType = matrixDetail.getDeliveryFromLocType();
+								log.info("omsCustOrdNo " + omsCustOrdNo + "fulFillLocType " + fulFillLocType);
+								log.info("omsCustOrdNo " + omsCustOrdNo + " physicalWH " + physicalWH);
+								log.info("omsCustOrdNo " + omsCustOrdNo + " channelId " + channelId);
+								List<BigDecimal> locList = session.getWhFindVirtualWh(physicalWH, channelId);
+								int i = 0;
+								while (i < locList.size()) {
+									log.info("omsCustOrdNo " + omsCustOrdNo + locList.get(i));
+									i++;
+								}
+								log.info(" Creating omsUtilCommons Connection Object");
+								// OMSUtilCommons omsUtilCommons = new OMSUtilCommons();
+								log.info("<----------Calling checkSOHForWH method to get Stock on hand of wareHouse-------->");
+								Date date1 = new Date();
+								log.info("<---------------start Date and Time Before calling method  ------------>" + date1);
+								try {
+									log.info("Sleeep for 5 sec for WareHouse stock on hand  in DAS Schema and Rms Schema to sync");
+									Thread.sleep(5000);
+								} catch (Exception e) {
+									log.info(" Some Error Occured -------------->");
+								}
+								String applicationId = "ORPOS";
+								SOH = omsUtilCommons.checkSOHForWH(omsTempCoFo.getItem(), locList, applicationId).longValue();
+								Date date2 = new Date();
+								log.info("End Time After calling method-------------->" + date2);
+								log.info(" Difference between start and end time " + (date2.getTime() - date1.getTime()) / 1000 + " seconds");
+								log.info("******---->omsTempCoFo.getOrderQty()------->" + omsTempCoFo.getOrderQty());
+								returnPartialResponse = PartialResponse.WHLocation(item, sourceLocId, availQty, pendingQty, omsCustOrdNo, SOH, orderQty, maxFulfilOrderNo, sohMap, lineNo,
+										combinationId, fulFillLocType, srcLocType, fulfillLocId, virtualWH, omsTempCoFo.getOrderQty());
+								orderQty = returnPartialResponse.getOrderQty();
+								maxFulfilOrderNo = returnPartialResponse.getMaxFulfilOrderNo();
+								sohMap = returnPartialResponse.getSohMap();
+								pendingQty = returnPartialResponse.getPendingQty();
+								omsTempCoFo.setOrderQty(new BigDecimal(pendingQty));
+								log.info("=========returnPartialResponse objects for WH=================");
+								log.info("orderQty " + orderQty);
+								log.info("pendingQty " + pendingQty);
+								log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+								log.info("omsTempCoFo.getOrderQty()" + omsTempCoFo.getOrderQty());
+								log.info("=========returnPartialResponse objects for WH=================");
+							}
+							if (matrixDetail.getLocationType().equals("SU")) {
+								CheckItemLocSOH checkItemLocSOH = new CheckItemLocSOH();
+								String item_status = checkItemLocSOH.findItemStatus(omsTempCoFo.getItem(), fulfillLocId);
+								if (item_status.equals("A") == false) {
+									log.info("omsCustOrdNo " + omsCustOrdNo + " inside item_status false condition");
+									OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+									omsCustOrdHead.setStatus("F");
+									session.mergeOmsCustOrdHead(omsCustOrdHead);
+									throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("ITM_NOT_APP"));
+									// break;
+								}
+								// sourceLocId = new
+								// BigDecimal(checkItemLocSOH.findSupplier(omsTempCoFo.getItem(), "Y"));
+								log.info("Delivery Location type" + matrixDetail.getDeliveryFromLocType());
+								if ("S".equals(matrixDetail.getDeliveryFromLocType())) {
+									log.info(" Calling getPrimarySupplierFromItemLocation method by passing item" + omsTempCoFo.getItem() + "location" + matrixDetail.getDeliveryFromLoc().longValue());
+									sourceLocId = checkItemLocSOH.getPrimarySupplierFromItemLocation(omsTempCoFo.getItem(), matrixDetail.getDeliveryFromLoc().longValue());
+								} else {
+									log.info(" Calling getPrimarySupplierFromItemLocation method by passing item" + omsTempCoFo.getItem() + "location" + custOrderDesc.getInitiateLocId());
+									sourceLocId = checkItemLocSOH.getPrimarySupplierFromItemLocation(omsTempCoFo.getItem(), custOrderDesc.getInitiateLocId());
+								}
+								log.info(" calling checkDirectShipIndicatoryofaGivenSupplier by passing item =" + omsTempCoFo.getItem() + "and supplier is" + sourceLocId.longValue());
+								Boolean flag = checkItemLocSOH.checkDirectShipIndicatoryofaGivenSupplier(omsTempCoFo.getItem(), sourceLocId.longValue(), custOrderDesc.getInitiateLocId());
+								log.info("Value of flag is" + flag);
+								log.info("sourceLocId " + sourceLocId);
+								log.info("omsCustOrdNo " + omsCustOrdNo + "supplier value from findSupplier method " + sourceLocId);
+								if (flag == Boolean.FALSE) {
+									OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+									omsCustOrdHead.setStatus("F");
+									session.mergeOmsCustOrdHead(omsCustOrdHead);
+									throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("SRC_LOC_ID==0"));
+								}
+								if (session.getStoreFindOrgUnit(fulfillLocId).compareTo(session.getPartnerOrgUnitFindOrgUnitId(sourceLocId)) != 0) {
+									log.info("omsCustOrdNo " + omsCustOrdNo + "Org unit not matched");
+									OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+									omsCustOrdHead.setStatus("F");
+									session.mergeOmsCustOrdHead(omsCustOrdHead);
+									throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("ORG_UNIT_UNMATCHED"));
+								}
+								SOH = orderQty;
+								log.info("========SOH========= in supplier " + SOH);
+								availQty = SOH;
+								returnPartialResponse = PartialResponse.SULocation(item, sourceLocId, availQty, pendingQty, omsCustOrdNo, SOH, orderQty, maxFulfilOrderNo, sohMap, lineNo,
+										combinationId, fulFillLocType, srcLocType, fulfillLocId, virtualWH, omsTempCoFo.getOrderQty(), srcLocfulfiLoc, storeMapValue, storeFulFillMap);
+								orderQty = returnPartialResponse.getOrderQty();
+								maxFulfilOrderNo = returnPartialResponse.getMaxFulfilOrderNo();
+								sohMap = returnPartialResponse.getSohMap();
+								pendingQty = returnPartialResponse.getPendingQty();
+								omsTempCoFo.setOrderQty(new BigDecimal(pendingQty));
+								log.info("=========returnPartialResponse objects for SU=================");
+								log.info("orderQty " + orderQty);
+								log.info("pendingQty " + pendingQty);
+								log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+								log.info("=========returnPartialResponse objects for SU=================");
+							}
+							SourceLocIdentify sourceLocIdentify = new SourceLocIdentify();
+							newFulfillMap = sourceLocIdentify.createFulfillDetailMap(omsCustOrdNo, sohMap, omsTempCoFo.getFulfillOrderNo().intValue());
+							if (orderQty == 0) {
+								log.info("Removing FulfillOrderNo from Map" + omsTempCoFo.getFulfillOrderNo());
+								fulfillDetailMap.remove(omsTempCoFo.getFulfillOrderNo());
+								break;
+							}
+							priority++;
+						}
+					} else {
+						log.info("Doesnot contain X");
+					}
+				}
+			}
+			for (BigDecimal key : newFulfillMap.keySet()) {
+				log.info("key---->" + key);
+				tempList = newFulfillMap.get(key);
+				log.info("tempList.size()" + tempList.size());
+				log.info("omsCustOrdNo " + omsCustOrdNo + "after getting P response and checking for next location calling the callWebservices method");
+				log.info("tempList.get(0).getRmsResponseCode() " + tempList.get(0).getRmsResponseCode());
+				try {
+					if (tempList.get(0).getRmsResponseCode() == null || tempList.get(0).getRmsResponseCode().isEmpty()) {
+						processedObject = interfacePersistence.callWebservices(omsCustOrdNo, tempList, omsOrposCustOrderId, custOrderDesc.getInitiateLocId(), custOrderDesc.getShipToStore());
+						fulfilOrdCfmCol = processedObject.getFulfilOrdCfmCol();
+						currentFulfilOrderNo = processedObject.getCurrentFulFillOrderNo();
+						log.info("currentFulfilOrderNo inside xresponse after calling RMS " + currentFulfilOrderNo);
+						tempList = processedObject.getOmsTempCoFoList();
+						newFulfillMap.put(key, tempList);
+						log.info("omsCustOrdNo " + omsCustOrdNo + "After getting from PResponseProcessingObj fulfilOrdCfmCol " + fulfilOrdCfmCol != null ? fulfilOrdCfmCol.getCollectionSize() : 0);
+						xResponseProcessingObj.setFulfilOrdCfmCol(fulfilOrdCfmCol);
+						// xResponseProcessingObj.setNewFulfillMap(newFulfillMap);
+						responseStatus = interfacePersistence.processWebserviceResponse(omsCustOrdNo, fulfilOrdCfmCol, tempList, omsOrposCustOrderId);
+						if ("P".equals(responseStatus)) {
+							this.pfulfilOrdCfmCols.put(key, fulfilOrdCfmCol);
+						} else if ("X".equals(responseStatus)) {
+							this.xfulfilOrdCfmCols.put(key, tempList);
+						}
+						log.info("responseStatus " + responseStatus);
+						fulfillDetailMap.put(key, tempList);
+						xResponseProcessingObj.setFulfillDetailMap(fulfillDetailMap);
+					}
+				} catch (Exception e) {
+					log.info("<-------------------Exception Occured------------------------> " + e.getMessage() + "<---------------------->");
+					log.info("omsCustOrdNo" + omsCustOrdNo + "exception " + e.getMessage());
+					OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+					omsCustOrdHead.setStatus("F");
+					session.mergeOmsCustOrdHead(omsCustOrdHead);
+					OmsOrposCustOrderHead omsOrposCustOrderHead = session.getOmsOrposCustOrderHeadFindByomsOrposCustOrderId(omsOrposCustOrderId);
+					omsOrposCustOrderHead.setStatus("F");
+					session.mergeOmsOrposCustOrderHead(omsOrposCustOrderHead);
+				}
+			}
+		} catch (Exception e) {
+			OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+			omsCustOrdHead.setStatus("F");
+			session.mergeOmsCustOrdHead(omsCustOrdHead);
+			throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("SYSTEM ERROR"));
+		}
+		return xResponseProcessingObj;
+	}
+
+	public PResponseProcessingObj processPResponse(BigDecimal omsCustOrdNo, ArrayList<OmsTempCoFo> tempList, FulfilOrdCfmCol fulfilOrdCfmCol, int maxFulfilOrderNo,
+			ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>> fulfillDetailMap, CustOrderDesc custOrderDesc, BigDecimal omsOrposCustOrderId, Map<BigDecimal, ArrayList<OmsTempCoFo>> tempMap)
+			throws EntityAlreadyExistsWSFaultException, com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalArgumentWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalArgumentWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException,
+			com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException,
+			com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException, com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException,
+			SOAPException {
+		log.info("<----------------------- Inside processPResponse method Begin --------------------------->");
+		OMSUtilSessionEJB session = OMSUtil.doLookup();
+		BigDecimal combinationId = null;
+		ProcessedObject processedObject = null;
+		String responseStatus = "";
+		InterfacePersistence interfacePersistence = new InterfacePersistence();
+		TreeMap<BigDecimal, ArrayList<OmsTempCoFo>> newFulfillMap = null;
+		Map<BigDecimal, ArrayList<OmsTempCoFo>> sohMap = new HashMap<BigDecimal, ArrayList<OmsTempCoFo>>();
+		PResponseProcessingObj pResponseProcessingObj = new PResponseProcessingObj();
+		ReturnPartialResponseObject returnPartialResponse = new ReturnPartialResponseObject();
+		BigDecimal virtualWH = BigDecimal.ZERO;
+		try {
+			log.info("tempList.size() for presponse" + tempList.size());
+			String storeMapValue = null;
+			String srcLocfulfiLoc = null;
+			TreeMap<BigDecimal, String> storeFulFillMap = new TreeMap<BigDecimal, String>();
+			for (OmsTempCoFo omsTempCoFo : tempList) {
+				OmsFulfillMatrixExtDetail matrixDetail = null;
+				combinationId = omsTempCoFo.getCombinationId();
+				log.info("combinationId " + combinationId);
+				log.info("omsTempCoFo.getSourceLocId() " + omsTempCoFo.getSourceLocId());
+				log.info("omsTempCoFo.getVirtualWH() " + omsTempCoFo.getVirtualWH());
+				log.info("omsTempCoFo.getSourceLocationType()" + omsTempCoFo.getSourceLocationType());
+				if (omsTempCoFo.getSourceLocationType().equals("WH")) {
+					// virtualWH=new BigDecimal(1072);
+					virtualWH = omsTempCoFo.getVirtualWH();
+					matrixDetail = session.getOmsFulfillMatrixExtDetailFindPriority(combinationId, virtualWH);
+				} else {
+					matrixDetail = session.getOmsFulfillMatrixExtDetailFindPriority(combinationId, omsTempCoFo.getSourceLocId());
+				}
+				FindNextfulfillLoc findNextfulfillLoc = new FindNextfulfillLoc();
+				int priority = matrixDetail.getPriority().add(BigDecimal.ONE).intValue();
+				log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+				log.info("omsTempCoFo.getItem() " + omsTempCoFo.getItem());
+				log.info("omsTempCoFo.getRmsResponseCode() " + omsTempCoFo.getRmsResponseCode());
+				long orderQty = omsTempCoFo.getOrderQty().intValue();
+				if (omsTempCoFo.getRmsResponseCode().equals("P")) {
+					// part of bug 2473 order quantity not equal to zero condition changed to
+					// greater than zero .
+					while (orderQty > 0) {
+						log.info("orderQty " + orderQty);
+						log.info("priority " + priority);
+						log.info("omsCustOrdNo " + omsCustOrdNo + "Finding next location with combination id " + combinationId + "and priority " + (priority));
+						matrixDetail = findNextfulfillLoc.processFulfillmentMatrix(combinationId, priority);
+						BigDecimal sourceLocId = matrixDetail.getLocation();
+						BigDecimal fulfillLocId = matrixDetail.getDeliveryFromLoc();
+						String srcLocType = matrixDetail.getLocationType();
+						String fulFillLocType = matrixDetail.getDeliveryFromLocType();
+						String item = omsTempCoFo.getItem();
+						BigDecimal lineNo = omsTempCoFo.getLineNo();
+						long SOH = 0;
+						long pendingQty = 0;
+						long availQty = 0;
+						log.info("item " + item);
+						log.info("lineNo " + lineNo);
+						log.info("omsCustOrdNo " + omsCustOrdNo);
+						PartialResponse PartialResponse = new PartialResponse();
+						InterfacePersistence interfacePersistece = new InterfacePersistence();
+						if (matrixDetail.getLocationType().equals("ST")) {
+							// Find SOH from SIM
+							log.info("omsCustOrdNo " + omsCustOrdNo + "Calling SIM webservice for finding SOH for item =" + omsTempCoFo.getItem() + " in store=" + sourceLocId);
+							try {
+								log.info("interfacePersistece.callSIMStoreInventory");
+								OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+								String applicationId = omsCustOrdHead.getApplicationId();
+								SOH = interfacePersistece.callSIMStoreInventory(item, sourceLocId, applicationId);
+								log.info("omsTempCoFo.getOrderQty()" + omsTempCoFo.getOrderQty() + "------->");
+								log.info("srcLocfulfiLoc---->" + srcLocfulfiLoc);
+								returnPartialResponse = PartialResponse.STLocation(item, sourceLocId, availQty, pendingQty, omsCustOrdNo, SOH, orderQty, maxFulfilOrderNo, sohMap, lineNo,
+										combinationId, fulFillLocType, srcLocType, fulfillLocId, virtualWH, omsTempCoFo.getOrderQty(), srcLocfulfiLoc, storeMapValue, storeFulFillMap);
+								orderQty = returnPartialResponse.getOrderQty();
+								maxFulfilOrderNo = returnPartialResponse.getMaxFulfilOrderNo();
+								sohMap = returnPartialResponse.getSohMap();
+								pendingQty = returnPartialResponse.getPendingQty();
+								log.info("ST--->pendingQty---->" + pendingQty + "----->");
+								omsTempCoFo.setOrderQty(new BigDecimal(pendingQty));
+								storeFulFillMap = returnPartialResponse.getStoreFulFillMap();
+								log.info("=========returnPartialResponse objects for ST=================");
+								log.info("orderQty " + orderQty);
+								log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+								log.info("pendingQty " + pendingQty);
+								log.info("=========returnPartialResponse objects for ST=================");
+							} catch (Exception e) {
+								if (combinationId.intValue() == 0) {
+									custOrderDesc.setOrderDesc("OMS_ORPOS_ERROR_102"); // failed in comb_id
+								} else {
+									custOrderDesc.setOrderDesc("OMS_ORPOS_ERROR_103");
+								}
+								OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+								omsCustOrdHead.setStatus("F");
+								session.mergeOmsCustOrdHead(omsCustOrdHead);
+								OmsOrposCustOrderHead omsOrposCustOrderHead = session.getOmsOrposCustOrderHeadFindByomsOrposCustOrderId(omsOrposCustOrderId);
+								omsOrposCustOrderHead.setStatus("F");
+								session.mergeOmsOrposCustOrderHead(omsOrposCustOrderHead);
+								break;
+							}
+						}
+						if (matrixDetail.getLocationType().equals("WH")) {
+							log.info("omsCustOrdNo " + omsCustOrdNo + "inside WH ");
+							log.info("omsCustOrdNo " + omsCustOrdNo + "Started the code for Virtual Warehouse scenario");
+							List<Object[]> tempWhObject = session.getWhFindPhysicalWH(matrixDetail.getLocation());
+							BigDecimal physicalWH = BigDecimal.ZERO;
+							BigDecimal channelId = BigDecimal.ZERO;
+							for (Object[] result : tempWhObject) {
+								log.info("omsCustOrdNo " + omsCustOrdNo + "inside loop");
+								log.info("omsCustOrdNo " + omsCustOrdNo + "WH=" + result[0]);
+								physicalWH = new BigDecimal(result[0].toString());
+								channelId = new BigDecimal(result[1].toString());
+								log.info("omsCustOrdNo " + omsCustOrdNo + "channel id=" + result[1]);
+							}
+							sourceLocId = physicalWH;
+							log.info("omsCustOrdNo " + omsCustOrdNo + "sourceLocId " + sourceLocId);
+							fulfillLocId = matrixDetail.getDeliveryFromLoc();
+							virtualWH = matrixDetail.getLocation();
+							log.info("omsCustOrdNo " + omsCustOrdNo + "fulfillLocId for WH " + fulfillLocId);
+							fulFillLocType = matrixDetail.getDeliveryFromLocType();
+							log.info("omsCustOrdNo " + omsCustOrdNo + "fulFillLocType " + fulFillLocType);
+							log.info("omsCustOrdNo " + omsCustOrdNo + " physicalWH " + physicalWH);
+							log.info("omsCustOrdNo " + omsCustOrdNo + " channelId " + channelId);
+							List<BigDecimal> locList = session.getWhFindVirtualWh(physicalWH, channelId);
+							int i = 0;
+							while (i < locList.size()) {
+								log.info("omsCustOrdNo " + omsCustOrdNo + locList.get(i));
+								i++;
+							}
+							// OMSUtilCommons omsUtilCommons = new OMSUtilCommons();
+							log.info("<----------Calling checkSOHForWH method to get Stock on hand of wareHouse-------->");
+							Date date1 = new Date();
+							try {
+								log.info("Sleeep for 5 sec for WareHouse stock on hand  in DAS Schema and Rms Schema to sync");
+								Thread.sleep(5000);
+							} catch (InterruptedException ie) {
+								log.info(" Some Error Occured -------------->");
+							}
+							log.info("<---------------start Date and Time Before calling method  ------------>" + date1);
+							String applicationId = "ORPOS";
+							SOH = omsUtilCommons.checkSOHForWH(omsTempCoFo.getItem(), locList, applicationId).longValue();
+							Date date2 = new Date();
+							log.info("End Time After calling method-------------->" + date2);
+							log.info(" Difference between start and end time " + (date2.getTime() - date1.getTime()) / 1000 + " seconds");
+							log.info("The omsTempCoFo.getOrderQty()-------->" + omsTempCoFo.getOrderQty() + "<---------");
+							returnPartialResponse = PartialResponse.WHLocation(item, sourceLocId, availQty, pendingQty, omsCustOrdNo, SOH, orderQty, maxFulfilOrderNo, sohMap, lineNo, combinationId,
+									fulFillLocType, srcLocType, fulfillLocId, virtualWH, omsTempCoFo.getOrderQty());
+							orderQty = returnPartialResponse.getOrderQty();
+							log.info("-------->order Quantity--------->" + orderQty + "<-----------------------");
+							maxFulfilOrderNo = returnPartialResponse.getMaxFulfilOrderNo();
+							log.info("----->maxFulfilOrderNo------------>" + maxFulfilOrderNo + "<-----------");
+							sohMap = returnPartialResponse.getSohMap();
+							log.info("------->sohMap---------------->" + sohMap + "<--------");
+							pendingQty = returnPartialResponse.getPendingQty();
+							log.info("------>Pending Quantity" + pendingQty + "<-------------");
+							omsTempCoFo.setOrderQty(new BigDecimal(pendingQty));
+							log.info("=========returnPartialResponse objects for WH=================");
+							log.info("orderQty " + orderQty + "<---------");
+							log.info("pendingQty " + pendingQty + "<------");
+							log.info("maxFulfilOrderNo " + maxFulfilOrderNo + "<-------");
+							log.info("=========returnPartialResponse objects for WH=================");
+						}
+						if (matrixDetail.getLocationType().equals("SU")) {
+							log.info("orderQty in supplier " + orderQty);
+							CheckItemLocSOH checkItemLocSOH = new CheckItemLocSOH();
+							String item_status = checkItemLocSOH.findItemStatus(omsTempCoFo.getItem(), fulfillLocId);
+							log.info("item_status " + item_status);
+							if (item_status.equals("A") == false) {
+								log.info("omsCustOrdNo " + omsCustOrdNo + " inside item_status false condition");
+								custOrderDesc.setOrderDesc("OMS_ORPOS_ERROR_108"); // Status of item is not approved,cannot fulfill the order
+								OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+								omsCustOrdHead.setStatus("F");
+								session.mergeOmsCustOrdHead(omsCustOrdHead);
+								OmsOrposCustOrderHead omsOrposCustOrderHead = session.getOmsOrposCustOrderHeadFindByomsOrposCustOrderId(omsOrposCustOrderId);
+								omsOrposCustOrderHead.setStatus("F");
+								session.mergeOmsOrposCustOrderHead(omsOrposCustOrderHead);
+								log.info("ITM_NOT_APP");
+								tempMap.putAll(fulfillDetailMap);
+								break;
+							}
+							// sourceLocId = new
+							// BigDecimal(checkItemLocSOH.findSupplier(omsTempCoFo.getItem(), "Y"));
+							log.info("Delivery Location type" + matrixDetail.getDeliveryFromLocType());
+							if ("S".equals(matrixDetail.getDeliveryFromLocType())) {
+								log.info(" Calling getPrimarySupplierFromItemLocation method by passing item" + omsTempCoFo.getItem() + "location" + matrixDetail.getDeliveryFromLoc().longValue());
+								sourceLocId = checkItemLocSOH.getPrimarySupplierFromItemLocation(omsTempCoFo.getItem(), matrixDetail.getDeliveryFromLoc().longValue());
+							} else {
+								log.info(" Calling getPrimarySupplierFromItemLocation method by passing item" + omsTempCoFo.getItem() + "location" + custOrderDesc.getInitiateLocId());
+								sourceLocId = checkItemLocSOH.getPrimarySupplierFromItemLocation(omsTempCoFo.getItem(), custOrderDesc.getInitiateLocId());
+							}
+							log.info(" calling checkDirectShipIndicatoryofaGivenSupplier by passing item =" + omsTempCoFo.getItem() + "and supplier is" + sourceLocId.longValue());
+							Boolean flag = checkItemLocSOH.checkDirectShipIndicatoryofaGivenSupplier(omsTempCoFo.getItem(), sourceLocId.longValue(), custOrderDesc.getInitiateLocId());
+							log.info("Value of flag is" + flag);
+							log.info("sourceLocId " + sourceLocId);
+							log.info("omsCustOrdNo " + omsCustOrdNo + "supplier value from findSupplier method " + sourceLocId);
+							if (flag == Boolean.FALSE) {
+								custOrderDesc.setOrderDesc("OMS_ORPOS_ERROR_109"); // supplier doesnot exist
+								OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+								omsCustOrdHead.setStatus("F");
+								session.mergeOmsCustOrdHead(omsCustOrdHead);
+								log.info("SRC_LOC_ID==0");
+								OmsOrposCustOrderHead omsOrposCustOrderHead = session.getOmsOrposCustOrderHeadFindByomsOrposCustOrderId(omsOrposCustOrderId);
+								omsOrposCustOrderHead.setStatus("F");
+								session.mergeOmsOrposCustOrderHead(omsOrposCustOrderHead);
+								break;
+							}
+							if (session.getStoreFindOrgUnit(fulfillLocId).compareTo(session.getPartnerOrgUnitFindOrgUnitId(sourceLocId)) != 0) {
+								log.info("omsCustOrdNo " + omsCustOrdNo + "Org unit not matched");
+								custOrderDesc.setOrderDesc("OMS_ORPOS_ERROR_104"); // ORG_UNIT_UNMATCHED
+								OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+								omsCustOrdHead.setStatus("F");
+								session.mergeOmsCustOrdHead(omsCustOrdHead);
+								log.info("ORG_UNIT_UNMATCHED");
+								OmsOrposCustOrderHead omsOrposCustOrderHead = session.getOmsOrposCustOrderHeadFindByomsOrposCustOrderId(omsOrposCustOrderId);
+								omsOrposCustOrderHead.setStatus("F");
+								session.mergeOmsOrposCustOrderHead(omsOrposCustOrderHead);
+								break;
+							}
+							SOH = orderQty;
+							log.info("========SOH========= in supplier " + SOH);
+							availQty = SOH;
+							returnPartialResponse = PartialResponse.SULocation(item, sourceLocId, availQty, pendingQty, omsCustOrdNo, SOH, orderQty, maxFulfilOrderNo, sohMap, lineNo, combinationId,
+									fulFillLocType, srcLocType, fulfillLocId, virtualWH, omsTempCoFo.getOrderQty(), srcLocfulfiLoc, storeMapValue, storeFulFillMap);
+							orderQty = returnPartialResponse.getOrderQty();
+							maxFulfilOrderNo = returnPartialResponse.getMaxFulfilOrderNo();
+							sohMap = returnPartialResponse.getSohMap();
+							pendingQty = returnPartialResponse.getPendingQty();
+							omsTempCoFo.setOrderQty(new BigDecimal(pendingQty));
+							log.info("=========returnPartialResponse objects for SU=================");
+							log.info("orderQty " + orderQty);
+							log.info("pendingQty " + pendingQty);
+							log.info("maxFulfilOrderNo " + maxFulfilOrderNo);
+							log.info("=========returnPartialResponse objects for SU=================");
+						}
+						SourceLocIdentify sourceLocIdentify = new SourceLocIdentify();
+						newFulfillMap = sourceLocIdentify.createFulfillDetailMap(omsCustOrdNo, sohMap, omsTempCoFo.getFulfillOrderNo().intValue());
+						if (orderQty == 0) {
+							break;
+						}
+						priority++;
+					}
+				}
+			}
+			log.info("1.----------------->New FulFill Map<-------------------------------------");
+			for (BigDecimal key : newFulfillMap.keySet()) {
+				log.info("key " + key);
+				tempList = newFulfillMap.get(key);
+				log.info("tempList.size()----->" + tempList.size());
+				log.info("omsCustOrdNo===-------->" + omsCustOrdNo + "<-------------after getting P response and checking for next location calling the callWebservices method");
+				try {
+					processedObject = interfacePersistence.callWebservices(omsCustOrdNo, tempList, omsOrposCustOrderId, custOrderDesc.getInitiateLocId(), custOrderDesc.getShipToStore());
+				} catch (Exception e) {
+					log.info("omsCustOrdNo" + omsCustOrdNo + "exception " + e.getMessage());
+					OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+					omsCustOrdHead.setStatus("F");
+					session.mergeOmsCustOrdHead(omsCustOrdHead);
+					OmsOrposCustOrderHead omsOrposCustOrderHead = session.getOmsOrposCustOrderHeadFindByomsOrposCustOrderId(omsOrposCustOrderId);
+					omsOrposCustOrderHead.setStatus("F");
+					session.mergeOmsOrposCustOrderHead(omsOrposCustOrderHead);
+				}
+				this.fulfilOrdCfmCol = processedObject.getFulfilOrdCfmCol();
+				currentFulfilOrderNo = processedObject.getCurrentFulFillOrderNo();
+				log.info("currentFulfilOrderNo inside presponse " + currentFulfilOrderNo);
+				tempList = processedObject.getOmsTempCoFoList();
+				newFulfillMap.put(key, tempList);
+				log.info("omsCustOrdNo " + omsCustOrdNo + "After getting from PResponseProcessingObj fulfilOrdCfmCol " + this.fulfilOrdCfmCol != null ? this.fulfilOrdCfmCol.getCollectionSize() : 0);
+				pResponseProcessingObj.setFulfilOrdCfmCol(this.fulfilOrdCfmCol);
+				pResponseProcessingObj.setNewFulfillMap(newFulfillMap);
+				fulfillDetailMap.putAll(newFulfillMap);
+				tempMap.putAll(fulfillDetailMap);
+				responseStatus = interfacePersistence.processWebserviceResponse(omsCustOrdNo, this.fulfilOrdCfmCol, tempList, omsOrposCustOrderId);
+				if ("P".equals(responseStatus)) {
+					this.pfulfilOrdCfmCols.put(key, this.fulfilOrdCfmCol);
+					// this.pfulfilOrdCfmCol=this.fulfilOrdCfmCol;
+				} else if ("X".equals(responseStatus)) {
+					this.xfulfilOrdCfmCols.put(key, tempList);
+				}
+				log.info("responseStatus " + responseStatus);
+			}
+		} catch (Exception e) {
+			log.info(" .........Some Error Occured  while executing ......" + e.getMessage());
+			OmsCustOrdHead omsCustOrdHead = session.getOmsCustOrdHeadFindByOmsCustOrdNo(omsCustOrdNo);
+			omsCustOrdHead.setStatus("F");
+			session.mergeOmsCustOrdHead(omsCustOrdHead);
+			log.info(" newFulfillMap value is" + newFulfillMap);
+			if (newFulfillMap != null && newFulfillMap.size() > 0) {
+				fulfillDetailMap.putAll(newFulfillMap);
+			}
+			tempMap.putAll(fulfillDetailMap);
+			throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("SYSTEM ERROR"));
+		}
+		return pResponseProcessingObj;
+	}
+
+//  New Code for consecutive P response....
+	private ArrayList<OmsTempCoFo> findUnProcessed_P_MapObject(ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>> fulfillDetailMap) {
+		log.info("<----------------- Begin findUnProcessed_P_MapObject method------------------->");
+		ArrayList<OmsTempCoFo> tempList = null;
+		ArrayList<OmsTempCoFo> tempList1 = null;
+		for (BigDecimal tempKey : fulfillDetailMap.keySet()) {
+			log.info("<-------------- temp key ------------>" + tempKey + "<---------------------");
+			tempList = fulfillDetailMap.get(tempKey);
+			for (OmsTempCoFo omsTemp : tempList) {
+				if (omsTemp.getRmsResponseCode() != null && !"".equals(omsTemp.getRmsResponseCode())) {
+					if ("P".equals(omsTemp.getRmsResponseCode())) {
+						log.info("<---------------->" + omsTemp.getRmsResponseCode() + "<--------------------->");
+						tempList1 = tempList;
+						return tempList1;
+					}
+				}
+			}
+		}
+		log.info("<-------------- Before returning findUnProcessed_P_MapObject------------------------->" + tempList1 + "<-----------");
+		return tempList1;
+	} // end of findUnProcessed_P_MapObject method....
+
+	private ArrayList<OmsTempCoFo> ProceessPResponseFulFillmentOrder(ArrayList<OmsTempCoFo> tempList, ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>> fulfillDetailMap, BigDecimal omsCustOrdNo,
+			CustOrderDesc custOrderDesc, BigDecimal omsOrposCustOrderId, TreeMap<BigDecimal, ArrayList<OmsTempCoFo>> tempMap1, BigDecimal key) {
+		log.info(" <-----------------------Begin of ProceessPResponseFulFillmentOrder--------------------------->");
+		ArrayList<OmsTempCoFo> unfulfilledItems = new ArrayList<OmsTempCoFo>();
+		Map<String, BigDecimal> tempMap = new HashMap<String, BigDecimal>();
+		List<FulfilOrdCfmDtl> fulfilOrdCfmDtlList = null;
+		log.info("The key is -------------------------->" + key + "<----------------------------------");
+		this.pfulfilOrdCfmCol = this.pfulfilOrdCfmCols.get(key);
+		log.info("<---------------------------------------------------------------------------------------------->");
+		try {
+			if (this.pfulfilOrdCfmCol.getFulfilOrdCfmDesc().isEmpty() && this.pfulfilOrdCfmCol.getCollectionSize() == 0) {
+				log.info("<----------**********pfulfilOrdCfmCol variable is null************-------------->");
+				log.info("<----------*************Response code is C**********************---------------> ");
+			} else {
+				log.info("<22222222222222222------------------------------------------------------------->");
+				fulfilOrdCfmDtlList = this.pfulfilOrdCfmCol.getFulfilOrdCfmDesc().get(0).getFulfilOrdCfmDtl();
+			}
+		} catch (Exception e) {
+			log.info("-------->Error Occurred------->" + e.getMessage() + "------------->");
+		}
+		if (fulfilOrdCfmDtlList != null && fulfilOrdCfmDtlList.size() > 0) {
+			for (FulfilOrdCfmDtl fulfilOrdCfmDtl : fulfilOrdCfmDtlList) {
+				log.info("<--------------P.fulfilOrdCfmDtl.getItem()------------>" + fulfilOrdCfmDtl.getItem() + "----fulfilOrdCfmDtl.getConfirmQty()-----" + fulfilOrdCfmDtl.getConfirmQty() + "--->");
+				tempMap.put(fulfilOrdCfmDtl.getItem(), fulfilOrdCfmDtl.getConfirmQty());
+			}
+			// for (BigDecimal mapkey : fulfillDetailMap.keySet())
+			log.info("<------ Process The list with Key------>" + key + "<-------->");
+			if (key != null) {
+				tempList = fulfillDetailMap.get(key);
+				log.info("<---------------------------  mapkey-------------->" + key + "<------>");
+				for (OmsTempCoFo tempCoFo : tempList) {
+					if (tempMap.containsKey(tempCoFo.getItem()) == true && tempCoFo.getRmsResponseCode() != null && tempCoFo.getRmsResponseCode().equals("P")) {
+						log.info("<---Map-->" + key + "<------ Item --- --->" + tempCoFo.getItem() + "<-------------------->");
+						OmsTempCoFo unfulfilledTemp = new OmsTempCoFo();
+						log.info("tempCoFo.getOrderQty()---->" + tempCoFo.getOrderQty() + "----------->");
+						log.info("tempCoFo.getItem()---->" + tempCoFo.getItem() + "----------->");
+						log.info("tempMap.get(tempCoFo.getItem())--->" + tempMap.get(tempCoFo.getItem()) + "------->");
+						log.info("remaing Qty " + tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())));
+						if ((tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())).intValue() > 0)) {
+							log.info("omsCustOrdNo----->" + omsCustOrdNo + "------->");
+							unfulfilledTemp.setOmsCustOrdNo(omsCustOrdNo);
+							unfulfilledTemp.setFulfillOrderNo(new BigDecimal(maxFulfilOrderNo));
+							log.info("tempCoFo.getItem()----->" + tempCoFo.getItem() + "----->");
+							unfulfilledTemp.setItem(tempCoFo.getItem());
+							log.info("tempCoFo.getLineNo()" + tempCoFo.getLineNo() + "------>");
+							unfulfilledTemp.setLineNo(tempCoFo.getLineNo());
+							log.info("tempCoFo.getOrderQty() " + tempCoFo.getOrderQty() + "----->");
+							log.info("tempCoFo.getItem()" + tempCoFo.getItem() + "----->");
+							log.info("tempMap.get(tempCoFo.getItem())" + tempMap.get(tempCoFo.getItem()) + "----->");
+							log.info("remaing Qty " + tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())));
+							log.info("<---------New Order Quantity---------->" + tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())) + "--------->");
+							unfulfilledTemp.setOrderQty(tempCoFo.getOrderQty().subtract(tempMap.get(tempCoFo.getItem())));
+							log.info("<-------------tempCoFo.getSourceLocId()--------->" + tempCoFo.getSourceLocId());
+							unfulfilledTemp.setSourceLocId(tempCoFo.getSourceLocId());
+							log.info("tempCoFo.getSourceLocationType()" + tempCoFo.getSourceLocationType() + "-------->");
+							unfulfilledTemp.setSourceLocationType(tempCoFo.getSourceLocationType());
+							log.info("tempCoFo.getVirtualWH()" + tempCoFo.getVirtualWH() + "----------->");
+							unfulfilledTemp.setVirtualWH(tempCoFo.getVirtualWH());
+							log.info("tempCoFo.getCombinationId()" + tempCoFo.getCombinationId() + "<-------------->");
+							unfulfilledTemp.setCombinationId(tempCoFo.getCombinationId());
+							unfulfilledTemp.setRmsResponseCode("P");
+							log.info("Setting Response Code to P");
+							log.info("unfulfilledTemp.getSourceLocId() " + unfulfilledTemp.getSourceLocId() + "------->");
+							log.info("unfulfilledTemp.getCombinationId()" + unfulfilledTemp.getCombinationId() + "------->");
+							log.info("unfulfilledTemp.getRmsResponseCode()" + unfulfilledTemp.getRmsResponseCode() + "------->");
+							log.info("unfulfilledTemp.getOrderQty() " + unfulfilledTemp.getOrderQty() + "------>");
+							tempCoFo.setOrderQty(tempMap.get(tempCoFo.getItem()));
+							log.info("tempMap.get(tempCoFo.getItem())---->" + tempMap.get(tempCoFo.getItem()) + "---->");
+							tempCoFo.setFoConfQty(tempMap.get(tempCoFo.getItem()));
+							log.info("<----- Confrim Qauntity------->" + tempCoFo.getFoConfQty() + "<------>");
+							if (unfulfilledTemp.getItem().equals(tempCoFo.getItem())) {
+								tempCoFo.setRmsResponseCode("C");
+								log.info("<---------tempCoFo.getRmsResponseCode()" + tempCoFo.getRmsResponseCode() + "-------->");
+								log.info("<--------tempCoFo.orderQty----->" + tempMap.get(tempCoFo.getItem()) + "-------->");
+								log.info("<---------tempCoFo.ConfQty------->" + tempMap.get(tempCoFo.getItem()) + "--------->");
+							}
+							unfulfilledItems.add(unfulfilledTemp);
+						} else {
+							tempCoFo.setRmsResponseCode("C");
+							tempCoFo.setFoConfQty(tempCoFo.getOrderQty());
+						}
+					} // end of templist response code is 'P'.
+					else if (tempCoFo.getRmsResponseCode() != null && tempCoFo.getRmsResponseCode().equals("P")) {
+						log.info("<-------key doesnot contain in in tempmap-------------------->");
+						log.info("passing currentFulfilOrderNo in fullfilldetailMap " + currentFulfilOrderNo + "<------>");
+						tempList = fulfillDetailMap.get(new BigDecimal(currentFulfilOrderNo));
+						// for (OmsTempCoFo temp : tempList) {
+						log.info("maxFulfilOrderNo " + maxFulfilOrderNo + "<-------->");
+						log.info("temp.getOrderQty() " + tempCoFo.getOrderQty() + "<------>");
+						log.info("temp.getItem()" + tempCoFo.getItem() + "<---->");
+						log.info("remaing Qty " + tempCoFo.getOrderQty() + "<------>");
+						log.info("temp.getRmsResponseCode() " + tempCoFo.getRmsResponseCode() + "<----->");
+						if (tempCoFo.getOrderQty().intValue() > 0) {
+							log.info(" <---------Creating an Object Of unfulfilledTemp------------->");
+							OmsTempCoFo unfulfilledTemp = new OmsTempCoFo();
+							log.info("<---omsCustOrdNo--->" + omsCustOrdNo + "<--maxFulfilOrderNo-->" + maxFulfilOrderNo + "Item" + tempCoFo.getItem());
+							unfulfilledTemp.setOmsCustOrdNo(omsCustOrdNo);
+							unfulfilledTemp.setFulfillOrderNo(new BigDecimal(maxFulfilOrderNo));
+							unfulfilledTemp.setItem(tempCoFo.getItem());
+							log.info("Line No" + tempCoFo.getLineNo() + "Order Qunatity" + tempCoFo.getOrderQty() + "Source Loc Id" + tempCoFo.getSourceLocId());
+							unfulfilledTemp.setLineNo(tempCoFo.getLineNo());
+							unfulfilledTemp.setOrderQty(tempCoFo.getOrderQty());
+							unfulfilledTemp.setSourceLocId(tempCoFo.getSourceLocId());
+							log.info("Source Location Type" + tempCoFo.getSourceLocationType() + " Virtual WH" + tempCoFo.getVirtualWH() + "CombinationId" + tempCoFo.getCombinationId());
+							unfulfilledTemp.setSourceLocationType(tempCoFo.getSourceLocationType());
+							unfulfilledTemp.setVirtualWH(tempCoFo.getVirtualWH());
+							unfulfilledTemp.setCombinationId(tempCoFo.getCombinationId());
+							unfulfilledTemp.setRmsResponseCode("P");
+							log.info("<---OrderQty-->" + tempCoFo.getOrderQty());
+							tempCoFo.setOrderQty(tempCoFo.getOrderQty());
+							tempCoFo.setFoConfQty(new BigDecimal(0));
+							if (unfulfilledTemp.getItem().equals(tempCoFo.getItem())) {
+								tempCoFo.setRmsResponseCode("C");
+								log.info("temp.getRmsResponseCode()" + tempCoFo.getRmsResponseCode() + "<------>");
+							}
+							log.info("<--------Unfulfilled Items add into------->");
+							unfulfilledItems.add(unfulfilledTemp);
+						} else {
+							log.info("We are setting Response Code into C-------->");
+							tempCoFo.setRmsResponseCode("C");
+							tempCoFo.setFoConfQty(new BigDecimal(0));
+						}
+						// } // end of for loop
+						try {
+							Thread.sleep(4000);
+						} catch (InterruptedException e) {
+							log.info("<--->");
+						}
+					} // end of else if part.
+				} // end of inner loop
+			} // map key ................... end of outer loop
+		} // end if statement of fulfilOrdCfmDtlList
+		log.info("<------------------ Before returning ProceessPResponseFulFillmentOrder --------------------->");
+		return unfulfilledItems;
+	}
+
+	private BigDecimal getUnProceesedPResponsekey(ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>> fulfillDetailMap) {
+		log.info("<-------------------------Begin of getUnProceesedPResponsekey method------------------>");
+		BigDecimal unProcessedPResponsekey = null;
+		ArrayList<OmsTempCoFo> tempList = null;
+		for (BigDecimal tempKey : fulfillDetailMap.keySet()) {
+			log.info("<-------------- temp key ------------>" + tempKey + "<---------------------");
+			tempList = fulfillDetailMap.get(tempKey);
+			for (OmsTempCoFo omsTemp : tempList) {
+				if (omsTemp.getRmsResponseCode() != null && !"".equals(omsTemp.getRmsResponseCode())) {
+					if ("P".equals(omsTemp.getRmsResponseCode())) {
+						unProcessedPResponsekey = tempKey;
+						log.info("------->Map Object With-------->" + tempKey + "---------->Need to Procees....");
+						return unProcessedPResponsekey;
+					}
+				}
+			}
+		}
+		log.info("<-------------------------End of getUnProceesedPResponsekey method------------------>");
+		return unProcessedPResponsekey;
+	}
+
+	private ArrayList<OmsTempCoFo> findUnProcessed_X_MapObject(ConcurrentHashMap<BigDecimal, ArrayList<OmsTempCoFo>> fulfillDetailMap) {
+		log.info("<----------------- Begin findUnProcessed_X_MapObject method------------------->");
+		ArrayList<OmsTempCoFo> tempList = null;
+		ArrayList<OmsTempCoFo> tempList1 = null;
+		for (BigDecimal tempKey : fulfillDetailMap.keySet()) {
+			log.info("<-------------- temp key ------------>" + tempKey + "<---------------------");
+			tempList = fulfillDetailMap.get(tempKey);
+			for (OmsTempCoFo omsTemp : tempList) {
+				if (omsTemp.getRmsResponseCode() != null && !"".equals(omsTemp.getRmsResponseCode())) {
+					if ("X".equals(omsTemp.getRmsResponseCode())) {
+						log.info("<---------------->" + omsTemp.getRmsResponseCode() + "<--------------------->");
+						tempList1 = tempList;
+						return tempList1;
+					}
+				} // end of if condition
+			} // end of inner loop
+		} // end of outer loop
+		log.info("<-------------- Before returning findUnProcessed_X_MapObject------------------------->" + tempList1 + "<-----------");
+		return tempList1;
+	} // end of function
+}

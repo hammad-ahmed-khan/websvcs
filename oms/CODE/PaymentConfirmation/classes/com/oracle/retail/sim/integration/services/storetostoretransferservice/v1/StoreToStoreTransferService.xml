@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname localpart="StoreToStoreTransferService"
+                     namespaceURI="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1"/>
+      <port-info>
+         <wsdl-port localpart="StoreToStoreTransferPort"
+                    namespaceURI="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1"/>
+         <runtime/>
+         <operations>
+            <operation name="approveTransfer"/>
+            <operation name="cancelTransfer"/>
+            <operation name="dispatchTransfer"/>
+            <operation name="receiveTransfer"/>
+            <operation name="rejectTransfer"/>
+            <operation name="requestTransfer"/>
+            <operation name="submitTransfer"/>
+            <operation name="lookupBillOfLadingMotives"/>
+            <operation name="readTransferDetail"/>
+            <operation name="lookupTransferHeader"/>
+            <operation name="cancelTransferSubmission"/>
+            <operation name="saveTransferRequest"/>
+            <operation name="savePendingTransferRequest"/>
+            <operation name="saveInProgressTransfer"/>
+            <operation name="saveInReceivingTransfer"/>
+            <operation name="ping"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

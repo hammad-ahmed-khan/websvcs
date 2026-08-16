@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1" xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/ForpCreModVo/v1" xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/ForpDesc/v1" xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/ForpModVo/v1" xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/ForpRef/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/ForpHdrColDesc/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" schemaLocation="FulfillmentOrderReversePickService4.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpHdrColDesc/v1" schemaLocation="FulfillmentOrderReversePickService9.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpRef/v1" schemaLocation="FulfillmentOrderReversePickService6.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="FulfillmentOrderReversePickService5.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpModVo/v1" schemaLocation="FulfillmentOrderReversePickService7.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpDesc/v1" schemaLocation="FulfillmentOrderReversePickService10.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpCreModVo/v1" schemaLocation="FulfillmentOrderReversePickService2.xsd"/>
+  <xs:element name="confirmReversePick" type="tns:confirmReversePick"/>
+  <xs:element name="confirmReversePickResponse" type="tns:confirmReversePickResponse"/>
+  <xs:element name="createReversePick" type="tns:createReversePick"/>
+  <xs:element name="createReversePickResponse" type="tns:createReversePickResponse"/>
+  <xs:element name="deleteReversePick" type="tns:deleteReversePick"/>
+  <xs:element name="deleteReversePickResponse" type="tns:deleteReversePickResponse"/>
+  <xs:element name="lookupReversePickHeaders" type="tns:lookupReversePickHeaders"/>
+  <xs:element name="lookupReversePickHeadersResponse" type="tns:lookupReversePickHeadersResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:element name="readReversePickDetail" type="tns:readReversePickDetail"/>
+  <xs:element name="readReversePickDetailResponse" type="tns:readReversePickDetailResponse"/>
+  <xs:element name="updateFulfillmentOrderReversePick" type="tns:updateFulfillmentOrderReversePick"/>
+  <xs:element name="updateFulfillmentOrderReversePickResponse" type="tns:updateFulfillmentOrderReversePickResponse"/>
+  <xs:complexType name="lookupReversePickHeaders">
+    <xs:sequence>
+      <xs:element ref="ns1:StrFordRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupReversePickHeadersResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:ForpHdrColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmReversePick">
+    <xs:sequence>
+      <xs:element ref="ns3:ForpRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmReversePickResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateFulfillmentOrderReversePick">
+    <xs:sequence>
+      <xs:element ref="ns5:ForpModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateFulfillmentOrderReversePickResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteReversePick">
+    <xs:sequence>
+      <xs:element ref="ns3:ForpRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deleteReversePickResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readReversePickDetail">
+    <xs:sequence>
+      <xs:element ref="ns3:ForpRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readReversePickDetailResponse">
+    <xs:sequence>
+      <xs:element ref="ns6:ForpDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createReversePick">
+    <xs:sequence>
+      <xs:element ref="ns7:ForpCreModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createReversePickResponse">
+    <xs:sequence>
+      <xs:element ref="ns3:ForpRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

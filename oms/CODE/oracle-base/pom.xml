@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.extra</groupId>
+	<artifactId>oracle-base</artifactId>
+	<version>0.0.3</version>
+
+	<name>oracle-base</name>
+	<description>Base API for calling oracle base web services</description>
+	<properties>
+		<java.version>1.7</java.version>
+		<spring.version>4.3.30.RELEASE</spring.version>
+	</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/io.github.openfeign/feign-core -->
+		<dependency>
+		    <groupId>io.github.openfeign</groupId>
+		    <artifactId>feign-core</artifactId>
+		    <version>10.2.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-jaxb</artifactId>
+			<version>10.2.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.github.openfeign/feign-soap -->
+		<dependency>
+		    <groupId>io.github.openfeign</groupId>
+		    <artifactId>feign-soap</artifactId>
+		    <version>10.2.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
+							<wsdlUrls>
+								<wsdlUrl>http://192.168.41.194:7117/FulfillOrderBean/FulfillOrderService?wsdl</wsdlUrl>
+								<wsdlUrl>http://exvm-qaadfapp01.extrastores.com:7511/StoreFulfillmentOrderBean/StoreFulfillmentOrderService?wsdl</wsdlUrl>
+								<wsdlUrl>http://exvm-qaadfapp01.extrastores.com:7511/InventoryAdjustmentBean/InventoryAdjustmentService?WSDL</wsdlUrl>
+								<wsdlUrl>http://exvm-qarmsapp01.extrastores.com:7117/InventoryBackOrderBean/InventoryBackOrderService?WSDL</wsdlUrl>
+								<wsdlUrl>http://exvm-qaadfapp01.extrastores.com:7511/FulfillmentOrderReversePickBean/FulfillmentOrderReversePickService?WSDL</wsdlUrl>
+								<wsdlUrl>http://exvm-qaadfapp01.extrastores.com:7511/FulfillmentOrderDeliveryBean/FulfillmentOrderDeliveryService?WSDL</wsdlUrl>
+								<!-- <wsdlUrl>http://qa-online-order-processing-v1.uk-e1.cloudhub.io/status/UpdateOrderStatus?wsdl</wsdlUrl> -->
+								<wsdlUrl>http://exvm-qaadfapp01.extrastores.com:7511/StoreToStoreTransferBean/StoreToStoreTransferService?wsdl</wsdlUrl>
+							</wsdlUrls>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

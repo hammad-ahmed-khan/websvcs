@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrDesc/v1">
+  <xs:element name="StsTsfHdrDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transfer_id" type="xs:long"/>
+        <xs:element name="external_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="sending_store_id" type="xs:long"/>
+        <xs:element name="receiving_store_id" type="xs:long"/>
+        <xs:element name="status" type="tns:StsTsfStatus"/>
+        <xs:element name="status_date" type="xs:dateTime"/>
+        <xs:element name="create_user_name" type="xs:string"/>
+        <xs:element name="approval_user_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="receive_user_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="number_of_line_items" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="StsTsfStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="PENDING"/>
+      <xs:enumeration value="REJECTED"/>
+      <xs:enumeration value="CANCELED_REQUEST"/>
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="DISPATCHED"/>
+      <xs:enumeration value="SUBMITTED"/>
+      <xs:enumeration value="RECEIVING"/>
+      <xs:enumeration value="RECEIVED"/>
+      <xs:enumeration value="CANCELED_TRANSFER"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,1236 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">610ff7ee-bc71-4186-af73-f20f514f4d67</identifier>
+  </ID>
+  <name>OMS_SPARE_PART_FULFILL</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">cd35efee-7ca5-42a1-b975-04ab4af3fc9d</identifier>
+      </ID>
+      <name>OMS_SERVICE_REQ_SEQ_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e46df50b-e560-401d-810e-cd3565eb581f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OMS_SERVICE_REQ_SEQ_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OMS_SERVICE_REQ_SEQ_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">41db500e-2346-4573-881d-de6a7c81136c</identifier>
+      </ID>
+      <name>SOURCE_LOCATION</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a0f15dd6-37ea-4fa7-8e24-39c522fb8fb0</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SOURCE_LOCATION</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SOURCE_LOCATION</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">01102810-6e35-4ce0-810f-9c3dd6247767</identifier>
+      </ID>
+      <name>ITEM_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4663d2d0-dbd5-45c5-bfe7-02f23fbbc7c9</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">25</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ITEM_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ITEM_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e8853b52-8287-4615-b574-a7726cdcd915</identifier>
+      </ID>
+      <name>QUANTITY_RESERVED</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">371a712c-f68d-427e-b1c2-e0f28b2504f7</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>QUANTITY_RESERVED</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>QUANTITY_RESERVED</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1940f5a7-22eb-4a4c-935c-043c9b2e754f</identifier>
+      </ID>
+      <name>QUANTITY_TSF_RESERVED</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">32149d15-f24a-4ea7-b7c5-4fd256d07182</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>QUANTITY_TSF_RESERVED</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>QUANTITY_TSF_RESERVED</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e2c76fe6-a051-42f2-8e02-cef9cf3e8fdd</identifier>
+      </ID>
+      <name>QUANTITY_UNRESERVED</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4302ca3d-6351-49d8-a06c-04c904261c7d</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>QUANTITY_UNRESERVED</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>QUANTITY_UNRESERVED</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">14131c86-b076-468b-bd2c-3b35909e4811</identifier>
+      </ID>
+      <name>QUANTITY_DEDUCTED</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">389b0895-4daf-4f9f-aa26-3624550ac4d1</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>QUANTITY_DEDUCTED</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>QUANTITY_DEDUCTED</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0a309586-9f2b-4f64-b9b5-6fc32c45a9be</identifier>
+      </ID>
+      <name>QUANTITY_SHIPPED</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">1872645c-5900-4dec-ab28-39752cf4ee0f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>QUANTITY_SHIPPED</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>QUANTITY_SHIPPED</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d1dab56a-a86c-40d1-8b3d-2547c0c9df4b</identifier>
+      </ID>
+      <name>QUANTITY_RECEIVED</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">09f3d32c-f966-463f-98e6-15151a945981</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>QUANTITY_RECEIVED</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>QUANTITY_RECEIVED</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">81d9a621-6756-4409-a71a-a3bac1cfa39b</identifier>
+      </ID>
+      <name>TRANSFER_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c15b3a45-73ca-49db-a308-6f8c318446c1</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TRANSFER_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TRANSFER_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2c323ee0-dc6d-475e-8e94-1d5ed44f9944</identifier>
+      </ID>
+      <name>CREATED_BY</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4b7c7d6c-7e1e-4a29-b733-6ec005172c2d</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b9818096-398b-449b-8108-4842abcbccd0</identifier>
+      </ID>
+      <name>CREATE_DATETIME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">abf29b66-2d8c-41d7-8373-ec8836212b20</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATE_DATETIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATE_DATETIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8759297c-0f21-42b0-9b42-1f874cbfd97e</identifier>
+      </ID>
+      <name>UPDATED_BY</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e16215a9-9555-44d4-a49d-fdcd805e4c29</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>UPDATED_BY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>UPDATED_BY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7fd3687a-a8f6-48dc-b850-513683705804</identifier>
+      </ID>
+      <name>LAST_UPDATED_DATETIME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ccf89f73-ffd8-4476-9196-5643f51a46d1</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LAST_UPDATED_DATETIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484241</identifier>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_UPDATED_DATETIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c478a1d9-ab7d-4206-ba07-378c7ceb08e4</identifier>
+      </ID>
+      <name>PK_OMS_SPARE_PART_FULFILL</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>OMS_SERVICE_REQ_SEQ_ID</name>
+          <identifier class="java.lang.String">cd35efee-7ca5-42a1-b975-04ab4af3fc9d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_SPARE_PART_FULFILL</name>
+            <identifier class="java.lang.String">610ff7ee-bc71-4186-af73-f20f514f4d67</identifier>
+            <schemaName>OMSUSER1</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>OMSUSER1</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SOURCE_LOCATION</name>
+          <identifier class="java.lang.String">41db500e-2346-4573-881d-de6a7c81136c</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_SPARE_PART_FULFILL</name>
+            <identifier class="java.lang.String">610ff7ee-bc71-4186-af73-f20f514f4d67</identifier>
+            <schemaName>OMSUSER1</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>OMSUSER1</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ITEM_ID</name>
+          <identifier class="java.lang.String">01102810-6e35-4ce0-810f-9c3dd6247767</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_SPARE_PART_FULFILL</name>
+            <identifier class="java.lang.String">610ff7ee-bc71-4186-af73-f20f514f4d67</identifier>
+            <schemaName>OMSUSER1</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>OMSUSER1</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PK_OMS_SPARE_PART_FULFILL</name>
+        <identifier class="java.lang.String">d35c4c6d-c5fb-4dc2-a84f-9870a619afd1</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>OMS_SPARE_PART_FULFILL</name>
+          <identifier class="java.lang.String">610ff7ee-bc71-4186-af73-f20f514f4d67</identifier>
+          <schemaName>OMSUSER1</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>OMSUSER1</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PK_OMS_SPARE_PART_FULFILL</name>
+            <childObjectNames>
+              <childObjectName>OMS_SERVICE_REQ_SEQ_ID</childObjectName>
+              <childObjectName>SOURCE_LOCATION</childObjectName>
+              <childObjectName>ITEM_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d35c4c6d-c5fb-4dc2-a84f-9870a619afd1</identifier>
+      </ID>
+      <name>PK_OMS_SPARE_PART_FULFILL</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">a0c4aade-b5c8-419f-91df-9c7b05edc89c</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">e1ba403e-fca3-4fa2-8e4d-d483be5bb76e</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>OMS_SERVICE_REQ_SEQ_ID</name>
+              <identifier class="java.lang.String">cd35efee-7ca5-42a1-b975-04ab4af3fc9d</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_SPARE_PART_FULFILL</name>
+                <identifier class="java.lang.String">610ff7ee-bc71-4186-af73-f20f514f4d67</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>OMSUSER1</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_SPARE_PART_FULFILL</name>
+                      <identifier class="java.math.BigDecimal">484242</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_SPARE_PART_FULFILL</name>
+                        <identifier class="java.math.BigDecimal">484241</identifier>
+                        <schemaName>OMSUSER1</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484242</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_SPARE_PART_FULFILL</name>
+                    <identifier class="java.math.BigDecimal">484241</identifier>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">fa9b9155-a039-404a-8a24-0a0a2f885a37</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">06081b68-e4af-4a90-b4e9-2007f2c65113</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SOURCE_LOCATION</name>
+              <identifier class="java.lang.String">41db500e-2346-4573-881d-de6a7c81136c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_SPARE_PART_FULFILL</name>
+                <identifier class="java.lang.String">610ff7ee-bc71-4186-af73-f20f514f4d67</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>OMSUSER1</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_SPARE_PART_FULFILL</name>
+                      <identifier class="java.math.BigDecimal">484242</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_SPARE_PART_FULFILL</name>
+                        <identifier class="java.math.BigDecimal">484241</identifier>
+                        <schemaName>OMSUSER1</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484242</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_SPARE_PART_FULFILL</name>
+                    <identifier class="java.math.BigDecimal">484241</identifier>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">941e70c8-6afc-4e08-b71a-2d4e00c442e1</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">bd2d0d62-5845-4fd5-abda-b2c9106279f5</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ITEM_ID</name>
+              <identifier class="java.lang.String">01102810-6e35-4ce0-810f-9c3dd6247767</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_SPARE_PART_FULFILL</name>
+                <identifier class="java.lang.String">610ff7ee-bc71-4186-af73-f20f514f4d67</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>OMSUSER1</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_SPARE_PART_FULFILL</name>
+                      <identifier class="java.math.BigDecimal">484242</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_SPARE_PART_FULFILL</name>
+                        <identifier class="java.math.BigDecimal">484241</identifier>
+                        <schemaName>OMSUSER1</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_SPARE_PART_FULFILL</name>
+                  <identifier class="java.math.BigDecimal">484242</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_SPARE_PART_FULFILL</name>
+                    <identifier class="java.math.BigDecimal">484241</identifier>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSUSER1</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PK_OMS_SPARE_PART_FULFILL</name>
+            <identifier class="java.math.BigDecimal">484242</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_SPARE_PART_FULFILL</name>
+              <identifier class="java.math.BigDecimal">484241</identifier>
+              <schemaName>OMSUSER1</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>OMSUSER1</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">de63deac-85f6-4fc1-aa30-334d04159fd5</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PK_OMS_SPARE_PART_FULFILL</name>
+                    <identifier class="java.math.BigDecimal">484242</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>OMS_SPARE_PART_FULFILL</name>
+                      <identifier class="java.math.BigDecimal">484241</identifier>
+                      <schemaName>OMSUSER1</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>OMSUSER1</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>RETAIL_DATA</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>OMSUSER1</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Table to hold the spare parts FULFILL information.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">OMSConnection</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>OMS_SPARE_PART_FULFILL</name>
+        <identifier class="java.math.BigDecimal">484241</identifier>
+        <schemaName>OMSUSER1</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9dc8d582-c339-4fad-b861-d854af421df3</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OMS_SPARE_PART_FULFILL</name>
+                <identifier class="java.math.BigDecimal">484241</identifier>
+                <schemaName>OMSUSER1</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>RETAIL_DATA</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>OMSUSER1</name>
+  </schema>
+</table>

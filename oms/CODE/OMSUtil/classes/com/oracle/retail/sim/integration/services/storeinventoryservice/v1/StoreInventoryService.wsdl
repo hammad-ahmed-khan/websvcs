@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1" name="StoreInventoryService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1" schemaLocation="StoreInventoryService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1" schemaLocation="StoreInventoryService2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrInvGpCriVo/v1" schemaLocation="StoreInventoryService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrInvDesc/v1" schemaLocation="StoreInventoryService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrInvCriVo/v1" schemaLocation="StoreInventoryService5.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrInvColDesc/v1" schemaLocation="StoreInventoryService6.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailDesc/v1" schemaLocation="StoreInventoryService7.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1" schemaLocation="StoreInventoryService8.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailColDesc/v1" schemaLocation="StoreInventoryService9.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="lookupAvailableInventory">
+    <part name="parameters" element="tns:lookupAvailableInventory"/>
+  </message>
+  <message name="lookupAvailableInventoryResponse">
+    <part name="parameters" element="tns:lookupAvailableInventoryResponse"/>
+  </message>
+  <message name="IllegalArgumentWSFaultException">
+    <part xmlns:ns1="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns1:IllegalArgumentWSFaultException"/>
+  </message>
+  <message name="ValidationWSFaultException">
+    <part xmlns:ns2="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns2:ValidationWSFaultException"/>
+  </message>
+  <message name="IllegalStateWSFaultException">
+    <part xmlns:ns3="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns3:IllegalStateWSFaultException"/>
+  </message>
+  <message name="lookupInventoryInStore">
+    <part name="parameters" element="tns:lookupInventoryInStore"/>
+  </message>
+  <message name="lookupInventoryInStoreResponse">
+    <part name="parameters" element="tns:lookupInventoryInStoreResponse"/>
+  </message>
+  <message name="lookupInventoryInTransferZone">
+    <part name="parameters" element="tns:lookupInventoryInTransferZone"/>
+  </message>
+  <message name="lookupInventoryInTransferZoneResponse">
+    <part name="parameters" element="tns:lookupInventoryInTransferZoneResponse"/>
+  </message>
+  <message name="lookupInventoryForBuddyStores">
+    <part name="parameters" element="tns:lookupInventoryForBuddyStores"/>
+  </message>
+  <message name="lookupInventoryForBuddyStoresResponse">
+    <part name="parameters" element="tns:lookupInventoryForBuddyStoresResponse"/>
+  </message>
+  <message name="ping">
+    <part name="parameters" element="tns:ping"/>
+  </message>
+  <message name="pingResponse">
+    <part name="parameters" element="tns:pingResponse"/>
+  </message>
+  <portType name="StoreInventoryPortType">
+    <operation name="lookupAvailableInventory">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1/StoreInventoryPortType/lookupAvailableInventoryRequest" message="tns:lookupAvailableInventory"/>
+      <output message="tns:lookupAvailableInventoryResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupInventoryInStore">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1/StoreInventoryPortType/lookupInventoryInStoreRequest" message="tns:lookupInventoryInStore"/>
+      <output message="tns:lookupInventoryInStoreResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupInventoryInTransferZone">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1/StoreInventoryPortType/lookupInventoryInTransferZoneRequest" message="tns:lookupInventoryInTransferZone"/>
+      <output message="tns:lookupInventoryInTransferZoneResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupInventoryForBuddyStores">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1/StoreInventoryPortType/lookupInventoryForBuddyStoresRequest" message="tns:lookupInventoryForBuddyStores"/>
+      <output message="tns:lookupInventoryForBuddyStoresResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="ping">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1/StoreInventoryPortType/pingRequest" message="tns:ping"/>
+      <output message="tns:pingResponse"/>
+    </operation>
+  </portType>
+  <binding name="StoreInventoryPortBinding" type="tns:StoreInventoryPortType">
+    <wsaw:UsingAddressing/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="lookupAvailableInventory">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupInventoryInStore">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupInventoryInTransferZone">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupInventoryForBuddyStores">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ping">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="StoreInventoryService">
+    <port name="StoreInventoryPort" binding="tns:StoreInventoryPortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:17019/StoreInventoryBean/StoreInventoryService"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,6 @@
+app.name=CustomerOrder
+server.url=exvm-tstribapp01.extrastores.com
+server.port=7701
+weblogic.oms.jndi.name=jdbc/oms
+weblogic.das.jndi.name=jdbc/das
+app.log.directory=/u01/oracle/Weblogic_RSB/user_projects/domains/RSBDomain/servers/AdminServer/logs

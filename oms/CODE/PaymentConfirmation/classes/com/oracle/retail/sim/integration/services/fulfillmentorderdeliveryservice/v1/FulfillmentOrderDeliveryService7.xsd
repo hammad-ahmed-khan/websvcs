@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/FodModVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FodModVo/v1">
+  <xs:element name="FodItmMod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="fulfill_order_delivery_line_id" type="xs:long"/>
+        <xs:element name="quantity" type="xs:decimal"/>
+        <xs:element name="added_uin_col" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="removed_uin_col" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FodModVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="int_fulfill_order_delivery_id" type="xs:long"/>
+        <xs:element name="notes" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="tns:FodItmMod" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

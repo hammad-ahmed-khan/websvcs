@@ -1,0 +1,16 @@
+.settings
+.project
+.classpath
+target
+node_modules
+.class
+.jar
+bin
+schema
+lib
+conf-chg
+conf-qa
+.lock
+.java
+.json
+.log

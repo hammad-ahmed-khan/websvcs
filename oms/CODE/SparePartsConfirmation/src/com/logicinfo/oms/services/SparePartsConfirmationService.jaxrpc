@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebService xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webservice">
+   <list n="CHILD_NODES">
+      <url path="../../../../../public_html/WEB-INF/wsdl/SparePartsConfirmationService.wsdl"/>
+      <url path="../model/ObjectFactory.java"/>
+      <url path="../model/ServiceConfirmationDetailType.java"/>
+      <url path="../model/ServiceConfDetailsResponseType.java"/>
+      <url path="../model/package-info.java"/>
+      <url path="../model/SparePartsConfirmation.java"/>
+      <url path="../model/SparePartsConfirmationResponse.java"/>
+      <url path="SparePartsConfirmationPortTypeImpl.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="BD_">
+         <hash>
+            <value n="BD_DEFAULT_DOCUMENT_WRAPPED" v="false"/>
+            <value n="BD_SOAP_VERSION" v="1.2"/>
+            <value n="BOUND_PORT_TYPE" v="{http://com.logicinfo.oms/services/}SparePartsConfirmation"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+            <value n="NAME" v="{http://com.logicinfo.oms/services/}SparePartsConfirmationSOAP12Binding"/>
+            <list n="OP_BINDINGS">
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="SparePartsConfirmationResponse"/>
+                  <value n="BD_SOAP_ACTION" v="SparePartsConfirmationOperation"/>
+                  <value n="BD_WSDL_RETURN_NAME" v="SparePartsConfirmationResponse"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="USE_OWNER_TNS"/>
+                  <value n="BOUND_OPERATION" v="com.logicinfo.oms.model.SparePartsConfirmationResponse.sparePartsConfirmationOperation.com.logicinfo.oms.model.SparePartsConfirmation"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+         </hash>
+      </list>
+      <list n="BINDING_FILES"/>
+      <value n="GENERATE_TOP_DOWN" v="TRUE"/>
+      <value n="GENERATION_OPTION" v="ANNOTATIONS_WSDL"/>
+      <value n="GUID" v="ce0d87b6-014d-1000-80d4-c0a80166ad63"/>
+      <value n="LAST_GENERATION_BOTTOM_UP" v="false"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaWebService"/>
+      <list n="PO_">
+         <hash>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+            <value n="NAME" v="SparePartsConfirmationPort"/>
+            <value n="PORT_BINDING_NAME" v="{http://com.logicinfo.oms/services/}SparePartsConfirmationSOAP12Binding"/>
+            <list n="PORT_OPS">
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="com.logicinfo.oms.model.SparePartsConfirmationResponse.sparePartsConfirmationOperation.com.logicinfo.oms.model.SparePartsConfirmation"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="URL" protocol="http" host="localhost" port="7101" path="/WebServices-SparePartsConfirmation-context-root/SparePartsConfirmationPortTypeImplService"/>
+         </hash>
+      </list>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="com.logicinfo.oms.services"/>
+            <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="com.logicinfo.oms.model"/>
+         </hash>
+      </hash>
+      <list n="PT_">
+         <hash>
+            <value n="AUTO_SERVICE_INTERFACE"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+            <value n="NAME" v="{http://com.logicinfo.oms/services/}SparePartsConfirmation"/>
+            <list n="OP_">
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <value n="OP_JAVA_NAME" v="sparePartsConfirmationOperation"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="sparePartsConfirmation"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="SparePartsConfirmation"/>
+                        <value n="PA_WSDL_PART_NAME" v="SparePartsConfirmation"/>
+                        <value n="TARGET_NAMESPACE" v="USE_OWNER_TNS"/>
+                        <value n="TYPE" v="com.logicinfo.oms.model.SparePartsConfirmation"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="com.logicinfo.oms.model.SparePartsConfirmationResponse"/>
+                  <value n="OP_NAME" v="SparePartsConfirmationOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <value n="PT_CLASS" v="com.logicinfo.oms.services.SparePartsConfirmationPortTypeImpl"/>
+            <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="com.logicinfo.oms.services.SparePartsConfirmation"/>
+         </hash>
+      </list>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <url n="TARGET_PROJECT" path="../../../../../SparePartsConfirmation.jpr"/>
+      <value n="TOPDOWN_GENERATION_OPTION" v="JAVA"/>
+      <list n="WS_DEPENDENT_VALUE_TYPES"/>
+      <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+      <url n="WS_REFERENCE_WSDL" path="../../../../../public_html/WEB-INF/wsdl/SparePartsConfirmationService.wsdl"/>
+      <value n="WS_TARGET_NAMESPACE" v="http://com.logicinfo.oms/services/"/>
+      <value n="WS_URI" v="SparePartsConfirmationService"/>
+      <url n="WS_WSDL_FILE" path="../../../../../public_html/WEB-INF/wsdl/SparePartsConfirmationService.wsdl"/>
+      <value n="WS_WSDL_LOC_ON_SEI" v="false"/>
+      <value n="WS_WSDL_LOC_VALUE" v="/WEB-INF/wsdl/SparePartsConfirmationService.wsdl"/>
+      <list n="WSDL_DEPENDENT_FILES">
+         <url path="../../../../../public_html/WEB-INF/wsdl/OMSSparePartsConfirmation.xsd"/>
+      </list>
+   </hash>
+</jdevws:WebService>

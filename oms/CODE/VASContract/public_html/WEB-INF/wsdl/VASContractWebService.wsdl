@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace="http://com.logicinfo.oms/model/" name="VASContractWebService" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com.logicinfo.oms/model/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="VASContract1.xsd" namespace="http://com.logicinfo.oms/model/"/>
+    </xsd:schema>
+  </types>
+  <message name="processVASContract">
+    <part name="input" element="tns:processVASContractReq"/>
+  </message>
+  <message name="VASContractResponse">
+    <part name="return" element="tns:VASContractResp"/>
+  </message>
+  <portType name="VASContractWebService">
+    <operation name="processVASContract">
+      <input message="tns:processVASContract"/>
+      <output message="tns:VASContractResponse"/>
+    </operation>
+  </portType>
+  <binding name="VASContractWebServiceSOAP12Binding" type="tns:VASContractWebService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="processVASContract">
+      <soap12:operation style="document" soapAction="" soapActionRequired="false"/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="VASContractWebService">
+    <port name="VASContractWebService" binding="tns:VASContractWebServiceSOAP12Binding"/>
+  </service>
+</definitions>

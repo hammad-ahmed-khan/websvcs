@@ -1,0 +1,322 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1" name="FulfillmentOrderDeliveryService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1" schemaLocation="FulfillmentOrderDeliveryService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1" schemaLocation="FulfillmentOrderDeliveryService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" schemaLocation="FulfillmentOrderDeliveryService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="FulfillmentOrderDeliveryService5.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FodRef/v1" schemaLocation="FulfillmentOrderDeliveryService6.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FodModVo/v1" schemaLocation="FulfillmentOrderDeliveryService7.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FodHdrDesc/v1" schemaLocation="FulfillmentOrderDeliveryService8.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FodHdrColDesc/v1" schemaLocation="FulfillmentOrderDeliveryService9.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FodDesc/v1" schemaLocation="FulfillmentOrderDeliveryService10.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FodCreModVo/v1" schemaLocation="FulfillmentOrderDeliveryService2.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="cancelFulfillmentOrderDelivery">
+    <part name="parameters" element="tns:cancelFulfillmentOrderDelivery"/>
+  </message>
+  <message name="cancelFulfillmentOrderDeliveryResponse">
+    <part name="parameters" element="tns:cancelFulfillmentOrderDeliveryResponse"/>
+  </message>
+  <message name="IllegalArgumentWSFaultException">
+    <part xmlns:ns1="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns1:IllegalArgumentWSFaultException"/>
+  </message>
+  <message name="ValidationWSFaultException">
+    <part xmlns:ns2="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns2:ValidationWSFaultException"/>
+  </message>
+  <message name="IllegalStateWSFaultException">
+    <part xmlns:ns3="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns3:IllegalStateWSFaultException"/>
+  </message>
+  <message name="dispatchFulfillmentOrderDelivery">
+    <part name="parameters" element="tns:dispatchFulfillmentOrderDelivery"/>
+  </message>
+  <message name="dispatchFulfillmentOrderDeliveryResponse">
+    <part name="parameters" element="tns:dispatchFulfillmentOrderDeliveryResponse"/>
+  </message>
+  <message name="submitFulfillmentOrderDelivery">
+    <part name="parameters" element="tns:submitFulfillmentOrderDelivery"/>
+  </message>
+  <message name="submitFulfillmentOrderDeliveryResponse">
+    <part name="parameters" element="tns:submitFulfillmentOrderDeliveryResponse"/>
+  </message>
+  <message name="updateFulfillmentOrderDelivery">
+    <part name="parameters" element="tns:updateFulfillmentOrderDelivery"/>
+  </message>
+  <message name="updateFulfillmentOrderDeliveryResponse">
+    <part name="parameters" element="tns:updateFulfillmentOrderDeliveryResponse"/>
+  </message>
+  <message name="lookupFulfillmentOrderDeliveryHeaders">
+    <part name="parameters" element="tns:lookupFulfillmentOrderDeliveryHeaders"/>
+  </message>
+  <message name="lookupFulfillmentOrderDeliveryHeadersResponse">
+    <part name="parameters" element="tns:lookupFulfillmentOrderDeliveryHeadersResponse"/>
+  </message>
+  <message name="readFulfillmentOrderDeliveryDetail">
+    <part name="parameters" element="tns:readFulfillmentOrderDeliveryDetail"/>
+  </message>
+  <message name="readFulfillmentOrderDeliveryDetailResponse">
+    <part name="parameters" element="tns:readFulfillmentOrderDeliveryDetailResponse"/>
+  </message>
+  <message name="createFulfillmentOrderDelivery">
+    <part name="parameters" element="tns:createFulfillmentOrderDelivery"/>
+  </message>
+  <message name="createFulfillmentOrderDeliveryResponse">
+    <part name="parameters" element="tns:createFulfillmentOrderDeliveryResponse"/>
+  </message>
+  <message name="cancelFulfillmentOrderDeliverySubmission">
+    <part name="parameters" element="tns:cancelFulfillmentOrderDeliverySubmission"/>
+  </message>
+  <message name="cancelFulfillmentOrderDeliverySubmissionResponse">
+    <part name="parameters" element="tns:cancelFulfillmentOrderDeliverySubmissionResponse"/>
+  </message>
+  <message name="ping">
+    <part name="parameters" element="tns:ping"/>
+  </message>
+  <message name="pingResponse">
+    <part name="parameters" element="tns:pingResponse"/>
+  </message>
+  <portType name="FulfillmentOrderDeliveryPortType">
+    <operation name="cancelFulfillmentOrderDelivery">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/cancelFulfillmentOrderDeliveryRequest" message="tns:cancelFulfillmentOrderDelivery"/>
+      <output message="tns:cancelFulfillmentOrderDeliveryResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="dispatchFulfillmentOrderDelivery">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/dispatchFulfillmentOrderDeliveryRequest" message="tns:dispatchFulfillmentOrderDelivery"/>
+      <output message="tns:dispatchFulfillmentOrderDeliveryResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="submitFulfillmentOrderDelivery">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/submitFulfillmentOrderDeliveryRequest" message="tns:submitFulfillmentOrderDelivery"/>
+      <output message="tns:submitFulfillmentOrderDeliveryResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="updateFulfillmentOrderDelivery">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/updateFulfillmentOrderDeliveryRequest" message="tns:updateFulfillmentOrderDelivery"/>
+      <output message="tns:updateFulfillmentOrderDeliveryResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupFulfillmentOrderDeliveryHeaders">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/lookupFulfillmentOrderDeliveryHeadersRequest" message="tns:lookupFulfillmentOrderDeliveryHeaders"/>
+      <output message="tns:lookupFulfillmentOrderDeliveryHeadersResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="readFulfillmentOrderDeliveryDetail">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/readFulfillmentOrderDeliveryDetailRequest" message="tns:readFulfillmentOrderDeliveryDetail"/>
+      <output message="tns:readFulfillmentOrderDeliveryDetailResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="createFulfillmentOrderDelivery">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/createFulfillmentOrderDeliveryRequest" message="tns:createFulfillmentOrderDelivery"/>
+      <output message="tns:createFulfillmentOrderDeliveryResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="cancelFulfillmentOrderDeliverySubmission">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/cancelFulfillmentOrderDeliverySubmissionRequest" message="tns:cancelFulfillmentOrderDeliverySubmission"/>
+      <output message="tns:cancelFulfillmentOrderDeliverySubmissionResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="ping">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1/FulfillmentOrderDeliveryPortType/pingRequest" message="tns:ping"/>
+      <output message="tns:pingResponse"/>
+    </operation>
+  </portType>
+  <binding name="FulfillmentOrderDeliveryPortBinding" type="tns:FulfillmentOrderDeliveryPortType">
+    <wsaw:UsingAddressing/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="cancelFulfillmentOrderDelivery">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="dispatchFulfillmentOrderDelivery">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="submitFulfillmentOrderDelivery">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateFulfillmentOrderDelivery">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupFulfillmentOrderDeliveryHeaders">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="readFulfillmentOrderDeliveryDetail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createFulfillmentOrderDelivery">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="cancelFulfillmentOrderDeliverySubmission">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ping">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="FulfillmentOrderDeliveryService">
+    <port name="FulfillmentOrderDeliveryPort" binding="tns:FulfillmentOrderDeliveryPortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:17019/FulfillmentOrderDeliveryBean/FulfillmentOrderDeliveryService"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace="http://com.siebel.retail/integration/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://schemas.oracle.com/bpel/extension" xmlns:tns="http://com.siebel.retail/integration/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <import namespace="http://schemas.oracle.com/bpel/extension" location="inboundordercreationbpelprocess_client_epRuntimeFault.wsdl"/>
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="SiebelOrderFeed.xsd" namespace="http://com.siebel.retail/integration/"/>
+    </xsd:schema>
+  </types>
+  <message name="SiebelOrderFeedRequest">
+    <part name="part" element="tns:NewCustomerOrderHeaderLevel"/>
+  </message>
+  <message name="SiebelOrderFeedResponse">
+    <part name="part" element="tns:NewCustomerOrderHeaderLevelResponse"/>
+  </message>
+  <portType name="SiebelOrderFeedWebservice">
+    <operation name="publishToSiebel">
+      <input message="tns:SiebelOrderFeedRequest"/>
+      <output message="tns:SiebelOrderFeedResponse"/>
+    </operation>
+  </portType>
+  <binding name="SiebelOrderFeedWebserviceBinding" type="tns:SiebelOrderFeedWebservice">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="publishToSiebel">
+      <soap:operation style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SiebelOrderFeedWebservice">
+    <port name="SiebelOrderFeedWebservice" binding="tns:SiebelOrderFeedWebserviceBinding">
+      <soap:address location="http://www.example.com"/>
+    </port>
+  </service>
+</definitions>

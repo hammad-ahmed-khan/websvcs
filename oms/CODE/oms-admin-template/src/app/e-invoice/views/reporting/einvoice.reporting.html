@@ -1,0 +1,174 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="searchForm" #form="ngForm" (ngSubmit)="searchInvoices()">
+                <div class="row mt-2">
+                    <div class="col-2">
+                        <label>From Date</label>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" readonly bsDatepicker formControlName="fromDate" #fromDate="bsDatepicker">
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-primary" (click)="fromDate.show()"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <label>To Date</label>
+                    </div>
+                    <div class="col-2">
+                        <div class="input-group">
+                            <input type="text" class="form-control" readonly bsDatepicker formControlName="toDate" #toDate="bsDatepicker">
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-primary" (click)="toDate.show()"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <label>Invoice#</label>
+                    </div>
+                    <div class="col-2">
+                        <input type="text" class="form-control" formControlName="invoiceNumber" [ngClass]="{'is-invalid': form.submitted && searchForm.hasError('anyField')}"/>
+                        <div *ngIf="form.submitted && searchForm.hasError('anyField')" class="invalid-feedback">
+                            Please enter order no or select bulk search
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-2">
+                        <label>Source</label>
+                    </div>
+                    <div class="col-2">
+                        <select formControlName="source" class="form-control">
+                            <option value="">All</option>
+                            <option value="EBS">EBS</option>
+                            <option value="POS">POS</option>
+                            <option value="OMS">OMS</option>
+                            <option value="ECOM">E-Commerce</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label>Invoice Type</label>
+                    </div>
+                    <div class="col-2">
+                        <select formControlName="invoiceType" class="form-control">
+                            <option value="">All</option>
+                            <option value="B2C">B2C</option>
+                            <option value="B2B">B2B</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label>Status</label>
+                    </div>
+                    <div class="col-2">
+                        <select formControlName="status" class="form-control">
+                            <option value="">All</option>
+                            <option value="N">Pending</option>
+                            <option value="Y">Reported/Cleared</option>
+                            <option value="F">Failed</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row mt-2">
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary mr-2">Search</button>
+                        <button type="reset" class="btn btn-warning mr-2">Reset</button>
+                    </div>
+                </div>
+            </form>
+            <div class="mt-3 overflow-auto">
+                <table style="min-height: 200px;" class="table table-responsive table-striped filter" [mfData]="invoices | filter:filterForm.value" #mf="mfDataTable" [mfRowsOnPage]="10">
+                    <thead>
+                        <tr [formGroup]="filterForm">
+                            <th style="width: 170x;">Invoice Number</th>
+                            <th style="width: 120x">Order Number</th>
+                            <th style="width: 80px">
+                                <div class="btn-group" dropdown #sourceDD="bs-dropdown" [insideClick]="true">
+                                    <button id="button-basic" dropdownToggle type="button" class="btn btn-link dropdown-toggle" aria-controls="dropdown-basic">
+                                            Source<span class="caret"></span>
+                                    </button>
+                                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                                        <li role="menuitem">
+                                            <select formControlName="source" class="form-control" (change)="sourceDD.hide()">
+                                                <option value="">All</option>
+                                                <option value="EBS">EBS</option>
+                                                <option value="POS">POS</option>
+                                                <option value="OMS">OMS</option>
+                                                <option value="ECOM">E-Commerce</option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th style="width: 80px;">
+                                <div class="btn-group" dropdown #invTypeDD="bs-dropdown" [insideClick]="true">
+                                    <button id="button-basic" dropdownToggle type="button" class="btn btn-link dropdown-toggle" aria-controls="dropdown-basic">
+                                        Invoice Type<span class="caret"></span>
+                                    </button>
+                                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                                        <li role="menuitem">
+                                            <select formControlName="invoiceType" class="form-control" (change)="invTypeDD.hide()">
+                                                <option value="">All</option>
+                                                <option value="B2C">B2C</option>
+                                                <option value="B2B">B2B</option>
+                                            </select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </th>
+                            <th style="width: 200px">Business Date</th>
+                            <th style="width: 200px">Process Date & Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of mf.data">
+                            <td>{{ i.invoiceNumber }}</td>
+                            <td>{{ i.orderNumber }}</td>
+                            <td>{{ i.source }}</td>
+                            <td>{{ i.invoiceType }}</td>
+                            <td>{{ i.businessDate | mdate }}</td>
+                            <td>{{ i.processDateTime | mdate }}</td>
+                            <td>
+                                <span class="badge" [ngClass]="{'badge-success': i.status == 'Y', 'badge-danger': i.status == 'F', 'badge-primary': i.status == 'N'}">{{ (i.status == 'F' ? 'Failed' : (i.status == 'Y' ? 'Success' : 'Pending')) }}</span>
+                            </td>
+                            <td>
+                                <a href="javascript:void();" (click)="showContent(true, i.invoiceNumber);">XML</a>&nbsp;&nbsp;
+                                <a *ngIf="i.status == 'F'" href="javascript:void();" (click)="showContent(false, i.invoiceNumber);">Error</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="13">
+                                <mfBootstrapPaginator [rowsOnPageSet]="[10,25,50,75,100]"></mfBootstrapPaginator>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" bsModal #contentDisplayModel="bs-modal" [config]="{backdrop: 'static'}" role="dialog">
+    <div class="modal-dialog modal-lg" [ngClass]="{'modal-success': isXML, 'modal-danger': !isXML}">
+        <div class="modal-content">
+            <div class="modal-header p-2">
+                <div class="w-100">
+                    {{ isXML ? 'XML' : 'Error'}}
+                    <span class="float-right" (click)="contentDisplayModel.hide();">Close</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row h-100">
+                    <div class="col-12">
+                        <textarea class="form-control w-100 h-100" [formControl]="textControl" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

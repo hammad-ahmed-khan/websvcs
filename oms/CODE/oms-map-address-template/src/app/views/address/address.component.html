@@ -1,0 +1,61 @@
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12" class="px-0">
+    <c-card class="mb-2">
+      <c-card-header>
+        <img style="width: 100px;height: 40px;" src="./assets/brand/logo.png"/>
+        <strong>Address Verification Form</strong>
+      </c-card-header>
+      <c-card-body>
+        <form cForm [formGroup]="addressForm" #form="ngForm" (ngSubmit)="validateAddress()">
+          <c-row class="mb-2">
+            <c-col xs="3">
+              <label cLabel>Address Type</label>
+            </c-col>
+            <c-col xs="9">
+              <input id="LAT_LONG_RADIO" (change)="switchAddrType(true)" cFormCheckInput type="radio" name="addressType" class="form-check-input" formControlName="addressType" value="true" [ngClass]="{ 'is-invalid': form.submitted && addressForm.get('addressType')?.errors }" />
+              <label for="LAT_LONG_RADIO" cFormCheckLabel>Location Pinning</label>
+              <input id="SHORT_ADDR_RADIO" (change)="switchAddrType(false)" cFormCheckInput type="radio" name="addressType" formControlName="addressType" class="ms-2 form-check-input" value="false" [ngClass]="{ 'is-invalid': form.submitted && addressForm.get('addressType')?.errors }" />
+              <label for="SHORT_ADDR_RADIO" cFormCheckLabel>National Address</label>
+              <div class="invalid-feedback">Please choose a address type.</div>
+            </c-col>
+          </c-row>
+          <c-row class="mb-2" [hidden]="addressForm.get('addressType')?.value != 'true'">
+            <c-col xs="3">
+              <label cLabel >Latitude & Longitude</label>
+            </c-col>
+            <c-col xs="9">
+              <input type="text" #searchPlaceInput class="form-control" style="border-bottom-left-radius: unset;border-bottom-right-radius: unset;" />
+              <google-map #maps height="350px"
+                  [ngClass]="{ 'is-invalid': form.submitted && addressForm.get('lat')?.errors }"
+                  width="100%" 
+                  [options]="options"
+                  (mapClick)="selectLocation($event)" >
+                <ng-container *ngIf="position">
+                  <map-advanced-marker [position]="position"
+                    [title]="'Test Tile'"
+                  />
+                </ng-container>
+              </google-map>
+              <div class="invalid-feedback">Please select the location on map.</div>
+            </c-col>
+          </c-row>
+          <c-row class="mb-2" *ngIf="addressForm.get('addressType')?.value == 'false'">
+            <c-col xs="3">
+              <label cLabel>National Address</label>
+            </c-col>
+            <c-col xs="9">
+              <input type="text" class="form-control" formControlName="shortaddress" [ngClass]="{ 'is-invalid': form.submitted && addressForm.get('shortaddress')?.errors }" />
+              <div class="invalid-feedback">Please enter valid short address.</div>
+            </c-col>
+          </c-row>
+          <c-row class="d-grid gap-2 col-6 mx-auto" >
+            <c-col>
+              <button cButton color="primary" type="submit">Verify</button>
+              <button cButton color="warning" class="ms-3" (click)="closeWin()">Close</button>
+            </c-col>
+          </c-row>
+        </form>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1" xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColRef/v1" xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/StrFordHdrColDesc/v1" xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/StrFordHdrCriVo/v1" xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmCol/v1" xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColDesc/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/StrFordDesc/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" schemaLocation="StoreFulfillmentOrderService16.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordDesc/v1" schemaLocation="StoreFulfillmentOrderService20.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColDesc/v1" schemaLocation="StoreFulfillmentOrderService9.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmCol/v1" schemaLocation="StoreFulfillmentOrderService13.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordHdrCriVo/v1" schemaLocation="StoreFulfillmentOrderService18.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordHdrColDesc/v1" schemaLocation="StoreFulfillmentOrderService19.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColRef/v1" schemaLocation="StoreFulfillmentOrderService8.xsd"/>
+  <xs:element name="cancelFulfillmentOrderDetail" type="tns:cancelFulfillmentOrderDetail"/>
+  <xs:element name="cancelFulfillmentOrderDetailResponse" type="tns:cancelFulfillmentOrderDetailResponse"/>
+  <xs:element name="createFulfillmentOrderDetail" type="tns:createFulfillmentOrderDetail"/>
+  <xs:element name="createFulfillmentOrderDetailResponse" type="tns:createFulfillmentOrderDetailResponse"/>
+  <xs:element name="lookupFulfillmentOrderHeaders" type="tns:lookupFulfillmentOrderHeaders"/>
+  <xs:element name="lookupFulfillmentOrderHeadersResponse" type="tns:lookupFulfillmentOrderHeadersResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:element name="readFulfillmentOrderDetail" type="tns:readFulfillmentOrderDetail"/>
+  <xs:element name="readFulfillmentOrderDetailResponse" type="tns:readFulfillmentOrderDetailResponse"/>
+  <xs:complexType name="readFulfillmentOrderDetail">
+    <xs:sequence>
+      <xs:element ref="ns1:StrFordRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readFulfillmentOrderDetailResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:StrFordDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFulfillmentOrderDetail">
+    <xs:sequence>
+      <xs:element ref="ns3:FulfilOrdColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFulfillmentOrderDetailResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:FulfilOrdCfmCol" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupFulfillmentOrderHeaders">
+    <xs:sequence>
+      <xs:element ref="ns5:StrFordHdrCriVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupFulfillmentOrderHeadersResponse">
+    <xs:sequence>
+      <xs:element ref="ns6:StrFordHdrColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelFulfillmentOrderDetail">
+    <xs:sequence>
+      <xs:element ref="ns7:FulfilOrdColRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelFulfillmentOrderDetailResponse">
+    <xs:sequence>
+      <xs:element ref="ns7:FulfilOrdColRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/rms/integration/services/FulfillOrderService/v1" xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColRef/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmCol/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/rms/integration/services/FulfillOrderService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColDesc/v1" schemaLocation="FulfillOrderService5.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmCol/v1" schemaLocation="FulfillOrderService8.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColRef/v1" schemaLocation="FulfillOrderService4.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="FulfillOrderService13.xsd"/>
+  <xs:element name="cancelFulfilOrdColRef" type="tns:cancelFulfilOrdColRef"/>
+  <xs:element name="cancelFulfilOrdColRefResponse" type="tns:cancelFulfilOrdColRefResponse"/>
+  <xs:element name="createFulfilOrdColDesc" type="tns:createFulfilOrdColDesc"/>
+  <xs:element name="createFulfilOrdColDescResponse" type="tns:createFulfilOrdColDescResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:complexType name="createFulfilOrdColDesc">
+    <xs:sequence>
+      <xs:element ref="ns1:FulfilOrdColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFulfilOrdColDescResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:FulfilOrdCfmCol" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelFulfilOrdColRef">
+    <xs:sequence>
+      <xs:element ref="ns3:FulfilOrdColRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelFulfilOrdColRefResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1" xmlns:ns11="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrColDesc/v1" xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrCriVo/v1" xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/StsTsfShpModVo/v1" xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/StsTsfDesc/v1" xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/StsTsfApvModVo/v1" xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/StsTsfReqModVo/v1" xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/StsTsfRef/v1" xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/BolMtvColDesc/v1" xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/Nothing/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/StsTsfRcvModVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfRcvModVo/v1" schemaLocation="StoreToStoreTransferService12.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="StoreToStoreTransferService5.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/Nothing/v1" schemaLocation="StoreToStoreTransferService4.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/BolMtvColDesc/v1" schemaLocation="StoreToStoreTransferService7.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfRef/v1" schemaLocation="StoreToStoreTransferService11.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfReqModVo/v1" schemaLocation="StoreToStoreTransferService10.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfApvModVo/v1" schemaLocation="StoreToStoreTransferService3.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfDesc/v1" schemaLocation="StoreToStoreTransferService2.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfShpModVo/v1" schemaLocation="StoreToStoreTransferService9.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrCriVo/v1" schemaLocation="StoreToStoreTransferService14.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrColDesc/v1" schemaLocation="StoreToStoreTransferService15.xsd"/>
+  <xs:element name="approveTransfer" type="tns:approveTransfer"/>
+  <xs:element name="approveTransferResponse" type="tns:approveTransferResponse"/>
+  <xs:element name="cancelTransfer" type="tns:cancelTransfer"/>
+  <xs:element name="cancelTransferResponse" type="tns:cancelTransferResponse"/>
+  <xs:element name="cancelTransferSubmission" type="tns:cancelTransferSubmission"/>
+  <xs:element name="cancelTransferSubmissionResponse" type="tns:cancelTransferSubmissionResponse"/>
+  <xs:element name="dispatchTransfer" type="tns:dispatchTransfer"/>
+  <xs:element name="dispatchTransferResponse" type="tns:dispatchTransferResponse"/>
+  <xs:element name="lookupBillOfLadingMotives" type="tns:lookupBillOfLadingMotives"/>
+  <xs:element name="lookupBillOfLadingMotivesResponse" type="tns:lookupBillOfLadingMotivesResponse"/>
+  <xs:element name="lookupTransferHeader" type="tns:lookupTransferHeader"/>
+  <xs:element name="lookupTransferHeaderResponse" type="tns:lookupTransferHeaderResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:element name="readTransferDetail" type="tns:readTransferDetail"/>
+  <xs:element name="readTransferDetailResponse" type="tns:readTransferDetailResponse"/>
+  <xs:element name="receiveTransfer" type="tns:receiveTransfer"/>
+  <xs:element name="receiveTransferResponse" type="tns:receiveTransferResponse"/>
+  <xs:element name="rejectTransfer" type="tns:rejectTransfer"/>
+  <xs:element name="rejectTransferResponse" type="tns:rejectTransferResponse"/>
+  <xs:element name="requestTransfer" type="tns:requestTransfer"/>
+  <xs:element name="requestTransferResponse" type="tns:requestTransferResponse"/>
+  <xs:element name="saveInProgressTransfer" type="tns:saveInProgressTransfer"/>
+  <xs:element name="saveInProgressTransferResponse" type="tns:saveInProgressTransferResponse"/>
+  <xs:element name="saveInReceivingTransfer" type="tns:saveInReceivingTransfer"/>
+  <xs:element name="saveInReceivingTransferResponse" type="tns:saveInReceivingTransferResponse"/>
+  <xs:element name="savePendingTransferRequest" type="tns:savePendingTransferRequest"/>
+  <xs:element name="savePendingTransferRequestResponse" type="tns:savePendingTransferRequestResponse"/>
+  <xs:element name="saveTransferRequest" type="tns:saveTransferRequest"/>
+  <xs:element name="saveTransferRequestResponse" type="tns:saveTransferRequestResponse"/>
+  <xs:element name="submitTransfer" type="tns:submitTransfer"/>
+  <xs:element name="submitTransferResponse" type="tns:submitTransferResponse"/>
+  <xs:complexType name="saveInReceivingTransfer">
+    <xs:sequence>
+      <xs:element ref="ns1:StsTsfRcvModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveInReceivingTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupBillOfLadingMotives">
+    <xs:sequence>
+      <xs:element ref="ns3:Nothing" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupBillOfLadingMotivesResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:BolMtvColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestTransfer">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="requestTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rejectTransfer">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rejectTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dispatchTransfer">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dispatchTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitTransfer">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="approveTransfer">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="approveTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveTransferRequest">
+    <xs:sequence>
+      <xs:element ref="ns6:StsTsfReqModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveTransferRequestResponse">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="savePendingTransferRequest">
+    <xs:sequence>
+      <xs:element ref="ns7:StsTsfApvModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="savePendingTransferRequestResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readTransferDetail">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readTransferDetailResponse">
+    <xs:sequence>
+      <xs:element ref="ns8:StsTsfDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelTransferSubmission">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelTransferSubmissionResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receiveTransfer">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receiveTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveInProgressTransfer">
+    <xs:sequence>
+      <xs:element ref="ns9:StsTsfShpModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveInProgressTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelTransfer">
+    <xs:sequence>
+      <xs:element ref="ns5:StsTsfRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelTransferResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupTransferHeader">
+    <xs:sequence>
+      <xs:element ref="ns10:StsTsfHdrCriVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupTransferHeaderResponse">
+    <xs:sequence>
+      <xs:element ref="ns11:StsTsfHdrColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrCriVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrCriVo/v1">
+  <xs:element name="StsTsfHdrCriVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="store_id" type="xs:long"/>
+        <xs:element name="other_store_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="status" type="tns:StsTsfCriStatus"/>
+        <xs:element name="transfer_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="external_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="item_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="from_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="to_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="context_type_id" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="StsTsfCriStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="ACTIVE_INBOUND"/>
+      <xs:enumeration value="ACTIVE_OUTBOUND"/>
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="PENDING_REQUEST"/>
+      <xs:enumeration value="AWAITING_RESPONSE"/>
+      <xs:enumeration value="OUTBOUND_REJECTED"/>
+      <xs:enumeration value="INBOUND_REJECTED"/>
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="SUBMITTED"/>
+      <xs:enumeration value="INBOUND_PICKING"/>
+      <xs:enumeration value="IN_TRANSIT"/>
+      <xs:enumeration value="DISPATCHED"/>
+      <xs:enumeration value="RECEIVING"/>
+      <xs:enumeration value="CLOSED"/>
+      <xs:enumeration value="RECEIVED"/>
+      <xs:enumeration value="CANCELED_INBOUND"/>
+      <xs:enumeration value="CANCELED_REQUEST"/>
+      <xs:enumeration value="CANCELED_TRANSFER"/>
+      <xs:enumeration value="NO_VALUE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

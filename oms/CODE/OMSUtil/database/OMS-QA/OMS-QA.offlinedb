@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <hash n="dataTypeSettings">
+      <value n="sourceKey" v="oracle.javatools.db.ora.Oracle11gR2"/>
+   </hash>
+   <value n="id" v="afb784ec-dcad-4ff4-acdf-da39fd85ee5a"/>
+   <value n="name" v="OMS-QA"/>
+   <value n="offlineDBSchema" v="OMSDEV"/>
+</ProviderSettings>

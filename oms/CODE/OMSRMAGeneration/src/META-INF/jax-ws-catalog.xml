@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://licrpap14-extra.logicindia.com:17053/PendingReturnsBean/PendingReturnsService?wsdl#%7Bhttp%3A%2F%2Fwww.oracle.com%2Fretail%2Frwms%2Fintegration%2Fservices%2FPendingReturnsService%2Fv1%7DPendingReturnsService"
+          uri="../com/oracle/retail/rwms/integration/services/pendingreturnsservice/v1/PendingReturnsService.wsdl"/>
+</catalog>

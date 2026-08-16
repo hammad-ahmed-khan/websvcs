@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StrFordHdrDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StrFordHdrDesc/v1">
+  <xs:element name="StrFordHdrDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="int_fulfillment_order_id" type="xs:long"/>
+        <xs:element name="ext_fulfillment_order_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="customer_order_id" type="xs:string"/>
+        <xs:element name="order_type" type="tns:str_ford_type"/>
+        <xs:element name="status" type="tns:str_ford_status"/>
+        <xs:element name="create_date" type="xs:dateTime"/>
+        <xs:element name="release_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="number_of_skus" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="str_ford_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LAYAWAY"/>
+      <xs:enumeration value="PICKUP_AND_DELIVERY"/>
+      <xs:enumeration value="CUSTOMER_ORDER"/>
+      <xs:enumeration value="PENDING_PURCHASE"/>
+      <xs:enumeration value="SPECIAL_ORDER"/>
+      <xs:enumeration value="WEB_ORDER"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="str_ford_status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="CANCELED"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

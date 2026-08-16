@@ -1,0 +1,237 @@
+{"properties": [
+  {
+    "name": "spring.ebs-datasource.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ebs-datasource.url'"
+  },
+  {
+    "name": "spring.ebs-datasource.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ebs-datasource.password'"
+  },
+  {
+    "name": "spring.ebs-datasource.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ebs-datasource.driver-class-name'"
+  },
+  {
+    "name": "spring.ebs-datasource.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ebs-datasource.username'"
+  },
+  {
+    "name": "spring.ebs-datasource.jdbc-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ebs-datasource.jdbc-url'"
+  },
+  {
+    "name": "zatca.api.url",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.url'"
+  },
+  {
+    "name": "zatca.api.binary-token",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.binary-token'"
+  },
+  {
+    "name": "zatca.api.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.secret'"
+  },
+  {
+    "name": "zatca.api.basic-auth",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.basic-auth'"
+  },
+  {
+    "name": "zatca.api.seller.country",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.country'"
+  },
+  {
+    "name": "zatca.api.seller.reg-name",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.reg-name'"
+  },
+  {
+    "name": "zatca.api.seller.vat",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.vat'"
+  },
+  {
+    "name": "zatca.api.seller.street-name",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.street-name'"
+  },
+  {
+    "name": "zatca.api.seller.building-num",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.building-num'"
+  },
+  {
+    "name": "zatca.api.seller.city-div",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.city-div'"
+  },
+  {
+    "name": "zatca.api.seller.postal",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.postal'"
+  },
+  {
+    "name": "zatca.api.seller.city",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.city'"
+  },
+  {
+    "name": "spring.datasource.jdbc-url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.jdbc-url'"
+  },
+  {
+    "name": "report.bip.url",
+    "type": "java.lang.String",
+    "description": "A description for 'report.bip.url'"
+  },
+  {
+    "name": "report.bip.username",
+    "type": "java.lang.String",
+    "description": "A description for 'report.bip.username'"
+  },
+  {
+    "name": "report.bip.password",
+    "type": "java.lang.String",
+    "description": "A description for 'report.bip.password'"
+  },
+  {
+    "name": "report.bip.path",
+    "type": "java.lang.String",
+    "description": "A description for 'report.bip.path'"
+  },
+  {
+    "name": "report.bip.email-body",
+    "type": "java.lang.String",
+    "description": "A description for 'report.bip.email-body'"
+  },
+  {
+    "name": "report.bip.email-server",
+    "type": "java.lang.String",
+    "description": "A description for 'report.bip.email-server'"
+  },
+  {
+    "name": "report.bip.email-subject",
+    "type": "java.lang.String",
+    "description": "A description for 'report.bip.email-subject'"
+  },
+  {
+    "name": "report.bip.email-from",
+    "type": "java.lang.String",
+    "description": "A description for 'report.bip.email-from'"
+  },
+  {
+    "name": "zatca.api.binary-token",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.binary-token'"
+  },
+  {
+    "name": "zatca.api.seller.street-name",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.street-name'"
+  },
+  {
+    "name": "zatca.api.seller.building-num",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.building-num'"
+  },
+  {
+    "name": "zatca.api.seller.street-name",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.street-name'"
+  },
+  {
+    "name": "spring.ebs-datasource.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.ebs-datasource.username'"
+  },
+  {
+    "name": "zatca.api.private-key",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.private-key'"
+  },
+  {
+    "name": "email.config.header.req-id",
+    "type": "java.lang.String",
+    "description": "A description for 'email.config.header.req-id'"
+  },
+  {
+    "name": "email.config.url",
+    "type": "java.lang.String",
+    "description": "A description for 'email.config.url'"
+  },
+  {
+    "name": "email.config.header.application-id",
+    "type": "java.lang.String",
+    "description": "A description for 'email.config.header.application-id'"
+  },
+  {
+    "name": "email.config.username",
+    "type": "java.lang.String",
+    "description": "A description for 'email.config.username'"
+  },
+  {
+    "name": "email.config.password",
+    "type": "java.lang.String",
+    "description": "A description for 'email.config.password'"
+  },
+  {
+    "name": "schedule.ebs.init-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.ebs.init-delay'"
+  },
+  {
+    "name": "schedule.ebs.init-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.ebs.init-delay'"
+  },
+  {
+    "name": "schedule.ebs.fixed-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.ebs.fixed-delay'"
+  },
+  {
+    "name": "schedule.pos.init-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.pos.init-delay'"
+  },
+  {
+    "name": "schedule.pos.fixed-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.pos.fixed-delay'"
+  },
+  {
+    "name": "schedule.report.fixed-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.report.fixed-delay'"
+  },
+  {
+    "name": "schedule.report.init-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.report.init-delay'"
+  },
+  {
+    "name": "schedule.canret.init-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.canret.init-delay'"
+  },
+  {
+    "name": "schedule.canret.fixed-delay",
+    "type": "java.lang.String",
+    "description": "A description for 'schedule.canret.fixed-delay'"
+  },
+  {
+    "name": "zatca.api.seller.additional-num",
+    "type": "java.lang.String",
+    "description": "A description for 'zatca.api.seller.additional-num'"
+  }
+]}

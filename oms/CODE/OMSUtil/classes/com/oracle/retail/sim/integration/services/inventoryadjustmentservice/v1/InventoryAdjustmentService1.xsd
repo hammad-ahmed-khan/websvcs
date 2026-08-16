@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1" xmlns:ns13="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" xmlns:ns12="http://www.oracle.com/retail/integration/base/bo/StrAdjTpHdColDesc/v1" xmlns:ns11="http://www.oracle.com/retail/integration/base/bo/StrAdjTpHdCriVo/v1" xmlns:ns10="http://www.oracle.com/retail/integration/base/bo/StrAdjTplDesc/v1" xmlns:ns9="http://www.oracle.com/retail/integration/base/bo/StrAdjTplRef/v1" xmlns:ns8="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrColDesc/v1" xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrCriVo/v1" xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/StrAdjRsnColDesc/v1" xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/StrAdjDesc/v1" xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/NslQtyTypColDesc/v1" xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/Nothing/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/StrAdjRef/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/StrAdjModVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjModVo/v1" schemaLocation="InventoryAdjustmentService3.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjRef/v1" schemaLocation="InventoryAdjustmentService2.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/Nothing/v1" schemaLocation="InventoryAdjustmentService10.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/NslQtyTypColDesc/v1" schemaLocation="InventoryAdjustmentService9.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjDesc/v1" schemaLocation="InventoryAdjustmentService7.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjRsnColDesc/v1" schemaLocation="InventoryAdjustmentService19.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrCriVo/v1" schemaLocation="InventoryAdjustmentService5.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrColDesc/v1" schemaLocation="InventoryAdjustmentService6.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTplRef/v1" schemaLocation="InventoryAdjustmentService13.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTplDesc/v1" schemaLocation="InventoryAdjustmentService14.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTpHdCriVo/v1" schemaLocation="InventoryAdjustmentService16.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTpHdColDesc/v1" schemaLocation="InventoryAdjustmentService17.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="InventoryAdjustmentService11.xsd"/>
+  <xs:element name="cancelInventoryAdjustment" type="tns:cancelInventoryAdjustment"/>
+  <xs:element name="cancelInventoryAdjustmentResponse" type="tns:cancelInventoryAdjustmentResponse"/>
+  <xs:element name="confirmInventoryAdjustment" type="tns:confirmInventoryAdjustment"/>
+  <xs:element name="confirmInventoryAdjustmentResponse" type="tns:confirmInventoryAdjustmentResponse"/>
+  <xs:element name="lookupInventoryAdjustmentHeader" type="tns:lookupInventoryAdjustmentHeader"/>
+  <xs:element name="lookupInventoryAdjustmentHeaderResponse" type="tns:lookupInventoryAdjustmentHeaderResponse"/>
+  <xs:element name="lookupInventoryAdjustmentReason" type="tns:lookupInventoryAdjustmentReason"/>
+  <xs:element name="lookupInventoryAdjustmentReasonResponse" type="tns:lookupInventoryAdjustmentReasonResponse"/>
+  <xs:element name="lookupInventoryAdjustmentTemplateHeader" type="tns:lookupInventoryAdjustmentTemplateHeader"/>
+  <xs:element name="lookupInventoryAdjustmentTemplateHeaderResponse" type="tns:lookupInventoryAdjustmentTemplateHeaderResponse"/>
+  <xs:element name="lookupNonSellableQuantityType" type="tns:lookupNonSellableQuantityType"/>
+  <xs:element name="lookupNonSellableQuantityTypeResponse" type="tns:lookupNonSellableQuantityTypeResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:element name="readInventoryAdjustmentDetail" type="tns:readInventoryAdjustmentDetail"/>
+  <xs:element name="readInventoryAdjustmentDetailResponse" type="tns:readInventoryAdjustmentDetailResponse"/>
+  <xs:element name="readInventoryAdjustmentTemplateDetail" type="tns:readInventoryAdjustmentTemplateDetail"/>
+  <xs:element name="readInventoryAdjustmentTemplateDetailResponse" type="tns:readInventoryAdjustmentTemplateDetailResponse"/>
+  <xs:element name="saveAndConfirmInventoryAdjustment" type="tns:saveAndConfirmInventoryAdjustment"/>
+  <xs:element name="saveAndConfirmInventoryAdjustmentResponse" type="tns:saveAndConfirmInventoryAdjustmentResponse"/>
+  <xs:element name="saveInventoryAdjustment" type="tns:saveInventoryAdjustment"/>
+  <xs:element name="saveInventoryAdjustmentResponse" type="tns:saveInventoryAdjustmentResponse"/>
+  <xs:complexType name="saveInventoryAdjustment">
+    <xs:sequence>
+      <xs:element ref="ns1:StrAdjModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveInventoryAdjustmentResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:StrAdjRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupNonSellableQuantityType">
+    <xs:sequence>
+      <xs:element ref="ns3:Nothing" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupNonSellableQuantityTypeResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:NslQtyTypColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readInventoryAdjustmentDetail">
+    <xs:sequence>
+      <xs:element ref="ns2:StrAdjRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readInventoryAdjustmentDetailResponse">
+    <xs:sequence>
+      <xs:element ref="ns5:StrAdjDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryAdjustmentReason">
+    <xs:sequence>
+      <xs:element ref="ns3:Nothing" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryAdjustmentReasonResponse">
+    <xs:sequence>
+      <xs:element ref="ns6:StrAdjRsnColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryAdjustmentHeader">
+    <xs:sequence>
+      <xs:element ref="ns7:StrAdjHdrCriVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryAdjustmentHeaderResponse">
+    <xs:sequence>
+      <xs:element ref="ns8:StrAdjHdrColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readInventoryAdjustmentTemplateDetail">
+    <xs:sequence>
+      <xs:element ref="ns9:StrAdjTplRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readInventoryAdjustmentTemplateDetailResponse">
+    <xs:sequence>
+      <xs:element ref="ns10:StrAdjTplDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveAndConfirmInventoryAdjustment">
+    <xs:sequence>
+      <xs:element ref="ns1:StrAdjModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saveAndConfirmInventoryAdjustmentResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:StrAdjRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryAdjustmentTemplateHeader">
+    <xs:sequence>
+      <xs:element ref="ns11:StrAdjTpHdCriVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryAdjustmentTemplateHeaderResponse">
+    <xs:sequence>
+      <xs:element ref="ns12:StrAdjTpHdColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmInventoryAdjustment">
+    <xs:sequence>
+      <xs:element ref="ns2:StrAdjRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="confirmInventoryAdjustmentResponse">
+    <xs:sequence>
+      <xs:element ref="ns13:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelInventoryAdjustment">
+    <xs:sequence>
+      <xs:element ref="ns2:StrAdjRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelInventoryAdjustmentResponse">
+    <xs:sequence>
+      <xs:element ref="ns13:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,175 @@
+package com.logicinfo.oms.beans;
+//ORPOS
+import com.logicinfo.oms.ejb.OMSUtilSessionEJB;
+import com.logicinfo.oms.ejb.OmsFulfillMatrixExtDetail;
+import com.logicinfo.oms.util.OMSConstants;
+import com.logicinfo.oms.util.OMSUtil;
+
+import java.math.BigDecimal;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Types;
+
+import javax.xml.soap.SOAPException;
+import javax.xml.ws.soap.SOAPFaultException;
+
+import org.apache.log4j.Logger;
+
+public class FindNextfulfillLoc 
+{
+    public FindNextfulfillLoc() 
+    {
+        super();
+    }
+    
+    private final  static Logger log =Logger.getLogger(FindNextfulfillLoc.class.getName());
+    
+    public BigDecimal processFulfillmentMatrixGetCombID(BigDecimal reqId, String itemType, String custCity,
+                                                        String modeOfDelv) throws  SOAPException 
+    {
+        log.info("***Start processFulfillmentMatrixGetCombID***");
+        OMSUtilSessionEJB session =OMSUtil.doLookup();
+        BigDecimal combinationID = null;
+       //Fetching combinationId
+        String deliveryZone = null;
+        String marketPlaceInd = null;
+		String applicationId = "ORPOS";
+		String shipToStore = "N";
+
+        try 
+        {
+            log.info("Finding combination for "+"reqId" + reqId + "itemType" + itemType + "custCity" + custCity + "modeOfDelv" +
+                               modeOfDelv);
+            combinationID = session.getOmsFulfillMatrixExtHeadFindCombination(reqId, itemType, custCity, modeOfDelv, deliveryZone, marketPlaceInd, applicationId, shipToStore);
+            log.info("Comb_id when the city name exists-----"+combinationID);
+        } 
+        catch (Exception e) 
+        {
+            log.error("Combination ID unavailable for the given record , rollbacking");
+            //   omsCustomerOrderBean.rollback();
+            
+            //included the code for CITY_NAME  = "ALL" option
+            try
+            {
+                log.info("Inside the try block for checking the city name 'ALL' option");
+                combinationID = session.getOmsFulfillMatrixExtHeadFindCombination(reqId, itemType, "ALL", modeOfDelv, deliveryZone, marketPlaceInd,applicationId, shipToStore);
+                log.info("Successfully fetched the combination_id when city doesnt exists in first try block-----"+combinationID);
+            }
+            catch(Exception f) 
+            {
+                throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("Combination ID unavailable for the given record"));
+            }        
+            //throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("Combination ID unavailable for the given record"));
+        }
+     //   ProjectUtils.setCombinationID(combinationID);
+        return combinationID;
+    }
+
+    public BigDecimal processFulfillmentMatrixGetCombIDWoCity(BigDecimal reqId, String itemType,
+                                                              String modeOfDelv)  throws 
+            SOAPException
+    {
+        log.info("***Start processFulfillmentMatrixGetCombIDWoCity***");
+        OMSUtilSessionEJB session =OMSUtil.doLookup();
+        BigDecimal combinationID = null;
+        String deliveryZone = null;
+        String marketPlaceInd = null;
+		String applicationId = "ORPOS";
+		String shipToStore = "N";
+
+        try 
+        {
+            log.info("reqId" + reqId + "itemType" + itemType + "modeOfDelv" + modeOfDelv);
+            combinationID = session.getOmsFulfillMatrixExtHeadFindCombinationWoCity(reqId, itemType, modeOfDelv,deliveryZone, marketPlaceInd, applicationId, shipToStore);
+            log.info(combinationID);
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();   
+            // omsCustomerOrderBean.rollback();
+            //Combination ID unavailable for the given record
+            throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("LOC_MTRX_MISSING"));
+        }
+        //   ProjectUtils.setCombinationID(combinationID);
+        return combinationID;
+    }
+
+    public OmsFulfillMatrixExtDetail processFulfillmentMatrix(BigDecimal combinationID,
+                                                              int priority) throws
+            SOAPException
+    {
+        log.info("***Start processFulfillmentMatrixDetail***");
+        OMSUtilSessionEJB session =OMSUtil.doLookup();
+        OmsFulfillMatrixExtDetail detailFindpriority = null;
+
+        try 
+        {
+            while (detailFindpriority == null) 
+            {
+                log.info("Finding detail for combinationID:" + combinationID +"priority"+priority);
+                detailFindpriority =
+                        session.getOmsFulfillMatrixExtDetailFindDetail(combinationID, new BigDecimal(priority));
+                log.info(detailFindpriority.getLocation());
+            }
+        } 
+        catch (Exception e) 
+        {
+            //Next location unavailable for the given record,rollbacking
+            log.error("");
+            e.printStackTrace();
+            //rollbacking orders
+            // omsCustomerOrderBean.rollback();
+            throw new SOAPFaultException(OMSUtil.getInstance().newSoapFault("UNAVL_INV"));//Unable to locate sufficient inventory
+        }
+        return detailFindpriority;
+    }
+    
+    
+    public String findShipmentClassification(String item,BigDecimal store,String shippingClassification) throws SOAPException 
+    {
+        log.info("inside findShipmentClassification method");
+        OMSUtilSessionEJB session = OMSUtil.doLookup();
+        Connection con = null;
+        CallableStatement pstmt = null;
+        int result = 0;
+        String shipClassification="";
+        try 
+        {
+            con= OMSUtil.createDBConnection(OMSConstants.DS_OMS_STRING);
+            BigDecimal channelId= session.getStoreFindChannelId(store);
+            pstmt = con.prepareCall("{?=call OMS_SHIP_CLASSIFICATION(?,?,?)}");
+            
+            pstmt.registerOutParameter(1, Types.VARCHAR);
+            pstmt.setString(2, item);
+            pstmt.setInt(3, channelId.intValue()); 
+            pstmt.setString(4, shippingClassification);
+            pstmt.executeUpdate();
+            shipClassification = pstmt.getString(1);
+         
+           
+            
+        }
+        catch (Exception e)
+        {
+
+            e.printStackTrace();
+        } 
+        finally
+        {
+            try
+            {
+            pstmt.close();
+            con.close();
+
+            } 
+            catch (SQLException e)
+            {
+            e.printStackTrace();
+            }
+    }
+        return shipClassification;
+    }
+
+}

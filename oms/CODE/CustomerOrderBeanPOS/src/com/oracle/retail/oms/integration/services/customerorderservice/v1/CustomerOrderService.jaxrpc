@@ -1,0 +1,672 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebService xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webservice">
+   <list n="CHILD_NODES">
+      <url path="../../../../../../../../../public_html/WEB-INF/wsdl/CustomerOrderService.wsdl"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/ReceiptDtlUin.java"/>
+      <url path="../../../../../integration/base/bo/custorderdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorderpicvo/v1/CustOrderPicVo.java"/>
+      <url path="../../../../../integration/base/bo/paymentcoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/taxlinepkvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/emaildesc/v1/EmailType.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/discntlinertcolvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/taxlinedesc/v1/TaxLineDesc.java"/>
+      <url path="../../../../../integration/base/bo/custordercoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/ReceiptDtl.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/GiftCardTender.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/PrimAddrType.java"/>
+      <url path="../../../../../integration/base/bo/custorditmpkvo/v1/CustOrdItmPkVo.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/InvocationSuccess.java"/>
+      <url path="../../../../../integration/base/bo/paymentcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/promolinedesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/EnumSearchType.java"/>
+      <url path="../../../../../integration/base/bo/taxlinepkcolvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/Nothing.java"/>
+      <url path="../../../../../integration/base/bo/custorditmpkvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/discntlinedesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/taxlinertvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/FulfillLocType.java"/>
+      <url path="../../../../../integration/base/bo/custorddeldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/discntlinepkvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/prcovdlinedesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorderrtncolvo/v1/CustOrderRtnColVo.java"/>
+      <url path="../../../../../integration/base/bo/custorderpicvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custorddelcoldesc/v1/CustOrdDelColDesc.java"/>
+      <url path="../../../../../integration/base/bo/custorddelcoldesc/v1/ObjectFactory.java"/>
+      <url path="CreateCustomerOrder.java"/>
+      <url path="../../../../../integration/base/bo/custorditmrtvo/v1/CustOrdItmRtVo.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/DeliveryDestDtl.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/package-info.java"/>
+      <url path="CreateCustomerOrderResponse.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/AlterationType.java"/>
+      <url path="../../../../../integration/base/bo/custorditmpkvo/v1/NewPricePkItems.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/GiftcardReqType.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/ReceiptDesc.java"/>
+      <url path="../../../../../integration/base/bo/prcovdlinedesc/v1/EnumEntryMethod.java"/>
+      <url path="../../../../../integration/base/bo/custorddeldesc/v1/EnumDeliveryType.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/ItemType.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/CustomerDesc.java"/>
+      <url path="UpdateReceipt.java"/>
+      <url path="../../../../../integration/base/bo/custorderdesc/v1/OrderStatus.java"/>
+      <url path="../../../../../integration/base/bo/taxlinecoldesc/v1/TaxLineColDesc.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/CustomerCri.java"/>
+      <url path="../../../../../integration/base/bo/discntlinedesc/v1/Flag.java"/>
+      <url path="../../../../../integration/services/exception/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/CardType.java"/>
+      <url path="../../../../../integration/base/bo/discntlinedesc/v1/EnumDiscountAcctMethod.java"/>
+      <url path="../../../../../integration/base/bo/promolinedesc/v1/PromoLineDesc.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/DateRange.java"/>
+      <url path="../../../../../integration/base/bo/contactdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/CustOrdItmDesc.java"/>
+      <url path="../../../../../integration/services/exception/v1/IllegalStateWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/CustOrdFulDesc.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/PurchaseOrdTender.java"/>
+      <url path="../../../../../integration/base/bo/taxlinertcolvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/ProductGroup.java"/>
+      <url path="../../../../../integration/services/exception/v1/ValidationWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/custorddeldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/discntlinepkcolvo/v1/package-info.java"/>
+      <url path="ValidationWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/custorderrtnvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/discntlinedesc/v1/EnumDiscountScope.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/GiftCertTender.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/ReceiptCartonDtl.java"/>
+      <url path="../../../../../integration/base/bo/custorderrtnvo/v1/CustOrderRtnVo.java"/>
+      <url path="../../../../../integration/base/bo/custorddelcoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/AddrBookEntry.java"/>
+      <url path="../../../../../integration/base/bo/discntlinertcolvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/taxlinedesc/v1/EnumTaxMode.java"/>
+      <url path="QueryCustomerOrderResponse.java"/>
+      <url path="CancelNewCustomerOrderIdResponse.java"/>
+      <url path="PickupCustomerOrderItems.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/localedesc/v1/ObjectFactory.java"/>
+      <url path="PingResponse.java"/>
+      <url path="Ping.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/CheckTender.java"/>
+      <url path="../../../../../integration/base/bo/localedesc/v1/LocaleDesc.java"/>
+      <url path="../../../../../integration/base/bo/custorditmpkvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/discntlinedesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/MailCheckTender.java"/>
+      <url path="../../../../../integration/base/bo/custorditmcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentcoldesc/v1/PaymentColDesc.java"/>
+      <url path="../../../../../integration/base/bo/custorderrtncolvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/emaildesc/v1/EmailDesc.java"/>
+      <url path="../../../../../integration/base/bo/taxlinertvo/v1/TaxLineRtVo.java"/>
+      <url path="../../../../../integration/base/bo/emaildesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/discntlinepkcolvo/v1/DiscntLinePkColVo.java"/>
+      <url path="../../../../../integration/base/bo/taxlinedesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/discntlinedesc/v1/DiscntLineDesc.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/GiftCardItem.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/CouponType.java"/>
+      <url path="../../../../../integration/base/bo/discntlinecoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/PaymentType.java"/>
+      <url path="../../../../../integration/base/bo/localedesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/taxlinepkcolvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/prcovdlinedesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custordfulcoldesc/v1/CustOrdFulColDesc.java"/>
+      <url path="../../../../../integration/base/bo/taxlinepkvo/v1/Flag.java"/>
+      <url path="../../../../../integration/base/bo/geoaddrdesc/v1/GeoAddrDesc.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/EntryMethod.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/PartialDeliveryInd.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/CustOrderCriVo.java"/>
+      <url path="../../../../../integration/base/bo/custorderrtncolvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/taxlinertcolvo/v1/TaxLineRtColVo.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/DeliveryType.java"/>
+      <url path="../../../../../integration/base/bo/phonedesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/Flag.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/discntlinecoldesc/v1/DiscntLineColDesc.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorditmpkcolvo/v1/CustOrdItmPkColVo.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/OrderRequestor.java"/>
+      <url path="../../../../../integration/base/bo/discntlinertcolvo/v1/DiscntLineRtColVo.java"/>
+      <url path="ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/PersonalIdSwipedFlag.java"/>
+      <url path="../../../../../integration/base/bo/prcovdlinedesc/v1/PrcOvdLineDesc.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/CustomerInfo.java"/>
+      <url path="../../../../../integration/base/bo/taxlinecoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/discntlinedesc/v1/EnumDiscountAssignBasis.java"/>
+      <url path="../../../../../integration/base/bo/contactdesc/v1/ContactDesc.java"/>
+      <url path="../../../../../integration/base/bo/discntlinepkvo/v1/DiscntLinePkVo.java"/>
+      <url path="../../../../../integration/base/bo/discntlinepkvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custorderref/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/taxlinepkcolvo/v1/TaxLinePkColVo.java"/>
+      <url path="../../../../../integration/base/bo/taxlinedesc/v1/EnumTaxModScope.java"/>
+      <url path="RequestNewCustomerOrderId.java"/>
+      <url path="../../../../../integration/base/bo/contactdesc/v1/Emails.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/package-info.java"/>
+      <url path="PickupCustomerOrderItemsResponse.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/CustomerGrpIdLst.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/OrderItemRequestor.java"/>
+      <url path="../../../../../integration/base/bo/custordercoldesc/v1/CustOrderColDesc.java"/>
+      <url path="../../../../../integration/base/bo/custordercolref/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/CreditDebitTender.java"/>
+      <url path="../../../../../integration/base/bo/phonedesc/v1/PhoneType.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/ReceiptOverageUin.java"/>
+      <url path="../../../../../integration/base/bo/taxlinedesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/taxlinertcolvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/taxlinertvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/EcheckConversionCode.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/ShipToFulfillLocFlag.java"/>
+      <url path="CancelNewCustomerOrderId.java"/>
+      <url path="../../../../../integration/base/bo/custorderrtnvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custordfulcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/MaskedCardNumber.java"/>
+      <url path="../../../../../integration/base/bo/custorditmcoldesc/v1/CustOrdItmColDesc.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/CustomerType.java"/>
+      <url path="IllegalArgumentWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/custorditmpkcolvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorditmrtvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/CreditFlag.java"/>
+      <url path="../../../../../integration/base/bo/custorditmpkcolvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/ReceiptPreference.java"/>
+      <url path="../../../../../integration/base/bo/custorddeldesc/v1/CustOrdDelDesc.java"/>
+      <url path="RequestNewCustomerOrderIdResponse.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/State.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/discntlinedesc/v1/EnumDiscountMethod.java"/>
+      <url path="../../../../../integration/base/bo/discntlinertvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custorditmrtcolvo/v1/CustOrdItmRtColVo.java"/>
+      <url path="../../../../../integration/base/bo/custorderref/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/PaymentDesc.java"/>
+      <url path="ReturnCustomerOrderItemsResponse.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/CreditDebitCri.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/StoreCreditTender.java"/>
+      <url path="../../../../../integration/services/exception/v1/ProblemDetailEntry.java"/>
+      <url path="../../../../../integration/base/bo/custorderref/v1/CustOrderRef.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/ReceiptOverage.java"/>
+      <url path="../../../../../integration/base/bo/custorddeldesc/v1/EnumDeliveryLocType.java"/>
+      <url path="../../../../../integration/base/bo/custorditmrtcolvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/OrderCriteria.java"/>
+      <url path="../../../../../integration/base/bo/promolinedesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/discntlinertvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorderdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/EntryMethod.java"/>
+      <url path="../../../../../integration/base/bo/custorderdesc/v1/CustOrderDesc.java"/>
+      <url path="../../../../../integration/base/bo/taxlinecoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/BillingDestDtl.java"/>
+      <url path="UpdateReceiptResponse.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/CouponTender.java"/>
+      <url path="ReturnCustomerOrderItems.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/GenderType.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/AddrBook.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/ObjectFactory.java"/>
+      <url path="package-info.java"/>
+      <url path="../../../../../integration/base/bo/taxlinepkvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custorditmcoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/geoaddrdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/Receipt.java"/>
+      <url path="IllegalStateWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/custordercolref/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorditmrtvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/discntlinertvo/v1/DiscntLineRtVo.java"/>
+      <url path="../../../../../integration/base/bo/emaildesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/IssueLocationType.java"/>
+      <url path="../../../../../integration/base/bo/custorderdesc/v1/InitiateLocType.java"/>
+      <url path="../../../../../integration/base/bo/taxlinedesc/v1/Flag.java"/>
+      <url path="../../../../../integration/base/bo/custorderpicvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/AlterationItem.java"/>
+      <url path="../../../../../integration/base/bo/contactdesc/v1/Phones.java"/>
+      <url path="../../../../../integration/base/bo/taxlinepkvo/v1/TaxLinePkVo.java"/>
+      <url path="../../../../../integration/base/bo/phonedesc/v1/PhoneDesc.java"/>
+      <url path="../../../../../integration/services/exception/v1/BusinessProblemDetail.java"/>
+      <url path="../../../../../integration/base/bo/custordfuldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/AuthorizationMethod.java"/>
+      <url path="QueryCustomerOrder.java"/>
+      <url path="../../../../../integration/base/bo/custorderdesc/v1/GiftReceiptAssigned.java"/>
+      <url path="../../../../../integration/base/bo/receiptdesc/v1/ReceiptOverageDtl.java"/>
+      <url path="../../../../../integration/base/bo/custorditmrtcolvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/services/exception/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/taxlinertvo/v1/Flag.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/AddrType.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/TravelCheckTender.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/EnumSearchLocType.java"/>
+      <url path="../../../../../integration/base/bo/custordercolref/v1/CustOrderColRef.java"/>
+      <url path="../../../../../integration/base/bo/customerdesc/v1/Flag.java"/>
+      <url path="../../../../../integration/base/bo/contactdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/discntlinepkcolvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/phonedesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custordercoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custorditmdesc/v1/Flag.java"/>
+      <url path="../../../../../integration/services/exception/v1/ServiceOpFaultReason.java"/>
+      <url path="../../../../../integration/base/bo/paymentdesc/v1/CertificateType.java"/>
+      <url path="../../../../../integration/base/bo/custordercrivo/v1/EnumRequestOrderItemFlag.java"/>
+      <url path="../../../../../integration/services/exception/v1/IllegalArgumentWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/discntlinecoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/geoaddrdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custordfulcoldesc/v1/package-info.java"/>
+      <url path="CustomerOrderPortTypeImpl.java"/>
+      <url path="../../../../../integration/base/bo/custordcancelitemdetails/v1/CustOrdCancelItemDetails.java"/>
+      <url path="../../../../../integration/base/bo/custordcancelitemdetails/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/custordcancelitemdetails/v1/package-info.java"/>
+      <url path="NewpickupCustomerOrderItemsResponse.java"/>
+      <url path="../../../../../integration/base/bo/custordcancelitemdetailscol/v1/CustOrdCancelItemDetailsCol.java"/>
+      <url path="../../../../../integration/base/bo/custordcancelitemdetailscol/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/custordcancelitemdetailscol/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/pickupcustomerorderitemdetailsref/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/pickupcustomerorderitemdetailsref/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/pickupcustomerorderitemdetailsref/v1/PickupCustomerOrderItemDetailsRef.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="BD_">
+         <hash>
+            <value n="BOUND_PORT_TYPE" v="{http://www.oracle.com/retail/oms/integration/services/CustomerOrderService/v1}CustomerOrderPortType"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+            <value n="NAME" v="{http://www.oracle.com/retail/oms/integration/services/CustomerOrderService/v1}CustomerOrderPortBinding"/>
+            <list n="OP_BINDINGS">
+               <hash>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="CustOrderRef"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://www.oracle.com/retail/integration/base/bo/CustOrderRef/v1"/>
+                  <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.custorderref.v1.CustOrderRef.requestNewCustomerOrderId.com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="return"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="USE_OWNER_TNS"/>
+                  <value n="BOUND_OPERATION" v="void.cancelNewCustomerOrderId.com.oracle.retail.integration.base.bo.custorderref.v1.CustOrderRef"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="return"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="USE_OWNER_TNS"/>
+                  <value n="BOUND_OPERATION" v="void.createCustomerOrder.com.oracle.retail.integration.base.bo.custorderdesc.v1.CustOrderDesc"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="CustOrderColDesc"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://www.oracle.com/retail/integration/base/bo/CustOrderColDesc/v1"/>
+                  <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.custordercoldesc.v1.CustOrderColDesc.queryCustomerOrder.com.oracle.retail.integration.base.bo.custordercrivo.v1.CustOrderCriVo"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="PickupCustomerOrderItemDetailsRef"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://www.oracle.com/retail/integration/base/bo/PickupCustomerOrderItemDetailsRef/v1"/>
+                  <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.pickupcustomerorderitemdetailsref.v1.PickupCustomerOrderItemDetailsRef.pickupCustomerOrderItems.com.oracle.retail.integration.base.bo.custorderpicvo.v1.CustOrderPicVo"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="CustOrderColRef"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://www.oracle.com/retail/integration/base/bo/CustOrderColRef/v1"/>
+                  <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.custordercolref.v1.CustOrderColRef.returnCustomerOrderItems.com.oracle.retail.integration.base.bo.custorderrtncolvo.v1.CustOrderRtnColVo"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="InvocationSuccess"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1"/>
+                  <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.updateReceipt.com.oracle.retail.integration.base.bo.receiptdesc.v1.ReceiptDesc"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="return"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="USE_OWNER_TNS"/>
+                  <value n="BOUND_OPERATION" v="java.lang.String.ping.java.lang.String"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+         </hash>
+      </list>
+      <list n="BINDING_FILES"/>
+      <value n="GENERATE_TOP_DOWN" v="TRUE"/>
+      <value n="GENERATION_OPTION" v="ANNOTATIONS_WSDL"/>
+      <value n="GUID" v="fa07bf63-014c-1000-80b7-c0a8024aa308"/>
+      <value n="LAST_GENERATION_BOTTOM_UP" v="false"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaWebService"/>
+      <list n="PO_">
+         <hash>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+            <value n="NAME" v="CustomerOrderPort"/>
+            <value n="PORT_BINDING_NAME" v="{http://www.oracle.com/retail/oms/integration/services/CustomerOrderService/v1}CustomerOrderPortBinding"/>
+            <list n="PORT_OPS">
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.custorderref.v1.CustOrderRef.requestNewCustomerOrderId.com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="void.cancelNewCustomerOrderId.com.oracle.retail.integration.base.bo.custorderref.v1.CustOrderRef"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="void.createCustomerOrder.com.oracle.retail.integration.base.bo.custorderdesc.v1.CustOrderDesc"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.custordercoldesc.v1.CustOrderColDesc.queryCustomerOrder.com.oracle.retail.integration.base.bo.custordercrivo.v1.CustOrderCriVo"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.pickupcustomerorderitemdetailsref.v1.PickupCustomerOrderItemDetailsRef.pickupCustomerOrderItems.com.oracle.retail.integration.base.bo.custorderpicvo.v1.CustOrderPicVo"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.custordercolref.v1.CustOrderColRef.returnCustomerOrderItems.com.oracle.retail.integration.base.bo.custorderrtncolvo.v1.CustOrderRtnColVo"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.updateReceipt.com.oracle.retail.integration.base.bo.receiptdesc.v1.ReceiptDesc"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="java.lang.String.ping.java.lang.String"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="URL" protocol="http" host="localhost" port="7101" path="/CustomerOrderBean/CustomerOrderService"/>
+         </hash>
+      </list>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="com.oracle.retail.oms.integration.services.customerorderservice.v1"/>
+         </hash>
+      </hash>
+      <list n="PT_">
+         <hash>
+            <value n="AUTO_SERVICE_INTERFACE"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+            <value n="NAME" v="{http://www.oracle.com/retail/oms/integration/services/CustomerOrderService/v1}CustomerOrderPortType"/>
+            <list n="OP_">
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="requestNewCustomerOrderId"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="nothing"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="Nothing"/>
+                        <value n="TARGET_NAMESPACE" v="http://www.oracle.com/retail/integration/base/bo/Nothing/v1"/>
+                        <value n="TYPE" v="com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="com.oracle.retail.integration.base.bo.custorderref.v1.CustOrderRef"/>
+                  <value n="OP_NAME" v="requestNewCustomerOrderId"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="cancelNewCustomerOrderId"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="custOrderRef"/>
+                        <value n="PA_MODE" v="2"/>
+                        <value n="PA_WSDL_NAME" v="CustOrderRef"/>
+                        <value n="TARGET_NAMESPACE" v="http://www.oracle.com/retail/integration/base/bo/CustOrderRef/v1"/>
+                        <value n="TYPE" v="javax.xml.ws.Holder&lt;com.oracle.retail.integration.base.bo.custorderref.v1.CustOrderRef>"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="void"/>
+                  <value n="OP_NAME" v="cancelNewCustomerOrderId"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.ValidationWSFaultException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="createCustomerOrder"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="custOrderDesc"/>
+                        <value n="PA_MODE" v="2"/>
+                        <value n="PA_WSDL_NAME" v="CustOrderDesc"/>
+                        <value n="TARGET_NAMESPACE" v="http://www.oracle.com/retail/integration/base/bo/CustOrderDesc/v1"/>
+                        <value n="TYPE" v="javax.xml.ws.Holder&lt;com.oracle.retail.integration.base.bo.custorderdesc.v1.CustOrderDesc>"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="void"/>
+                  <value n="OP_NAME" v="createCustomerOrder"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="queryCustomerOrder"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="custOrderCriVo"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="CustOrderCriVo"/>
+                        <value n="TARGET_NAMESPACE" v="http://www.oracle.com/retail/integration/base/bo/CustOrderCriVo/v1"/>
+                        <value n="TYPE" v="com.oracle.retail.integration.base.bo.custordercrivo.v1.CustOrderCriVo"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="com.oracle.retail.integration.base.bo.custordercoldesc.v1.CustOrderColDesc"/>
+                  <value n="OP_NAME" v="queryCustomerOrder"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.fulfillmentorderreversepickservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.fulfillmentorderreversepickservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.sim.integration.services.fulfillmentorderreversepickservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.EntityAlreadyExistsWSFaultException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="pickupCustomerOrderItems"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="custOrderPicVo"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="CustOrderPicVo"/>
+                        <value n="TARGET_NAMESPACE" v="http://www.oracle.com/retail/integration/base/bo/CustOrderPicVo/v1"/>
+                        <value n="TYPE" v="com.oracle.retail.integration.base.bo.custorderpicvo.v1.CustOrderPicVo"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="com.oracle.retail.integration.base.bo.pickupcustomerorderitemdetailsref.v1.PickupCustomerOrderItemDetailsRef"/>
+                  <value n="OP_NAME" v="pickupCustomerOrderItems"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="javax.xml.soap.SOAPException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="returnCustomerOrderItems"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="custOrderRtnColVo"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="CustOrderRtnColVo"/>
+                        <value n="TARGET_NAMESPACE" v="http://www.oracle.com/retail/integration/base/bo/CustOrderRtnColVo/v1"/>
+                        <value n="TYPE" v="com.oracle.retail.integration.base.bo.custorderrtncolvo.v1.CustOrderRtnColVo"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="com.oracle.retail.integration.base.bo.custordercolref.v1.CustOrderColRef"/>
+                  <value n="OP_NAME" v="returnCustomerOrderItems"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalStateWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.ValidationWSFaultException"/>
+                     <string v="com.oracle.retail.oms.integration.services.customerorderservice.v1.IllegalArgumentWSFaultException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="updateReceipt"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="receiptDesc"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="ReceiptDesc"/>
+                        <value n="TARGET_NAMESPACE" v="http://www.oracle.com/retail/integration/base/bo/ReceiptDesc/v1"/>
+                        <value n="TYPE" v="com.oracle.retail.integration.base.bo.receiptdesc.v1.ReceiptDesc"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess"/>
+                  <value n="OP_NAME" v="updateReceipt"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <value n="OP_JAVA_NAME" v="ping"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="arg0"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="arg0"/>
+                        <value n="TARGET_NAMESPACE" v="USE_OWNER_TNS"/>
+                        <value n="TYPE" v="java.lang.String"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="java.lang.String"/>
+                  <value n="OP_NAME" v="ping"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <value n="PT_CLASS" v="com.oracle.retail.oms.integration.services.customerorderservice.v1.CustomerOrderPortTypeImpl"/>
+            <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="com.oracle.retail.oms.integration.services.customerorderservice.v1.CustomerOrderPortType"/>
+         </hash>
+      </list>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <url n="TARGET_PROJECT" path="../../../../../../../../../CustomerOrderService.jpr"/>
+      <value n="TOPDOWN_GENERATION_OPTION" v="JAVA"/>
+      <list n="WS_DEPENDENT_VALUE_TYPES"/>
+      <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+      <url n="WS_REFERENCE_WSDL" path="../../../../../../../../../public_html/WEB-INF/wsdl/CustomerOrderService.wsdl"/>
+      <value n="WS_TARGET_NAMESPACE" v="http://www.oracle.com/retail/oms/integration/services/CustomerOrderService/v1"/>
+      <value n="WS_URI" v="CustomerOrderService"/>
+      <url n="WS_WSDL_FILE" path="../../../../../../../../../public_html/WEB-INF/wsdl/CustomerOrderService.wsdl"/>
+      <value n="WS_WSDL_LOC_ON_SEI" v="false"/>
+      <value n="WS_WSDL_LOC_VALUE" v="/WEB-INF/wsdl/CustomerOrderService.wsdl"/>
+   </hash>
+</jdevws:WebService>

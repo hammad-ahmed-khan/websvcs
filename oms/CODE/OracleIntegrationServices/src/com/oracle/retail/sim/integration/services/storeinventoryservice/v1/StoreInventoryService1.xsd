@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1" xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/StrInvCriVo/v1" xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/InvAvailColDesc/v1" xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/StrInvColDesc/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/StrInvGpCriVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrInvGpCriVo/v1" schemaLocation="StoreInventoryService3.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrInvColDesc/v1" schemaLocation="StoreInventoryService6.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1" schemaLocation="StoreInventoryService8.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvAvailColDesc/v1" schemaLocation="StoreInventoryService9.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrInvCriVo/v1" schemaLocation="StoreInventoryService5.xsd"/>
+  <xs:element name="lookupAvailableInventory" type="tns:lookupAvailableInventory"/>
+  <xs:element name="lookupAvailableInventoryResponse" type="tns:lookupAvailableInventoryResponse"/>
+  <xs:element name="lookupInventoryForBuddyStores" type="tns:lookupInventoryForBuddyStores"/>
+  <xs:element name="lookupInventoryForBuddyStoresResponse" type="tns:lookupInventoryForBuddyStoresResponse"/>
+  <xs:element name="lookupInventoryInStore" type="tns:lookupInventoryInStore"/>
+  <xs:element name="lookupInventoryInStoreResponse" type="tns:lookupInventoryInStoreResponse"/>
+  <xs:element name="lookupInventoryInTransferZone" type="tns:lookupInventoryInTransferZone"/>
+  <xs:element name="lookupInventoryInTransferZoneResponse" type="tns:lookupInventoryInTransferZoneResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:complexType name="lookupInventoryInTransferZone">
+    <xs:sequence>
+      <xs:element ref="ns1:StrInvGpCriVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryInTransferZoneResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:StrInvColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupAvailableInventory">
+    <xs:sequence>
+      <xs:element ref="ns3:InvAvailCriVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupAvailableInventoryResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:InvAvailColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryForBuddyStores">
+    <xs:sequence>
+      <xs:element ref="ns1:StrInvGpCriVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryForBuddyStoresResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:StrInvColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryInStore">
+    <xs:sequence>
+      <xs:element ref="ns5:StrInvCriVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupInventoryInStoreResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:StrInvColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

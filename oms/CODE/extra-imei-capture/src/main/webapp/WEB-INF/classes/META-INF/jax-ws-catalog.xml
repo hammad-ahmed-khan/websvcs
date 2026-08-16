@@ -1,0 +1,14 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://licrpap14-extra.logicindia.com:17040/FulfillOrderBean/FulfillOrderService?WSDL#%7Bhttp%3A%2F%2Fwww.oracle.com%2Fretail%2Frms%2Fintegration%2Fservices%2FFulfillOrderService%2Fv1%7DFulfillOrderService"
+          uri="../com/oracle/retail/rms/integration/services/fulfillorderservice/v1/FulfillOrderService.wsdl"/>
+  <system systemId="http://licrpap14-extra.logicindia.com:17019/StoreFulfillmentOrderBean/StoreFulfillmentOrderService?WSDL#%7Bhttp%3A%2F%2Fwww.oracle.com%2Fretail%2Fsim%2Fintegration%2Fservices%2FStoreFulfillmentOrderService%2Fv1%7DStoreFulfillmentOrderService"
+          uri="../com/oracle/retail/sim/integration/services/storefulfillmentorderservice/v1/StoreFulfillmentOrderService.wsdl"/>
+  <system systemId="http://www.example.com#%7Bhttp%3A%2F%2Fretail.seibel.com%2Fintegration%2F%7DNewCustomerOrderWebserivce?wsdl"
+          uri="../com/seibel/retail/integration/NewCustomerOrderWebserivce.wsdl"/>
+  <system systemId="http://www.example.com#%7Bhttp%3A%2F%2Fcom.siebel.retail%2Fintegration%2F%7DSiebelPublishWebservice?wsdl"
+          uri="../retail/siebel/com/integration/SiebelPublishWebservice.wsdl"/>
+  <system systemId="http://licrpap14-extra.logicindia.com:17019/InventoryAdjustmentBean/InventoryAdjustmentService?WSDL#%7Bhttp%3A%2F%2Fwww.oracle.com%2Fretail%2Fsim%2Fintegration%2Fservices%2FInventoryAdjustmentService%2Fv1%7DInventoryAdjustmentService"
+          uri="../com/oracle/retail/sim/integration/services/inventoryadjustmentservice/v1/InventoryAdjustmentService.wsdl"/>
+  <system systemId="http://licrpap14-extra.logicindia.com:17019/StoreInventoryBean/StoreInventoryService?WSDL#%7Bhttp%3A%2F%2Fwww.oracle.com%2Fretail%2Fsim%2Fintegration%2Fservices%2FStoreInventoryService%2Fv1%7DStoreInventoryService"
+          uri="../com/oracle/retail/sim/integration/services/storeinventoryservice/v1/StoreInventoryService.wsdl"/>
+</catalog>

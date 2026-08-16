@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace="http://com.logicinfo.oms/model/" name="SIMDeliveryDetail" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com.logicinfo.oms/model/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="SIMDeliveryDetail.xsd" namespace="http://com.logicinfo.oms/model/"/>
+    </xsd:schema>
+  </types>
+  <message name="processNewOrder">
+    <part name="input" element="tns:processOrderReq"/>
+  </message>
+  <message name="processNewOrderResponse">
+    <part name="return" element="tns:processOrderResp"/>
+  </message>
+  <portType name="SIMDeliveryDetailWebService">
+    <operation name="processNewOrder">
+      <input message="tns:processNewOrder"/>
+      <output message="tns:processNewOrderResponse"/>
+    </operation>
+  </portType>
+  <binding name="SIMDeliveryDetailWebServicePortBinding" type="tns:SIMDeliveryDetailWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="processNewOrder">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SIMDeliveryDetailWebService">
+    <port name="SIMDeliveryDetailWebService" binding="tns:SIMDeliveryDetailWebServicePortBinding">
+      <soap:address location="http://localhost:7101/CustomerOrderServiceApplication-SIMDetails-context-root/SIMDeliveryDetailWebServiceImplService"/>
+    </port>
+  </service>
+</definitions>

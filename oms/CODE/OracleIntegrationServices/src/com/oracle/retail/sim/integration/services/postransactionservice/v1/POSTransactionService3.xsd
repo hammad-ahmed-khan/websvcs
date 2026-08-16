@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/PosTrnDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/PosTrnDesc/v1">
+  <xs:element name="PosTrnDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="store_id" type="xs:long"/>
+        <xs:element name="transaction_id" type="xs:string"/>
+        <xs:element name="transaction_timestamp" type="xs:dateTime"/>
+        <xs:element name="cust_order_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="cust_order_comment" type="xs:string" minOccurs="0"/>
+        <xs:element ref="tns:PosTrnItm" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PosTrnItm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="item_id" type="xs:string"/>
+        <xs:element name="quantity" type="xs:decimal"/>
+        <xs:element name="unit_of_measure" type="xs:string"/>
+        <xs:element name="uin" type="xs:string" minOccurs="0"/>
+        <xs:element name="reason_code" type="xs:int" minOccurs="0"/>
+        <xs:element name="drop_ship" type="xs:boolean"/>
+        <xs:element name="comments" type="xs:string" minOccurs="0"/>
+        <xs:element name="fulfill_order_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="reservation_type" type="tns:PosTrnOrdResvType"/>
+        <xs:element name="transaction_code" type="tns:PosTrnItmTranCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="PosTrnOrdResvType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WEB_ORDER"/>
+      <xs:enumeration value="SPECIAL_ORDER"/>
+      <xs:enumeration value="PICKUP_OR_DELIVERY"/>
+      <xs:enumeration value="LAYAWAY"/>
+      <xs:enumeration value="NO_VALUE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PosTrnItmTranCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SALE"/>
+      <xs:enumeration value="RETURN"/>
+      <xs:enumeration value="VOID_SALE"/>
+      <xs:enumeration value="VOID_RETURN"/>
+      <xs:enumeration value="ORDER_NEW"/>
+      <xs:enumeration value="ORDER_FULFILL"/>
+      <xs:enumeration value="ORDER_CANCEL"/>
+      <xs:enumeration value="ORDER_CANCEL_FULFILL"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

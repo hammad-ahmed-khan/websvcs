@@ -1,0 +1,93 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="searchForm" #form="ngForm" (ngSubmit)="searchInvoices()">
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <label>From Date</label>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" readonly bsDatepicker formControlName="fromDate" #fromDate="bsDatepicker">
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-primary" (click)="fromDate.show()"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <label>To Date</label>
+                    </div>
+                    <div class="col-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" readonly bsDatepicker formControlName="toDate" #toDate="bsDatepicker">
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-primary" (click)="toDate.show()"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <label>Invoice#</label>
+                    </div>
+                    <div class="col-3">
+                        <input type="text" class="form-control" formControlName="invoiceNumber" [ngClass]="{'is-invalid': form.submitted && searchForm.hasError('anyField')}"/>
+                    </div>
+                    <div class="col-3">
+                        <label>Status</label>
+                    </div>
+                    <div class="col-3">
+                        <select formControlName="status" class="form-control">
+                            <option value="">All</option>
+                            <option value="N">Pending</option>
+                            <option value="Y">Cleared</option>
+                            <option value="F">Failed</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row mt-2">
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary mr-2">Search</button>
+                        <button type="reset" class="btn btn-warning mr-2">Reset</button>
+                    </div>
+                </div>
+            </form>
+            <div class="mt-3 overflow-auto">
+                <table style="min-height: 200px;" class="table table-responsive table-striped filter" [mfData]="invoices" #mf="mfDataTable" [mfRowsOnPage]="10">
+                    <thead>
+                        <tr>
+                            <th>Tran Seq No</th>
+                            <th>Invoice Number</th>
+                            <th style="min-width: 150px;">Invoice Date</th>
+                            <th style="min-height: 150px;">Process Date & Time</th>
+                            <th>Status</th>
+                            <th>Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of mf.data">
+                            <td>{{ i.invoiceId }}</td>
+                            <td>{{ i.invoiceNumber }}</td>
+                            <td>{{ i.businessDate | mdate }}</td>
+                            <td>{{ i.processDateTime | mdate }}</td>
+                            <td>
+                                <span class="badge" [ngClass]="{'badge-success': i.status == 'Y', 'badge-danger': i.status == 'F', 'badge-primary': i.status == 'N'}">{{ (i.status == 'F' ? 'Failed' : (i.status == 'Y' ? 'Success' : 'Pending')) }}</span>
+                            </td>
+                            <td>
+                                <a *ngIf="i.status == 'F'" href="javascript:void();" ><i class="fa fa-info-circle" style="font-size: 1.5em;" tooltip="{{i.message}}" placement="left" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="13">
+                                <mfBootstrapPaginator [rowsOnPageSet]="[10,25,50,75,100]"></mfBootstrapPaginator>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table> 
+            </div>
+        </div>
+    </div>
+</div>

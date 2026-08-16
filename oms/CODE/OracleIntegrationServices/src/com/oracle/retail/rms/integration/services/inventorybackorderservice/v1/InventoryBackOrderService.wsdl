@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.oracle.com/retail/rms/integration/services/InventoryBackOrderService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.oracle.com/retail/rms/integration/services/InventoryBackOrderService/v1" name="InventoryBackOrderService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/rms/integration/services/InventoryBackOrderService/v1" schemaLocation="InventoryBackOrderService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1" schemaLocation="InventoryBackOrderService2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="InventoryBackOrderService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvBackOrdDesc/v1" schemaLocation="InventoryBackOrderService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvBackOrdColDesc/v1" schemaLocation="InventoryBackOrderService5.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="createInvBackOrdColDesc">
+    <part name="parameters" element="tns:createInvBackOrdColDesc"/>
+  </message>
+  <message name="createInvBackOrdColDescResponse">
+    <part name="parameters" element="tns:createInvBackOrdColDescResponse"/>
+  </message>
+  <message name="IllegalArgumentWSFaultException">
+    <part xmlns:ns1="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns1:IllegalArgumentWSFaultException"/>
+  </message>
+  <message name="EntityAlreadyExistsWSFaultException">
+    <part xmlns:ns2="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns2:EntityAlreadyExistsWSFaultException"/>
+  </message>
+  <message name="IllegalStateWSFaultException">
+    <part xmlns:ns3="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns3:IllegalStateWSFaultException"/>
+  </message>
+  <message name="ValidationWSFaultException">
+    <part xmlns:ns4="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns4:ValidationWSFaultException"/>
+  </message>
+  <message name="ping">
+    <part name="parameters" element="tns:ping"/>
+  </message>
+  <message name="pingResponse">
+    <part name="parameters" element="tns:pingResponse"/>
+  </message>
+  <portType name="InventoryBackOrderPortType">
+    <operation name="createInvBackOrdColDesc">
+      <input wsaw:Action="http://www.oracle.com/retail/rms/integration/services/InventoryBackOrderService/v1/InventoryBackOrderPortType/createInvBackOrdColDescRequest" message="tns:createInvBackOrdColDesc"/>
+      <output message="tns:createInvBackOrdColDescResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:EntityAlreadyExistsWSFaultException" name="EntityAlreadyExistsWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+    </operation>
+    <operation name="ping">
+      <input wsaw:Action="http://www.oracle.com/retail/rms/integration/services/InventoryBackOrderService/v1/InventoryBackOrderPortType/pingRequest" message="tns:ping"/>
+      <output message="tns:pingResponse"/>
+    </operation>
+  </portType>
+  <binding name="InventoryBackOrderPortBinding" type="tns:InventoryBackOrderPortType">
+    <wsaw:UsingAddressing/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="createInvBackOrdColDesc">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="EntityAlreadyExistsWSFaultException">
+        <soap:fault name="EntityAlreadyExistsWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ping">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="InventoryBackOrderService">
+    <port name="InventoryBackOrderPort" binding="tns:InventoryBackOrderPortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:17040/InventoryBackOrderBean/InventoryBackOrderService"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/InboundordercreationbpelprocessClientEp.xml"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/CustomerOrderHeaderLevelResponse.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/ItemLevelDetails.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/FulfillmentDetails.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/SiebelOrderFeedWebservice.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/package-info.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/CustomerOrderHeaderLevel.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/InboundordercreationbpelprocessClientEp.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/ObjectFactory.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/CustomerDetails.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/TenderDetails.java"/>
+      <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/SiebelOrderFeedWebservice_ptClient.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="BINDING_FILES">
+         <url path="../../../../../../binding.xml"/>
+      </list>
+      <list n="LOCAL_FILES">
+         <url path="inboundordercreationbpelprocess_client_ep-binding/binding.xml"/>
+      </list>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/InboundordercreationbpelprocessClientEp.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_NONE"/>
+      <list n="PROXY_CLIENTS">
+         <url path="../../../../../../OracleIntegrationServices/src/retail/siebel/com/integration/SiebelOrderFeedWebservice_ptClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" protocol="http" host="ex-uat-mw1.extrastores.com" port="8001" path="/soa-infra/services/IBT_Development/OMSToSiebelOrderCreation/inboundordercreationbpelprocess_client_ep" query="WSDL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="SiebelOrderFeedWebservice_pt">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="retail.siebel.com.integration.SiebelOrderFeedWebservice"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="SiebelOrderFeedWebservice_pt"/>
+            <hash n="OPERATIONS">
+               <hash n="publishToSiebel">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="ex-uat-mw1.extrastores.com" port="8001" path="/soa-infra/services/IBT_Development/OMSToSiebelOrderCreation/inboundordercreationbpelprocess_client_ep"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="inboundordercreationbpelprocess_client_ep"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://com.siebel.retail/integration/"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../../PaymentConfirmation.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="inboundordercreationbpelprocess_client_epSiebelOrderFeedWebservice.wsdl"/>
+         <url path="inboundordercreationbpelprocess_client_epRuntimeFault.wsdl"/>
+         <url path="SiebelOrderFeed.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="inboundordercreationbpelprocess_client_ep.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://com.siebel.retail/integration/}SiebelOrderFeedWebservice"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://com.siebel.retail/integration/}SiebelOrderFeedWebserviceBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="retail.siebel.com.integration.CustomerOrderHeaderLevelResponse.publishToSiebel.retail.siebel.com.integration.CustomerOrderHeaderLevel"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES">
+            <url path="../../../../../../binding.xml"/>
+         </list>
+         <value n="GUID" v="9d93d6b9-0153-1000-8012-c0a802878a4e"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="SiebelOrderFeedWebservice_pt"/>
+               <value n="PORT_BINDING_NAME" v="{http://com.siebel.retail/integration/}SiebelOrderFeedWebserviceBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="retail.siebel.com.integration.CustomerOrderHeaderLevelResponse.publishToSiebel.retail.siebel.com.integration.CustomerOrderHeaderLevel"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="ex-uat-mw1.extrastores.com" port="8001" path="/soa-infra/services/IBT_Development/OMSToSiebelOrderCreation/inboundordercreationbpelprocess_client_ep"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://com.siebel.retail/integration/}SiebelOrderFeedWebservice"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="retail.siebel.com.integration.SiebelOrderFeedWebserviceImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="retail.siebel.com.integration.SiebelOrderFeedWebservice"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="retail.siebel.com.integration.SiebelOrderFeedWebservice"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../../PaymentConfirmation.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://com.siebel.retail/integration/"/>
+         <value n="WS_URI" v="inboundordercreationbpelprocess_client_ep"/>
+         <url n="WS_WSDL_FILE" path="inboundordercreationbpelprocess_client_ep.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

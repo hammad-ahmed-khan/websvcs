@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="http://com.logicinfo.oms/model/" name="RMAModifyWebService" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://com.logicinfo.oms/model/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://com.logicinfo.oms/model/" schemaLocation="OMSRMAModify.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="modifyRMA">
+    <part name="input" element="tns:ModifyRMA"/>
+  </message>
+  
+  <message name="modifyRMAResponse">
+    <part name="return" element="tns:ModifyRMAResponse"/>
+  </message>
+  <portType name="RMAModifyWebService">
+    <operation name="modifyRMA">
+      <input message="tns:modifyRMA"/>
+      <output message="tns:modifyRMAResponse"/>
+     
+    </operation>
+  </portType>
+  <binding name="OMSRMAModifyWebServiceBinding" type="tns:RMAModifyWebService">
+    <soap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" style="document"/>
+    <operation name="modifyRMA">
+      <soap12:operation soapAction=""/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+     
+    </operation>
+  </binding>
+  <service name="OMSRMAModifyWebService">
+    <port name="OMSRMAModifyWebService" binding="tns:OMSRMAModifyWebServiceBinding">
+      <soap12:address location=""/>
+    </port>
+  </service>
+</definitions>

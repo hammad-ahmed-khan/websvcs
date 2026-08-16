@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://com.siebel.retail/integration/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://com.siebel.retail/integration/" elementFormDefault="qualified">
+  <xs:element name="SiebelStatusUpdateInfo" type="tns:SiebelStatusUpdate"/>
+  <xs:element name="SiebelStatusUpdateResponse" type="tns:SiebelStatusUpdateResponse"/>
+  <xs:complexType name="SiebelStatusUpdate">
+    <xs:sequence>
+      <xs:element name="cust_order_no" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="48"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="sub_cust_order_no" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="cust_id" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="consumer_dly_time" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="close_datetime" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="cancel_datetime" type="xs:dateTime" nillable="true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CustomerOrderStatusUpdateDetails" type="tns:SiebelStatusUpdateDetails" nillable="true" minOccurs="1" maxOccurs="100"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SiebelStatusUpdateDetails">
+    <xs:sequence>
+      <xs:element name="item" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="25"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="line_no" minOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:unsignedInt"/>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="qty" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="12"/>
+            <xs:fractionDigits value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="event_id" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="event_comments" minOccurs="1" maxOccurs="1" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="200"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="oms_dlv_conf_id" minOccurs="0" maxOccurs="1" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:unsignedInt">
+            <!--  <xs:maxLength value="20"/>     -->
+            
+            
+            
+          
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="oms_cancel_id" minOccurs="0" maxOccurs="1" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:unsignedInt">
+            <!-- <xs:maxLength value="12"/>   -->
+            
+            
+            
+            
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="source_loc_type" minOccurs="0" maxOccurs="1" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="source_loc" minOccurs="0" maxOccurs="1" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:unsignedInt">
+            <!-- <xs:maxLength value="10"/>  -->
+            
+            
+            
+            
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="fulfill_loc_type" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:unsignedInt">
+            <!--  <xs:maxLength value="1"/>    -->
+            
+            
+            
+           
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="fulfill_loc" minOccurs="1" maxOccurs="1" nillable="false">
+        <xs:simpleType>
+          <xs:restriction base="xs:unsignedInt">
+            <!-- <xs:maxLength value="10"/>   -->
+            
+            
+            
+            
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="update_datetime" type="xs:dateTime" nillable="false" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SiebelStatusUpdateResponse">
+    <xs:sequence>
+      <xs:element name="message" nillable="true" minOccurs="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

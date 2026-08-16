@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>oms-customerorder</artifactId>
+	<name>OMSCustomerOrder</name>
+	<url>http://maven.apache.org</url>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>com.extra</groupId>
+		<artifactId>oms-parent</artifactId>
+		<version>0.0.1</version>
+		<relativePath>../oms-parent/pom.xml</relativePath>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.extra</groupId>
+			<artifactId>oms-util</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>OMSCustomerOrder</finalName>
+		<sourceDirectory>${project.basedir}/src</sourceDirectory>
+		<testSourceDirectory>${project.basedir}/test</testSourceDirectory>
+	</build>
+</project>

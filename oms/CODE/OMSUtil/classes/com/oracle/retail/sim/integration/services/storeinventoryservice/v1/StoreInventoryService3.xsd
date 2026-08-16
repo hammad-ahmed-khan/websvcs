@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StrInvGpCriVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StrInvGpCriVo/v1">
+  <xs:element name="StrInvGpCriVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="item_id_col" type="xs:string" maxOccurs="unbounded"/>
+        <xs:element name="store_id" type="xs:long"/>
+        <xs:element name="uom_type" type="tns:StrInvUomType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="StrInvUomType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="STANDARD"/>
+      <xs:enumeration value="SELLING"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

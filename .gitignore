@@ -1,0 +1,19 @@
+# Compiled Java classes
+*.class
+
+# Build directories
+target/
+build/
+out/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db

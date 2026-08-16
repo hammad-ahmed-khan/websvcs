@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>extra.retail</groupId>
+	<artifactId>extra-sim</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+
+	<name>extra-sim</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+
+	<modules>
+		<module>../extra-sim-common</module>
+		<module>../extra-sim-ejb</module>
+		<module>../extra-sim-server</module>
+		<module>../extra-sim-client</module>
+	</modules>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+							<target>
+								<copy
+									file="../extra-sim-common/target/extra-sim-common-0.0.1.jar"
+									tofile="./target/extra-sim-common-0.0.1.jar" />
+								<copy
+									file="../extra-sim-common/target/extra-sim-common-0.0.1.jar"
+									tofile="./target/sign/extra-sim-common-0.0.1.jar" />
+								<copy
+									file="../extra-sim-ejb/target/extra-sim-ejb-0.0.1.jar"
+									tofile="./target/extra-sim-ejb-0.0.1.jar" />
+								<copy
+									file="../extra-sim-client/target/extra-sim-client-0.0.1.jar"
+									tofile="./target/extra-sim-client-0.0.1.jar" />
+								<copy
+									file="../extra-sim-client/target/extra-sim-client-0.0.1.jar"
+									tofile="./target/sign/extra-sim-client-0.0.1.jar" />
+								<copy
+									file="../extra-sim-server/target/extra-sim-server-0.0.1.jar"
+									tofile="./target/extra-sim-server-0.0.1.jar" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jarsigner-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>install</id>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<archiveDirectory>./target/sign</archiveDirectory>
+					<includes>
+						<include>extra-sim-client-0.0.1.jar</include>
+					</includes>
+					<keystore>${project.basedir}/src/main/resources/ex-keystore.jks</keystore>
+					<alias>extra</alias>
+					<storepass>extra@123</storepass>
+					<keypass>extra@123</keypass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StsTsfShpModVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StsTsfShpModVo/v1">
+  <xs:element name="StsTsfBolMod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bill_of_lading_motive_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="requested_pickup_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="carrier_role" type="tns:sts_tsf_mod_carrier_role"/>
+        <xs:element name="carrier_code" type="xs:string" minOccurs="0"/>
+        <xs:element name="carrier_service_code" type="xs:string" minOccurs="0"/>
+        <xs:element name="carrier_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="carrier_address" type="xs:string" minOccurs="0"/>
+        <xs:element name="carton_type_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="package_weight" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="package_weight_uom" type="xs:string" minOccurs="0"/>
+        <xs:element name="alternate_ship_to_address" type="xs:string" minOccurs="0"/>
+        <xs:element name="tracking_number" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StsTsfShpItmMod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="line_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="item_id" type="xs:string"/>
+        <xs:element name="case_size" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="transfer_quantity" type="xs:decimal"/>
+        <xs:element name="added_uin_col" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="removed_uin_col" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StsTsfShpModVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transfer_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="sending_store_id" type="xs:long"/>
+        <xs:element name="receiving_store_id" type="xs:long"/>
+        <xs:element name="external_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="comments" type="xs:string" minOccurs="0"/>
+        <xs:element name="context_type_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="context_value" type="xs:string" minOccurs="0"/>
+        <xs:element ref="tns:StsTsfBolMod" minOccurs="0"/>
+        <xs:element ref="tns:StsTsfShpItmMod" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="removed_line_id_col" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="sts_tsf_mod_carrier_role">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="THIRD_PARTY"/>
+      <xs:enumeration value="SENDER"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

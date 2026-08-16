@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">51f96cd8-1bd7-44b7-b46c-a2dbfc3fee0c</identifier>
+  </ID>
+  <name>RMS14</name>
+</schema>

@@ -1,0 +1,63 @@
+
+package com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+import com.oracle.retail.integration.base.bo.stradjmodvo.v1.StrAdjModVo;
+
+
+/**
+ * <p>Java class for saveInventoryAdjustment complex type.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType name="saveInventoryAdjustment">
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element ref="{http://www.oracle.com/retail/integration/base/bo/StrAdjModVo/v1}StrAdjModVo" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "saveInventoryAdjustment", propOrder = {
+    "strAdjModVo"
+})
+public class SaveInventoryAdjustment {
+
+    @XmlElement(name = "StrAdjModVo", namespace = "http://www.oracle.com/retail/integration/base/bo/StrAdjModVo/v1")
+    protected StrAdjModVo strAdjModVo;
+
+    /**
+     * Gets the value of the strAdjModVo property.
+     *
+     * @return
+     * possible object is
+     * {@link .com.oracle.retail.integration.base.bo.stradjmodvo.v1.StrAdjModVo}
+     *
+     */
+    public StrAdjModVo getStrAdjModVo() {
+        return strAdjModVo;
+    }
+
+    /**
+     * Sets the value of the strAdjModVo property.
+     *
+     * @param value
+     * allowed object is
+     * {@link .com.oracle.retail.integration.base.bo.stradjmodvo.v1.StrAdjModVo}
+     *
+     */
+    public void setStrAdjModVo(StrAdjModVo value) {
+        this.strAdjModVo = value;
+    }
+
+}

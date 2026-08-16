@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/PendRtrnRef/v1">
+  <xs:element name="PendRtrnRef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="physical_wh" type="xs:long"/>
+        <xs:element name="rma_nbr" type="xs:string" minOccurs="0"/>
+        <xs:element name="line_item_nbr" type="xs:long"/>
+        <xs:element name="reason_code" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

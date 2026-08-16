@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://com.logicinfo.oms/model/"
+            targetNamespace="http://com.logicinfo.oms/model/" elementFormDefault="qualified">
+    <xs:complexType name="RMAModifyRequest">
+        <xs:sequence minOccurs="1" maxOccurs="1">          
+            <xs:element name="rma_id" nillable="false" minOccurs="1">
+              <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                        <xs:minExclusive value="0"/>
+                        <xs:totalDigits value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="rma_mod_req_id" nillable="false" minOccurs="1">
+                 <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>           
+            <xs:element name="RMAModifyDetail" type="RMAModifyDetail" nillable="false" minOccurs="1" maxOccurs="100"/>
+       
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RMAModifyDetail">
+        <xs:sequence>
+            <xs:element name="item" minOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="25"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+	    
+            <xs:element name="line_no" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                       
+                        <xs:totalDigits value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            
+            <xs:element name="qty" nillable="false" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                        <xs:minExclusive value="0"/>
+                        <xs:totalDigits value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+           
+                 </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RMAModifyResponse">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+            
+            <xs:element name="rma_mod_req_id" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            
+            <xs:element name="status" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+              <xs:element name="message_code" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+		
+			<xs:element name="message_desc" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+			 <xs:element name="RMAModifyDetailResponse" type="RMAModifyDetailResponse" nillable="true" minOccurs="0" maxOccurs="100"/>
+        </xs:sequence>
+    </xs:complexType>
+	 <xs:complexType name="RMAModifyDetailResponse">
+        <xs:sequence>
+             <xs:element name="line_no" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                       
+                        <xs:totalDigits value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="item" minOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="25"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+           
+                 </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ModifyRMA" type="RMAModifyRequest"/>
+    <xs:element name="ModifyRMAResponse" type="RMAModifyResponse"/>
+</xs:schema>

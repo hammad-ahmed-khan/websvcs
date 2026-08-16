@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<synonym xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">a27a6a9f-d261-49ad-b439-d33391766087</identifier>
+  </ID>
+  <name>POS_TENDER_TYPE_HEAD</name>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">Extra-OMS-QA</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>POS_TENDER_TYPE_HEAD</name>
+        <identifier class="java.math.BigDecimal">1877054</identifier>
+        <schemaName>OMSDEV</schemaName>
+        <type>SYNONYM</type>
+      </value>
+    </entry>
+  </properties>
+  <public>false</public>
+  <reference class="oracle.javatools.db.IdentifierBasedID">
+    <name>POS_TENDER_TYPE_HEAD</name>
+    <identifier class="java.lang.String">2fe5dd90-689a-46c2-ab7d-7b418846f803</identifier>
+    <schemaName>RMS14</schemaName>
+    <type>TABLE</type>
+  </reference>
+  <schema>
+    <name>OMSDEV</name>
+  </schema>
+</synonym>

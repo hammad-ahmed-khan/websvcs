@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDesc/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtl/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDesc/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" schemaLocation="StoreFulfillmentOrderService7.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtl/v1" schemaLocation="StoreFulfillmentOrderService5.xsd"/>
+  <xs:element name="FulfilOrdDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="customer_order_no" type="xs:string"/>
+        <xs:element name="fulfill_order_no" type="xs:string"/>
+        <xs:element name="source_loc_type" type="tns:source_loc_type" minOccurs="0"/>
+        <xs:element name="source_loc_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="fulfill_loc_type" type="tns:fulfill_loc_type"/>
+        <xs:element name="fulfill_loc_id" type="xs:long"/>
+        <xs:element name="partial_delivery_ind" type="tns:yes_no_ind"/>
+        <xs:element name="delivery_type" type="tns:delivery_type" minOccurs="0"/>
+        <xs:element name="carrier_code" type="xs:string" minOccurs="0"/>
+        <xs:element name="carrier_service_code" type="xs:string" minOccurs="0"/>
+        <xs:element name="consumer_delivery_date" type="xs:dateTime"/>
+        <xs:element name="consumer_delivery_time" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="delivery_charges" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="delivery_charges_curr" type="xs:string" minOccurs="0"/>
+        <xs:element name="comments" type="xs:string" minOccurs="0"/>
+        <xs:element ref="ns1:FulfilOrdCustDesc" minOccurs="0"/>
+        <xs:element ref="ns2:FulfilOrdDtl" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="source_loc_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SU"/>
+      <xs:enumeration value="ST"/>
+      <xs:enumeration value="WH"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="fulfill_loc_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="S"/>
+      <xs:enumeration value="V"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="yes_no_ind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y"/>
+      <xs:enumeration value="N"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="delivery_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="S"/>
+      <xs:enumeration value="C"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

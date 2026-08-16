@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Use the latest (edge) version of IE rendering engine -->
+    <title>Email Template - Extra</title>
+    <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <!-- Please use an inliner tool to convert all CSS to inline as inpage or external CSS is removed by email clients -->
+    <!-- important in CSS is used to prevent the styles of currently inline CSS from overriding the ones mentioned in media queries when corresponding screen sizes are encountered -->
+
+    <!-- CSS Reset -->
+    <style type="text/css">
+/* What it does: Remove spaces around the email design added by some email clients. */
+      /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+html,  body {
+	margin: 0 !important;
+	padding: 0 !important;
+	height: 100% !important;
+	width: 100% !important;
+    direction:rtl;
+}
+/* What it does: Stops email clients resizing small text. */
+* {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* What it does: Forces Outlook.com to display emails full width. */
+.ExternalClass {
+	width: 100%;
+}
+/* What is does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+	margin: 0 !important;
+}
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table,  td {
+	mso-table-lspace: 0pt !important;
+	mso-table-rspace: 0pt !important;
+}
+/* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+table {
+	border-spacing: 0 !important;
+	border-collapse: collapse !important;
+	table-layout: fixed !important;
+	margin: 0 auto !important;
+}
+table table table {
+	table-layout: auto;
+}
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+	-ms-interpolation-mode: bicubic;
+}
+/* What it does: Overrides styles added when Yahoo's auto-senses a link. */
+.yshortcuts a {
+	border-bottom: none !important;
+}
+/* What it does: Another work-around for iOS meddling in triggered links. */
+a[x-apple-data-detectors] {
+	color: inherit !important;
+}
+</style>
+
+    <!-- Progressive Enhancements -->
+    <style type="text/css">
+        
+        /* Media Queries */
+        @media screen and (max-width: 650px) {
+            }
+
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid,
+            .fluid-centered {
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            /* And center justify these ones. */
+            .fluid-centered {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: rtl !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+        
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }         
+        }  
+@media (max-width: 650px){
+}
+    </style>
+    </head>
+    <body bgcolor="#ffffff" width="100%" style="margin: 0;" yahoo="yahoo">
+    <table bgcolor="#ffffff" cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" style="border-collapse:collapse; max-width: 650px; min-width: 240px; font-family: Helvetica, Arial, sans-serif;direction:rtl">
+      <tr>
+        <td><center>
+            <!-- Visually Hidden Preheader Text : BEGIN -->
+            <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;"> eXtra.com </div>
+            <!-- Visually Hidden Preheader Text : END --> 
+            
+            <!-- Email Header : BEGIN -->
+            <table align="center">
+            <tr>
+                <td style="padding: 20px 0; text-align: center"><img src="https://media.extra.com/i/aurora/extra-logo-2x" width="86" height="59" alt="Extra Logo" border="0"></td>
+              </tr>
+          </table>
+            <!-- Email Header : END --> 
+            
+            <!-- Email Body : BEGIN -->
+            <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" style="box-shadow:0 0 8px 0 rgba(0, 0, 0, .14);">
+            
+            <!-- Main Title : BEGIN -->
+            <tr>
+                <td style="padding: 40px; text-align: center; font-size: 22px; font-weight: none;mso-height-rule: exactly; line-height: 20px; color: #ffffff;background-color:#0066A5;border-radius:5px 5px 0 0">طلبك جاهز للشحن</td>
+              </tr>
+            <!-- Main Title : END --> 
+            <tr>
+             <td  style="text-align: center; padding:50px 40px 0 40px;font-size: 24px; mso-height-rule: exactly; direction:rtl;">شكراً لك! <strong>$Customername</strong>
+           
+            </td>
+            </tr>
+            <!-- Main Message : BEGIN -->
+            <tr>
+                <td style="padding:50px 40px 40px 40px; text-align: center; font-size: 16px; mso-height-rule: exactly; line-height: 20px;direction:rtl;"> سوف يتم شحن طلبك رقم <strong>$OrderId</strong> مع شركة <strong>$CourierName</strong> للشحن ورقم الشحنة هو <strong>$AWBNo.</strong> باستطاعتك تتبع شحنتك من هنا$URL.</td></tr>
+                <tr>
+                <td style="padding:0 40px 50px 40px; text-align: center; font-size: 16px; mso-height-rule: exactly; line-height: 20px;">
+                  <br>
+                <strong>شكرا لاختيارك اكسترا !!</strong><br></td>
+              </tr>
+            <!-- Main Message : END --> 
+            <!-- Order Details : BEGIN -->
+            <tr>
+                <td> 
+                <div>
+                    <table dir="rtl" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #444444">
+                    <tr>
+                           <td valign="middle" style="text-align: right; padding: 22px; font-size: 14px; font-weight: bold; mso-height-rule: exactly; line-height: 0px; color: #ffffff;background-color:#0066A5;"> الطلب #$OrderId </td>
+                      </tr>
+                  </table>
+                  </div>
+                </td>
+              </tr>
+            <tr>
+                <td dir="rtl" align="center" valign="top" width="100%" style="padding: 40px;">
+                    <table align="right" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                    <td width="100%" class="stack-column-center">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                             <td style="text-align: right; font-size: 15px">المجموع ($qnty منتج)<br>
+                               <p style="padding:5px 0;margin: 0;font-size: 16px"><strong>$price رس</strong></p>
+                            </td>
+                            <td style="text-align: left; font-size: 15px;vertical-align: top">
+                                
+                            </td>
+                            </tr>
+                      </table></td>
+                  </tr>
+                  <tr>
+                      <td style="font-size:16px;margin:20px;line-height:20px;border-bottom:1px solid #D7D8DB;">&nbsp;
+                      </td>
+                  </tr>
+                  <tr>
+                      <td width="100%" class="stack-column-center">
+                          <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                          $buf
+                         
+                       </table>
+                      </td>
+                  </tr>
+                  </table>
+                </td>
+              </tr>            
+            <!-- Order Details : End -->
+          </table>
+            <!-- Email Body : END --> 
+            
+            <!-- Email Footer : BEGIN -->
+            <table align="center" width="95%" class="email-container">
+            <tr>
+                <td style="width:4%"><img width="18" height="18" src="https://media.extra.com/i/aurora/icon-phone-@2x" alt=""></td>
+                <td style="padding: 46px 10px;width:50%;font-size:16px;font-family: Helvetica, Arial, sans-serif;color:#000000; mso-height-rule: exactly; line-height:18px;">
+                    <table align="right">
+                        <tr>
+                            <td style="text-align: right;font-size: 14px">اتصل بنا</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right;font-size:20px">920004123 <span style="color:#8b8e96;font-size: 14px">(9:00 صباحاً إلى  11:00 مساءً)</span></td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="text-align:left;width:20%">
+                    <a href="#" title="Privacy Policy" style="font-size:14px;color:#0066A5;text-decoration:none;">سياسة الخصوصية</a>
+                </td>
+                <td style="text-align:left;width:20%">
+                    <a href="#" title="Terms &amp; Conditions" style="font-size:14px;color:#0066A5;text-decoration:none;">الشروط والأحكام</a>
+                </td>
+            </tr>
+          </table>
+          <table align="center" class="email-container" style="width: 100%; border-top: 1px solid #D7D8DB">
+            <tr>
+                <td style="padding: 20px">
+                <table>
+                    <tr>
+                        <td style="padding:10px"><a href="#" title="facebook"><img width="44" height="44" src="https://media.extra.com/i/aurora/icon-facebook-@2x" alt=""></a></td>
+                        <td style="padding:10px"><a href="#" title="twitter"><img width="44" height="44" src="https://media.extra.com/i/aurora/icon-twitter-@2x" alt=""></a></td>
+                        <td style="padding:10px"><a href="#" title="google"><img width="44" height="44" src="https://media.extra.com/i/aurora/icon-google-@2x" alt=""></a></td>
+                        <td style="padding:10px"><a href="#" title="instagram"><img width="44" height="44" src="https://media.extra.com/i/aurora/icon-insta-@2x" alt=""></a></td>
+                        <td style="padding:10px"><a href="#" title="youtube"><img width="44" height="44" src="https://media.extra.com/i/aurora/icon-youtube-@2x" alt=""></a></td>
+                    </tr>
+                </table>
+                </td>
+            </tr>
+          </table>
+            
+            <!-- Email Footer : END -->
+            
+          </center></td>
+      </tr>
+    </table>
+</body>
+</html>

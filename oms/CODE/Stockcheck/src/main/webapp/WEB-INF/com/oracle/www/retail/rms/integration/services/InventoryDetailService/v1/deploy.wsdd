@@ -1,0 +1,131 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from InventoryDetailService WSDL service -->
+
+  <service name="InventoryDetailPort" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://www.oracle.com/retail/rms/integration/services/InventoryDetailService/v1"/>
+      <parameter name="wsdlServiceElement" value="InventoryDetailService"/>
+      <parameter name="schemaQualified" value="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1,http://www.oracle.com/retail/integration/base/bo/InvAvailDesc/v1,http://www.oracle.com/retail/integration/base/bo/InvAvailColDesc/v1,http://www.oracle.com/retail/integration/services/exception/v1"/>
+      <parameter name="schemaUnqualified" value="http://www.oracle.com/retail/rms/integration/services/InventoryDetailService/v1"/>
+      <parameter name="wsdlServicePort" value="InventoryDetailPort"/>
+      <parameter name="className" value="com.oracle.www.retail.rms.integration.services.InventoryDetailService.v1.InventoryDetailPortBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="InventoryDetailPortType"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1"
+        qname="ns:store_pickup_ind"
+        type="java:com.oracle.www.retail.integration.base.bo.InvAvailCriVo.v1.Store_pickup_ind"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/base/bo/InvAvailColDesc/v1"
+        qname="ns:>InvAvailColDesc"
+        type="java:com.oracle.www.retail.integration.base.bo.InvAvailColDesc.v1.InvAvailColDesc"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/base/bo/InvAvailDesc/v1"
+        qname="ns:pack_calculate_ind"
+        type="java:com.oracle.www.retail.integration.base.bo.InvAvailDesc.v1.Pack_calculate_ind"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/base/bo/InvAvailDesc/v1"
+        qname="ns:loc_type"
+        type="java:com.oracle.www.retail.integration.base.bo.InvAvailDesc.v1.Loc_type"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/services/exception/v1"
+        qname="ns:>BusinessProblemDetail"
+        type="java:com.oracle.www.retail.integration.services.exception.v1.BusinessProblemDetail"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/base/bo/InvAvailDesc/v1"
+        qname="ns:>InvAvailDesc"
+        type="java:com.oracle.www.retail.integration.base.bo.InvAvailDesc.v1.InvAvailDesc"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1"
+        qname="ns:>InvAvailCriVo"
+        type="java:com.oracle.www.retail.integration.base.bo.InvAvailCriVo.v1.InvAvailCriVo"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/services/exception/v1"
+        qname="ns:>ValidationWSFaultException"
+        type="java:com.oracle.www.retail.integration.services.exception.v1.ValidationWSFaultException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/services/exception/v1"
+        qname="ns:>IllegalStateWSFaultException"
+        type="java:com.oracle.www.retail.integration.services.exception.v1.IllegalStateWSFaultException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/services/exception/v1"
+        qname="ns:>ProblemDetailEntry"
+        type="java:com.oracle.www.retail.integration.services.exception.v1.ProblemDetailEntry"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1"
+        qname="ns:>InvLocation"
+        type="java:com.oracle.www.retail.integration.base.bo.InvAvailCriVo.v1.InvLocation"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1"
+        qname="ns:loc_type"
+        type="java:com.oracle.www.retail.integration.base.bo.InvAvailCriVo.v1.Loc_type"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://www.oracle.com/retail/integration/services/exception/v1"
+        qname="ns:>IllegalArgumentWSFaultException"
+        type="java:com.oracle.www.retail.integration.services.exception.v1.IllegalArgumentWSFaultException"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

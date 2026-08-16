@@ -1,0 +1,554 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1" name="StoreToStoreTransferService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1" schemaLocation="StoreToStoreTransferService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1" schemaLocation="StoreToStoreTransferService8.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfShpModVo/v1" schemaLocation="StoreToStoreTransferService9.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfReqModVo/v1" schemaLocation="StoreToStoreTransferService10.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfRef/v1" schemaLocation="StoreToStoreTransferService11.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfRcvModVo/v1" schemaLocation="StoreToStoreTransferService12.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrDesc/v1" schemaLocation="StoreToStoreTransferService13.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrCriVo/v1" schemaLocation="StoreToStoreTransferService14.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrColDesc/v1" schemaLocation="StoreToStoreTransferService15.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfDesc/v1" schemaLocation="StoreToStoreTransferService2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfApvModVo/v1" schemaLocation="StoreToStoreTransferService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/Nothing/v1" schemaLocation="StoreToStoreTransferService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="StoreToStoreTransferService5.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/BolMtvDesc/v1" schemaLocation="StoreToStoreTransferService6.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/BolMtvColDesc/v1" schemaLocation="StoreToStoreTransferService7.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="approveTransfer">
+    <part name="parameters" element="tns:approveTransfer"/>
+  </message>
+  <message name="approveTransferResponse">
+    <part name="parameters" element="tns:approveTransferResponse"/>
+  </message>
+  <message name="IllegalArgumentWSFaultException">
+    <part xmlns:ns1="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns1:IllegalArgumentWSFaultException"/>
+  </message>
+  <message name="ValidationWSFaultException">
+    <part xmlns:ns2="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns2:ValidationWSFaultException"/>
+  </message>
+  <message name="IllegalStateWSFaultException">
+    <part xmlns:ns3="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns3:IllegalStateWSFaultException"/>
+  </message>
+  <message name="cancelTransfer">
+    <part name="parameters" element="tns:cancelTransfer"/>
+  </message>
+  <message name="cancelTransferResponse">
+    <part name="parameters" element="tns:cancelTransferResponse"/>
+  </message>
+  <message name="dispatchTransfer">
+    <part name="parameters" element="tns:dispatchTransfer"/>
+  </message>
+  <message name="dispatchTransferResponse">
+    <part name="parameters" element="tns:dispatchTransferResponse"/>
+  </message>
+  <message name="receiveTransfer">
+    <part name="parameters" element="tns:receiveTransfer"/>
+  </message>
+  <message name="receiveTransferResponse">
+    <part name="parameters" element="tns:receiveTransferResponse"/>
+  </message>
+  <message name="rejectTransfer">
+    <part name="parameters" element="tns:rejectTransfer"/>
+  </message>
+  <message name="rejectTransferResponse">
+    <part name="parameters" element="tns:rejectTransferResponse"/>
+  </message>
+  <message name="requestTransfer">
+    <part name="parameters" element="tns:requestTransfer"/>
+  </message>
+  <message name="requestTransferResponse">
+    <part name="parameters" element="tns:requestTransferResponse"/>
+  </message>
+  <message name="submitTransfer">
+    <part name="parameters" element="tns:submitTransfer"/>
+  </message>
+  <message name="submitTransferResponse">
+    <part name="parameters" element="tns:submitTransferResponse"/>
+  </message>
+  <message name="lookupBillOfLadingMotives">
+    <part name="parameters" element="tns:lookupBillOfLadingMotives"/>
+  </message>
+  <message name="lookupBillOfLadingMotivesResponse">
+    <part name="parameters" element="tns:lookupBillOfLadingMotivesResponse"/>
+  </message>
+  <message name="readTransferDetail">
+    <part name="parameters" element="tns:readTransferDetail"/>
+  </message>
+  <message name="readTransferDetailResponse">
+    <part name="parameters" element="tns:readTransferDetailResponse"/>
+  </message>
+  <message name="lookupTransferHeader">
+    <part name="parameters" element="tns:lookupTransferHeader"/>
+  </message>
+  <message name="lookupTransferHeaderResponse">
+    <part name="parameters" element="tns:lookupTransferHeaderResponse"/>
+  </message>
+  <message name="cancelTransferSubmission">
+    <part name="parameters" element="tns:cancelTransferSubmission"/>
+  </message>
+  <message name="cancelTransferSubmissionResponse">
+    <part name="parameters" element="tns:cancelTransferSubmissionResponse"/>
+  </message>
+  <message name="saveTransferRequest">
+    <part name="parameters" element="tns:saveTransferRequest"/>
+  </message>
+  <message name="saveTransferRequestResponse">
+    <part name="parameters" element="tns:saveTransferRequestResponse"/>
+  </message>
+  <message name="savePendingTransferRequest">
+    <part name="parameters" element="tns:savePendingTransferRequest"/>
+  </message>
+  <message name="savePendingTransferRequestResponse">
+    <part name="parameters" element="tns:savePendingTransferRequestResponse"/>
+  </message>
+  <message name="saveInProgressTransfer">
+    <part name="parameters" element="tns:saveInProgressTransfer"/>
+  </message>
+  <message name="saveInProgressTransferResponse">
+    <part name="parameters" element="tns:saveInProgressTransferResponse"/>
+  </message>
+  <message name="saveInReceivingTransfer">
+    <part name="parameters" element="tns:saveInReceivingTransfer"/>
+  </message>
+  <message name="saveInReceivingTransferResponse">
+    <part name="parameters" element="tns:saveInReceivingTransferResponse"/>
+  </message>
+  <message name="ping">
+    <part name="parameters" element="tns:ping"/>
+  </message>
+  <message name="pingResponse">
+    <part name="parameters" element="tns:pingResponse"/>
+  </message>
+  <portType name="StoreToStoreTransferPortType">
+    <operation name="approveTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/approveTransferRequest" message="tns:approveTransfer"/>
+      <output message="tns:approveTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="cancelTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/cancelTransferRequest" message="tns:cancelTransfer"/>
+      <output message="tns:cancelTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="dispatchTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/dispatchTransferRequest" message="tns:dispatchTransfer"/>
+      <output message="tns:dispatchTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="receiveTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/receiveTransferRequest" message="tns:receiveTransfer"/>
+      <output message="tns:receiveTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="rejectTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/rejectTransferRequest" message="tns:rejectTransfer"/>
+      <output message="tns:rejectTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="requestTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/requestTransferRequest" message="tns:requestTransfer"/>
+      <output message="tns:requestTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="submitTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/submitTransferRequest" message="tns:submitTransfer"/>
+      <output message="tns:submitTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupBillOfLadingMotives">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/lookupBillOfLadingMotivesRequest" message="tns:lookupBillOfLadingMotives"/>
+      <output message="tns:lookupBillOfLadingMotivesResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="readTransferDetail">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/readTransferDetailRequest" message="tns:readTransferDetail"/>
+      <output message="tns:readTransferDetailResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupTransferHeader">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/lookupTransferHeaderRequest" message="tns:lookupTransferHeader"/>
+      <output message="tns:lookupTransferHeaderResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="cancelTransferSubmission">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/cancelTransferSubmissionRequest" message="tns:cancelTransferSubmission"/>
+      <output message="tns:cancelTransferSubmissionResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="saveTransferRequest">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/saveTransferRequestRequest" message="tns:saveTransferRequest"/>
+      <output message="tns:saveTransferRequestResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="savePendingTransferRequest">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/savePendingTransferRequestRequest" message="tns:savePendingTransferRequest"/>
+      <output message="tns:savePendingTransferRequestResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="saveInProgressTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/saveInProgressTransferRequest" message="tns:saveInProgressTransfer"/>
+      <output message="tns:saveInProgressTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="saveInReceivingTransfer">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/saveInReceivingTransferRequest" message="tns:saveInReceivingTransfer"/>
+      <output message="tns:saveInReceivingTransferResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="ping">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1/StoreToStoreTransferPortType/pingRequest" message="tns:ping"/>
+      <output message="tns:pingResponse"/>
+    </operation>
+  </portType>
+  <binding name="StoreToStoreTransferPortBinding" type="tns:StoreToStoreTransferPortType">
+    <wsaw:UsingAddressing/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="approveTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="cancelTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="dispatchTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="receiveTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rejectTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="requestTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="submitTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupBillOfLadingMotives">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="readTransferDetail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupTransferHeader">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="cancelTransferSubmission">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="saveTransferRequest">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="savePendingTransferRequest">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="saveInProgressTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="saveInReceivingTransfer">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ping">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="StoreToStoreTransferService">
+    <port name="StoreToStoreTransferPort" binding="tns:StoreToStoreTransferPortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:17019/StoreToStoreTransferBean/StoreToStoreTransferService"/>
+    </port>
+  </service>
+</definitions>

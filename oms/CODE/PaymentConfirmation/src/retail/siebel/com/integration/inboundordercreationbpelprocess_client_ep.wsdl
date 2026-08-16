@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions targetNamespace="http://com.siebel.retail/integration/" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://com.siebel.retail/integration/" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://ex-uat-mw1.extrastores.com:8001/soa-infra/services/IBT_Development/OMSToSiebelOrderCreation!3.0/SiebelOrderFeedWebserviceWrapper.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="InboundOrderCreationBPELProcess">
+    <plnk:role name="SiebelOrderFeedWebservice">
+      <plnk:portType name="tns:SiebelOrderFeedWebservice"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsdl:import namespace="http://com.siebel.retail/integration/" location="inboundordercreationbpelprocess_client_epSiebelOrderFeedWebservice.wsdl"/>
+  <wsdl:service name="inboundordercreationbpelprocess_client_ep">
+    <wsdl:port name="SiebelOrderFeedWebservice_pt" binding="tns:SiebelOrderFeedWebserviceBinding">
+      <soap:address location="http://ex-uat-mw1.extrastores.com:8001/soa-infra/services/IBT_Development/OMSToSiebelOrderCreation/inboundordercreationbpelprocess_client_ep"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,109 @@
+package com.extra.jood.bean;
+
+import java.math.BigDecimal;
+
+/**
+ * aibrahim 2024
+ */
+public class TransactionDetail {
+
+	private Long lineNumber;
+
+	private String item;
+
+	private int qty;
+
+	private String unitRetailPrice;
+
+	private String unitTotalRetailDiscount;
+
+	private String unitTotalJoodDiscount;
+
+	private String unitSellingPrice;
+
+	private BigDecimal unitRewardsCB;
+
+	private BigDecimal unitRedeemedCB;
+
+	private String redeemptionEligible;
+
+	public Long getLineNumber() {
+		return lineNumber;
+	}
+
+	public String getItem() {
+		return item;
+	}
+
+	public int getQty() {
+		return qty;
+	}
+
+	public String getUnitRetailPrice() {
+		return unitRetailPrice;
+	}
+
+	public String getUnitTotalRetailDiscount() {
+		return unitTotalRetailDiscount;
+	}
+
+	public String getUnitTotalJoodDiscount() {
+		return unitTotalJoodDiscount;
+	}
+
+	public String getUnitSellingPrice() {
+		return unitSellingPrice;
+	}
+
+	public void setLineNumber(Long lineNumber) {
+		this.lineNumber = lineNumber;
+	}
+
+	public void setItem(String item) {
+		this.item = item;
+	}
+
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+
+	public void setUnitRetailPrice(String unitRetailPrice) {
+		this.unitRetailPrice = unitRetailPrice;
+	}
+
+	public void setUnitTotalRetailDiscount(String unitTotalRetailDiscount) {
+		this.unitTotalRetailDiscount = unitTotalRetailDiscount;
+	}
+
+	public void setUnitTotalJoodDiscount(String unitTotalJoodDiscount) {
+		this.unitTotalJoodDiscount = unitTotalJoodDiscount;
+	}
+
+	public void setUnitSellingPrice(String unitSellingPrice) {
+		this.unitSellingPrice = unitSellingPrice;
+	}
+
+	public BigDecimal getUnitRewardsCB() {
+		return unitRewardsCB;
+	}
+
+	public BigDecimal getUnitRedeemedCB() {
+		return unitRedeemedCB;
+	}
+
+	public void setUnitRewardsCB(BigDecimal unitRewardsCB) {
+		this.unitRewardsCB = unitRewardsCB;
+	}
+
+	public void setUnitRedeemedCB(BigDecimal unitRedeemedCB) {
+		this.unitRedeemedCB = unitRedeemedCB;
+	}
+
+	public String getRedeemptionEligible() {
+		return redeemptionEligible;
+	}
+
+	public void setRedeemptionEligible(String redeemptionEligible) {
+		this.redeemptionEligible = redeemptionEligible;
+	}
+}

@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1" name="StoreFulfillmentOrderService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1" schemaLocation="StoreFulfillmentOrderService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1" schemaLocation="StoreFulfillmentOrderService12.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/localization/bo/BrFulfilOrdCustDesc/v1" schemaLocation="StoreFulfillmentOrderService14.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/custom/bo/EOfBrFulfilOrdCustDesc/v1" schemaLocation="StoreFulfillmentOrderService15.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" schemaLocation="StoreFulfillmentOrderService16.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordHdrDesc/v1" schemaLocation="StoreFulfillmentOrderService17.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordHdrCriVo/v1" schemaLocation="StoreFulfillmentOrderService18.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordHdrColDesc/v1" schemaLocation="StoreFulfillmentOrderService19.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordDesc/v1" schemaLocation="StoreFulfillmentOrderService20.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/LocOfFulfilOrdCustDesc/v1" schemaLocation="StoreFulfillmentOrderService2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdRef/v1" schemaLocation="StoreFulfillmentOrderService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtlRef/v1" schemaLocation="StoreFulfillmentOrderService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtl/v1" schemaLocation="StoreFulfillmentOrderService5.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDesc/v1" schemaLocation="StoreFulfillmentOrderService6.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1" schemaLocation="StoreFulfillmentOrderService7.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColRef/v1" schemaLocation="StoreFulfillmentOrderService8.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdColDesc/v1" schemaLocation="StoreFulfillmentOrderService9.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1" schemaLocation="StoreFulfillmentOrderService10.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1" schemaLocation="StoreFulfillmentOrderService11.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmCol/v1" schemaLocation="StoreFulfillmentOrderService13.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="lookupFulfillmentOrderHeaders">
+    <part name="parameters" element="tns:lookupFulfillmentOrderHeaders"/>
+  </message>
+  <message name="lookupFulfillmentOrderHeadersResponse">
+    <part name="parameters" element="tns:lookupFulfillmentOrderHeadersResponse"/>
+  </message>
+  <message name="IllegalArgumentWSFaultException">
+    <part xmlns:ns1="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns1:IllegalArgumentWSFaultException"/>
+  </message>
+  <message name="ValidationWSFaultException">
+    <part xmlns:ns2="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns2:ValidationWSFaultException"/>
+  </message>
+  <message name="IllegalStateWSFaultException">
+    <part xmlns:ns3="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns3:IllegalStateWSFaultException"/>
+  </message>
+  <message name="createFulfillmentOrderDetail">
+    <part name="parameters" element="tns:createFulfillmentOrderDetail"/>
+  </message>
+  <message name="createFulfillmentOrderDetailResponse">
+    <part name="parameters" element="tns:createFulfillmentOrderDetailResponse"/>
+  </message>
+  <message name="cancelFulfillmentOrderDetail">
+    <part name="parameters" element="tns:cancelFulfillmentOrderDetail"/>
+  </message>
+  <message name="cancelFulfillmentOrderDetailResponse">
+    <part name="parameters" element="tns:cancelFulfillmentOrderDetailResponse"/>
+  </message>
+  <message name="readFulfillmentOrderDetail">
+    <part name="parameters" element="tns:readFulfillmentOrderDetail"/>
+  </message>
+  <message name="readFulfillmentOrderDetailResponse">
+    <part name="parameters" element="tns:readFulfillmentOrderDetailResponse"/>
+  </message>
+  <message name="ping">
+    <part name="parameters" element="tns:ping"/>
+  </message>
+  <message name="pingResponse">
+    <part name="parameters" element="tns:pingResponse"/>
+  </message>
+  <portType name="StoreFulfillmentOrderPortType">
+    <operation name="lookupFulfillmentOrderHeaders">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1/StoreFulfillmentOrderPortType/lookupFulfillmentOrderHeadersRequest" message="tns:lookupFulfillmentOrderHeaders"/>
+      <output message="tns:lookupFulfillmentOrderHeadersResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="createFulfillmentOrderDetail">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1/StoreFulfillmentOrderPortType/createFulfillmentOrderDetailRequest" message="tns:createFulfillmentOrderDetail"/>
+      <output message="tns:createFulfillmentOrderDetailResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="cancelFulfillmentOrderDetail">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1/StoreFulfillmentOrderPortType/cancelFulfillmentOrderDetailRequest" message="tns:cancelFulfillmentOrderDetail"/>
+      <output message="tns:cancelFulfillmentOrderDetailResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="readFulfillmentOrderDetail">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1/StoreFulfillmentOrderPortType/readFulfillmentOrderDetailRequest" message="tns:readFulfillmentOrderDetail"/>
+      <output message="tns:readFulfillmentOrderDetailResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="ping">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/StoreFulfillmentOrderService/v1/StoreFulfillmentOrderPortType/pingRequest" message="tns:ping"/>
+      <output message="tns:pingResponse"/>
+    </operation>
+  </portType>
+  <binding name="StoreFulfillmentOrderPortBinding" type="tns:StoreFulfillmentOrderPortType">
+    <wsaw:UsingAddressing/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="lookupFulfillmentOrderHeaders">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createFulfillmentOrderDetail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="cancelFulfillmentOrderDetail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="readFulfillmentOrderDetail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ping">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="StoreFulfillmentOrderService">
+    <port name="StoreFulfillmentOrderPort" binding="tns:StoreFulfillmentOrderPortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:17019/StoreFulfillmentOrderBean/StoreFulfillmentOrderService"/>
+    </port>
+  </service>
+</definitions>

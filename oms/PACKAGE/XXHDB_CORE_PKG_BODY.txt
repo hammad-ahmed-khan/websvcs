@@ -1,0 +1,934 @@
+create or replace package body XXHDB_CORE_PKG is
+
+  procedure get_schedule(p_item_list varchar2,
+                         p_city      varchar2,
+                         o_groups    OUT ref_cursor,
+                         o_items     OUT ref_cursor,
+                         o_schedule  OUT ref_cursor) is
+    v_sql              varchar2(4000);
+    v_item_list        long;
+    v_region_id        number;
+    v_region_name      varchar2(150);
+    v_group_table      group_t;
+    v_dyn_sql          varchar2(4000);
+    v_LINE_NUMBER      number;
+    v_item             varchar2(150);
+    v_qty              number;
+    v_install_srv_flag varchar2(10);
+    v_source_loc       number;
+    v_fulfill_loc      number;
+    v_max_source_loc   number;
+    v_max_fulfill_loc  number;
+    v_count_seec       number;
+    v_seec             number;
+    x_lines            SYS_REFCURSOR;
+    v_lead_time        number;
+    v_max_lead_time    number;
+    v_missed_loc number; 
+    v_src_chk number;
+    v_ful_chk number;
+    v_source_loc1 number;
+    v_fulfill_loc1 number;
+    v_log_id number;
+  begin
+    select xx_dlvry_log_seq.nextval into v_log_id from dual;
+    v_missed_loc:=0;
+    v_lead_time     := 0;
+    v_max_lead_time := 0;
+    begin
+      select distinct r.region_id, r.region_name
+        into v_region_id, v_region_name
+        from xx_dlvry_cities c, xx_dlvry_regions_v r
+       where c.region_id = r.region_id
+         and upper(c.city_name) = upper(p_city);
+    exception
+      when others then
+        null;
+    end;
+  
+    /*  v_item_list := q'[select 1 as line_no , '00192918' as item , 3 as QTY , 'Y' as install_srv_flag from dual
+    union all
+    select 1 as line_no , '00166703' as item , 4 as QTY , 'N' as install_srv_flag from dual]';*/
+    v_item_list := p_item_list;
+    begin
+      insert into xx_dlvry_log values (p_item_list, p_city, sysdate,sysdate,v_log_id);
+      commit;
+    exception
+      when others then
+        null;
+    end;
+    v_seec := 0;
+    OPEN x_lines FOR v_item_list;
+    LOOP
+      FETCH x_lines
+        INTO v_LINE_NUMBER,
+             v_item,
+             v_qty,
+             v_source_loc,
+             v_fulfill_loc,
+             v_install_srv_flag;
+ v_source_loc1:=v_source_loc;
+v_fulfill_loc1:=v_fulfill_loc;              
+ select max(PHYSICAL_WH) into  v_source_loc from wh where wh=v_source_loc;
+-- select max(PHYSICAL_WH) into v_fulfill_loc from wh where wh=v_fulfill_loc;
+   if v_source_loc is null then v_source_loc:=v_source_loc1; end if;
+   if v_fulfill_loc is null then v_fulfill_loc:=v_fulfill_loc1; end if;          
+      select nvl(max(lead_time), 0)
+        into v_lead_time
+        from xx_dlvry_dc_lead_time
+       where loc = v_fulfill_loc
+         and SOURCE_LOC = v_source_loc;
+         
+         select nvl(count(*),0) into v_src_chk from v_rpt_locations l where l.loc=v_source_loc;
+         select nvl(count(*),0) into v_ful_chk from v_rpt_locations l where l.loc=v_fulfill_loc;
+         
+         if v_src_chk<>1 or v_ful_chk <>1 then
+             v_missed_loc:=1; end if;
+      if v_max_lead_time = 0 or v_lead_time>v_max_lead_time then
+        v_max_lead_time   := v_lead_time;
+        v_max_source_loc  := v_source_loc;
+        v_max_fulfill_loc := v_fulfill_loc;
+      end if;
+      select nvl(count(*), 0)
+        into v_count_seec
+        from xx_seec_items
+       where item = v_item
+         and 1 = 2;
+      if v_count_seec > 0 then
+        v_seec := 1;
+        exit;
+      end if;
+    
+      EXIT WHEN x_lines%NOTFOUND;
+    END LOOP;
+  
+    v_sql := q'[select * from ( with  items as  (]' || v_item_list ||
+             q'[),
+                                      matrix as (select * from XXHDB_GROUPS_MERCH_MATRIX_V)
+
+                                     select t.line_no, t.item, nvl(x.group_id, 4) group_id, t.qty qty
+                                        from (select i.*, m.dept, m.class
+                                                from items i, rms14.item_master m
+                                               where i.item = m.item) t,
+                                             matrix x
+                                       where t.dept = x.dept(+)
+                                         and t.class = x.class(+)
+                                         and t.install_srv_flag = x.install_srv_flag(+)
+                                       order by nvl(x.group_id, 4), t.line_no asc
+                                      )]';
+    sys.dbms_output.put_line(v_sql);
+    OPEN o_items FOR v_sql;
+  
+    v_sql := q'[select tmp.*,
+                       case when tmp.slots > tmp.MAX_UNITS_PER_ORDER then 'F' else 'S' end status , ]' ||
+             v_region_id || q'[ region_id , ']' || v_region_name ||
+             q'[' region_name
+                  from ( with  items as  (]' || v_item_list ||
+             q'[),
+                                     matrix as (select v.*, g.group_name, g.MAX_UNITS_PER_ORDER  from XXHDB_GROUPS_MERCH_MATRIX_V V , Xx_Dlvry_Groups g where v.group_id = g.group_id)
+                             select nvl(x.group_id, 4) group_id,
+                                    nvl(x.group_name, 'NA') group_name,
+                                    nvl(x.MAX_UNITS_PER_ORDER,0) MAX_UNITS_PER_ORDER,
+                                    case
+                                      when nvl(x.group_id, 4) = 4 then
+                                       ceil((sum(t.qty) * (2 / 3)))
+                                      else
+                                       sum(t.qty)
+                                    end SLOTS
+                                from (select i.*, m.dept, m.class
+                                        from items i, rms14.item_master m
+                                       where i.item = m.item) t,
+                                     matrix x
+                               where t.dept = x.dept(+)
+                                 and t.class = x.class(+)
+                                 and t.install_srv_flag = x.install_srv_flag(+)
+
+                              group by nvl(x.group_id, 4),  nvl(x.group_name, 'NA'), nvl(x.MAX_UNITS_PER_ORDER,0) ) tmp]';
+    sys.dbms_output.put_line(v_sql);
+    open o_groups FOR v_sql;
+    --open temp_cursor FOR v_sql;
+  
+    LOOP
+      FETCH o_groups bulk collect
+        INTO v_group_table;
+      EXIT WHEN o_groups%NOTFOUND;
+    END LOOP;
+    close o_groups;
+  
+    FOR i IN 1 .. v_group_table.COUNT() LOOP
+      sys.dbms_output.put_line(v_group_table(i).group_id);
+      if i > 1 then
+        v_dyn_sql := v_dyn_sql || ' union all';
+      end if;
+      v_dyn_sql := v_dyn_sql || '
+
+                   select t.REGION_ID, t.group_id, t.delivery_date, t.window, t.orig_slots, t.available_slots, t.time_en , t.start_time_seconds, t.end_time_seconds, case
+                   when t.available_slots >= ' || v_group_table(i).slots ||
+                   ' and 
+                    xx_dlvry_dc_lead_time_f(''' ||
+                   v_max_source_loc || ''',''' || v_max_fulfill_loc ||
+                   ''',t.delivery_date)=2
+                   then ''N''
+                   when t.available_slots >= ' || v_group_table(i).slots ||
+                   ' and upper(''' || p_city ||
+                   ''')<>upper(''Abqiq'')  then ''Y''
+                   when t.available_slots >= ' || v_group_table(i).slots ||
+                   ' and upper(''' || p_city ||
+                   ''')=upper(''Abqiq'') and  to_char(t.delivery_date,''Dy'')=''Wed'' then ''Y''
+
+                    else ''N'' end available from XXHDB_SCHEDULE_V t where '||v_missed_loc||'=0 and t.REGION_ID = ' || v_group_table(i).region_id ||
+                   ' and t.group_id = ' || v_group_table(i).group_id;
+    end loop;
+    if v_dyn_sql is not null then
+      v_dyn_sql := '
+     select REGION_ID,
+''999'' GROUP_ID,
+DELIVERY_DATE,
+WINDOW,
+sum(ORIG_SLOTS) ORIG_SLOTS,
+case when sign(sum(AVAILABLE_SLOTS))=-1 then 0
+  when ' || v_seec || '=1 then 0
+  else sum(AVAILABLE_SLOTS) end  AVAILABLE_SLOTS,
+max(TIME_EN)TIME_EN,
+max(START_TIME_SECONDS)START_TIME_SECONDS,
+max(END_TIME_SECONDS)END_TIME_SECONDS,
+case when ' || v_seec ||
+                   '=1 then ''N'' else min(AVAILABLE) end  AVAILABLE from (' ||
+                   v_dyn_sql ||
+                   ') group by region_id,  delivery_date, window';
+    end if;
+    if v_dyn_sql is not null then
+      v_dyn_sql := v_dyn_sql ||
+                   '  order by region_id, group_id, delivery_date, window';
+      sys.dbms_output.put_line(v_dyn_sql);
+    end if;
+    if v_dyn_sql is null then
+      v_dyn_sql := 'select null REGION_ID, null group_id, null delivery_date, null window, null orig_slots, null available_slots, null time_en , null start_time_seconds, null end_time_seconds, null available from XXHDB_SCHEDULE_V t where 1=2  order by region_id, group_id, delivery_date, window';
+    end if;
+    OPEN o_schedule FOR v_dyn_sql;
+    open o_groups FOR v_sql;
+  update xx_dlvry_log set last_update_date=sysdate where log_id=v_log_id; commit;
+    /*
+    
+    /////////////////////////////////// we need to consider the leadtime for remote stores ///////////////////////////////////
+    
+    */
+  
+  end;
+  --#######################Reserve Booking##############
+  procedure reserve_booking(p_reservation_id  number,
+                            p_Hybris_Cust_nbr varchar2,
+                            p_group           number,
+                            p_order_lines     xxhdb_tbl_type,
+                            p_request_date    date,
+                            p_window          varchar2,
+                            p_slots           number,
+                            p_region          number,
+                            p_cust_city       number,
+                            p_cust_area       number,
+                            p_cust_name       varchar2,
+                            p_cust_addr       varchar2,
+                            p_cust_mobile     varchar2,
+                            p_cust_lat        varchar2,
+                            p_cust_long       varchar2,
+                            p_status          out varchar2,
+                            p_msg             out varchar2) is
+    v_booking_id number;
+    v_exp exception;
+    v_msg      varchar2(3000);
+    my_sqlerrm varchar2(3000);
+    v_slot_chk number;
+    v_s        number;
+    v_msg_en   varchar2(256);
+    --v_msg_ar   varchar2(256);
+    v_chk_resv       number;
+    v_region         number;
+    v_reservation_id number;
+    v_count_rec number;
+    v_count_ac number;
+    v_count_SEEC  number;
+  begin
+    v_reservation_id := p_reservation_id;
+    begin
+      insert into xx_dlvry_resrv_log
+      values
+        (p_reservation_id,
+         p_Hybris_Cust_nbr,
+         p_group,
+         p_request_date,
+         p_window,
+         p_slots,
+         p_region,
+         p_cust_city,
+         p_cust_area,
+         p_cust_name,
+         p_cust_addr,
+         p_cust_mobile,
+         p_cust_lat,
+         p_cust_long,
+         sysdate,
+         null,
+         sysdate);
+      commit;
+    exception
+      when others then
+        null;
+    end;
+    select nvl(count(*), 0)
+      into v_region
+      from xx_dlvry_regions_v
+     where region_id = p_region
+       and city_id = p_cust_city
+       and area_id = p_cust_area;
+    if v_region = 0 then
+      v_msg := 'The combination City/Area not exist';
+      raise v_exp;
+    end if;
+    select nvl(count(*), 0)
+      into v_chk_resv
+      from XXhdb_EC_RESVE
+     where reservation_id = p_reservation_id;
+  
+    if v_chk_resv <> 0 then
+      v_msg := 'The reservation#' || p_reservation_id || ' already exist';
+      raise v_exp;
+    end if;
+  
+    if p_request_date < trunc(sysdate) then
+      v_msg := 'booking date should be a future date';
+      raise v_exp;
+    end if;
+  
+    --  xx_dlvry_pkg.dc_lead_time(v_booking_id, v_s, v_msg_en, v_msg_ar);
+  
+    /*if v_s = 2 then
+      v_msg := v_msg_en;
+      raise v_exp;
+    end if;*/
+    -----Creating Reservation Lines
+    FOR i IN 1 .. p_order_lines.count LOOP
+      insert into XXHDB_EC_RESVE
+        (reservation_id,
+         Hybris_Cust_nbr,
+         Cust_Order_nbr,
+         GROUP_ID,
+         ITEM,
+         LINE_NO,
+         QTY,
+         REQUEST_DATE,
+         WINDOW,
+         SLOTS,
+         REGION_ID,
+         CUST_CITY,
+         CUST_AREA,
+         CUST_NAME,
+         CUST_ADDR,
+         CUST_MOBILE,
+         CUST_LAT,
+         CUST_LONG,
+         STATUS,
+         MSG,
+         PROCESSED_DATE,
+         creation_date,
+         ins_flag,
+         slot_chk)
+      values
+        (p_reservation_id,
+         p_Hybris_Cust_nbr,
+         null,
+         P_GROUP,
+         p_order_lines    (i).item,
+         p_order_lines    (i).line_no,
+         p_order_lines    (i).qty,
+         P_REQUEST_DATE,
+         P_WINDOW,
+         P_SLOTS,
+         P_REGION,
+         P_CUST_CITY,
+         P_CUST_AREA,
+         P_CUST_NAME,
+         P_CUST_ADDR,
+         P_CUST_MOBILE,
+         P_CUST_LAT,
+         P_CUST_LONG,
+         'PENDING',
+         null,
+         sysdate,
+         sysdate,
+         p_order_lines    (i).ins_flag,
+         'N');
+      commit;
+      begin
+        update XXHDB_EC_RESVE r
+           set r.group_id = nvl((select a.GROUP_ID
+                                  from XXHDB_GROUPS_MERCH_MATRIX_V a,
+                                       rms14.item_master           b
+                                 where a.dept(+) = b.dept
+                                   and a.class(+) = b.class
+                                   and b.item = r.item
+                                   and a.INSTALL_SRV_FLAG = r.ins_flag),
+                                4)
+         where r.reservation_id = p_reservation_id;
+      
+      select nvl(count(1), 0) into v_count_rec
+          from XXHDB_EC_RESVE t
+         where reservation_id = p_reservation_id
+           and group_id = 3;
+      
+        select nvl(count(1), 0) into v_count_ac
+          from XXHDB_EC_RESVE t
+         where reservation_id = p_reservation_id
+           and item in (select item from xx_dlvry_ac_ins_items_v);
+      
+            if v_count_rec >0 and v_count_ac=0 then
+        update XXHDB_EC_RESVE r
+           set r.group_id = nvl((select a.GROUP_ID
+                                  from XXHDB_GROUPS_MERCH_MATRIX_V a,
+                                       rms14.item_master           b
+                                 where a.dept(+) = b.dept
+                                   and a.class(+) = b.class
+                                   and b.item = r.item
+                                   and a.INSTALL_SRV_FLAG = 'N'),
+                                4)
+         where r.reservation_id = p_reservation_id;
+         end if;
+      
+        update XXHDB_EC_RESVE r
+           set r.slots =
+               (select sum(qty)
+                  from XXHDB_EC_RESVE a
+                 where a.reservation_id = p_reservation_id
+                   and a.group_id in (3, 9)
+                   and a.item not in
+                       (select item_code from XX_DLVRY_AC_ITEMS))
+         where r.group_id in (3, 9)
+           and r.reservation_id = p_reservation_id;
+      
+        update XXHDB_EC_RESVE r
+           set r.slots =
+               (select decode((trunc((nvl(sum(qty), 0) * 2) / 3)),
+                              0,
+                              1,
+                              (trunc((nvl(sum(qty), 0) * 2) / 3)))
+                  from XXHDB_EC_RESVE a
+                 where a.reservation_id = p_reservation_id
+                   and a.group_id not in (3, 9)
+                   and a.item not in
+                       (select item_code from XX_DLVRY_AC_ITEMS))
+         where r.group_id not in (3, 9)
+           and reservation_id = p_reservation_id;
+      
+        update XXHDB_EC_RESVE r
+           set r.slots = (select sum(qty) from XXHDB_EC_RESVE where reservation_id = p_reservation_id  
+           and item in (select item from xx_dlvry_ac_ins_items_v)  )
+         where r.slots is null
+           and r.reservation_id = p_reservation_id;
+      
+       update XXHDB_EC_RESVE r
+           set r.slots = 1
+         where r.slots is null
+           and r.reservation_id = p_reservation_id;
+      
+      exception
+        when others then
+          v_msg := 'Invalid Group';
+          raise v_exp;
+      end;
+    
+      for i in (select distinct GROUP_ID,
+                                request_date,
+                                window,
+                                slots,
+                                region_id,
+                                cust_city,
+                                cust_area,
+                                cust_name,
+                                cust_addr,
+                                cust_mobile
+                  from XXHDB_EC_RESVE
+                 where reservation_id = p_reservation_id
+                
+                ) loop
+        select xx_dlvry_pkg.XX_DLVRY_CALENDAR(i.GROUP_ID,
+                                              i.region_id,
+                                              i.window,
+                                              i.request_date)
+          into v_slot_chk
+          from dual;
+        if v_slot_chk < p_slots or v_slot_chk = 0 then
+         -- v_msg := 'There is no available slot at this time, please choose another Date/Window';
+         v_msg:='Not eligible for Slot Booking';
+          raise v_exp;
+        end if;
+      end loop;
+    end loop;
+    
+    select nvl(count(*),0) into v_count_SEEC  from XXHDB_EC_RESVE 
+    where reservation_id = p_reservation_id 
+    and item in (select item from xx_seec_items); 
+    if v_count_SEEC>0 then null;
+     -- v_msg:='This order related to SEEC group so cannot create online booking';
+     -- raise v_exp;
+    end if;
+    update XXHDB_EC_RESVE
+       set slot_chk = 'Y', STATUS = 'RESERVED'
+     where reservation_id = p_reservation_id
+       and status = 'PENDING';
+    p_status := 'S';
+    
+    update xx_dlvry_resrv_log set last_update_date =sysdate where 
+    p_reservation_id = v_reservation_id;
+    commit;
+  
+  exception
+    when v_exp then
+      rollback;
+      my_sqlerrm := nvl(v_msg, SQLERRM);
+      p_status   := 'F';
+      p_msg      := my_sqlerrm;
+      delete xx_dlvry_booking_lines where book_id = v_booking_id;
+      delete xx_dlvry_booking where book_id = v_booking_id;
+      update XXHDB_EC_RESVE
+         set status = 'ERROR', msg = my_sqlerrm
+       where reservation_id = p_reservation_id;
+      update xx_dlvry_resrv_log
+         set msg = my_sqlerrm,last_update_date=sysdate
+       where p_reservation_id = v_reservation_id;
+      commit;
+    when others then
+      rollback;
+      my_sqlerrm := SQLERRM;
+      p_status   := 'F';
+      p_msg      := my_sqlerrm;
+      delete xx_dlvry_booking_lines where book_id = v_booking_id;
+      delete xx_dlvry_booking where book_id = v_booking_id;
+      update XXHDB_EC_RESVE
+         set status = 'ERROR', msg = my_sqlerrm
+       where reservation_id = p_reservation_id;
+      update xx_dlvry_resrv_log
+         set msg = my_sqlerrm,last_update_date=sysdate
+       where p_reservation_id = v_reservation_id;
+      commit;
+  end;
+  --#########################Create Booking#################
+  procedure create_booking(p_reservation_id  number,
+                           p_Hybris_Cust_nbr varchar2,
+                           p_cust_nbr        varchar2,
+                           p_group           number,
+                           p_order_lines     xxhdb_tbl_type,
+                           p_request_date    date,
+                           p_window          varchar2,
+                           p_slots           number,
+                           p_region          number,
+                           p_cust_city       number,
+                           p_cust_area       number,
+                           p_cust_name       varchar2,
+                           p_cust_addr       varchar2,
+                           p_cust_mobile     varchar2,
+                           p_cust_lat        varchar2,
+                           p_cust_long       varchar2,
+                           p_booking_id      out number,
+                           p_status          out varchar2,
+                           p_msg             out varchar2) is
+    v_booking_id number;
+    v_exp exception;
+    v_msg      varchar2(3000);
+    my_sqlerrm varchar2(3000);
+    v_ord_id   number;
+    v_ord_chk  number;
+    --v_slot_chk number;
+    v_s          number;
+    v_msg_en     varchar2(256);
+    v_msg_ar     varchar2(256);
+    v_mobile     varchar2(50);
+    v_out_mobile varchar(50);
+    v_cust_name  varchar2(256);
+  begin
+    ----Update slots
+    begin
+      declare
+        cursor num is
+          select *
+            from XXHDB_EC_RESVE r
+           where STATUS in ('PROCESSED', 'RESERVED')
+             and slots = 0;
+      begin
+        for i in num loop
+          update XXHDB_EC_RESVE r
+             set r.slots =
+                 (select sum(qty)
+                    from XXHDB_EC_RESVE a
+                   where a.reservation_id = i.reservation_id
+                     and a.group_id in (3, 9)
+                     and a.item not in
+                         (select item_code from XX_DLVRY_AC_ITEMS))
+           where r.group_id in (3, 9)
+             and r.reservation_id = i.reservation_id;
+        
+          update XXHDB_EC_RESVE r
+             set r.slots =
+                 (select decode((trunc((nvl(sum(qty), 0) * 2) / 3)),
+                                0,
+                                1,
+                                (trunc((nvl(sum(qty), 0) * 2) / 3)))
+                    from XXHDB_EC_RESVE a
+                   where a.reservation_id = i.reservation_id
+                     and a.group_id not in (3, 9)
+                     and a.item not in
+                         (select item_code from XX_DLVRY_AC_ITEMS))
+           where r.group_id not in (3, 9)
+             and reservation_id = i.reservation_id;
+        end loop;
+      end;
+    end;
+    ---
+    xx_dlvry_pkg.mobile_format(p_cust_mobile, v_out_mobile);
+    v_mobile := v_out_mobile;
+    if v_mobile is null or v_mobile = '00' then
+      select max(h.cust_phone_no)
+        into v_out_mobile
+        from oms_cust_ord_head h
+       where h.status = 'S'
+         and h.ord_payment_status = 'S'
+         and h.cust_order_no = p_cust_nbr;
+      xx_dlvry_pkg.mobile_format(v_out_mobile, v_mobile);
+    end if;
+    v_cust_name := p_cust_name;
+    if v_cust_name is null then
+      select max(h.cust_first_name) || ' ' || max(h.cust_last_name)
+        into v_cust_name
+        from oms_cust_ord_head h
+       where h.status = 'S'
+         and h.ord_payment_status = 'S'
+         and h.cust_order_no = p_cust_nbr;
+    end if;
+    if p_request_date < trunc(sysdate) then
+      v_msg := 'booking date should be a future date';
+      raise v_exp;
+    end if;
+  
+    select max(h.oms_cust_ord_no)
+      into v_ord_id
+      from oms_cust_ord_head h
+     where h.cust_order_no = p_cust_nbr
+       and h.status = 'S';
+    if v_ord_id is null then
+      v_msg := 'The order not exist';
+      raise v_exp;
+    end if;
+    /*select xx_dlvry_pkg.XX_DLVRY_CALENDAR(p_group,
+                                        p_region,
+                                        p_window,
+                                        p_request_date)
+    into v_slot_chk
+    from dual;*/
+    /*  select nvl(max(AVAILABLE_SLOTS), 0)
+      into v_slot_chk
+      from xxhdb_schedule_v
+     where region_id = p_region
+       and group_id = p_group
+       and window = p_window
+       and DELIVERY_DATE = p_request_date;
+    if v_slot_chk < p_slots then
+      v_msg := 'There is no available slot at this time, please choose another Date/Window';
+      raise v_exp;
+    end if;*/
+    select XX_DLVRY_BOOK_H_SEQ.nextval into v_booking_id from dual;
+    p_booking_id := v_booking_id;
+    -----Creating Booking Header
+    insert into xx_dlvry_booking
+      (book_id,
+       book_status,
+       store_code,
+       region_id,
+       group_id,
+       request_date,
+       window_code,
+       slots,
+       city_id,
+       area_id,
+       zone_id,
+       CUSTOMER_NAME,
+       CUSTOMER_ADDRESS,
+       MOBILE,
+       LATITUDE,
+       LONGITUDE,
+       src,
+       creation_date,
+       created_by,
+       region_name,
+       group_name,
+       zone_name,
+       area_name,
+       source_booking)
+      select v_booking_id,
+             'Confirmed',
+             'ESK',
+             p_region,
+             p_group,
+             p_request_date,
+             p_window,
+             p_slots,
+             p_cust_city,
+             p_cust_area,
+             (select zone_id
+                from xx_dlvry_areas
+               where city_id = p_cust_city
+                 and area_id = p_cust_area),
+             v_cust_name,
+             p_cust_addr,
+             v_mobile,
+             p_cust_lat,
+             p_cust_long,
+             'E-COMMERCE',
+             sysdate,
+             'EXTRADEV',
+             (select region_name
+                from xx_dlvry_regions
+               where region_id = p_region),
+             (select group_name
+                from xx_dlvry_groups
+               where group_id = p_group),
+             (select zone_name
+                from xx_dlvry_zones
+               where zone_id = (select zone_id
+                                  from xx_dlvry_areas
+                                 where city_id = p_cust_city
+                                   and area_id = p_cust_area)),
+             (select area_name
+                from xx_dlvry_areas
+               where city_id = p_cust_city
+                 and area_id = p_cust_area),
+             'HYBRIS'
+      
+        from dual;
+  
+    -- xx_dlvry_pkg.dc_lead_time(v_booking_id, v_s, v_msg_en, v_msg_ar);
+  
+    /* if v_s = 2 then
+      v_msg := v_msg_en;
+      raise v_exp;
+    end if;*/
+  
+    -----Creating Booking Lines
+    FOR i IN 1 .. p_order_lines.count LOOP
+    
+      v_ord_chk := 0;
+      select count(*)
+        into v_ord_chk
+        from oms_cust_ord_item i
+       where i.oms_cust_ord_no = v_ord_id
+         and i.line_no = p_order_lines(i).line_no
+         and i.item = p_order_lines(i).item;
+      --  insert into xxuec_temp
+      --  values
+      --   (p_order_lines(i).line_no, p_order_lines(i).item);
+      --      commit;
+      if v_ord_chk = 0 then
+        v_msg := 'The order line not exist Line No.' || p_order_lines(i).line_no ||
+                 ' Item ' || p_order_lines(i).item;
+        raise v_exp;
+      end if;
+    
+      select nvl(count(*), 0)
+        into v_ord_chk
+        from xx_dlvry_booking_lines l, xx_dlvry_booking h
+       where h.book_id = l.book_id
+         and h.book_status <> 'Cancelled'
+         and l.order_id = v_ord_id
+         and l.line_no = p_order_lines(i).line_no
+         and l.item = p_order_lines(i).item;
+    
+      if v_ord_chk > 0 then
+        /*v_msg := 'The order line alreday exist Line No.' || p_order_lines(i).line_no ||
+                 ' Item ' || p_order_lines(i).item;
+        raise v_exp;*/
+        null;
+      else
+      
+        insert into xx_dlvry_booking_lines
+          (book_line_id,
+           book_id,
+           line_no,
+           order_number,
+           order_id,
+           item,
+           description,
+           qty,
+           creation_date,
+           created_by,
+           oms_flag,
+           reservation_id,
+           HYBRIS_CUST_NBR)
+          select XX_DLVRY_BOOK_L_SEQ.nextval,
+                 v_booking_id,
+                 p_order_lines(i).line_no,
+                 p_cust_nbr,
+                 v_ord_id,
+                 p_order_lines(i).item,
+                 (select max(ITEM_DESC)
+                    from xx_item_details
+                   where item = p_order_lines(i).item),
+                 p_order_lines(i).qty,
+                 sysdate,
+                 'EXTRADEV',
+                 'N',
+                 p_reservation_id,
+                 p_Hybris_Cust_nbr
+            from dual;
+      end if;
+    end loop;
+  
+    p_status := 'S';
+  
+  exception
+    when v_exp then
+      rollback;
+      my_sqlerrm   := nvl(v_msg, SQLERRM);
+      p_status     := 'F';
+      p_booking_id := null;
+      p_msg        := my_sqlerrm;
+      delete xx_dlvry_booking_lines where book_id = v_booking_id;
+      delete xx_dlvry_booking where book_id = v_booking_id;
+      update XXHDB_EC_RESVE
+         set status = 'ERROR', msg = my_sqlerrm
+       where reservation_id = p_reservation_id;
+      commit;
+    when others then
+      rollback;
+      my_sqlerrm   := SQLERRM;
+      p_status     := 'F';
+      p_booking_id := null;
+      p_msg        := my_sqlerrm;
+      delete xx_dlvry_booking_lines where book_id = v_booking_id;
+      delete xx_dlvry_booking where book_id = v_booking_id;
+      update XXHDB_EC_RESVE
+         set status = 'ERROR', msg = my_sqlerrm
+       where reservation_id = p_reservation_id;
+      commit;
+  end;
+
+  procedure confirm_booking(p_reservation_id  number,
+                            p_Hybris_Cust_nbr varchar2,
+                            p_cust_order_no   varchar2,
+                            p_booking_id      out number,
+                            p_status          out varchar2,
+                            p_msg             out varchar2) is
+    v_rec        xxhdb_tbl_type := xxhdb_tbl_type();
+    v_booking_id number;
+    v_status     varchar2(1);
+    v_msg        varchar2(3000);
+    v_reservation_id number;
+    cursor resv is
+      select distinct GROUP_ID,
+                      request_date,
+                      window,
+                      cust_lat,
+                cust_long,
+                      slots,
+                      region_id,
+                      cust_city,
+                      cust_area,
+                      cust_name,
+                      cust_addr,
+                      cust_mobile
+        from XXHDB_EC_RESVE
+       where reservation_id = p_reservation_id
+       group by GROUP_ID,
+                request_date,
+                window,
+                cust_lat,
+                cust_long,
+                region_id,
+                cust_city,
+                cust_area,
+                cust_name,
+                cust_addr,
+                cust_mobile,
+                slots;
+  begin
+    v_reservation_id:=p_reservation_id;
+    p_booking_id := '';
+  
+    for j in resv loop
+      v_rec.delete;
+      for i in (select rownum i, line_no, item, qty, ins_flag
+                  from XXHDB_EC_RESVE r
+                 where reservation_id = p_reservation_id
+                   and status = 'RESERVED'
+                   and r.group_id = j.group_id) loop
+        v_rec.Extend;
+      
+        v_rec(i.i) := xxhdb_rec(i.line_no, i.item, i.qty, i.ins_flag);
+      end loop;
+    
+      create_booking(p_reservation_id  => p_reservation_id,
+                     p_Hybris_Cust_nbr => p_Hybris_Cust_nbr,
+                     p_cust_nbr        => p_cust_order_no,
+                     p_group           => j.GROUP_ID,
+                     p_order_lines     => v_rec,
+                     p_request_date    => j.request_date,
+                     p_window          => j.window,
+                     p_slots           => j.slots,
+                     p_region          => j.region_id,
+                     p_cust_city       => j.cust_city,
+                     p_cust_area       => j.cust_area,
+                     p_cust_name       => j.cust_name,
+                     p_cust_addr       => j.cust_addr,
+                     p_cust_mobile     => j.cust_mobile,
+                     p_cust_lat        => j.cust_lat,
+                     p_cust_long       => j.cust_long,
+                     p_booking_id      => v_booking_id,
+                     p_status          => v_status,
+                     p_msg             => v_msg);
+      if v_status = 'S' then
+        update XXhdb_EC_RESVE
+           set status         = 'PROCESSED',
+               processed_date = sysdate,
+               CUST_ORDER_NBR = p_cust_order_no,
+               BOOK_ID        = v_booking_id
+         where reservation_id = p_reservation_id
+           and group_id = j.GROUP_ID
+           and status = 'RESERVED'
+           and request_date = j.request_date;
+      end if;
+      p_status := v_status;
+      p_msg    := v_msg;
+      -- p_booking_id := v_booking_id;
+    
+    end loop;
+    commit;
+     update xx_dlvry_resrv_log set last_update_date =sysdate where 
+    p_reservation_id = v_reservation_id;
+    commit;
+  end;
+
+  procedure cancel_booking(p_reservation_id  number,
+                           p_Hybris_Cust_nbr varchar2,
+                           p_status          out varchar2,
+                           p_msg             out varchar2) is
+  v_reservation_id number;
+  begin
+    v_reservation_id:=p_reservation_id;
+    update xx_dlvry_booking
+       set book_status = 'Cancelled'
+     WHERE book_status <> 'Cancelled'
+       and BOOK_ID in
+           (select distinct book_id
+              from xx_dlvry_booking_lines
+             where reservation_id = p_reservation_id
+               and Hybris_Cust_nbr = p_Hybris_Cust_nbr);
+    update XXHDB_EC_RESVE
+       set status = 'Cancelled'
+     where status <> 'Cancelled'
+       and reservation_id = p_reservation_id;
+    p_status := 'S';
+    update xx_dlvry_resrv_log set last_update_date =sysdate where 
+    p_reservation_id = v_reservation_id;
+    commit;
+  exception
+    when others then
+      p_status := 'F';
+      p_msg    := SQLERRM;
+  end;
+end XXHDB_CORE_PKG;

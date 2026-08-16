@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://com.logicinfo.oms/model/"
+            targetNamespace="http://com.logicinfo.oms/model/" elementFormDefault="qualified">
+    <xs:complexType name="RMADeleteRequest">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+            
+           
+            <xs:element name="rma_id" nillable="false" minOccurs="1">
+              <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                        <xs:minExclusive value="0"/>
+                        <xs:totalDigits value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="rma_del_req_id" nillable="false" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="12"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+           
+            <xs:element name="RMADeleteDetail" type="RMADeleteDetail" nillable="false" minOccurs="1" maxOccurs="100"/>
+       
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RMADeleteDetail">
+        <xs:sequence>
+                    <xs:element name="line_no" minOccurs="1" maxOccurs="1" nillable="false">
+                         <xs:simpleType>
+                         <xs:restriction base="xs:unsignedInt">
+                       
+                          <xs:totalDigits value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="item" minOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="25"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+                 </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RMADeleteResponse">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+            
+            <xs:element name="rma_del_req_id" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            
+            <xs:element name="message_status" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+			 <xs:element name="RMADeleteDetailResponse" type="RMADeleteDetailResponse" nillable="true" minOccurs="0" maxOccurs="100"/>
+        </xs:sequence>
+    </xs:complexType>
+	 <xs:complexType name="RMADeleteDetailResponse">
+        <xs:sequence>
+          <xs:element name="line_no" minOccurs="0" maxOccurs="1" nillable="false">
+                         <xs:simpleType>
+                         <xs:restriction base="xs:unsignedInt">
+                       
+                          <xs:totalDigits value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="item" minOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="25"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+         <xs:element name="message_code" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+		
+			<xs:element name="message_desc" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+                 </xs:sequence>
+    </xs:complexType>
+    <xs:element name="DeleteRMA" type="RMADeleteRequest"/>
+    <xs:element name="DeleteRMAResponse" type="RMADeleteResponse"/>
+</xs:schema>

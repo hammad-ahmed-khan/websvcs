@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StsTsfReqModVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StsTsfReqModVo/v1">
+  <xs:element name="StsTsfReqItmMod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="line_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="item_id" type="xs:string"/>
+        <xs:element name="case_size" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="requested_quantity" type="xs:decimal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StsTsfReqModVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transfer_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="sending_store_id" type="xs:long"/>
+        <xs:element name="receiving_store_id" type="xs:long"/>
+        <xs:element name="external_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="comments" type="xs:string" minOccurs="0"/>
+        <xs:element name="context_type_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="context_value" type="xs:string" minOccurs="0"/>
+        <xs:element ref="tns:StsTsfReqItmMod" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="removed_line_id_col" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

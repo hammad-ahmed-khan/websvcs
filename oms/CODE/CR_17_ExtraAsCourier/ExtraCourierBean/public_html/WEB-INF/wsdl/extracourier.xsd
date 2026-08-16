@@ -1,0 +1,91 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto"
+     targetNamespace="http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto"
+     elementFormDefault="qualified">
+   
+    <xs:element name="Shipment">
+    <xs:complexType >
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+            <xs:element name="Address" nillable="true" type="tns:Address"/>
+            <xs:element minOccurs="0" name="Carrier" type="tns:Carrier"/>
+            <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer"/>
+            <xs:element minOccurs="0" name="IsCod" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="IsExpressDelivery" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="OrderId" type="xs:int"/>
+            <xs:element minOccurs="0" name="OrderValue" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProduct"/>
+            <xs:element minOccurs="0" name="ShipmentOrder" nillable="true" type="tns:ShipmentOrder"/>
+            <xs:element minOccurs="0" name="StoreId" type="xs:int"/>
+            <xs:element minOccurs="0" name="TrackingNumber" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+    
+    
+    
+    <xs:complexType name="Address">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="CountryId" type="xs:int"/>
+            <xs:element minOccurs="0" name="District" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ShippingAddress" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="Carrier">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Aramex"/>
+            <xs:enumeration value="Smsa"/>
+            <xs:enumeration value="Alshrouq"/>
+            <xs:enumeration value="Fetchr"/>
+            <xs:enumeration value="Ups"/>
+            <xs:enumeration value="Dhl"/>
+            <xs:enumeration value="Jak"/>
+            <xs:enumeration value="Extra"/>
+            <xs:enumeration value="TAMCO"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="Customer">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CollectorName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="CustomerId" type="xs:int"/>
+            <xs:element minOccurs="0" name="DeliveryMobile" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Language" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Mobile" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ShipmentOrder">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="ShipOrderId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ShipmentId" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Product">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="CartonId" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ProductSku" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="Quantity" type="xs:int"/>
+            <xs:element minOccurs="0" name="TotalValue" type="xs:decimal"/>
+            <xs:element minOccurs="0" name="Weight" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="Product" nillable="true" type="tns:Product"/>
+    <xs:complexType name="ArrayOfProduct">
+        <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct"/>
+    <xs:complexType name="ShipmentResponse">
+        <xs:sequence>
+            <xs:element minOccurs="1" name="AirwayBillNo" nillable="false" type="xs:string"/>
+            <xs:element minOccurs="1" name="LabelData" nillable="false" type="xs:string"/>
+            <xs:element minOccurs="1" name="errorMessage" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+     <xs:element name="CreateShipmentResponse" type="tns:ShipmentResponse"/>
+</xs:schema>

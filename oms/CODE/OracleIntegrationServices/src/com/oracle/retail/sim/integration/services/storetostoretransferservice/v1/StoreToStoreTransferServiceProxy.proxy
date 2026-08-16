@@ -1,0 +1,458 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="StoreToStoreTransferService.xml"/>
+      <url path="StoreToStoreTransferService.wsdl"/>
+      <url path="StoreToStoreTransferService4.xsd"/>
+      <url path="StoreToStoreTransferService5.xsd"/>
+      <url path="StoreToStoreTransferService2.xsd"/>
+      <url path="StoreToStoreTransferService3.xsd"/>
+      <url path="StoreToStoreTransferService1.xsd"/>
+      <url path="StoreToStoreTransferService10.xsd"/>
+      <url path="StoreToStoreTransferService11.xsd"/>
+      <url path="StoreToStoreTransferService12.xsd"/>
+      <url path="StoreToStoreTransferService6.xsd"/>
+      <url path="StoreToStoreTransferService13.xsd"/>
+      <url path="StoreToStoreTransferService7.xsd"/>
+      <url path="StoreToStoreTransferService14.xsd"/>
+      <url path="StoreToStoreTransferService8.xsd"/>
+      <url path="StoreToStoreTransferService15.xsd"/>
+      <url path="StoreToStoreTransferService9.xsd"/>
+      <url path="../../../../../integration/base/bo/ststsfshpmodvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrdesc/v1/package-info.java"/>
+      <url path="SubmitTransfer.java"/>
+      <url path="../../../../../integration/services/exception/v1/ValidationWSFaultException.java"/>
+      <url path="../../../../../integration/services/exception/v1/ObjectFactory.java"/>
+      <url path="DispatchTransferResponse.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrcrivo/v1/StsTsfCriStatus.java"/>
+      <url path="../../../../../integration/base/bo/ststsfdesc/v1/StsTsfItm.java"/>
+      <url path="../../../../../integration/base/bo/ststsfrcvmodvo/v1/StsTsfRcvModVo.java"/>
+      <url path="SubmitTransferResponse.java"/>
+      <url path="../../../../../integration/base/bo/ststsfdesc/v1/StsTsfDesc.java"/>
+      <url path="../../../../../integration/base/bo/ststsfref/v1/StsTsfRef.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrdesc/v1/ObjectFactory.java"/>
+      <url path="SaveTransferRequest.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfreqmodvo/v1/StsTsfReqItmMod.java"/>
+      <url path="LookupTransferHeaderResponse.java"/>
+      <url path="LookupTransferHeader.java"/>
+      <url path="../../../../../integration/base/bo/ststsfshpmodvo/v1/StsTsfModCarrierRole.java"/>
+      <url path="DispatchTransfer.java"/>
+      <url path="SavePendingTransferRequestResponse.java"/>
+      <url path="package-info.java"/>
+      <url path="ApproveTransfer.java"/>
+      <url path="../../../../../integration/services/exception/v1/ServiceOpFaultReason.java"/>
+      <url path="IllegalStateWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/InvocationSuccess.java"/>
+      <url path="CancelTransferResponse.java"/>
+      <url path="../../../../../integration/base/bo/bolmtvcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/ststsfreqmodvo/v1/ObjectFactory.java"/>
+      <url path="CancelTransfer.java"/>
+      <url path="ReceiveTransferResponse.java"/>
+      <url path="ValidationWSFaultException.java"/>
+      <url path="IllegalArgumentWSFaultException.java"/>
+      <url path="PingResponse.java"/>
+      <url path="LookupBillOfLadingMotivesResponse.java"/>
+      <url path="SavePendingTransferRequest.java"/>
+      <url path="../../../../../integration/base/bo/ststsfapvmodvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/bolmtvcoldesc/v1/BolMtvColDesc.java"/>
+      <url path="../../../../../integration/base/bo/ststsfshpmodvo/v1/StsTsfShpModVo.java"/>
+      <url path="../../../../../integration/base/bo/ststsfreqmodvo/v1/package-info.java"/>
+      <url path="../../../../../integration/services/exception/v1/ProblemDetailEntry.java"/>
+      <url path="../../../../../integration/base/bo/ststsfref/v1/ObjectFactory.java"/>
+      <url path="SaveInReceivingTransferResponse.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/ststsfrcvmodvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrcoldesc/v1/StsTsfHdrColDesc.java"/>
+      <url path="CancelTransferSubmissionResponse.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrcoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfref/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/bolmtvdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrcrivo/v1/StsTsfHdrCriVo.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/Nothing.java"/>
+      <url path="RejectTransfer.java"/>
+      <url path="SaveInProgressTransfer.java"/>
+      <url path="../../../../../integration/base/bo/ststsfshpmodvo/v1/StsTsfShpItmMod.java"/>
+      <url path="RequestTransfer.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrdesc/v1/StsTsfStatus.java"/>
+      <url path="../../../../../integration/base/bo/ststsfdesc/v1/StsTsfStatus.java"/>
+      <url path="../../../../../integration/base/bo/ststsfreqmodvo/v1/StsTsfReqModVo.java"/>
+      <url path="SaveInProgressTransferResponse.java"/>
+      <url path="ApproveTransferResponse.java"/>
+      <url path="StoreToStoreTransferPortClient.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrcrivo/v1/package-info.java"/>
+      <url path="../../../../../integration/services/exception/v1/BusinessProblemDetail.java"/>
+      <url path="../../../../../integration/base/bo/ststsfapvmodvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/ststsfdesc/v1/StsTsfCarrierRole.java"/>
+      <url path="ReadTransferDetailResponse.java"/>
+      <url path="../../../../../integration/base/bo/ststsfshpmodvo/v1/ObjectFactory.java"/>
+      <url path="RejectTransferResponse.java"/>
+      <url path="SaveTransferRequestResponse.java"/>
+      <url path="../../../../../integration/base/bo/bolmtvdesc/v1/BolMtvDesc.java"/>
+      <url path="../../../../../integration/services/exception/v1/IllegalArgumentWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/ststsfapvmodvo/v1/StsTsfApvModVo.java"/>
+      <url path="ReadTransferDetail.java"/>
+      <url path="StoreToStoreTransferService.java"/>
+      <url path="CancelTransferSubmission.java"/>
+      <url path="../../../../../integration/services/exception/v1/IllegalStateWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/ststsfshpmodvo/v1/StsTsfBolMod.java"/>
+      <url path="ReceiveTransfer.java"/>
+      <url path="Ping.java"/>
+      <url path="../../../../../integration/base/bo/ststsfdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrdesc/v1/StsTsfHdrDesc.java"/>
+      <url path="ObjectFactory.java"/>
+      <url path="StoreToStoreTransferPortType.java"/>
+      <url path="../../../../../integration/base/bo/bolmtvdesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/ststsfrcvmodvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfapvmodvo/v1/StsTsfApvItmMod.java"/>
+      <url path="../../../../../integration/base/bo/bolmtvcoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/services/exception/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/ststsfrcvmodvo/v1/StsTsfRcvItmMod.java"/>
+      <url path="LookupBillOfLadingMotives.java"/>
+      <url path="SaveInReceivingTransfer.java"/>
+      <url path="../../../../../integration/base/bo/ststsfdesc/v1/StsTsfBol.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/ObjectFactory.java"/>
+      <url path="RequestTransferResponse.java"/>
+      <url path="../../../../../integration/base/bo/ststsfhdrcrivo/v1/ObjectFactory.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="StoreToStoreTransferService.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_NONE"/>
+      <list n="PROXY_CLIENTS">
+         <url path="StoreToStoreTransferPortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/StoreToStoreTransferBean/StoreToStoreTransferService" query="WSDL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="StoreToStoreTransferPort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="com.oracle.retail.sim.integration.services.storetostoretransferservice.v1.StoreToStoreTransferPortType"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="StoreToStoreTransferPort"/>
+            <hash n="OPERATIONS">
+               <hash n="approveTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="cancelTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="cancelTransferSubmission">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="dispatchTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupBillOfLadingMotives">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupTransferHeader">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="ping">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="readTransferDetail">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="receiveTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="rejectTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="requestTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="saveInProgressTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="saveInReceivingTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="savePendingTransferRequest">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="saveTransferRequest">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="submitTransfer">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/StoreToStoreTransferBean/StoreToStoreTransferService"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="StoreToStoreTransferService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../../../../../../OracleIntegrationServices.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="StoreToStoreTransferService4.xsd"/>
+         <url path="StoreToStoreTransferService5.xsd"/>
+         <url path="StoreToStoreTransferService2.xsd"/>
+         <url path="StoreToStoreTransferService3.xsd"/>
+         <url path="StoreToStoreTransferService1.xsd"/>
+         <url path="StoreToStoreTransferService10.xsd"/>
+         <url path="StoreToStoreTransferService11.xsd"/>
+         <url path="StoreToStoreTransferService12.xsd"/>
+         <url path="StoreToStoreTransferService6.xsd"/>
+         <url path="StoreToStoreTransferService13.xsd"/>
+         <url path="StoreToStoreTransferService7.xsd"/>
+         <url path="StoreToStoreTransferService14.xsd"/>
+         <url path="StoreToStoreTransferService8.xsd"/>
+         <url path="StoreToStoreTransferService15.xsd"/>
+         <url path="StoreToStoreTransferService9.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="StoreToStoreTransferService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1}StoreToStoreTransferPortType"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1}StoreToStoreTransferPortBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.approveTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.cancelTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.dispatchTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.receiveTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.rejectTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.requestTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.submitTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.bolmtvcoldesc.v1.BolMtvColDesc.lookupBillOfLadingMotives.com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.ststsfdesc.v1.StsTsfDesc.readTransferDetail.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.ststsfhdrcoldesc.v1.StsTsfHdrColDesc.lookupTransferHeader.com.oracle.retail.integration.base.bo.ststsfhdrcrivo.v1.StsTsfHdrCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.cancelTransferSubmission.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef.saveTransferRequest.com.oracle.retail.integration.base.bo.ststsfreqmodvo.v1.StsTsfReqModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.savePendingTransferRequest.com.oracle.retail.integration.base.bo.ststsfapvmodvo.v1.StsTsfApvModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef.saveInProgressTransfer.com.oracle.retail.integration.base.bo.ststsfshpmodvo.v1.StsTsfShpModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.saveInReceivingTransfer.com.oracle.retail.integration.base.bo.ststsfrcvmodvo.v1.StsTsfRcvModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="java.lang.String.ping.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="577f9024-014d-1000-8087-c0a8a23ddf92"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="StoreToStoreTransferPort"/>
+               <value n="PORT_BINDING_NAME" v="{http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1}StoreToStoreTransferPortBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.approveTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.cancelTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.dispatchTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.receiveTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.rejectTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.requestTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.submitTransfer.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.bolmtvcoldesc.v1.BolMtvColDesc.lookupBillOfLadingMotives.com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.ststsfdesc.v1.StsTsfDesc.readTransferDetail.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.ststsfhdrcoldesc.v1.StsTsfHdrColDesc.lookupTransferHeader.com.oracle.retail.integration.base.bo.ststsfhdrcrivo.v1.StsTsfHdrCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.cancelTransferSubmission.com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef.saveTransferRequest.com.oracle.retail.integration.base.bo.ststsfreqmodvo.v1.StsTsfReqModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.savePendingTransferRequest.com.oracle.retail.integration.base.bo.ststsfapvmodvo.v1.StsTsfApvModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.ststsfref.v1.StsTsfRef.saveInProgressTransfer.com.oracle.retail.integration.base.bo.ststsfshpmodvo.v1.StsTsfShpModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.saveInReceivingTransfer.com.oracle.retail.integration.base.bo.ststsfrcvmodvo.v1.StsTsfRcvModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="java.lang.String.ping.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/StoreToStoreTransferBean/StoreToStoreTransferService"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1}StoreToStoreTransferPortType"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="com.oracle.retail.sim.integration.services.storetostoretransferservice.v1.StoreToStoreTransferPortTypeImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="com.oracle.retail.sim.integration.services.storetostoretransferservice.v1.StoreToStoreTransferPortType"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="com.oracle.retail.sim.integration.services.storetostoretransferservice.v1.StoreToStoreTransferPortType"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../../../../../../OracleIntegrationServices.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://www.oracle.com/retail/sim/integration/services/StoreToStoreTransferService/v1"/>
+         <value n="WS_URI" v="StoreToStoreTransferService"/>
+         <url n="WS_WSDL_FILE" path="StoreToStoreTransferService.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

@@ -1,0 +1,196 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-body">
+            <div *ngIf="!createFulfilment">
+                <form [formGroup]="searchForm" #form="ngForm" (ngSubmit)="searchFulfilment()">
+                    <div class="row">
+                        <div class="col-3">
+                            <label>Order Number</label>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="form-control" formControlName="orderNumber" [ngClass]="{'is-invalid': form.submitted && searchForm.get('orderNumber').hasError('required')}"/>
+                            <div *ngIf="form.submitted && searchForm.get('orderNumber').hasError('required')" class="invalid-feedback">
+                                This field is required
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <label>Item#</label>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="form-control" [ngClass]="{'is-invalid': form.submitted && searchForm.get('item').hasError('required')}" formControlName="item"/>
+                            <div *ngIf="form.submitted && searchForm.get('item').hasError('required')" class="invalid-feedback">
+                                This field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary mr-2">Search</button>
+                            <button type="reset" class="btn btn-warning mr-2">Reset</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="mt-3 overflow-auto">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Item Number</th>
+                                <th>Line Number</th>
+                                <th style="width: 250px;">Item Description</th>
+                                <th>Fulfilment No#</th>
+                                <th>Source Location</th>
+                                <th>Fulfil Location</th>
+                                <th>Requested Qty</th>
+                                <th>Cancelled Qty</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let f of fulfilments">
+                                <td>{{ f.orderInfo.orderNumber }}</td>
+                                <td>{{ f.item }}</td>
+                                <td>{{ f.lineNo }}</td>
+                                <td>{{ f.itemDesc }}</td>
+                                <td>{{ f.fulfilOrdNo }}</td>
+                                <td>{{ f.srcLocation + ' - ' + f.srcLocationType }}</td>
+                                <td>{{ f.fulfilLocation + ' - ' + f.fulfilLocationType }}</td>
+                                <td>{{ f.requestQty }}</td>
+                                <td>{{ f.cancelledQty }}</td>
+                                <td class="p-2">
+                                    <div>
+                                        <a *ngIf="(f.cancelledQty || 0) + (f.deliveryQty || 0) < f.requestQty" class="btn btn-link" href="javascript:void()" (click)="openCancelFulfilmentForm(f)">Cancel</a>
+                                        <a *ngIf="(f.cancelledQty || 0) - (f.itemCancelledQty || 0) != 0" class="btn btn-link py-0" href="javascript:void()" (click)="loadCreateForm(f)">Create</a>
+                                        <a *ngIf="f.requestQty != f.itemCancelledQty && (f.cancelledQty || 0) + (f.deliveryQty || 0) < f.requestQty" class="btn btn-link py-0" href="javascript:void()" (click)="loadCreateForm(f, true)">Cancel & Create</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div *ngIf="createFulfilment">
+                <form [formGroup]="createForm" #fulfilForm="ngForm" (ngSubmit)="createNewFulfilment()">
+                    <div class="row">
+                        <div class="col-3">
+                            <label>Item Desc.</label>
+                        </div>
+                        <div class="col-9">
+                            <input type="text" class="form-control" [value]="fulfilment.itemDesc" readonly />
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label>Item#</label>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="form-control" [value]="fulfilment.item" readonly />
+                        </div>
+                        <div class="col-3">
+                            <label>Line No</label>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="form-control" [value]="fulfilment.lineNo" readonly />
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label>Source Location Type</label>
+                        </div>
+                        <div class="col-3">
+                            <select class="form-control" formControlName="srcLocationType" (change)="loadSRCLocation()" [ngClass]="{'is-invalid': fulfilForm.submitted && createForm.get('srcLocationType').hasError('required')}">
+                                <option value="">Select</option>
+                                <option value="ST">Store</option>
+                                <option value="WH">Warehouse</option>
+                            </select>
+                            <div *ngIf="fulfilForm.submitted && createForm.get('srcLocationType').hasError('required')" class="invalid-feedback">
+                                This field is required
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <label>Source Location</label>
+                        </div>
+                        <div class="col-3">
+                            <select class="form-control" (change)="loadStockQty()" [ngClass]="{'is-invalid': (fulfilForm.submitted && createForm.get('srcLocation').hasError('required')) || createForm.get('srcLocation').hasError('notAvailable')}" formControlName="srcLocation">
+                                <option value="">Select</option>
+                                <ng-container *ngIf="createForm.get('srcLocationType').value != 'WH'">
+                                    <option *ngFor="let src of sourceLocs | keyvalue " value="{{ src.key }}">{{ src.key + ' - ' + src.value }}</option>
+                                </ng-container>
+                                <ng-container *ngIf="createForm.get('srcLocationType').value == 'WH'">
+                                    <option *ngFor="let wh of sourceLocs " [ngValue]="wh">{{ wh.wh + ' - ' + wh.name }}</option>
+                                </ng-container>
+                            </select>
+                            <div *ngIf="fulfilForm.submitted && createForm.get('srcLocation').hasError('required')" class="invalid-feedback">
+                                This field is required
+                            </div>
+                            <div *ngIf="createForm.get('srcLocation').hasError('notAvailable')" class="invalid-feedback">
+                                Req. qty is not available.
+                            </div>
+                            <div *ngIf="createForm.get('srcLocation').valid" class="valid-feedback">
+                                Req. qty is available.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label>Fulfil Location Type</label>
+                        </div>
+                        <div class="col-3">
+                            <select class="form-control" formControlName="fulfilLocationType" (change)="loadFulfilLocation()" [ngClass]="{'is-invalid': fulfilForm.submitted && createForm.get('fulfilLocationType').hasError('required')}">
+                                <option value="">Select</option>
+                                <option value="S">Store</option>
+                                <option value="W">Warehouse</option>
+                                <option value="V">Virtual</option>
+                            </select>
+                            <div *ngIf="fulfilForm.submitted && createForm.get('fulfilLocationType').hasError('required')" class="invalid-feedback">
+                                This field is required
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <label>Fulfil Location</label>
+                        </div>
+                        <div class="col-3">
+                            <select class="form-control" [ngClass]="{'is-invalid': fulfilForm.submitted && createForm.get('fulfilLocation').hasError('required')}" formControlName="fulfilLocation">
+                                <option value="">Select</option>
+                                <ng-container *ngIf="createForm.get('fulfilLocationType').value != 'W'">
+                                    <option *ngFor="let src of fulfimentLocs | keyvalue " value="{{ src.key }}">{{ src.key + ' - ' + src.value }}</option>
+                                </ng-container>
+                                <ng-container *ngIf="createForm.get('fulfilLocationType').value == 'W'">
+                                    <option *ngFor="let wh of fulfimentLocs " [ngValue]="wh">{{ wh.wh + ' - ' + wh.name }}</option>
+                                </ng-container>
+                            </select>
+                            <div *ngIf="fulfilForm.submitted && createForm.get('fulfilLocation').hasError('required')" class="invalid-feedback">
+                                This field is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-3">
+                            <label>Quantity</label>
+                        </div>
+                        <div class="col-3">
+                            <input type="number" class="form-control" formControlName="requestQty" [ngClass]="{'is-invalid': fulfilForm.submitted && !createForm.get('requestQty').valid}" (change)="validateStock($event.target.value)"/>
+                            <div *ngIf="fulfilForm.submitted && createForm.get('requestQty').hasError('required')" class="invalid-feedback">
+                                This field is required
+                            </div>
+
+                            
+                            <div *ngIf="fulfilForm.submitted && createForm.get('requestQty').hasError('min')" class="invalid-feedback">
+                                Please enter minimum 1 Qty.
+                            </div>
+                            <div *ngIf="fulfilForm.submitted && createForm.get('requestQty').hasError('max')" class="invalid-feedback">
+                                Qty is more than requested quantity
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                            <button type="button" class="btn btn-danger mr-2" (click)="cancelCreateFulfil()">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

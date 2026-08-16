@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrCriVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrCriVo/v1">
+  <xs:element name="StrAdjHdrCriVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="store_id" type="xs:long"/>
+        <xs:element name="from_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="to_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="item_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="adjustment_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="reason_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="status" type="tns:str_adj_status"/>
+        <xs:element name="user_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="nonsellable_type_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="template_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="search_limit" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="str_adj_status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="CANCELED"/>
+      <xs:enumeration value="UNKNOWN"/>
+      <xs:enumeration value="NO_VALUE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

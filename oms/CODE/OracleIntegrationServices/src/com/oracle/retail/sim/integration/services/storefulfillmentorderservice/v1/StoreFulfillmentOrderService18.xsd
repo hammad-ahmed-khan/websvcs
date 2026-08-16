@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StrFordHdrCriVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StrFordHdrCriVo/v1">
+  <xs:element name="StrFordHdrCriVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="release_from_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="release_to_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="status" type="tns:StrFordCriStatus"/>
+        <xs:element name="int_fulfillment_order_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="ext_fulfillment_order_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="customer_order_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="bin_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="order_type" type="tns:StrFordCriType"/>
+        <xs:element name="customer_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="item_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="store_id" type="xs:long"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="StrFordCriStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="CANCELED"/>
+      <xs:enumeration value="ACTIVE"/>
+      <xs:enumeration value="NO_VALUE"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StrFordCriType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LAYAWAY"/>
+      <xs:enumeration value="PICKUP_AND_DELIVERY"/>
+      <xs:enumeration value="CUSTOMER_ORDER"/>
+      <xs:enumeration value="PENDING_PURCHASE"/>
+      <xs:enumeration value="SPECIAL_ORDER"/>
+      <xs:enumeration value="WEB_ORDER"/>
+      <xs:enumeration value="NO_VALUE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

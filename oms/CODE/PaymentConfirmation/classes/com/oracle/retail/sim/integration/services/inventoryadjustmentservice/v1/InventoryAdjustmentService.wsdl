@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1" name="InventoryAdjustmentService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1" schemaLocation="InventoryAdjustmentService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1" schemaLocation="InventoryAdjustmentService12.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTplRef/v1" schemaLocation="InventoryAdjustmentService13.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTplDesc/v1" schemaLocation="InventoryAdjustmentService14.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTpHdDesc/v1" schemaLocation="InventoryAdjustmentService15.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTpHdCriVo/v1" schemaLocation="InventoryAdjustmentService16.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTpHdColDesc/v1" schemaLocation="InventoryAdjustmentService17.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjRsnDesc/v1" schemaLocation="InventoryAdjustmentService18.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjRsnColDesc/v1" schemaLocation="InventoryAdjustmentService19.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjRef/v1" schemaLocation="InventoryAdjustmentService2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjModVo/v1" schemaLocation="InventoryAdjustmentService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrDesc/v1" schemaLocation="InventoryAdjustmentService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrCriVo/v1" schemaLocation="InventoryAdjustmentService5.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjHdrColDesc/v1" schemaLocation="InventoryAdjustmentService6.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrAdjDesc/v1" schemaLocation="InventoryAdjustmentService7.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/NslQtyTypDesc/v1" schemaLocation="InventoryAdjustmentService8.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/NslQtyTypColDesc/v1" schemaLocation="InventoryAdjustmentService9.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/Nothing/v1" schemaLocation="InventoryAdjustmentService10.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="InventoryAdjustmentService11.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="confirmInventoryAdjustment">
+    <part name="parameters" element="tns:confirmInventoryAdjustment"/>
+  </message>
+  <message name="confirmInventoryAdjustmentResponse">
+    <part name="parameters" element="tns:confirmInventoryAdjustmentResponse"/>
+  </message>
+  <message name="IllegalArgumentWSFaultException">
+    <part xmlns:ns1="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns1:IllegalArgumentWSFaultException"/>
+  </message>
+  <message name="ValidationWSFaultException">
+    <part xmlns:ns2="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns2:ValidationWSFaultException"/>
+  </message>
+  <message name="IllegalStateWSFaultException">
+    <part xmlns:ns3="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns3:IllegalStateWSFaultException"/>
+  </message>
+  <message name="cancelInventoryAdjustment">
+    <part name="parameters" element="tns:cancelInventoryAdjustment"/>
+  </message>
+  <message name="cancelInventoryAdjustmentResponse">
+    <part name="parameters" element="tns:cancelInventoryAdjustmentResponse"/>
+  </message>
+  <message name="saveAndConfirmInventoryAdjustment">
+    <part name="parameters" element="tns:saveAndConfirmInventoryAdjustment"/>
+  </message>
+  <message name="saveAndConfirmInventoryAdjustmentResponse">
+    <part name="parameters" element="tns:saveAndConfirmInventoryAdjustmentResponse"/>
+  </message>
+  <message name="lookupInventoryAdjustmentReason">
+    <part name="parameters" element="tns:lookupInventoryAdjustmentReason"/>
+  </message>
+  <message name="lookupInventoryAdjustmentReasonResponse">
+    <part name="parameters" element="tns:lookupInventoryAdjustmentReasonResponse"/>
+  </message>
+  <message name="lookupNonSellableQuantityType">
+    <part name="parameters" element="tns:lookupNonSellableQuantityType"/>
+  </message>
+  <message name="lookupNonSellableQuantityTypeResponse">
+    <part name="parameters" element="tns:lookupNonSellableQuantityTypeResponse"/>
+  </message>
+  <message name="lookupInventoryAdjustmentTemplateHeader">
+    <part name="parameters" element="tns:lookupInventoryAdjustmentTemplateHeader"/>
+  </message>
+  <message name="lookupInventoryAdjustmentTemplateHeaderResponse">
+    <part name="parameters" element="tns:lookupInventoryAdjustmentTemplateHeaderResponse"/>
+  </message>
+  <message name="readInventoryAdjustmentTemplateDetail">
+    <part name="parameters" element="tns:readInventoryAdjustmentTemplateDetail"/>
+  </message>
+  <message name="readInventoryAdjustmentTemplateDetailResponse">
+    <part name="parameters" element="tns:readInventoryAdjustmentTemplateDetailResponse"/>
+  </message>
+  <message name="lookupInventoryAdjustmentHeader">
+    <part name="parameters" element="tns:lookupInventoryAdjustmentHeader"/>
+  </message>
+  <message name="lookupInventoryAdjustmentHeaderResponse">
+    <part name="parameters" element="tns:lookupInventoryAdjustmentHeaderResponse"/>
+  </message>
+  <message name="readInventoryAdjustmentDetail">
+    <part name="parameters" element="tns:readInventoryAdjustmentDetail"/>
+  </message>
+  <message name="readInventoryAdjustmentDetailResponse">
+    <part name="parameters" element="tns:readInventoryAdjustmentDetailResponse"/>
+  </message>
+  <message name="saveInventoryAdjustment">
+    <part name="parameters" element="tns:saveInventoryAdjustment"/>
+  </message>
+  <message name="saveInventoryAdjustmentResponse">
+    <part name="parameters" element="tns:saveInventoryAdjustmentResponse"/>
+  </message>
+  <message name="ping">
+    <part name="parameters" element="tns:ping"/>
+  </message>
+  <message name="pingResponse">
+    <part name="parameters" element="tns:pingResponse"/>
+  </message>
+  <portType name="InventoryAdjustmentPortType">
+    <operation name="confirmInventoryAdjustment">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/confirmInventoryAdjustmentRequest" message="tns:confirmInventoryAdjustment"/>
+      <output message="tns:confirmInventoryAdjustmentResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="cancelInventoryAdjustment">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/cancelInventoryAdjustmentRequest" message="tns:cancelInventoryAdjustment"/>
+      <output message="tns:cancelInventoryAdjustmentResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="saveAndConfirmInventoryAdjustment">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/saveAndConfirmInventoryAdjustmentRequest" message="tns:saveAndConfirmInventoryAdjustment"/>
+      <output message="tns:saveAndConfirmInventoryAdjustmentResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupInventoryAdjustmentReason">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/lookupInventoryAdjustmentReasonRequest" message="tns:lookupInventoryAdjustmentReason"/>
+      <output message="tns:lookupInventoryAdjustmentReasonResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupNonSellableQuantityType">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/lookupNonSellableQuantityTypeRequest" message="tns:lookupNonSellableQuantityType"/>
+      <output message="tns:lookupNonSellableQuantityTypeResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupInventoryAdjustmentTemplateHeader">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/lookupInventoryAdjustmentTemplateHeaderRequest" message="tns:lookupInventoryAdjustmentTemplateHeader"/>
+      <output message="tns:lookupInventoryAdjustmentTemplateHeaderResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="readInventoryAdjustmentTemplateDetail">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/readInventoryAdjustmentTemplateDetailRequest" message="tns:readInventoryAdjustmentTemplateDetail"/>
+      <output message="tns:readInventoryAdjustmentTemplateDetailResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupInventoryAdjustmentHeader">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/lookupInventoryAdjustmentHeaderRequest" message="tns:lookupInventoryAdjustmentHeader"/>
+      <output message="tns:lookupInventoryAdjustmentHeaderResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="readInventoryAdjustmentDetail">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/readInventoryAdjustmentDetailRequest" message="tns:readInventoryAdjustmentDetail"/>
+      <output message="tns:readInventoryAdjustmentDetailResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="saveInventoryAdjustment">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/saveInventoryAdjustmentRequest" message="tns:saveInventoryAdjustment"/>
+      <output message="tns:saveInventoryAdjustmentResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="ping">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1/InventoryAdjustmentPortType/pingRequest" message="tns:ping"/>
+      <output message="tns:pingResponse"/>
+    </operation>
+  </portType>
+  <binding name="InventoryAdjustmentPortBinding" type="tns:InventoryAdjustmentPortType">
+    <wsaw:UsingAddressing/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="confirmInventoryAdjustment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="cancelInventoryAdjustment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="saveAndConfirmInventoryAdjustment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupInventoryAdjustmentReason">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupNonSellableQuantityType">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupInventoryAdjustmentTemplateHeader">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="readInventoryAdjustmentTemplateDetail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupInventoryAdjustmentHeader">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="readInventoryAdjustmentDetail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="saveInventoryAdjustment">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ping">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="InventoryAdjustmentService">
+    <port name="InventoryAdjustmentPort" binding="tns:InventoryAdjustmentPortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:17019/InventoryAdjustmentBean/InventoryAdjustmentService"/>
+    </port>
+  </service>
+</definitions>

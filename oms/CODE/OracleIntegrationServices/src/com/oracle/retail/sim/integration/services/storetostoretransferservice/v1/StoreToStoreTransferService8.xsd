@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/services/exception/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/services/exception/v1">
+  <xs:element name="BusinessProblemDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="problemDescription" type="xs:string" maxOccurs="unbounded"/>
+        <xs:element ref="tns:ProblemDetailEntry" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IllegalArgumentWSFaultException" nillable="true">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="shortErrorMessage" type="xs:string"/>
+        <xs:element name="errorDescription" type="xs:string" minOccurs="0"/>
+        <xs:element ref="tns:BusinessProblemDetail" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IllegalStateWSFaultException" nillable="true">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="shortErrorMessage" type="xs:string"/>
+        <xs:element name="errorDescription" type="xs:string" minOccurs="0"/>
+        <xs:element ref="tns:BusinessProblemDetail" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProblemDetailEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="value" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceOpFaultReason">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="shortErrorMessage" type="xs:string"/>
+        <xs:element name="errorDescription" type="xs:string" minOccurs="0"/>
+        <xs:element ref="tns:BusinessProblemDetail" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidationWSFaultException" nillable="true">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="shortErrorMessage" type="xs:string"/>
+        <xs:element name="errorDescription" type="xs:string" minOccurs="0"/>
+        <xs:element ref="tns:BusinessProblemDetail" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

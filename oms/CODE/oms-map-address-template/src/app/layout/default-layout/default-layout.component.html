@@ -1,0 +1,19 @@
+<!--main-->
+<div class="wrapper d-flex flex-column min-vh-100">  
+  <!--app-body-->
+  <div class="body flex-grow-1">
+    <c-container breakpoint="lg" class="h-auto">
+      <router-outlet />
+    </c-container>
+  </div>
+  <!--app footer-->
+  <app-default-footer />
+  <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-circus"
+>
+  
+</ngx-spinner>
+</div>

@@ -1,0 +1,180 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="Status.xml"/>
+      <url path="Status.wsdl"/>
+      <url path="../../../../org/datacontract/schemas/_2004/_07/extra_services/OrderDetailStatus.java"/>
+      <url path="BasicHttpBinding_IStatusClient.java"/>
+      <url path="Status.java"/>
+      <url path="../../../../org/datacontract/schemas/_2004/_07/extra_services/ObjectFactory.java"/>
+      <url path="IStatus.java"/>
+      <url path="../../../../org/datacontract/schemas/_2004/_07/extra_services/OrderStatus.java"/>
+      <url path="../../../../com/microsoft/schemas/_2003/_10/serialization/ObjectFactory.java"/>
+      <url path="../../../../org/datacontract/schemas/_2004/_07/extra_services/ArrayOfOrderDetailStatus.java"/>
+      <url path="../../../../com/extra/services/omsstatus/UpdateOrderStatusResponse.java"/>
+      <url path="../../../../com/extra/services/omsstatus/package-info.java"/>
+      <url path="../../../../org/datacontract/schemas/_2004/_07/extra_services/package-info.java"/>
+      <url path="../../../../com/extra/services/omsstatus/ObjectFactory.java"/>
+      <url path="../../../../com/extra/services/omsstatus/UpdateOrderStatus.java"/>
+      <url path="NetTcpBinding_IStatusClient.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="Status.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="retail.siebel.com.soaintegration"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
+      <list n="PROXY_CLIENTS">
+         <url path="BasicHttpBinding_IStatusClient.java"/>
+         <url path="NetTcpBinding_IStatusClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" protocol="http" host="192.168.40.89" path="/eXtra.Services.Oms/Status.svc" query="singleWsdl"/>
+      <hash n="PROXY_PORTS">
+         <hash n="BasicHttpBinding_IStatus">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="retail.siebel.com.soaintegration.IStatus"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="BasicHttpBinding_IStatus"/>
+            <hash n="OPERATIONS">
+               <hash n="UpdateOrderStatus">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="192.168.40.89" path="/eXtra.Services.Oms/Status.svc"/>
+         </hash>
+         <hash n="NetTcpBinding_IStatus">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="retail.siebel.com.soaintegration.IStatus"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="NetTcpBinding_IStatus"/>
+            <hash n="OPERATIONS">
+               <hash n="UpdateOrderStatus">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="localhost" port="7101" path="/WebServices-OracleIntegrationServices-context-root/IStatusImplService"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="Status"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://www.extra.com/Services/OmsStatus"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../../OracleIntegrationServices.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST"/>
+      <url n="PROXY_WSDL_URL" path="Status.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://www.extra.com/Services/OmsStatus}IStatus"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://www.extra.com/Services/OmsStatus}BasicHttpBinding_IStatus"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="java.lang.String.updateOrderStatus.org.datacontract.schemas._2004._07.extra_services.OrderStatus"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+            <hash>
+               <value n="BD_SOAP_VERSION" v="1.2"/>
+               <value n="BOUND_PORT_TYPE" v="{http://www.extra.com/Services/OmsStatus}IStatus"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://www.extra.com/Services/OmsStatus}NetTcpBinding_IStatus"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="java.lang.String.updateOrderStatus.org.datacontract.schemas._2004._07.extra_services.OrderStatus"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="4429bc57-0162-1000-8002-ac1113473a24"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="BasicHttpBinding_IStatus"/>
+               <value n="PORT_BINDING_NAME" v="{http://www.extra.com/Services/OmsStatus}BasicHttpBinding_IStatus"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="java.lang.String.updateOrderStatus.org.datacontract.schemas._2004._07.extra_services.OrderStatus"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="192.168.40.89" path="/eXtra.Services.Oms/Status.svc"/>
+            </hash>
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="NetTcpBinding_IStatus"/>
+               <value n="PORT_BINDING_NAME" v="{http://www.extra.com/Services/OmsStatus}NetTcpBinding_IStatus"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="java.lang.String.updateOrderStatus.org.datacontract.schemas._2004._07.extra_services.OrderStatus"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="localhost" port="7101" path="/WebServices-OracleIntegrationServices-context-root/IStatusImplService"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+               <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="retail.siebel.com.soaintegration"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://www.extra.com/Services/OmsStatus}IStatus"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="retail.siebel.com.soaintegration.IStatusImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="retail.siebel.com.soaintegration.IStatus"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="retail.siebel.com.soaintegration.IStatus"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../../OracleIntegrationServices.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://www.extra.com/Services/OmsStatus"/>
+         <value n="WS_URI" v="Status"/>
+         <url n="WS_WSDL_FILE" path="Status.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

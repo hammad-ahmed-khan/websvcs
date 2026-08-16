@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1" xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/PendRtrnRef/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/PendRtrnDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/PendRtrnDesc/v1" schemaLocation="PendingReturnsService4.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="PendingReturnsService5.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/PendRtrnRef/v1" schemaLocation="PendingReturnsService3.xsd"/>
+  <xs:element name="pendReturnDtlCreate" type="tns:pendReturnDtlCreate"/>
+  <xs:element name="pendReturnDtlCreateResponse" type="tns:pendReturnDtlCreateResponse"/>
+  <xs:element name="pendReturnDtlDelete" type="tns:pendReturnDtlDelete"/>
+  <xs:element name="pendReturnDtlDeleteResponse" type="tns:pendReturnDtlDeleteResponse"/>
+  <xs:element name="pendReturnDtlModify" type="tns:pendReturnDtlModify"/>
+  <xs:element name="pendReturnDtlModifyResponse" type="tns:pendReturnDtlModifyResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:complexType name="pendReturnDtlModify">
+    <xs:sequence>
+      <xs:element ref="ns1:PendRtrnDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pendReturnDtlModifyResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pendReturnDtlDelete">
+    <xs:sequence>
+      <xs:element ref="ns3:PendRtrnRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pendReturnDtlDeleteResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pendReturnDtlCreate">
+    <xs:sequence>
+      <xs:element ref="ns1:PendRtrnDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pendReturnDtlCreateResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

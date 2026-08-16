@@ -1,0 +1,1258 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+  </ID>
+  <name>OMS_ORPOS_MASTER_AUDIT</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9fd3d8d5-f7ec-47ec-8f0f-6b02fe18b7d5</identifier>
+      </ID>
+      <name>ORDER_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ec7ad840-09d7-4e60-a343-aee1a9667a16</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ORDER_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ORDER_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e0329996-2a8a-45b1-b55e-9aefb003bd94</identifier>
+      </ID>
+      <name>OMS_CUST_ORDER_NO</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ba47445e-27a2-4595-be41-fe356f9cdcd8</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OMS_CUST_ORDER_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OMS_CUST_ORDER_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1297c55c-231a-42fa-afd9-d3f01462b660</identifier>
+      </ID>
+      <name>ORPOS_TRANSACTION_NUMBER</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d41c811d-e071-41fe-8b41-a9a3b1173570</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ORPOS_TRANSACTION_NUMBER</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ORPOS_TRANSACTION_NUMBER</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">707e6a1e-d5b4-4d26-baa3-76f62876fcf0</identifier>
+      </ID>
+      <name>LINE_ITEM_NO</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">59332eb4-8322-4709-9c71-27ece86ba48f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">9</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>LINE_ITEM_NO</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LINE_ITEM_NO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5b013194-4493-4d3d-92b4-9be4413aafdb</identifier>
+      </ID>
+      <name>PICKUP_QUANTITY</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fc384289-a236-4f0d-a641-bbf021ce2198</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PICKUP_QUANTITY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PICKUP_QUANTITY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1ebb6aee-68c4-4d77-beaa-0136418b99df</identifier>
+      </ID>
+      <name>CANCEL_QUANTITY</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">93ee8c9e-8a41-4e94-8c02-869c41d4f466</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CANCEL_QUANTITY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CANCEL_QUANTITY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c4bed580-ad0c-4e07-af6e-e5d0f1b147bf</identifier>
+      </ID>
+      <name>RETURN_QUANTITY</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">88e841b3-e64c-48ca-8945-3dfaa0394845</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>RETURN_QUANTITY</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>RETURN_QUANTITY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3b110a72-809f-461a-a308-138596949cc4</identifier>
+      </ID>
+      <name>CANCEL_REQ_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a7df29cc-a65f-42d9-89bb-642e8322c745</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CANCEL_REQ_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CANCEL_REQ_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d52dbf55-e9aa-401f-aa75-f502bbeb9a33</identifier>
+      </ID>
+      <name>RMA_REQ_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">00772858-87c1-4277-84a0-c318e58bccfc</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>RMA_REQ_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>RMA_REQ_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">58553f03-3b03-4b07-89bd-15ea352b8780</identifier>
+      </ID>
+      <name>EVENT_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7181b9bb-d713-4e65-a855-443274c5315f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">12</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>EVENT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EVENT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b7115c0b-061a-40f2-97ff-0affdc589e61</identifier>
+      </ID>
+      <name>STATUS</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">12fc1aba-7a69-452d-bb67-06f0a1bf6909</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>STATUS</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>STATUS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d64fb758-2684-4b1d-939d-3bd1bdd3ac6c</identifier>
+      </ID>
+      <name>CREATE_TIMESTAMP</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d517f7d5-e850-4ec5-bcde-476a15024772</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATE_TIMESTAMP</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATE_TIMESTAMP</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">481b8758-5a2a-4624-8349-46c9f19e03f6</identifier>
+      </ID>
+      <name>UPDATE_TIMESTAMP</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">665386f2-5bc2-4731-ba7c-6a153ba374c3</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>UPDATE_TIMESTAMP</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526129</identifier>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>UPDATE_TIMESTAMP</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3de53ac0-18ba-46a6-ac4e-03cb26279560</identifier>
+      </ID>
+      <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ORDER_ID</name>
+          <identifier class="java.lang.String">9fd3d8d5-f7ec-47ec-8f0f-6b02fe18b7d5</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_ORPOS_MASTER_AUDIT</name>
+            <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+            <schemaName>OMSDEV</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>OMSDEV</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>OMS_CUST_ORDER_NO</name>
+          <identifier class="java.lang.String">e0329996-2a8a-45b1-b55e-9aefb003bd94</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_ORPOS_MASTER_AUDIT</name>
+            <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+            <schemaName>OMSDEV</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>OMSDEV</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ORPOS_TRANSACTION_NUMBER</name>
+          <identifier class="java.lang.String">1297c55c-231a-42fa-afd9-d3f01462b660</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_ORPOS_MASTER_AUDIT</name>
+            <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+            <schemaName>OMSDEV</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>OMSDEV</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>LINE_ITEM_NO</name>
+          <identifier class="java.lang.String">707e6a1e-d5b4-4d26-baa3-76f62876fcf0</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>OMS_ORPOS_MASTER_AUDIT</name>
+            <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+            <schemaName>OMSDEV</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>OMSDEV</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+        <identifier class="java.lang.String">f6beded2-88b8-4d41-b7e9-2348bc1bdaa1</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>OMS_ORPOS_MASTER_AUDIT</name>
+          <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+          <schemaName>OMSDEV</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>OMSDEV</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+            <childObjectNames>
+              <childObjectName>ORDER_ID</childObjectName>
+              <childObjectName>OMS_CUST_ORDER_NO</childObjectName>
+              <childObjectName>ORPOS_TRANSACTION_NUMBER</childObjectName>
+              <childObjectName>LINE_ITEM_NO</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f6beded2-88b8-4d41-b7e9-2348bc1bdaa1</identifier>
+      </ID>
+      <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">9aa7a672-1c88-4693-98cb-e75f389daf48</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">ce44a86c-8c8e-4861-8fd8-ca34dd19746a</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ORDER_ID</name>
+              <identifier class="java.lang.String">9fd3d8d5-f7ec-47ec-8f0f-6b02fe18b7d5</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_ORPOS_MASTER_AUDIT</name>
+                <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+                <schemaName>OMSDEV</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>OMSDEV</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                      <identifier class="java.math.BigDecimal">7526145</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_ORPOS_MASTER_AUDIT</name>
+                        <identifier class="java.math.BigDecimal">7526129</identifier>
+                        <schemaName>OMSDEV</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSDEV</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526145</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_ORPOS_MASTER_AUDIT</name>
+                    <identifier class="java.math.BigDecimal">7526129</identifier>
+                    <schemaName>OMSDEV</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">46bda117-c2f8-469b-aa1b-32658013cce7</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">adbc9c68-8e26-4b06-a733-f2650d5aba7c</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>OMS_CUST_ORDER_NO</name>
+              <identifier class="java.lang.String">e0329996-2a8a-45b1-b55e-9aefb003bd94</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_ORPOS_MASTER_AUDIT</name>
+                <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+                <schemaName>OMSDEV</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>OMSDEV</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                      <identifier class="java.math.BigDecimal">7526145</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_ORPOS_MASTER_AUDIT</name>
+                        <identifier class="java.math.BigDecimal">7526129</identifier>
+                        <schemaName>OMSDEV</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSDEV</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526145</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_ORPOS_MASTER_AUDIT</name>
+                    <identifier class="java.math.BigDecimal">7526129</identifier>
+                    <schemaName>OMSDEV</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">4491ec4c-04ae-4bbc-bca5-32749ca3b750</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">89b8f166-ac89-4928-a659-fde13d9afe82</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ORPOS_TRANSACTION_NUMBER</name>
+              <identifier class="java.lang.String">1297c55c-231a-42fa-afd9-d3f01462b660</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_ORPOS_MASTER_AUDIT</name>
+                <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+                <schemaName>OMSDEV</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>OMSDEV</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                      <identifier class="java.math.BigDecimal">7526145</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_ORPOS_MASTER_AUDIT</name>
+                        <identifier class="java.math.BigDecimal">7526129</identifier>
+                        <schemaName>OMSDEV</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSDEV</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526145</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_ORPOS_MASTER_AUDIT</name>
+                    <identifier class="java.math.BigDecimal">7526129</identifier>
+                    <schemaName>OMSDEV</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">af12984d-3ef0-4db0-b52d-6482621be7e2</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">97c92cb5-b0c9-4701-a0f2-ac7e7a45032d</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>LINE_ITEM_NO</name>
+              <identifier class="java.lang.String">707e6a1e-d5b4-4d26-baa3-76f62876fcf0</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>OMS_ORPOS_MASTER_AUDIT</name>
+                <identifier class="java.lang.String">dc3e18a0-36c4-484b-97aa-dfcc8ee65deb</identifier>
+                <schemaName>OMSDEV</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>OMSDEV</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                      <identifier class="java.math.BigDecimal">7526145</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>OMS_ORPOS_MASTER_AUDIT</name>
+                        <identifier class="java.math.BigDecimal">7526129</identifier>
+                        <schemaName>OMSDEV</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>OMSDEV</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                  <identifier class="java.math.BigDecimal">7526145</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>OMS_ORPOS_MASTER_AUDIT</name>
+                    <identifier class="java.math.BigDecimal">7526129</identifier>
+                    <schemaName>OMSDEV</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>OMSDEV</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+            <identifier class="java.math.BigDecimal">7526145</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>OMS_ORPOS_MASTER_AUDIT</name>
+              <identifier class="java.math.BigDecimal">7526129</identifier>
+              <schemaName>OMSDEV</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>OMSDEV</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">73ee3ede-a410-40e7-b653-091ebc4eee3c</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PK_OMS_ORPOS_MASTER_AUDIT</name>
+                    <identifier class="java.math.BigDecimal">7526145</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>OMS_ORPOS_MASTER_AUDIT</name>
+                      <identifier class="java.math.BigDecimal">7526129</identifier>
+                      <schemaName>OMSDEV</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>OMSDEV</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>USERS</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>OMSDEV</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Table to hold master details of order info.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">OMS-QA</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>OMS_ORPOS_MASTER_AUDIT</name>
+        <identifier class="java.math.BigDecimal">7526129</identifier>
+        <schemaName>OMSDEV</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f292c818-03fe-4f9d-9706-c9c5e671b302</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OMS_ORPOS_MASTER_AUDIT</name>
+                <identifier class="java.math.BigDecimal">7526129</identifier>
+                <schemaName>OMSDEV</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>USERS</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>OMSDEV</name>
+  </schema>
+</table>

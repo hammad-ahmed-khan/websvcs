@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname localpart="PendingReturnsService"
+                     namespaceURI="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1"/>
+      <port-info>
+         <wsdl-port localpart="PendingReturnsPort"
+                    namespaceURI="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1"/>
+         <runtime/>
+         <operations>
+            <operation name="pendReturnDtlModify"/>
+            <operation name="pendReturnDtlDelete"/>
+            <operation name="pendReturnDtlCreate"/>
+            <operation name="ping"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

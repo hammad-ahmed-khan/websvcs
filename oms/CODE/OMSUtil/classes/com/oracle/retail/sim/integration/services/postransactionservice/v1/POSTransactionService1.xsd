@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/sim/integration/services/POSTransactionService/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/PosTrnColDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/sim/integration/services/POSTransactionService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/PosTrnColDesc/v1" schemaLocation="POSTransactionService4.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="POSTransactionService5.xsd"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:element name="processPOSTransactions" type="tns:processPOSTransactions"/>
+  <xs:element name="processPOSTransactionsResponse" type="tns:processPOSTransactionsResponse"/>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="processPOSTransactions">
+    <xs:sequence>
+      <xs:element ref="ns1:PosTrnColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="processPOSTransactionsResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

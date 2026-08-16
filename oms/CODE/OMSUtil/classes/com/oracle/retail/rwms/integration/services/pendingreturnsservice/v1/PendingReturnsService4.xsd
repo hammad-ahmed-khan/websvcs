@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/PendRtrnDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/PendRtrnDesc/v1">
+  <xs:element name="PendRtrnDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="physical_wh" type="xs:long"/>
+        <xs:element name="rma_nbr" type="xs:string" minOccurs="0"/>
+        <xs:element name="cust_order_nbr" type="xs:string" minOccurs="0"/>
+        <xs:element name="special_instructions" type="xs:string" minOccurs="0"/>
+        <xs:element name="expected_receipt" type="xs:dateTime" minOccurs="0"/>
+        <xs:element ref="tns:PendRtrnDtlDesc" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendRtrnDtlActCodeDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="action_code" type="xs:string" minOccurs="0"/>
+        <xs:element name="unit_qty" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="disposition_code" type="xs:string" minOccurs="0"/>
+        <xs:element name="sellable" type="xs:string" minOccurs="0"/>
+        <xs:element name="comments" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendRtrnDtlDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="item_id" type="xs:string"/>
+        <xs:element name="line_item_nbr" type="xs:long"/>
+        <xs:element name="expected_unit_qty" type="xs:decimal" minOccurs="0"/>
+        <xs:element ref="tns:PendRtrnDtlRsnCodeDesc" maxOccurs="unbounded"/>
+        <xs:element ref="tns:PendRtrnDtlActCodeDesc" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PendRtrnDtlRsnCodeDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reason_code" type="xs:string" minOccurs="0"/>
+        <xs:element name="description" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

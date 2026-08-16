@@ -1,0 +1,1 @@
+ant -logfile ../logs/build-edev-log.log -buildfile ../build.xml -Darg=edev

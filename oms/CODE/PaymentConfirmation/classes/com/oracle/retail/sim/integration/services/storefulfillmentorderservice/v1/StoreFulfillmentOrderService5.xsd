@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtl/v1">
+  <xs:element name="FulfilOrdDtl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="item" type="xs:string"/>
+        <xs:element name="ref_item" type="xs:string" minOccurs="0"/>
+        <xs:element name="order_qty_suom" type="xs:decimal"/>
+        <xs:element name="standard_uom" type="xs:string"/>
+        <xs:element name="transaction_uom" type="xs:string"/>
+        <xs:element name="substitute_ind" type="xs:string"/>
+        <xs:element name="unit_retail" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="retail_curr" type="xs:string" minOccurs="0"/>
+        <xs:element name="comments" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/rms/integration/services/InventoryBackOrderService/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/InvBackOrdColDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/rms/integration/services/InventoryBackOrderService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvBackOrdColDesc/v1" schemaLocation="InventoryBackOrderService5.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="InventoryBackOrderService3.xsd"/>
+  <xs:element name="createInvBackOrdColDesc" type="tns:createInvBackOrdColDesc"/>
+  <xs:element name="createInvBackOrdColDescResponse" type="tns:createInvBackOrdColDescResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createInvBackOrdColDesc">
+    <xs:sequence>
+      <xs:element ref="ns1:InvBackOrdColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createInvBackOrdColDescResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

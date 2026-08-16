@@ -1,0 +1,6 @@
+app.name=CustomerOrder
+server.url=localhost
+server.port=7101
+weblogic.oms.jndi.name=jdbc/oms
+weblogic.das.jndi.name=jdbc/das
+app.log.directory=D:\JDeveloper\mywork\WebServices\CustomerOrderService\logs

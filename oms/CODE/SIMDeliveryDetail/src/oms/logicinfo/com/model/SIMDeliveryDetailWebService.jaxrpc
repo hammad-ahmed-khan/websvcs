@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebService xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webservice">
+   <list n="CHILD_NODES">
+      <url path="../../../../../public_html/WEB-INF/wsdl/SIMDeliveryDetail.wsdl"/>
+      <url path="Order.java"/>
+      <url path="CustomerOrderResponseAddress.java"/>
+      <url path="SIMDeliveryDetailResponse.java"/>
+      <url path="CustomerOrderResponseItems.java"/>
+      <url path="SIMDeliveryDetail.java"/>
+      <url path="ObjectFactory.java"/>
+      <url path="package-info.java"/>
+      <url path="SIMDeliveryDetailWebServiceImpl.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="BD_">
+         <hash>
+            <value n="BD_DEFAULT_DOCUMENT_WRAPPED" v="false"/>
+            <value n="BOUND_PORT_TYPE" v="{http://com.logicinfo.oms/model/}SIMDeliveryDetailWebService"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+            <value n="NAME" v="{http://com.logicinfo.oms/model/}SIMDeliveryDetailWebServicePortBinding"/>
+            <list n="OP_BINDINGS">
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="return"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="processOrderResp"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="USE_OWNER_TNS"/>
+                  <value n="BOUND_OPERATION" v="oms.logicinfo.com.model.SIMDeliveryDetailResponse.processNewOrder.oms.logicinfo.com.model.SIMDeliveryDetail"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+         </hash>
+      </list>
+      <list n="BINDING_FILES"/>
+      <value n="GENERATE_TOP_DOWN" v="TRUE"/>
+      <value n="GENERATION_OPTION" v="ANNOTATIONS_WSDL"/>
+      <value n="GUID" v="2514cd6e-0163-1000-8040-c0a8016662ae"/>
+      <value n="LAST_GENERATION_BOTTOM_UP" v="false"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaWebService"/>
+      <list n="PO_">
+         <hash>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+            <value n="NAME" v="SIMDeliveryDetailWebService"/>
+            <value n="PORT_BINDING_NAME" v="{http://com.logicinfo.oms/model/}SIMDeliveryDetailWebServicePortBinding"/>
+            <list n="PORT_OPS">
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="oms.logicinfo.com.model.SIMDeliveryDetailResponse.processNewOrder.oms.logicinfo.com.model.SIMDeliveryDetail"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="URL" protocol="http" host="localhost" port="7101" path="/CustomerOrderServiceApplication-SIMDetails-context-root/SIMDeliveryDetailWebServiceImplService"/>
+         </hash>
+      </list>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            <value n="WSDL2JAVA_DEFAULT_PACKAGE" v="oms.logicinfo.com.model"/>
+            <value n="WSDL2JAVA_ROOT_VALUE_PACKAGE" v="oms.logicinfo.com.model"/>
+         </hash>
+      </hash>
+      <list n="PT_">
+         <hash>
+            <value n="AUTO_SERVICE_INTERFACE"/>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+            <value n="NAME" v="{http://com.logicinfo.oms/model/}SIMDeliveryDetailWebService"/>
+            <list n="OP_">
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="javax.xml.soap.SOAPException"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="processNewOrder"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="input"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="processOrderReq"/>
+                        <value n="PA_WSDL_PART_NAME" v="input"/>
+                        <value n="TARGET_NAMESPACE" v="USE_OWNER_TNS"/>
+                        <value n="TYPE" v="oms.logicinfo.com.model.SIMDeliveryDetail"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="oms.logicinfo.com.model.SIMDeliveryDetailResponse"/>
+                  <value n="OP_NAME" v="processNewOrder"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <value n="PT_CLASS" v="oms.logicinfo.com.model.SIMDeliveryDetailWebServiceImpl"/>
+            <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="oms.logicinfo.com.model.SIMDeliveryDetailWebService"/>
+         </hash>
+      </list>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <url n="TARGET_PROJECT" path="../../../../../SIMDeliveryDetail.jpr"/>
+      <value n="TOPDOWN_GENERATION_OPTION" v="JAVA"/>
+      <list n="WS_DEPENDENT_VALUE_TYPES"/>
+      <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+      <url n="WS_REFERENCE_WSDL" path="../../../../../public_html/WEB-INF/wsdl/SIMDeliveryDetail.wsdl"/>
+      <value n="WS_TARGET_NAMESPACE" v="http://com.logicinfo.oms/model/"/>
+      <value n="WS_URI" v="SIMDeliveryDetailWebService"/>
+      <url n="WS_WSDL_FILE" path="../../../../../public_html/WEB-INF/wsdl/SIMDeliveryDetail.wsdl"/>
+      <value n="WS_WSDL_LOC_ON_SEI" v="false"/>
+      <value n="WS_WSDL_LOC_VALUE" v="/WEB-INF/wsdl/SIMDeliveryDetail.wsdl"/>
+   </hash>
+</jdevws:WebService>

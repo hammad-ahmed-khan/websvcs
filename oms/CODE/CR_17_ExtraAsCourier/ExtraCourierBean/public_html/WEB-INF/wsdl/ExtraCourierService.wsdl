@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+    <types>       
+    <xsd:schema>
+      <xsd:import schemaLocation="extracourier.xsd" namespace="http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto"/>
+    </xsd:schema>
+  </types>
+    <message name="Shipment">
+        <part name="input" element="tns:Shipment"/>
+    </message>
+    <message name="CreateShipmentResponse">
+        <part name="return" element="tns:CreateShipmentResponse"/>
+    </message>
+    <portType name="ExtraCourierWebService">
+        <operation name="CreateShipment">
+            <input message="tns:Shipment"/>
+            <output message="tns:CreateShipmentResponse"/>
+        </operation>
+    </portType>
+    <binding name="ExtraCourierWebServiceSOAP12Binding"
+             type="tns:ExtraCourierWebService">
+        <soap12:binding style="document"
+                        transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="CreateShipment">
+            <soap12:operation style="document"
+                              soapAction="http://schemas.datacontract.org/2004/07/eXtra.Services.Shipping.Dto/CreateShipment"/>
+            <input>
+                <soap12:body use="literal" parts="input"/>
+            </input>
+            <output>
+                <soap12:body use="literal" parts="return"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="ExtraCourierService">
+        <port name="ExtraCourierWebService"
+              binding="tns:ExtraCourierWebServiceSOAP12Binding">
+            <soap12:address location="http://localhost:7777/services/extra/ExtraCourierBean/ExtraCourierCreateShipment"/>
+        </port>
+    </service>
+</definitions>

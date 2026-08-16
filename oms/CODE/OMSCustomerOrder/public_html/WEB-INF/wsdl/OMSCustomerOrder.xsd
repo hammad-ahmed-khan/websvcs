@@ -1,0 +1,1190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema version="1.0"
+	targetNamespace="http://com.logicinfo.oms/model/"
+	xmlns:tns="http://com.logicinfo.oms/model/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:complexType name="customerOrder">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element name="entity_id" minOccurs="1"
+				nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="application_id" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="E-COMMERCE" />
+						<xs:enumeration value="SIEBEL_CRM" />
+						<xs:enumeration value="ORPOS" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="order_requestor_id" minOccurs="1"
+				nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="request_datetimestamp"
+				type="xs:dateTime" minOccurs="1" />
+			<xs:element name="order_type" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="B2B" />
+						<xs:enumeration value="SAS" />
+						<xs:enumeration value="CO" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="order_create_reserve_ind" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="C" />
+						<xs:enumeration value="R" />
+
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="customer_order_no" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="customer_sub_order_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="customer_id" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="14" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="customer_phone_no" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="16" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="customer_lang" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="delivery_type" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="S" />
+						<xs:enumeration value="C" />
+						<xs:enumeration value="SS" />
+						<xs:enumeration value="CC" />
+						<xs:enumeration value="SC" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="first_name" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="last_name" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="consumer_delivery_date" type="xs:date"
+				minOccurs="1" />
+			<xs:element name="consumer_delivery_time" type="xs:time"
+				minOccurs="1" />
+			<xs:element name="pay_in_store_ind" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Y" />
+						<xs:enumeration value="N" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="create_date" type="xs:dateTime"
+				minOccurs="1" />
+			<xs:element name="pick_loc" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cart_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="contract_flag" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ord_src" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="consumer_delivery_slot" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="delivery_mode_type" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="order_category" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="delivery_auth_code" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:totalDigits value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="addr_verified_ind" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="oms_reference" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="oms_medium" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ord_type" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="locker_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="customer_order_address"
+				type="tns:customerOrderAddress" minOccurs="0" maxOccurs="1" />
+			<xs:element name="customer_order_items"
+				type="tns:customerOrderItems" nillable="false" minOccurs="1"
+				maxOccurs="100" />
+			<xs:element name="customer_order_tenders"
+				type="tns:customerOrderTenders" nillable="false" minOccurs="0"
+				maxOccurs="100" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="customerOrderAddress">
+		<xs:sequence>
+			<xs:element name="deliver_first_name" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_last_name" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_address_1" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_address_2" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_address_3" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="delv_short_addr" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_zone" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_city" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_state" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_country" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_postal" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="deliver_phone_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="15" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="latitude" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:fractionDigits value="15" />
+						<xs:totalDigits value="20" />
+						<xs:minInclusive value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="longitude" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:fractionDigits value="15" />
+						<xs:totalDigits value="20" />
+						<xs:minInclusive value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_first_name" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_last_name" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_address_1" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_address_2" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_address_3" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="240" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_zone" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_city" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_state" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_country" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="bill_postal" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="company_name" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="vat_reg_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cr_number" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="customerOrderItems">
+		<xs:sequence>
+			<xs:element name="item" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="line_no" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedLong" />
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="link_line_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedLong">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="shipping_classification" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="15" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Back_Order_Ind" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Y" />
+						<xs:enumeration value="N" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Pack_Item_Ind" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Y" />
+						<xs:enumeration value="N" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="combination_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="priority" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="item_source_loc_type" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="item_source_loc" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="item_fulfill_loc_type" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="item_fulfill_loc" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="order_qty_suom" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minExclusive value="0" />
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="standard_uom" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="unit_retail" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="orig_unit_retail" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="unit_vat_amount" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="20" />
+						<xs:minInclusive value="0" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="retail_currency" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="transaction_uom" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="substitution_ind" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Y" />
+						<xs:enumeration value="N" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="item_comments" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="200" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="expected_delivery_dateTime"
+				type="xs:dateTime" minOccurs="0" />
+			<xs:element name="jood_Item" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="marketplace_Ind" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="apply_service_Ind" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="original_tran_order_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="48" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="original_tran_line_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedLong">
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="service_type" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ord_sr_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="delv_effort" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RSAItem" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="true" />
+						<xs:enumeration value="false" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+
+			<xs:element name="RSADetails" type="tns:RSADetails"
+				nillable="false" minOccurs="0" maxOccurs="10" />
+
+			<xs:element name="Cust_Ord_Item_Disc"
+				type="tns:CustOrdItemDisc" nillable="false" minOccurs="0"
+				maxOccurs="10" />
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="RSADetails">
+		<xs:sequence>
+			<xs:element name="RSABrand">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="RSAYear">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="RSANumber">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CustOrdItemDisc">
+		<xs:sequence>
+			<xs:element name="disc_line_no">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="rms_promo_type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="06" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="disc_ref_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="discount_type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="06" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="unit_discount_amount">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="promo_comp_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="simple_promo_ind" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="employee_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="40" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="customerOrderTenders">
+		<xs:sequence>
+			<xs:element name="tender_type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tender_type_id">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="pymt_status_ind" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="P" />
+						<xs:enumeration value="S" />
+						<xs:enumeration value="D" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tender_amount">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minExclusive value="0" />
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="20" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="cc_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="40" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cc_auth_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="16" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cc_auth_src" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cc_cardholder_verf" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cc_exp_date" type="xs:dateTime"
+				minOccurs="0" />
+			<xs:element name="cc_entry_mode" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cc_term_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="5" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cc_spec_cond" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tender_ref_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="cc_ref_id" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="voucher_no" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tender_sub_acc" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="120" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="customerOrderResponseItems">
+		<xs:sequence>
+			<xs:element name="line_no" minOccurs="1">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedLong" />
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="item" minOccurs="1" nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="order_qty_suom" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minExclusive value="0" />
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="fulfill_qty_suom" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="available_qty" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="status" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="AVAILABLE" />
+						<xs:enumeration value="FAILED" />
+						<xs:enumeration value="UNAVAILABLE" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="status_message" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="200" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="customerOrderResponseItemFulfillment"
+				type="tns:customerOrderResponseItemFulfillment" nillable="true"
+				minOccurs="0" maxOccurs="100" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType
+		name="customerOrderResponseItemFulfillment">
+		<xs:sequence>
+			<xs:element name="fulfill_order_no" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:totalDigits value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="item" minOccurs="1" nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="25" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="order_qty_suom" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minExclusive value="0" />
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fulfill_qty_suom" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+
+						<xs:fractionDigits value="04" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="tsf_no" minOccurs="1" nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="po_no" minOccurs="1" nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="source_loc_type" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="source_loc" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fulfill_loc" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="fulfill_loc_type" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RMS_resv_qty" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RMS_resv_loc" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RMS_resv_loc_type" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="backorder_qty" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+
+						<xs:totalDigits value="10" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="customerOrderResponse">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element name="entity_id" minOccurs="1" nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string" />
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="application_id" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="customer_order_no" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="42" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="customer_sub_order_no" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="request_datetimestamp"
+				type="xs:dateTime" minOccurs="1" nillable="true" />
+			<xs:element name="response_datetimestamp"
+				type="xs:dateTime" minOccurs="1" nillable="true" />
+			<xs:element name="oms_customer_order_no" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:unsignedInt">
+						<xs:minExclusive value="0" />
+						<xs:totalDigits value="12" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+			<xs:element name="message_status" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="message_code" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="24" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="message_desc" minOccurs="1"
+				nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="200" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="response_message" type="xs:string"
+				minOccurs="1" nillable="true" />
+			<xs:element name="customer_order_response_items"
+				type="tns:customerOrderResponseItems" nillable="true" minOccurs="0"
+				maxOccurs="100" />
+
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="backOrderRequest">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element name="nothing" minOccurs="1" nillable="false">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="backOrderResponse">
+		<xs:sequence minOccurs="1" maxOccurs="1">
+			<xs:element name="Message" minOccurs="1" nillable="true">
+				<xs:simpleType>
+					<xs:restriction base="xs:string" />
+				</xs:simpleType>
+			</xs:element>
+
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="processBackOrderReq"
+		type="tns:backOrderRequest" />
+	<xs:element name="processBackOrderResp"
+		type="tns:backOrderResponse" />
+	<xs:element name="processNewOrderReq"
+		type="tns:customerOrder" />
+	<xs:element name="processNewOrderResp"
+		type="tns:customerOrderResponse" />
+</xs:schema>

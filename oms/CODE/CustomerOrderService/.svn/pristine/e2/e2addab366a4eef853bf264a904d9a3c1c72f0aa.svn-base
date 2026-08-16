@@ -1,0 +1,43 @@
+call ant -logfile D:\WebServices\build\eqa\OMSUtil-eqa-log.log -buildfile D:\WebServices\OMSUtil\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\AWBUpdateRequest-eqa-log.log -buildfile D:\WebServices\AWBUpdateRequest\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OMSHomeDeliveryStatusUpdate-eqa-log.log -buildfile D:\WebServices\OMSHomeDeliveryStatusUpdate\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\SparePartsRequest-eqa-log.log -buildfile D:\WebServices\SparePartsRequest\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\SparePartsConfirmation-eqa-log.log -buildfile D:\WebServices\SparePartsConfirmation\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OMSSparePartsCancel-eqa-log.log -buildfile D:\WebServices\OMSSparePartsCancel\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OMSRMAGeneration-eqa-log.log -buildfile D:\WebServices\OMSRMAGeneration\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OMSRMADeletion-eqa-log.log -buildfile 
+D:\WebServices\OMSRMADeletion\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\etst\OMSThresholdInventoryForSim-eqa-log.log -buildfile D:\WebServices\OMSThresholdInventoryForSim\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OMSRMAModification-eqa-log.log -buildfile D:\WebServices\OMSRMAModification\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OMSCustomerOrder-eqa-log.log -buildfile D:\WebServices\OMSCustomerOrder\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OMSCOCancellation-eqa-log.log -buildfile D:\WebServices\OMSCOCancellation\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\PaymentConfirmation-eqa-log.log -buildfile D:\WebServices\PaymentConfirmation\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\CustomerOrderService-eqa-log.log -buildfile D:\WebServices\CustomerOrderService\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\InventoryAvailableToPromise-eqa-log.log -buildfile D:\WebServices\InventoryAvailableToPromise\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\SparePartsConfirmation-eqa-log.log -buildfile D:\WebServices\SparePartsConfirmation\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OmsOrposInventoryCheck-dev-log.log -buildfile D:\WebServices\OmsOrposInventoryCheck\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\SIMDeliveryDetails-dev-log.log -buildfile D:\WebServices\SIMDeliveryDetails\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\OMSActualDeliveryDate-dev-log.log -buildfile D:\WebServices\OMSActualDeliveryDate\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\SlotBookingAvailability-dev-log.log -buildfile D:\WebServices\SlotBookingAvailability\build\build.xml -Darg=eqa
+call ant -logfile D:\WebServices\build\eqa\ExtraCourier-dev-log.log -buildfile D:\WebServices\ExtraCourier\build\build.xml -Darg=eqa
+copy D:\WebServices\OMSUtil\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\AWBUpdateRequest\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSHomeDeliveryStatusUpdate\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\SparePartsRequest\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSSparePartsCancel\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSRMAGeneration\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSCustomerOrder\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSCOCancellation\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\PaymentConfirmation\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSRMADeletion\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSRMAModification\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\SparePartsConfirmation\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\CustomerOrderService\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\InventoryAvailableToPromise\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\SparePartsConfirmation\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OmsOrposInventoryCheck\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\SIMDeliveryDetails\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSActualDeliveryDate\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\OMSThresholdInventoryForSim\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\SlotBookingAvailability\deploy\*.* D:\WebServices\deploy\eqa
+copy D:\WebServices\ExtraCourier\deploy\*.* D:\WebServices\deploy\eqa

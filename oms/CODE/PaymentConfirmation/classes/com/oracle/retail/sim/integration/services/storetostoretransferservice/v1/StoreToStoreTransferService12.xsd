@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StsTsfRcvModVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StsTsfRcvModVo/v1">
+  <xs:element name="StsTsfRcvItmMod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="line_id" type="xs:long"/>
+        <xs:element name="case_size" type="xs:decimal"/>
+        <xs:element name="received_quantity" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="damaged_quantity" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="received_uin_col" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="damaged_uin_col" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="removed_uin_col" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StsTsfRcvModVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transfer_id" type="xs:long"/>
+        <xs:element ref="tns:StsTsfRcvItmMod" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

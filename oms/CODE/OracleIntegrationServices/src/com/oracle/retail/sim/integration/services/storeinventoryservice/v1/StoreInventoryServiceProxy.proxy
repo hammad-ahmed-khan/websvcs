@@ -1,0 +1,248 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="StoreInventoryService.xml"/>
+      <url path="StoreInventoryService.wsdl"/>
+      <url path="StoreInventoryService9.xsd"/>
+      <url path="StoreInventoryService8.xsd"/>
+      <url path="StoreInventoryService7.xsd"/>
+      <url path="StoreInventoryService6.xsd"/>
+      <url path="StoreInventoryService2.xsd"/>
+      <url path="StoreInventoryService3.xsd"/>
+      <url path="StoreInventoryService4.xsd"/>
+      <url path="StoreInventoryService5.xsd"/>
+      <url path="StoreInventoryService1.xsd"/>
+      <url path="../../../../../integration/base/bo/invavailcrivo/v1/InvAvailCriVo.java"/>
+      <url path="../../../../../integration/base/bo/invavailcrivo/v1/LocType.java"/>
+      <url path="StoreInventoryService.java"/>
+      <url path="LookupAvailableInventoryResponse.java"/>
+      <url path="../../../../../integration/services/exception/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/services/exception/v1/ValidationWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/strinvgpcrivo/v1/StrInvGpCriVo.java"/>
+      <url path="../../../../../integration/base/bo/strinvcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/invavaildesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/strinvdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/invavailcrivo/v1/ObjectFactory.java"/>
+      <url path="LookupInventoryForBuddyStores.java"/>
+      <url path="../../../../../integration/base/bo/invavaildesc/v1/PackCalculateInd.java"/>
+      <url path="../../../../../integration/base/bo/invavailcrivo/v1/InvLocation.java"/>
+      <url path="../../../../../integration/services/exception/v1/BusinessProblemDetail.java"/>
+      <url path="PingResponse.java"/>
+      <url path="LookupInventoryInStore.java"/>
+      <url path="../../../../../integration/base/bo/strinvdesc/v1/StrInvDesc.java"/>
+      <url path="../../../../../integration/base/bo/strinvgpcrivo/v1/package-info.java"/>
+      <url path="../../../../../integration/services/exception/v1/ServiceOpFaultReason.java"/>
+      <url path="ValidationWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/invavailcrivo/v1/StorePickupInd.java"/>
+      <url path="LookupInventoryInStoreResponse.java"/>
+      <url path="../../../../../integration/base/bo/invavailcoldesc/v1/InvAvailColDesc.java"/>
+      <url path="../../../../../integration/base/bo/strinvdesc/v1/StrInvNslQty.java"/>
+      <url path="../../../../../integration/services/exception/v1/IllegalArgumentWSFaultException.java"/>
+      <url path="LookupAvailableInventory.java"/>
+      <url path="../../../../../integration/base/bo/strinvdesc/v1/ObjectFactory.java"/>
+      <url path="ObjectFactory.java"/>
+      <url path="LookupInventoryInTransferZoneResponse.java"/>
+      <url path="../../../../../integration/base/bo/strinvcrivo/v1/ObjectFactory.java"/>
+      <url path="package-info.java"/>
+      <url path="../../../../../integration/base/bo/invavailcrivo/v1/package-info.java"/>
+      <url path="../../../../../integration/services/exception/v1/IllegalStateWSFaultException.java"/>
+      <url path="LookupInventoryForBuddyStoresResponse.java"/>
+      <url path="StoreInventoryPortType.java"/>
+      <url path="../../../../../integration/base/bo/strinvcoldesc/v1/StrInvColDesc.java"/>
+      <url path="../../../../../integration/base/bo/invavailcoldesc/v1/ObjectFactory.java"/>
+      <url path="IllegalStateWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/strinvgpcrivo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/strinvcoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/strinvgpcrivo/v1/StrInvUomType.java"/>
+      <url path="../../../../../integration/services/exception/v1/ProblemDetailEntry.java"/>
+      <url path="../../../../../integration/base/bo/strinvcrivo/v1/StrInvUomType.java"/>
+      <url path="../../../../../integration/services/exception/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/strinvcrivo/v1/StrInvCriVo.java"/>
+      <url path="../../../../../integration/base/bo/invavaildesc/v1/LocType.java"/>
+      <url path="LookupInventoryInTransferZone.java"/>
+      <url path="../../../../../integration/base/bo/invavailcoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/invavaildesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/strinvcrivo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/invavaildesc/v1/InvAvailDesc.java"/>
+      <url path="Ping.java"/>
+      <url path="IllegalArgumentWSFaultException.java"/>
+      <url path="StoreInventoryPortClient.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="StoreInventoryService.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_NONE"/>
+      <list n="PROXY_CLIENTS">
+         <url path="StoreInventoryPortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/StoreInventoryBean/StoreInventoryService" query="WSDL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="StoreInventoryPort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.StoreInventoryPortType"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="StoreInventoryPort"/>
+            <hash n="OPERATIONS">
+               <hash n="lookupAvailableInventory">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupInventoryForBuddyStores">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupInventoryInStore">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupInventoryInTransferZone">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="ping">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/StoreInventoryBean/StoreInventoryService"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="StoreInventoryService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../../../../../../OracleIntegrationServices.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="StoreInventoryService9.xsd"/>
+         <url path="StoreInventoryService8.xsd"/>
+         <url path="StoreInventoryService7.xsd"/>
+         <url path="StoreInventoryService6.xsd"/>
+         <url path="StoreInventoryService2.xsd"/>
+         <url path="StoreInventoryService3.xsd"/>
+         <url path="StoreInventoryService4.xsd"/>
+         <url path="StoreInventoryService5.xsd"/>
+         <url path="StoreInventoryService1.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="StoreInventoryService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1}StoreInventoryPortType"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1}StoreInventoryPortBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invavailcoldesc.v1.InvAvailColDesc.lookupAvailableInventory.com.oracle.retail.integration.base.bo.invavailcrivo.v1.InvAvailCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.strinvcoldesc.v1.StrInvColDesc.lookupInventoryInStore.com.oracle.retail.integration.base.bo.strinvcrivo.v1.StrInvCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.strinvcoldesc.v1.StrInvColDesc.lookupInventoryInTransferZone.com.oracle.retail.integration.base.bo.strinvgpcrivo.v1.StrInvGpCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.strinvcoldesc.v1.StrInvColDesc.lookupInventoryForBuddyStores.com.oracle.retail.integration.base.bo.strinvgpcrivo.v1.StrInvGpCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="java.lang.String.ping.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="57779036-014d-1000-8086-c0a8a23ddf92"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="StoreInventoryPort"/>
+               <value n="PORT_BINDING_NAME" v="{http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1}StoreInventoryPortBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invavailcoldesc.v1.InvAvailColDesc.lookupAvailableInventory.com.oracle.retail.integration.base.bo.invavailcrivo.v1.InvAvailCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.strinvcoldesc.v1.StrInvColDesc.lookupInventoryInStore.com.oracle.retail.integration.base.bo.strinvcrivo.v1.StrInvCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.strinvcoldesc.v1.StrInvColDesc.lookupInventoryInTransferZone.com.oracle.retail.integration.base.bo.strinvgpcrivo.v1.StrInvGpCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.strinvcoldesc.v1.StrInvColDesc.lookupInventoryForBuddyStores.com.oracle.retail.integration.base.bo.strinvgpcrivo.v1.StrInvGpCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="java.lang.String.ping.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/StoreInventoryBean/StoreInventoryService"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1}StoreInventoryPortType"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.StoreInventoryPortTypeImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.StoreInventoryPortType"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="com.oracle.retail.sim.integration.services.storeinventoryservice.v1.StoreInventoryPortType"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../../../../../../OracleIntegrationServices.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://www.oracle.com/retail/sim/integration/services/StoreInventoryService/v1"/>
+         <value n="WS_URI" v="StoreInventoryService"/>
+         <url n="WS_WSDL_FILE" path="StoreInventoryService.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

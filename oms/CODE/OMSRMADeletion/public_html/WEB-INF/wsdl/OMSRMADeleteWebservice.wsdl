@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="http://com.logicinfo.oms/model/" name="RMADeletionWebService" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://com.logicinfo.oms/model/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://com.logicinfo.oms/model/" schemaLocation="OMSRMADelete.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="deleteRMA">
+    <part name="input" element="tns:DeleteRMA"/>
+  </message>
+  
+  <message name="deleteRMAResponse">
+    <part name="return" element="tns:DeleteRMAResponse"/>
+  </message>
+  <portType name="RMADeletionWebService">
+    <operation name="deleteRMA">
+      <input message="tns:deleteRMA"/>
+      <output message="tns:deleteRMAResponse"/>
+     
+    </operation>
+  </portType>
+  <binding name="OMSRMADeletionWebServiceBinding" type="tns:RMADeletionWebService">
+    <soap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" style="document"/>
+    <operation name="deleteRMA">
+      <soap12:operation soapAction=""/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+     
+    </operation>
+  </binding>
+  <service name="OMSRMADeletionWebService">
+    <port name="OMSRMADeletionWebService" binding="tns:OMSRMADeletionWebServiceBinding">
+      <soap12:address location=""/>
+    </port>
+  </service>
+</definitions>

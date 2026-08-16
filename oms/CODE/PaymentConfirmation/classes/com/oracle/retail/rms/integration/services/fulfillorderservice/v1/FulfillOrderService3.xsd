@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/LocOfFulfilOrdCustDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCustDesc/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/LocOfFulfilOrdCustDesc/v1" schemaLocation="FulfillOrderService12.xsd"/>
+  <xs:element name="FulfilOrdCustDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="customer_no" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_first_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_phonetic_first" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_last_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_phonetic_last" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_preferred_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_company_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_add1" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_add2" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_add3" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_county" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_city" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_state" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_country_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_post" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_jurisdiction" type="xs:string" minOccurs="0"/>
+        <xs:element name="deliver_phone" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_first_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_phonetic_first" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_last_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_phonetic_last" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_preferred_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_company_name" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_add1" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_add2" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_add3" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_county" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_city" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_state" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_country_id" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_post" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_jurisdiction" type="xs:string" minOccurs="0"/>
+        <xs:element name="bill_phone" type="xs:string" minOccurs="0"/>
+        <xs:element ref="ns1:LocOfFulfilOrdCustDesc" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

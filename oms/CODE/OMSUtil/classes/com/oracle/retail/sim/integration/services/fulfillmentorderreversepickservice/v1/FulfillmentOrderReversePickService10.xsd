@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/ForpDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/ForpDesc/v1">
+  <xs:element name="ForpDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reverse_pick_id" type="xs:long"/>
+        <xs:element name="status" type="tns:forp_status"/>
+        <xs:element name="create_date" type="xs:dateTime"/>
+        <xs:element name="create_user_name" type="xs:string"/>
+        <xs:element ref="tns:ForpItm" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForpItm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="line_id" type="xs:long"/>
+        <xs:element name="item_id" type="xs:string"/>
+        <xs:element name="fulfillment_order_line_id" type="xs:long"/>
+        <xs:element name="standard_uom" type="xs:string"/>
+        <xs:element name="suggested_quantity" type="xs:decimal" minOccurs="0"/>
+        <xs:element name="unpicked_quantity" type="xs:decimal"/>
+        <xs:element name="case_size" type="xs:decimal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="forp_status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NEW"/>
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="CANCELED"/>
+      <xs:enumeration value="UNKNOWN"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

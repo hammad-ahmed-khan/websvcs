@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:ns1="http://www.oracle.com/retail/integration/custom/bo/EOfBrFulfilOrdCustDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/localization/bo/BrFulfilOrdCustDesc/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/custom/bo/EOfBrFulfilOrdCustDesc/v1" schemaLocation="StoreFulfillmentOrderService15.xsd"/>
+  <xs:element name="BrFulfilOrdCustDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="cpf" type="xs:string" minOccurs="0"/>
+        <xs:element name="neighborhood" type="xs:string" minOccurs="0"/>
+        <xs:element name="tax_exempt" type="xs:string" minOccurs="0"/>
+        <xs:element ref="ns1:EOfBrFulfilOrdCustDesc" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,1 @@
+ant -logfile ../logs/build-eco-log.log -buildfile ../build.xml -Darg=eco

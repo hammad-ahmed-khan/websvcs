@@ -1,0 +1,7 @@
+app.name=CustomerOrder
+server.url=192.168.40.186
+server.port=7902
+weblogic.oms.jndi.name=jdbc/oms
+weblogic.das.jndi.name=jdbc/das
+weblogic.sim.jndi.name=jdbc/sim
+app.log.directory=u00/oracle/Weblogic_CO/user_projects/domains/CODomain/servers/AdminServer/logs

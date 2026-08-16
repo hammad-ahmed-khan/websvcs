@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace="http://com.logicinfo.oms/services/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://com.logicinfo.oms/services/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:clom="http://com.logicinfo.oms/services/">
+    <types>
+        <xsd:schema targetNamespace="mod:SparePartsConfirmationService/types" elementFormDefault="qualified"/>
+        <xsd:schema>
+            <xsd:import schemaLocation="OMSSparePartsConfirmation.xsd" namespace="http://com.logicinfo.oms/services/"/>
+        </xsd:schema>
+    </types>
+    <portType name="SparePartsConfirmation">
+        <operation name="SparePartsConfirmationOperation">
+            <input message="tns:SparePartsConfirmation"/>
+            <output message="tns:SparePartsConfirmationResponse"/>
+        </operation>
+    </portType>
+    <message name="SparePartsConfirmation">
+        <part name="SparePartsConfirmation" element="tns:SparePartsConfirmation"/>
+    </message>
+    <message name="SparePartsConfirmationResponse">
+        <part name="SparePartsConfirmationResponse" element="tns:SparePartsConfirmationResponse"/>
+    </message>
+    <binding name="SparePartsConfirmationSOAP12Binding" type="tns:SparePartsConfirmation">
+        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="SparePartsConfirmationOperation">
+            <soap12:operation style="document" soapAction="SparePartsConfirmationOperation" soapActionRequired="false"/>
+            <input>
+                <soap12:body use="literal" parts="SparePartsConfirmation"/>
+            </input>
+            <output>
+                <soap12:body use="literal" parts="SparePartsConfirmationResponse"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="SparePartsConfirmationService">
+        <port name="SparePartsConfirmationPort" binding="tns:SparePartsConfirmationSOAP12Binding">
+            <soap12:address location="http://localhost:7101/WebServices-SparePartsConfirmation-context-root/SparePartsConfirmationPortTypeImplService"/>
+        </port>
+    </service>
+</definitions>

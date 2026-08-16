@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="http://com.logicinfo.oms/model/" name="OMSRMAGenerationWebService" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://com.logicinfo.oms/model/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://com.logicinfo.oms/model/" schemaLocation="OMSRMAGenerationV1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="generateNewRMA">
+    <part name="input" element="tns:GenerateNewRMA"/>
+  </message>
+  
+  <message name="generateNewRMAResponse">
+    <part name="return" element="tns:GenerateNewRMAResponse"/>
+  </message>
+  <portType name="RMAGenerationWebService">
+    <operation name="generateNewRMA">
+      <input message="tns:generateNewRMA"/>
+      <output message="tns:generateNewRMAResponse"/>
+     
+    </operation>
+  </portType>
+  <binding name="OMSRMAGenerationWebServiceBinding" type="tns:RMAGenerationWebService">
+    <soap12:binding transport="http://www.w3.org/2003/05/soap/bindings/HTTP/" style="document"/>
+    <operation name="generateNewRMA">
+      <soap12:operation soapAction=""/>
+      <input>
+        <soap12:body use="literal"/>
+      </input>
+      <output>
+        <soap12:body use="literal"/>
+      </output>
+     
+    </operation>
+  </binding>
+  <service name="OMSRMAGenerationWebService">
+    <port name="OMSRMAGenerationWebService" binding="tns:OMSRMAGenerationWebServiceBinding">
+      <soap12:address location=""/>
+    </port>
+  </service>
+</definitions>

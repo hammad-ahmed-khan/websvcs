@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1" name="PendingReturnsService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1" schemaLocation="PendingReturnsService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1" schemaLocation="PendingReturnsService2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/PendRtrnRef/v1" schemaLocation="PendingReturnsService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/PendRtrnDesc/v1" schemaLocation="PendingReturnsService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="PendingReturnsService5.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="pendReturnDtlModify">
+    <part name="parameters" element="tns:pendReturnDtlModify"/>
+  </message>
+  <message name="pendReturnDtlModifyResponse">
+    <part name="parameters" element="tns:pendReturnDtlModifyResponse"/>
+  </message>
+  <message name="IllegalArgumentWSFaultException">
+    <part xmlns:ns1="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns1:IllegalArgumentWSFaultException"/>
+  </message>
+  <message name="ValidationWSFaultException">
+    <part xmlns:ns2="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns2:ValidationWSFaultException"/>
+  </message>
+  <message name="IllegalStateWSFaultException">
+    <part xmlns:ns3="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns3:IllegalStateWSFaultException"/>
+  </message>
+  <message name="pendReturnDtlDelete">
+    <part name="parameters" element="tns:pendReturnDtlDelete"/>
+  </message>
+  <message name="pendReturnDtlDeleteResponse">
+    <part name="parameters" element="tns:pendReturnDtlDeleteResponse"/>
+  </message>
+  <message name="pendReturnDtlCreate">
+    <part name="parameters" element="tns:pendReturnDtlCreate"/>
+  </message>
+  <message name="pendReturnDtlCreateResponse">
+    <part name="parameters" element="tns:pendReturnDtlCreateResponse"/>
+  </message>
+  <message name="ping">
+    <part name="parameters" element="tns:ping"/>
+  </message>
+  <message name="pingResponse">
+    <part name="parameters" element="tns:pingResponse"/>
+  </message>
+  <portType name="PendingReturnsPortType">
+    <operation name="pendReturnDtlModify">
+      <input wsaw:Action="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1/PendingReturnsPortType/pendReturnDtlModifyRequest" message="tns:pendReturnDtlModify"/>
+      <output message="tns:pendReturnDtlModifyResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="pendReturnDtlDelete">
+      <input wsaw:Action="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1/PendingReturnsPortType/pendReturnDtlDeleteRequest" message="tns:pendReturnDtlDelete"/>
+      <output message="tns:pendReturnDtlDeleteResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="pendReturnDtlCreate">
+      <input wsaw:Action="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1/PendingReturnsPortType/pendReturnDtlCreateRequest" message="tns:pendReturnDtlCreate"/>
+      <output message="tns:pendReturnDtlCreateResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="ping">
+      <input wsaw:Action="http://www.oracle.com/retail/rwms/integration/services/PendingReturnsService/v1/PendingReturnsPortType/pingRequest" message="tns:ping"/>
+      <output message="tns:pingResponse"/>
+    </operation>
+  </portType>
+  <binding name="PendingReturnsPortBinding" type="tns:PendingReturnsPortType">
+    <wsaw:UsingAddressing/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="pendReturnDtlModify">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="pendReturnDtlDelete">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="pendReturnDtlCreate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ping">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="PendingReturnsService">
+    <port name="PendingReturnsPort" binding="tns:PendingReturnsPortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:17053/PendingReturnsBean/PendingReturnsService"/>
+    </port>
+  </service>
+</definitions>

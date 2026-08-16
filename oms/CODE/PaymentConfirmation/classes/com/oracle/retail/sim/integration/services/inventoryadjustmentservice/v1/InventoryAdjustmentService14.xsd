@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/StrAdjTplDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StrAdjTplDesc/v1">
+  <xs:element name="StrAdjTplDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="template_id" type="xs:long"/>
+        <xs:element name="store_id" type="xs:long"/>
+        <xs:element name="description" type="xs:string"/>
+        <xs:element name="status" type="tns:str_adj_status"/>
+        <xs:element name="comments" type="xs:string" minOccurs="0"/>
+        <xs:element name="create_date" type="xs:dateTime"/>
+        <xs:element name="create_user_name" type="xs:string"/>
+        <xs:element name="approve_date" type="xs:dateTime" minOccurs="0"/>
+        <xs:element name="approve_user_name" type="xs:string" minOccurs="0"/>
+        <xs:element ref="tns:StrAdjTplItm" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StrAdjTplItm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="line_id" type="xs:long"/>
+        <xs:element name="item_id" type="xs:string"/>
+        <xs:element name="reason_id" type="xs:long"/>
+        <xs:element name="quantity" type="xs:decimal"/>
+        <xs:element name="case_size" type="xs:decimal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="str_adj_status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IN_PROGRESS"/>
+      <xs:enumeration value="COMPLETED"/>
+      <xs:enumeration value="CANCELED"/>
+      <xs:enumeration value="UNKNOWN"/>
+      <xs:enumeration value="NO_VALUE"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

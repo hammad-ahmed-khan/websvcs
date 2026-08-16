@@ -1,0 +1,72 @@
+create or replace package XXHDB_CORE_PKG is
+
+  -- Author  : RAMY
+  -- Created : 10/07/2018 12:21:53 PM
+  -- Purpose :
+
+  -- Public type declarations
+  TYPE ref_cursor IS REF CURSOR;
+
+  TYPE group_rec IS RECORD(
+    GROUP_ID            number,
+    GROUP_NAME          varchar2(100),
+    MAX_UNITS_PER_ORDER number,
+    SLOTS               number,
+    STATUS              varchar2(1),
+    REGION_ID           number,
+    REGION_NAME         varchar2(50));
+  TYPE group_t IS TABLE OF group_rec;
+
+  procedure get_schedule(p_item_list varchar2,
+                         p_city      varchar2,
+                         o_groups    OUT ref_cursor,
+                         o_items     OUT ref_cursor,
+                         o_schedule  OUT ref_cursor);
+
+  procedure reserve_booking(p_reservation_id  number,
+                            p_Hybris_Cust_nbr varchar2,
+                            p_group           number,
+                            p_order_lines     xxhdb_tbl_type,
+                            p_request_date    date,
+                            p_window          varchar2,
+                            p_slots           number,
+                            p_region          number,
+                            p_cust_city       number,
+                            p_cust_area       number,
+                            p_cust_name       varchar2,
+                            p_cust_addr       varchar2,
+                            p_cust_mobile     varchar2,
+                            p_cust_lat        varchar2,
+                            p_cust_long       varchar2,
+                            p_status          out varchar2,
+                            p_msg             out varchar2);
+  procedure create_booking(p_reservation_id  number,
+                           p_Hybris_Cust_nbr varchar2,
+                           p_cust_nbr        varchar2,
+                           p_group           number,
+                           p_order_lines     xxhdb_tbl_type,
+                           p_request_date    date,
+                           p_window          varchar2,
+                           p_slots           number,
+                           p_region          number,
+                           p_cust_city       number,
+                           p_cust_area       number,
+                           p_cust_name       varchar2,
+                           p_cust_addr       varchar2,
+                           p_cust_mobile     varchar2,
+                           p_cust_lat        varchar2,
+                           p_cust_long       varchar2,
+                           p_booking_id      out number,
+                           p_status          out varchar2,
+                           p_msg             out varchar2);
+  procedure confirm_booking(p_reservation_id  number,
+                            p_Hybris_Cust_nbr varchar2,
+                            p_cust_order_no   varchar2,
+                            p_booking_id      out number,
+                            p_status          out varchar2,
+                            p_msg             out varchar2);
+  procedure cancel_booking(p_reservation_id  number,
+                           p_Hybris_Cust_nbr varchar2,
+                           p_status          out varchar2,
+                           p_msg             out varchar2);
+end XXHDB_CORE_PKG;

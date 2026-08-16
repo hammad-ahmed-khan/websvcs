@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1" xmlns:ns7="http://www.oracle.com/retail/integration/base/bo/FodCreModVo/v1" xmlns:ns6="http://www.oracle.com/retail/integration/base/bo/FodDesc/v1" xmlns:ns5="http://www.oracle.com/retail/integration/base/bo/FodModVo/v1" xmlns:ns4="http://www.oracle.com/retail/integration/base/bo/FodHdrColDesc/v1" xmlns:ns3="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" xmlns:ns2="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/FodRef/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderDeliveryService/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FodRef/v1" schemaLocation="FulfillmentOrderDeliveryService6.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="FulfillmentOrderDeliveryService5.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" schemaLocation="FulfillmentOrderDeliveryService4.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FodHdrColDesc/v1" schemaLocation="FulfillmentOrderDeliveryService9.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FodModVo/v1" schemaLocation="FulfillmentOrderDeliveryService7.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FodDesc/v1" schemaLocation="FulfillmentOrderDeliveryService10.xsd"/>
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FodCreModVo/v1" schemaLocation="FulfillmentOrderDeliveryService2.xsd"/>
+  <xs:element name="cancelFulfillmentOrderDelivery" type="tns:cancelFulfillmentOrderDelivery"/>
+  <xs:element name="cancelFulfillmentOrderDeliveryResponse" type="tns:cancelFulfillmentOrderDeliveryResponse"/>
+  <xs:element name="cancelFulfillmentOrderDeliverySubmission" type="tns:cancelFulfillmentOrderDeliverySubmission"/>
+  <xs:element name="cancelFulfillmentOrderDeliverySubmissionResponse" type="tns:cancelFulfillmentOrderDeliverySubmissionResponse"/>
+  <xs:element name="createFulfillmentOrderDelivery" type="tns:createFulfillmentOrderDelivery"/>
+  <xs:element name="createFulfillmentOrderDeliveryResponse" type="tns:createFulfillmentOrderDeliveryResponse"/>
+  <xs:element name="dispatchFulfillmentOrderDelivery" type="tns:dispatchFulfillmentOrderDelivery"/>
+  <xs:element name="dispatchFulfillmentOrderDeliveryResponse" type="tns:dispatchFulfillmentOrderDeliveryResponse"/>
+  <xs:element name="lookupFulfillmentOrderDeliveryHeaders" type="tns:lookupFulfillmentOrderDeliveryHeaders"/>
+  <xs:element name="lookupFulfillmentOrderDeliveryHeadersResponse" type="tns:lookupFulfillmentOrderDeliveryHeadersResponse"/>
+  <xs:element name="ping" type="tns:ping"/>
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+  <xs:element name="readFulfillmentOrderDeliveryDetail" type="tns:readFulfillmentOrderDeliveryDetail"/>
+  <xs:element name="readFulfillmentOrderDeliveryDetailResponse" type="tns:readFulfillmentOrderDeliveryDetailResponse"/>
+  <xs:element name="submitFulfillmentOrderDelivery" type="tns:submitFulfillmentOrderDelivery"/>
+  <xs:element name="submitFulfillmentOrderDeliveryResponse" type="tns:submitFulfillmentOrderDeliveryResponse"/>
+  <xs:element name="updateFulfillmentOrderDelivery" type="tns:updateFulfillmentOrderDelivery"/>
+  <xs:element name="updateFulfillmentOrderDeliveryResponse" type="tns:updateFulfillmentOrderDeliveryResponse"/>
+  <xs:complexType name="cancelFulfillmentOrderDelivery">
+    <xs:sequence>
+      <xs:element ref="ns1:FodRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelFulfillmentOrderDeliveryResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupFulfillmentOrderDeliveryHeaders">
+    <xs:sequence>
+      <xs:element ref="ns3:StrFordRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lookupFulfillmentOrderDeliveryHeadersResponse">
+    <xs:sequence>
+      <xs:element ref="ns4:FodHdrColDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateFulfillmentOrderDelivery">
+    <xs:sequence>
+      <xs:element ref="ns5:FodModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="updateFulfillmentOrderDeliveryResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelFulfillmentOrderDeliverySubmission">
+    <xs:sequence>
+      <xs:element ref="ns1:FodRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelFulfillmentOrderDeliverySubmissionResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readFulfillmentOrderDeliveryDetail">
+    <xs:sequence>
+      <xs:element ref="ns1:FodRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="readFulfillmentOrderDeliveryDetailResponse">
+    <xs:sequence>
+      <xs:element ref="ns6:FodDesc" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitFulfillmentOrderDelivery">
+    <xs:sequence>
+      <xs:element ref="ns1:FodRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="submitFulfillmentOrderDeliveryResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ping">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dispatchFulfillmentOrderDelivery">
+    <xs:sequence>
+      <xs:element ref="ns1:FodRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dispatchFulfillmentOrderDeliveryResponse">
+    <xs:sequence>
+      <xs:element ref="ns2:InvocationSuccess" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFulfillmentOrderDelivery">
+    <xs:sequence>
+      <xs:element ref="ns7:FodCreModVo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createFulfillmentOrderDeliveryResponse">
+    <xs:sequence>
+      <xs:element ref="ns1:FodRef" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

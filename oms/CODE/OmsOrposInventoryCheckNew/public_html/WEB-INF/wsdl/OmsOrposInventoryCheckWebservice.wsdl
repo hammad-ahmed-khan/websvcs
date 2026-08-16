@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions
+	targetNamespace="http://com.logicinfo.oms/model/"
+	name="OmsOrposInventoryCheckWebService"
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://com.logicinfo.oms/model/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+	<types>
+		<xsd:schema>
+			<xsd:import schemaLocation="OmsOrposInventoryCheck.xsd"
+				namespace="http://com.logicinfo.oms/model/" />
+		</xsd:schema>
+	</types>
+	<xs:schema version="1.0"
+		targetNamespace="http://com.logicinfo.oms/model/"
+		xmlns:tns="http://com.logicinfo.oms/model/"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:ns79="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1">
+		<xs:complexType name="refreshParamsResponse">
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="ns79:InvocationSuccess" />
+			</xs:sequence>
+		</xs:complexType>
+		<xs:element name="refreshParamsResponse"
+			type="tns:refreshParamsResponse" />
+
+		<xs:complexType name="Void">
+			<xsd:sequence>
+			</xsd:sequence>
+		</xs:complexType>
+		<xsd:element name="refreshParams" type="tns:Void" />
+	</xs:schema>
+	<xs:schema elementFormDefault="qualified"
+		targetNamespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1"
+		version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:element name="InvocationSuccess">
+			<xs:annotation>
+				<xs:documentation>Successful message string.</xs:documentation>
+			</xs:annotation>
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element minOccurs="0" name="success_message"
+						type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:schema>
+	<message name="inventoryCheck">
+		<part name="inventoryCheck" element="tns:inventoryCheck" />
+	</message>
+	<message name="inventoryCheckResponse">
+		<part name="inventoryCheckResponse"
+			element="tns:inventoryCheckResponse" />
+	</message>
+	<message name="refreshParams">
+		<part name="parameters" element="tns:refreshParams" />
+	</message>
+	<message name="refreshParamsResponse">
+		<part name="parameters" element="tns:refreshParamsResponse" />
+	</message>
+	<portType name="OmsOrposInventoryCheckWebService">
+		<operation name="checkInventory">
+			<input message="tns:inventoryCheck" />
+			<output message="tns:inventoryCheckResponse" />
+		</operation>
+		<operation name="refreshParams">
+			<input message="tns:refreshParams" />
+			<output message="tns:refreshParamsResponse"
+				wsam:Action="http://www.oracle.com/retail/oms/integration/services/CustomerOrderService/v1/CustomerOrderPortType/refreshParamsResponse" />
+		</operation>
+	</portType>
+	<binding name="OmsOrposInventoryCheckWebService"
+		type="tns:OmsOrposInventoryCheckWebService">
+		<soap12:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<operation name="checkInventory">
+			<soap12:operation style="document" soapAction="" />
+			<input>
+				<soap12:body use="literal" />
+			</input>
+			<output>
+				<soap12:body use="literal" />
+			</output>
+		</operation>
+		<operation name="refreshParams">
+			<soap12:operation style="document" soapAction="" />
+			<input>
+				<soap12:body use="literal" />
+			</input>
+			<output>
+				<soap12:body use="literal" />
+			</output>
+		</operation>
+	</binding>
+	<service name="OmsOrposInventoryCheckWebService">
+		<port name="OmsOrposInventoryCheckWebService"
+			binding="tns:OmsOrposInventoryCheckWebService">
+			<soap12:address
+				location="http://localhost:7101/OmsOrposInventoryCheckWebServiceBean/OmsOrposInventoryCheckWebService" />
+		</port>
+	</service>
+</definitions>

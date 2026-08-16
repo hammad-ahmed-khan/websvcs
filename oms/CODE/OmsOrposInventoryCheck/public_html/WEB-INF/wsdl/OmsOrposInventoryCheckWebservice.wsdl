@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="http://com.logicinfo.oms/model/" name="OmsOrposInventoryCheckWebService" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://com.logicinfo.oms/model/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="OmsOrposInventoryCheck.xsd" namespace="http://com.logicinfo.oms/model/"/>
+    </xsd:schema>
+  </types>
+  <message name="inventoryCheck">
+    <part name="inventoryCheck" element="tns:inventoryCheck"/>
+  </message>
+  <message name="inventoryCheckResponse">
+    <part name="inventoryCheckResponse" element="tns:inventoryCheckResponse"/>
+  </message>
+  <portType name="OmsOrposInventoryCheckWebService">
+    <operation name="checkInventory">
+      <input message="tns:inventoryCheck"/>
+      <output message="tns:inventoryCheckResponse"/>
+    </operation>
+  </portType>
+  <binding name="OmsOrposInventoryCheckWebService" type="tns:OmsOrposInventoryCheckWebService">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="checkInventory">
+      <soap12:operation style="document" soapAction=""/>
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="OmsOrposInventoryCheckWebService">
+    <port name="OmsOrposInventoryCheckWebService" binding="tns:OmsOrposInventoryCheckWebService">
+      <soap12:address location="http://localhost:7101/OmsOrposInventoryCheckWebServiceBean/OmsOrposInventoryCheckWebService"/>
+    </port>
+  </service>
+</definitions>

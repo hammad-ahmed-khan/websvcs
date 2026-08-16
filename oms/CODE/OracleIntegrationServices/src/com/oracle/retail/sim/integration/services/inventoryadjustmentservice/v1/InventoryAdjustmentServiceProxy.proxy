@@ -1,0 +1,395 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="InventoryAdjustmentService.xml"/>
+      <url path="InventoryAdjustmentService.wsdl"/>
+      <url path="InventoryAdjustmentService17.xsd"/>
+      <url path="InventoryAdjustmentService18.xsd"/>
+      <url path="InventoryAdjustmentService19.xsd"/>
+      <url path="InventoryAdjustmentService16.xsd"/>
+      <url path="InventoryAdjustmentService15.xsd"/>
+      <url path="InventoryAdjustmentService1.xsd"/>
+      <url path="InventoryAdjustmentService14.xsd"/>
+      <url path="InventoryAdjustmentService13.xsd"/>
+      <url path="InventoryAdjustmentService12.xsd"/>
+      <url path="InventoryAdjustmentService11.xsd"/>
+      <url path="InventoryAdjustmentService10.xsd"/>
+      <url path="InventoryAdjustmentService7.xsd"/>
+      <url path="InventoryAdjustmentService6.xsd"/>
+      <url path="InventoryAdjustmentService9.xsd"/>
+      <url path="InventoryAdjustmentService8.xsd"/>
+      <url path="InventoryAdjustmentService3.xsd"/>
+      <url path="InventoryAdjustmentService2.xsd"/>
+      <url path="InventoryAdjustmentService5.xsd"/>
+      <url path="InventoryAdjustmentService4.xsd"/>
+      <url path="../../../../../integration/base/bo/stradjhdrcoldesc/v1/StrAdjHdrColDesc.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrdesc/v1/StrAdjStatus.java"/>
+      <url path="../../../../../integration/services/exception/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/services/exception/v1/ValidationWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/nslqtytypcoldesc/v1/package-info.java"/>
+      <url path="InventoryAdjustmentPortType.java"/>
+      <url path="package-info.java"/>
+      <url path="LookupNonSellableQuantityType.java"/>
+      <url path="../../../../../integration/base/bo/stradjrsncoldesc/v1/StrAdjRsnColDesc.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjmodvo/v1/StrAdjModVo.java"/>
+      <url path="../../../../../integration/base/bo/stradjrsndesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/services/exception/v1/ServiceOpFaultReason.java"/>
+      <url path="../../../../../integration/base/bo/stradjmodvo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/InvocationSuccess.java"/>
+      <url path="../../../../../integration/base/bo/stradjtplref/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjtpldesc/v1/StrAdjTplDesc.java"/>
+      <url path="PingResponse.java"/>
+      <url path="../../../../../integration/base/bo/nslqtytypcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrcrivo/v1/package-info.java"/>
+      <url path="InventoryAdjustmentService.java"/>
+      <url path="../../../../../integration/base/bo/stradjmodvo/v1/StrAdjItmMod.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphddesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrcrivo/v1/StrAdjStatus.java"/>
+      <url path="SaveAndConfirmInventoryAdjustment.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphddesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/nslqtytypdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjdesc/v1/StrAdjDesc.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrdesc/v1/ObjectFactory.java"/>
+      <url path="ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjdesc/v1/StrAdjStatus.java"/>
+      <url path="IllegalArgumentWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphdcrivo/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/nslqtytypdesc/v1/NslQtyTypDesc.java"/>
+      <url path="../../../../../integration/base/bo/stradjtpldesc/v1/StrAdjStatus.java"/>
+      <url path="../../../../../integration/services/exception/v1/ProblemDetailEntry.java"/>
+      <url path="../../../../../integration/base/bo/stradjdesc/v1/StrAdjItm.java"/>
+      <url path="LookupInventoryAdjustmentHeaderResponse.java"/>
+      <url path="../../../../../integration/base/bo/stradjref/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphdcoldesc/v1/package-info.java"/>
+      <url path="LookupNonSellableQuantityTypeResponse.java"/>
+      <url path="InventoryAdjustmentPortClient.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphdcoldesc/v1/StrAdjTpHdColDesc.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrcrivo/v1/ObjectFactory.java"/>
+      <url path="LookupInventoryAdjustmentReasonResponse.java"/>
+      <url path="../../../../../integration/base/bo/stradjrsncoldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjrsndesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/Nothing.java"/>
+      <url path="../../../../../integration/base/bo/nslqtytypdesc/v1/ObjectFactory.java"/>
+      <url path="CancelInventoryAdjustment.java"/>
+      <url path="SaveInventoryAdjustment.java"/>
+      <url path="../../../../../integration/base/bo/stradjmodvo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/invocationsuccess/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjdesc/v1/ObjectFactory.java"/>
+      <url path="ConfirmInventoryAdjustment.java"/>
+      <url path="SaveInventoryAdjustmentResponse.java"/>
+      <url path="../../../../../integration/services/exception/v1/BusinessProblemDetail.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphdcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphdcrivo/v1/StrAdjTpHdCriVo.java"/>
+      <url path="LookupInventoryAdjustmentTemplateHeader.java"/>
+      <url path="LookupInventoryAdjustmentReason.java"/>
+      <url path="../../../../../integration/base/bo/stradjdesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjref/v1/StrAdjRef.java"/>
+      <url path="ReadInventoryAdjustmentDetailResponse.java"/>
+      <url path="ValidationWSFaultException.java"/>
+      <url path="IllegalStateWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphddesc/v1/StrAdjStatus.java"/>
+      <url path="../../../../../integration/base/bo/stradjtplref/v1/StrAdjTplRef.java"/>
+      <url path="../../../../../integration/services/exception/v1/IllegalArgumentWSFaultException.java"/>
+      <url path="ReadInventoryAdjustmentTemplateDetail.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrcoldesc/v1/package-info.java"/>
+      <url path="LookupInventoryAdjustmentTemplateHeaderResponse.java"/>
+      <url path="CancelInventoryAdjustmentResponse.java"/>
+      <url path="../../../../../integration/services/exception/v1/IllegalStateWSFaultException.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrcoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjtpldesc/v1/StrAdjTplItm.java"/>
+      <url path="../../../../../integration/base/bo/stradjref/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphddesc/v1/StrAdjTpHdDesc.java"/>
+      <url path="ConfirmInventoryAdjustmentResponse.java"/>
+      <url path="../../../../../integration/base/bo/stradjtpldesc/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphdcrivo/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjrsncoldesc/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjtplref/v1/package-info.java"/>
+      <url path="ReadInventoryAdjustmentTemplateDetailResponse.java"/>
+      <url path="../../../../../integration/base/bo/nslqtytypcoldesc/v1/NslQtyTypColDesc.java"/>
+      <url path="Ping.java"/>
+      <url path="../../../../../integration/base/bo/stradjtphdcrivo/v1/StrAdjStatus.java"/>
+      <url path="../../../../../integration/services/exception/v1/package-info.java"/>
+      <url path="../../../../../integration/base/bo/stradjtpldesc/v1/ObjectFactory.java"/>
+      <url path="LookupInventoryAdjustmentHeader.java"/>
+      <url path="SaveAndConfirmInventoryAdjustmentResponse.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrdesc/v1/StrAdjHdrDesc.java"/>
+      <url path="../../../../../integration/base/bo/nothing/v1/ObjectFactory.java"/>
+      <url path="../../../../../integration/base/bo/stradjrsndesc/v1/StrAdjRsnDesc.java"/>
+      <url path="../../../../../integration/base/bo/stradjhdrcrivo/v1/StrAdjHdrCriVo.java"/>
+      <url path="ReadInventoryAdjustmentDetail.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MTOM"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="InventoryAdjustmentService.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_NONE"/>
+      <list n="PROXY_CLIENTS">
+         <url path="InventoryAdjustmentPortClient.java"/>
+      </list>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/InventoryAdjustmentBean/InventoryAdjustmentService" query="WSDL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="InventoryAdjustmentPort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.InventoryAdjustmentPortType"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="InventoryAdjustmentPort"/>
+            <hash n="OPERATIONS">
+               <hash n="cancelInventoryAdjustment">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="confirmInventoryAdjustment">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupInventoryAdjustmentHeader">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupInventoryAdjustmentReason">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupInventoryAdjustmentTemplateHeader">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="lookupNonSellableQuantityType">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="ping">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="readInventoryAdjustmentDetail">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="readInventoryAdjustmentTemplateDetail">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="saveAndConfirmInventoryAdjustment">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash n="saveInventoryAdjustment">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_CLIENT_POLICY">
+                  <value n="addressing"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security"/>
+                  <value n="wsrm"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/InventoryAdjustmentBean/InventoryAdjustmentService"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="InventoryAdjustmentService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../../../../../../../../OracleIntegrationServices.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST">
+         <url path="InventoryAdjustmentService17.xsd"/>
+         <url path="InventoryAdjustmentService18.xsd"/>
+         <url path="InventoryAdjustmentService19.xsd"/>
+         <url path="InventoryAdjustmentService16.xsd"/>
+         <url path="InventoryAdjustmentService15.xsd"/>
+         <url path="InventoryAdjustmentService1.xsd"/>
+         <url path="InventoryAdjustmentService14.xsd"/>
+         <url path="InventoryAdjustmentService13.xsd"/>
+         <url path="InventoryAdjustmentService12.xsd"/>
+         <url path="InventoryAdjustmentService11.xsd"/>
+         <url path="InventoryAdjustmentService10.xsd"/>
+         <url path="InventoryAdjustmentService7.xsd"/>
+         <url path="InventoryAdjustmentService6.xsd"/>
+         <url path="InventoryAdjustmentService9.xsd"/>
+         <url path="InventoryAdjustmentService8.xsd"/>
+         <url path="InventoryAdjustmentService3.xsd"/>
+         <url path="InventoryAdjustmentService2.xsd"/>
+         <url path="InventoryAdjustmentService5.xsd"/>
+         <url path="InventoryAdjustmentService4.xsd"/>
+      </list>
+      <url n="PROXY_WSDL_URL" path="InventoryAdjustmentService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1}InventoryAdjustmentPortType"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1}InventoryAdjustmentPortBinding"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.confirmInventoryAdjustment.com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.cancelInventoryAdjustment.com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef.saveAndConfirmInventoryAdjustment.com.oracle.retail.integration.base.bo.stradjmodvo.v1.StrAdjModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.stradjrsncoldesc.v1.StrAdjRsnColDesc.lookupInventoryAdjustmentReason.com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.nslqtytypcoldesc.v1.NslQtyTypColDesc.lookupNonSellableQuantityType.com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.stradjtphdcoldesc.v1.StrAdjTpHdColDesc.lookupInventoryAdjustmentTemplateHeader.com.oracle.retail.integration.base.bo.stradjtphdcrivo.v1.StrAdjTpHdCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.stradjtpldesc.v1.StrAdjTplDesc.readInventoryAdjustmentTemplateDetail.com.oracle.retail.integration.base.bo.stradjtplref.v1.StrAdjTplRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.stradjhdrcoldesc.v1.StrAdjHdrColDesc.lookupInventoryAdjustmentHeader.com.oracle.retail.integration.base.bo.stradjhdrcrivo.v1.StrAdjHdrCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.stradjdesc.v1.StrAdjDesc.readInventoryAdjustmentDetail.com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef.saveInventoryAdjustment.com.oracle.retail.integration.base.bo.stradjmodvo.v1.StrAdjModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="BOUND_OPERATION" v="java.lang.String.ping.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="5780c416-014d-1000-8088-c0a8a23ddf92"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="InventoryAdjustmentPort"/>
+               <value n="PORT_BINDING_NAME" v="{http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1}InventoryAdjustmentPortBinding"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.confirmInventoryAdjustment.com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.invocationsuccess.v1.InvocationSuccess.cancelInventoryAdjustment.com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef.saveAndConfirmInventoryAdjustment.com.oracle.retail.integration.base.bo.stradjmodvo.v1.StrAdjModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.stradjrsncoldesc.v1.StrAdjRsnColDesc.lookupInventoryAdjustmentReason.com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.nslqtytypcoldesc.v1.NslQtyTypColDesc.lookupNonSellableQuantityType.com.oracle.retail.integration.base.bo.nothing.v1.Nothing"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.stradjtphdcoldesc.v1.StrAdjTpHdColDesc.lookupInventoryAdjustmentTemplateHeader.com.oracle.retail.integration.base.bo.stradjtphdcrivo.v1.StrAdjTpHdCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.stradjtpldesc.v1.StrAdjTplDesc.readInventoryAdjustmentTemplateDetail.com.oracle.retail.integration.base.bo.stradjtplref.v1.StrAdjTplRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.stradjhdrcoldesc.v1.StrAdjHdrColDesc.lookupInventoryAdjustmentHeader.com.oracle.retail.integration.base.bo.stradjhdrcrivo.v1.StrAdjHdrCriVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.stradjdesc.v1.StrAdjDesc.readInventoryAdjustmentDetail.com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.retail.integration.base.bo.stradjref.v1.StrAdjRef.saveInventoryAdjustment.com.oracle.retail.integration.base.bo.stradjmodvo.v1.StrAdjModVo"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="java.lang.String.ping.java.lang.String"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="licrpap14-extra.logicindia.com" port="17019" path="/InventoryAdjustmentBean/InventoryAdjustmentService"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1}InventoryAdjustmentPortType"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.InventoryAdjustmentPortTypeImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.InventoryAdjustmentPortType"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.InventoryAdjustmentPortType"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../../../../../../../../OracleIntegrationServices.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1"/>
+         <value n="WS_URI" v="InventoryAdjustmentService"/>
+         <url n="WS_WSDL_FILE" path="InventoryAdjustmentService.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

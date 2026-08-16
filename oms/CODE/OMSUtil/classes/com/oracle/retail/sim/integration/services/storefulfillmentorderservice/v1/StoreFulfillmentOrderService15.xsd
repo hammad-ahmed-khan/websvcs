@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/custom/bo/EOfBrFulfilOrdCustDesc/v1">
+  <xs:element name="EOfBrFulfilOrdCustDesc">
+    <xs:complexType>
+      <xs:sequence/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

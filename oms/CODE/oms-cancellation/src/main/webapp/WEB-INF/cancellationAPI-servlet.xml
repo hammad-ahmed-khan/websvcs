@@ -1,0 +1,91 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<context:component-scan base-package="com.extra.oms" />
+
+	<mvc:annotation-driven />
+
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:application.properties" />
+	</bean>
+
+	<bean id="datasource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="${db.jndi}" />
+	</bean>
+
+	<bean id="simDatasource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="${db.sim.jndi}" />
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg index="0" ref="datasource"></constructor-arg>
+	</bean>
+
+	<bean id="simJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg index="0" ref="simDatasource"></constructor-arg>
+	</bean>
+
+	<bean id="rmsURL" class="java.net.URL">
+		<constructor-arg value="${rms.oralce.base.api.url}" />
+	</bean>
+
+	<bean id="simURL" class="java.net.URL">
+		<constructor-arg value="${sim.oralce.base.api.url}" />
+	</bean>
+
+	<bean id="invAdjURL" class="java.net.URL">
+		<constructor-arg value="${inv.adj.oralce.base.api.url}" />
+	</bean>
+
+	<bean id="invBOORDURL" class="java.net.URL">
+		<constructor-arg value="${inv.boOrd.oralce.base.api.url}" />
+	</bean>
+
+	<bean id="invFulfilReverseURL" class="java.net.URL">
+		<constructor-arg value="${rms.fulfil.reverse.base.api.url}" />
+	</bean>
+
+	<bean id="fulfilDeliveryURL" class="java.net.URL">
+		<constructor-arg value="${rms.fulfil.delivery.base.api.url}" />
+	</bean>
+
+	<bean id="storeFulfillmentOrderService" class="com.oracle.retail.sim.integration.services.storefulfillmentorderservice.v1.StoreFulfillmentOrderService" lazy-init="true">
+		<constructor-arg ref="simURL" type="java.net.URL" />
+	</bean>
+
+	<bean id="storeFulfillmentOrderPortType" factory-method="getStoreFulfillmentOrderPort" factory-bean="storeFulfillmentOrderService" scope="request" lazy-init="true"/>
+	
+	<bean id="fulfillOrderService" class="com.oracle.retail.rms.integration.services.fulfillorderservice.v1.FulfillOrderService" lazy-init="true">
+		<constructor-arg ref="rmsURL" type="java.net.URL" />
+	</bean>
+
+	<bean id="fulfillOrderPortType" factory-method="getFulfillOrderPort" factory-bean="fulfillOrderService" scope="request" lazy-init="true"/>
+
+	<bean id="inventoryBackOrderService" class="com.oracle.retail.rms.integration.services.inventorybackorderservice.v1.InventoryBackOrderService" lazy-init="true">
+		<constructor-arg ref="invBOORDURL" type="java.net.URL" />
+	</bean>
+
+	<bean id="inventoryBackOrderPortType" factory-method="getInventoryBackOrderPort" factory-bean="inventoryBackOrderService" scope="request" lazy-init="true"/>
+	
+	<bean id="inventoryAdjustmentService" class="com.oracle.retail.sim.integration.services.inventoryadjustmentservice.v1.InventoryAdjustmentService" lazy-init="true">
+		<constructor-arg ref="invAdjURL" type="java.net.URL" />
+	</bean>
+
+	<bean id="inventoryAdjustmentPortType" factory-method="getInventoryAdjustmentPort" factory-bean="inventoryAdjustmentService" scope="request" lazy-init="true"/>
+
+	<bean id="fulfillmentOrderReversePickService" class="com.oracle.retail.sim.integration.services.fulfillmentorderreversepickservice.v1.FulfillmentOrderReversePickService" lazy-init="true">
+		<constructor-arg ref="invFulfilReverseURL" type="java.net.URL" />
+	</bean>
+
+	<bean id="fulfillmentOrderReversePickPortType" factory-method="getFulfillmentOrderReversePickPort" factory-bean="fulfillmentOrderReversePickService" scope="request" lazy-init="true"/>
+
+	<bean id="fulfillmentOrderDeliveryService" class="com.oracle.retail.sim.integration.services.fulfillmentorderdeliveryservice.v1.FulfillmentOrderDeliveryService" lazy-init="true">
+		<constructor-arg ref="fulfilDeliveryURL" type="java.net.URL" />
+	</bean>
+
+	<bean id="fulfillmentOrderDeliveryPortType" factory-method="getFulfillmentOrderDeliveryPort" factory-bean="fulfillmentOrderDeliveryService" scope="request" lazy-init="true"/>
+</beans>

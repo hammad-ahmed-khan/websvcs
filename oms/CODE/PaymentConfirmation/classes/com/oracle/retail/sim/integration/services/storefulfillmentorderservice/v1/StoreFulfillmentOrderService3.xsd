@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdRef/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtlRef/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdRef/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdDtlRef/v1" schemaLocation="StoreFulfillmentOrderService4.xsd"/>
+  <xs:element name="FulfilOrdRef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="customer_order_no" type="xs:string"/>
+        <xs:element name="fulfill_order_no" type="xs:string"/>
+        <xs:element name="source_loc_type" type="tns:source_loc_type" minOccurs="0"/>
+        <xs:element name="source_loc_id" type="xs:long" minOccurs="0"/>
+        <xs:element name="fulfill_loc_type" type="tns:fulfill_loc_type"/>
+        <xs:element name="fulfill_loc_id" type="xs:long"/>
+        <xs:element ref="ns1:FulfilOrdDtlRef" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="source_loc_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SU"/>
+      <xs:enumeration value="ST"/>
+      <xs:enumeration value="WH"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="fulfill_loc_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="S"/>
+      <xs:enumeration value="V"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

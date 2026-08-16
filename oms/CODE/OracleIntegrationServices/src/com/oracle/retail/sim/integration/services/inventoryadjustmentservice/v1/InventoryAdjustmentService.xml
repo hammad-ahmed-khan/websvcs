@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns2="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname localpart="InventoryAdjustmentService"
+                     namespaceURI="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1"/>
+      <port-info>
+         <wsdl-port localpart="InventoryAdjustmentPort"
+                    namespaceURI="http://www.oracle.com/retail/sim/integration/services/InventoryAdjustmentService/v1"/>
+         <runtime/>
+         <operations>
+            <operation name="confirmInventoryAdjustment"/>
+            <operation name="cancelInventoryAdjustment"/>
+            <operation name="saveAndConfirmInventoryAdjustment"/>
+            <operation name="lookupInventoryAdjustmentReason"/>
+            <operation name="lookupNonSellableQuantityType"/>
+            <operation name="lookupInventoryAdjustmentTemplateHeader"/>
+            <operation name="readInventoryAdjustmentTemplateDetail"/>
+            <operation name="lookupInventoryAdjustmentHeader"/>
+            <operation name="readInventoryAdjustmentDetail"/>
+            <operation name="saveInventoryAdjustment"/>
+            <operation name="ping"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

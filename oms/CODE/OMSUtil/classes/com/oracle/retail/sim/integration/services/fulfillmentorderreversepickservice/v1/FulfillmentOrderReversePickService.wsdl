@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1" name="FulfillmentOrderReversePickService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1" schemaLocation="FulfillmentOrderReversePickService1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/services/exception/v1" schemaLocation="FulfillmentOrderReversePickService3.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/StrFordRef/v1" schemaLocation="FulfillmentOrderReversePickService4.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/InvocationSuccess/v1" schemaLocation="FulfillmentOrderReversePickService5.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpRef/v1" schemaLocation="FulfillmentOrderReversePickService6.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpModVo/v1" schemaLocation="FulfillmentOrderReversePickService7.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpHdrDesc/v1" schemaLocation="FulfillmentOrderReversePickService8.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpHdrColDesc/v1" schemaLocation="FulfillmentOrderReversePickService9.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpDesc/v1" schemaLocation="FulfillmentOrderReversePickService10.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://www.oracle.com/retail/integration/base/bo/ForpCreModVo/v1" schemaLocation="FulfillmentOrderReversePickService2.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="updateFulfillmentOrderReversePick">
+    <part name="parameters" element="tns:updateFulfillmentOrderReversePick"/>
+  </message>
+  <message name="updateFulfillmentOrderReversePickResponse">
+    <part name="parameters" element="tns:updateFulfillmentOrderReversePickResponse"/>
+  </message>
+  <message name="IllegalArgumentWSFaultException">
+    <part xmlns:ns1="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns1:IllegalArgumentWSFaultException"/>
+  </message>
+  <message name="ValidationWSFaultException">
+    <part xmlns:ns2="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns2:ValidationWSFaultException"/>
+  </message>
+  <message name="IllegalStateWSFaultException">
+    <part xmlns:ns3="http://www.oracle.com/retail/integration/services/exception/v1" name="fault" element="ns3:IllegalStateWSFaultException"/>
+  </message>
+  <message name="createReversePick">
+    <part name="parameters" element="tns:createReversePick"/>
+  </message>
+  <message name="createReversePickResponse">
+    <part name="parameters" element="tns:createReversePickResponse"/>
+  </message>
+  <message name="deleteReversePick">
+    <part name="parameters" element="tns:deleteReversePick"/>
+  </message>
+  <message name="deleteReversePickResponse">
+    <part name="parameters" element="tns:deleteReversePickResponse"/>
+  </message>
+  <message name="confirmReversePick">
+    <part name="parameters" element="tns:confirmReversePick"/>
+  </message>
+  <message name="confirmReversePickResponse">
+    <part name="parameters" element="tns:confirmReversePickResponse"/>
+  </message>
+  <message name="lookupReversePickHeaders">
+    <part name="parameters" element="tns:lookupReversePickHeaders"/>
+  </message>
+  <message name="lookupReversePickHeadersResponse">
+    <part name="parameters" element="tns:lookupReversePickHeadersResponse"/>
+  </message>
+  <message name="readReversePickDetail">
+    <part name="parameters" element="tns:readReversePickDetail"/>
+  </message>
+  <message name="readReversePickDetailResponse">
+    <part name="parameters" element="tns:readReversePickDetailResponse"/>
+  </message>
+  <message name="ping">
+    <part name="parameters" element="tns:ping"/>
+  </message>
+  <message name="pingResponse">
+    <part name="parameters" element="tns:pingResponse"/>
+  </message>
+  <portType name="FulfillmentOrderReversePickPortType">
+    <operation name="updateFulfillmentOrderReversePick">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1/FulfillmentOrderReversePickPortType/updateFulfillmentOrderReversePickRequest" message="tns:updateFulfillmentOrderReversePick"/>
+      <output message="tns:updateFulfillmentOrderReversePickResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="createReversePick">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1/FulfillmentOrderReversePickPortType/createReversePickRequest" message="tns:createReversePick"/>
+      <output message="tns:createReversePickResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="deleteReversePick">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1/FulfillmentOrderReversePickPortType/deleteReversePickRequest" message="tns:deleteReversePick"/>
+      <output message="tns:deleteReversePickResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="confirmReversePick">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1/FulfillmentOrderReversePickPortType/confirmReversePickRequest" message="tns:confirmReversePick"/>
+      <output message="tns:confirmReversePickResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="lookupReversePickHeaders">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1/FulfillmentOrderReversePickPortType/lookupReversePickHeadersRequest" message="tns:lookupReversePickHeaders"/>
+      <output message="tns:lookupReversePickHeadersResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="readReversePickDetail">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1/FulfillmentOrderReversePickPortType/readReversePickDetailRequest" message="tns:readReversePickDetail"/>
+      <output message="tns:readReversePickDetailResponse"/>
+      <fault message="tns:IllegalArgumentWSFaultException" name="IllegalArgumentWSFaultException"/>
+      <fault message="tns:ValidationWSFaultException" name="ValidationWSFaultException"/>
+      <fault message="tns:IllegalStateWSFaultException" name="IllegalStateWSFaultException"/>
+    </operation>
+    <operation name="ping">
+      <input wsaw:Action="http://www.oracle.com/retail/sim/integration/services/FulfillmentOrderReversePickService/v1/FulfillmentOrderReversePickPortType/pingRequest" message="tns:ping"/>
+      <output message="tns:pingResponse"/>
+    </operation>
+  </portType>
+  <binding name="FulfillmentOrderReversePickPortBinding" type="tns:FulfillmentOrderReversePickPortType">
+    <wsaw:UsingAddressing/>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="updateFulfillmentOrderReversePick">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createReversePick">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteReversePick">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="confirmReversePick">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="lookupReversePickHeaders">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="readReversePickDetail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="IllegalArgumentWSFaultException">
+        <soap:fault name="IllegalArgumentWSFaultException" use="literal"/>
+      </fault>
+      <fault name="ValidationWSFaultException">
+        <soap:fault name="ValidationWSFaultException" use="literal"/>
+      </fault>
+      <fault name="IllegalStateWSFaultException">
+        <soap:fault name="IllegalStateWSFaultException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ping">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="FulfillmentOrderReversePickService">
+    <port name="FulfillmentOrderReversePickPort" binding="tns:FulfillmentOrderReversePickPortBinding">
+      <soap:address location="http://licrpap14-extra.logicindia.com:17019/FulfillmentOrderReversePickBean/FulfillmentOrderReversePickService"/>
+    </port>
+  </service>
+</definitions>

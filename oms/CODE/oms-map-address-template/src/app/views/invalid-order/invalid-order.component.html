@@ -1,0 +1,19 @@
+<c-row ngPreserveWhitespaces>
+  <c-col xs="12" class="px-0">
+    <c-card class="mb-2">
+      <c-card-header>
+        <img style="width: 100px;height: 40px;" src="./assets/brand/logo.png"/>
+        <strong>Address Verification Form</strong>
+      </c-card-header>
+      <c-card-body> 
+          <c-row class="d-grid gap-2 col-6 mx-auto" >
+            <c-col>
+              <span *ngIf="orderStatus == 'INVALID_URL'">Invalid URL, Please open the valid url</span>
+              <span *ngIf="orderStatus == 'INVALID'">Invalid Order Number, Please Provide Valid Order Number</span>
+              <span *ngIf="orderStatus == 'ALREADY_VERIFIED'">Order/Invoice Number Already Verified</span>
+            </c-col>
+          </c-row>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>

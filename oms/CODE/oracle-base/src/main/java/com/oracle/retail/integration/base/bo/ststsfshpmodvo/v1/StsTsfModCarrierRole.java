@@ -1,0 +1,38 @@
+
+package com.oracle.retail.integration.base.bo.ststsfshpmodvo.v1;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for sts_tsf_mod_carrier_role.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="sts_tsf_mod_carrier_role"&gt;
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *     &lt;enumeration value="THIRD_PARTY"/&gt;
+ *     &lt;enumeration value="SENDER"/&gt;
+ *   &lt;/restriction&gt;
+ * &lt;/simpleType&gt;
+ * </pre>
+ * 
+ */
+@XmlType(name = "sts_tsf_mod_carrier_role")
+@XmlEnum
+public enum StsTsfModCarrierRole {
+
+    THIRD_PARTY,
+    SENDER;
+
+    public String value() {
+        return name();
+    }
+
+    public static StsTsfModCarrierRole fromValue(String v) {
+        return valueOf(v);
+    }
+
+}

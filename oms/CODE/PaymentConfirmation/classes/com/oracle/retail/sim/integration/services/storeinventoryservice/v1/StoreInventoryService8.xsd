@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/InvAvailCriVo/v1">
+  <xs:element name="InvAvailCriVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="items" type="xs:string" maxOccurs="unbounded"/>
+        <xs:element ref="tns:InvLocation" maxOccurs="unbounded"/>
+        <xs:element name="store_pickup_ind" type="tns:store_pickup_ind"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InvLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="location" type="xs:long"/>
+        <xs:element name="loc_type" type="tns:loc_type"/>
+        <xs:element name="channel_id" type="xs:int" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="loc_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="S"/>
+      <xs:enumeration value="W"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="store_pickup_ind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y"/>
+      <xs:enumeration value="N"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

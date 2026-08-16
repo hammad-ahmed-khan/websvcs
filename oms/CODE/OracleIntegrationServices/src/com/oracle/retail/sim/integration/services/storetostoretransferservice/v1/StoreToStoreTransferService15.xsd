@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrDesc/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrColDesc/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/StsTsfHdrDesc/v1" schemaLocation="StoreToStoreTransferService13.xsd"/>
+  <xs:element name="StsTsfHdrColDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ns1:StsTsfHdrDesc" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="collection_size" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

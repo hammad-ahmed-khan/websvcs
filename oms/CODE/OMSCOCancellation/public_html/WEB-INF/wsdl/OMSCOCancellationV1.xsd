@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema version="1.0" targetNamespace="http://com.logicinfo.oms/model/" xmlns:tns="http://com.logicinfo.oms/model/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="customerOrderCancellation">
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="entity_id" minOccurs="1" nillable="false">
+        <xs:simpleType>
+             <xs:restriction base="xs:string">
+                 <xs:maxLength value="30"/>
+             </xs:restriction>
+         </xs:simpleType>
+      </xs:element>   
+      <xs:element name="application_id" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="E-COMMERCE"/>
+                        <xs:enumeration value="SIEBEL_CRM"/>
+                        <xs:enumeration value="ORPOS"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element> 
+      <xs:element name="comments" minOccurs="0">
+        <xs:simpleType>
+             <xs:restriction base="xs:string">
+                 <xs:maxLength value="240"/>
+             </xs:restriction>
+         </xs:simpleType>
+      </xs:element>   
+      <xs:element name="cancellation_requestor_id" minOccurs="1" >
+           <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                 <xs:maxLength value="25"/>
+             </xs:restriction>
+                </xs:simpleType>
+     </xs:element>
+      <xs:element name="request_datetimestamp" type="xs:dateTime" minOccurs="1"/>
+      <xs:element name="cust_order_no" minOccurs="1" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                 <xs:maxLength value="48"/>
+             </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="sub_cust_order_no" minOccurs="0" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                 <xs:maxLength value="3"/>
+             </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+	  <xs:element name="cancellation_id" minOccurs="1" >
+           <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                 <xs:maxLength value="30"/>
+             </xs:restriction>
+                </xs:simpleType>
+     </xs:element>
+      
+      <xs:element name="refund_preference" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="CLEARING"/>                       
+                        <xs:enumeration value="ORPOS"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>  
+             
+            <xs:element name="refund_amount" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        
+                        <xs:fractionDigits value="04"/>
+                        <xs:totalDigits value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>    
+            </xs:element>
+      <xs:element name="cancellation_date" minOccurs="1" type="xs:date"/>
+      
+      <xs:element name="cancellation_items" type="tns:customerOrderCancellationItems" nillable="false" minOccurs="1" maxOccurs="100"/>
+   
+    </xs:sequence>
+  </xs:complexType>
+ <xs:complexType name="customerOrderCancellationItems">
+ <xs:sequence>
+ <xs:element name="line_no"  minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt"/>
+                </xs:simpleType>
+            </xs:element>   
+  <xs:element name="item"  minOccurs="1">
+         <xs:simpleType>
+             <xs:restriction base="xs:string">
+                 <xs:maxLength value="25"/>
+             </xs:restriction>
+         </xs:simpleType>
+      </xs:element>   
+	   <xs:element name="cancel_qty_suom" minOccurs="1">
+	  <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:minExclusive value="0"/>
+                        <xs:fractionDigits value="04"/>
+                        <xs:totalDigits value="16"/>
+                    </xs:restriction>
+        </xs:simpleType>
+	  </xs:element>
+	   <xs:element name="item_comments"  minOccurs="1">
+         <xs:simpleType>
+             <xs:restriction base="xs:string">
+                 <xs:maxLength value="200"/>
+             </xs:restriction>
+         </xs:simpleType>
+      </xs:element> 
+  </xs:sequence>
+  </xs:complexType>
+   
+<xs:complexType name="customerOrderCancellationResponse">
+<xs:sequence>
+
+        
+        <xs:element name="cancellation_id" minOccurs="1" nillable="true">
+       <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                 <xs:maxLength value="30"/>
+             </xs:restriction>
+                </xs:simpleType>
+      </xs:element>
+	  <xs:element name="response_datetimestamp" type="xs:dateTime" minOccurs="1" nillable="true"/>
+     
+            <xs:element name="message_status" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            	<xs:element name="response_message" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+			<xs:element name="message_code" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+			<xs:element name="message_desc" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+		
+	  <xs:element name="customerOrderCancelResponseItems" type="tns:customerOrderCancelResponseItems" minOccurs="0" maxOccurs="100"/>
+</xs:sequence>
+  </xs:complexType>
+ <xs:complexType name="customerOrderCancelResponseItems" >
+ <xs:sequence>
+ <xs:element name="line_no"  minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt"/>
+                </xs:simpleType>
+            </xs:element>   
+  <xs:element name="item"  minOccurs="1" nillable="true">
+         <xs:simpleType>
+             <xs:restriction base="xs:string">
+                 <xs:maxLength value="25"/>
+             </xs:restriction>
+         </xs:simpleType>
+      </xs:element>  
+  <xs:element name="cancel_qty_suom" minOccurs="1" nillable="true">
+	  <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        
+                        <xs:fractionDigits value="04"/>
+                        <xs:totalDigits value="12"/>
+                    </xs:restriction>
+        </xs:simpleType>
+	  </xs:element>	  
+          
+          <xs:element name="message_code" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+			<xs:element name="message_desc" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+  </xs:sequence>
+  </xs:complexType>
+  <xs:element name="cancelOrder" type="tns:customerOrderCancellation"/>
+  <xs:element name="cancelOrderResponse" type="tns:customerOrderCancellationResponse"/>
+  </xs:schema>

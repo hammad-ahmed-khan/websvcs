@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions targetNamespace="http://com.logicinfo.oms/model/" name="OMSCustomerOrder" xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:tns="http://com.logicinfo.oms/model/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">  
+  <types>
+    <xsd:schema>
+      <xsd:import  schemaLocation="OMSCustomerOrder.xsd" namespace="http://com.logicinfo.oms/model/"/>
+    </xsd:schema>
+  </types>
+  <message name="processNewOrder">
+    <part name="input" element="tns:processNewOrderReq"/>
+  </message>
+  <message name="processNewOrderResponse">
+    <part name="return" element="tns:processNewOrderResp"/>
+  </message>
+   <message name="processBackOrderRequest">
+    <part name="backOrderRequest" element="tns:processBackOrderReq"/>
+  </message>
+  <message name="processBackOrderResponse">
+    <part name="backOrderResponse" element="tns:processBackOrderResp"/>
+  </message>
+  <portType name="OMSCustomerOrderWebService">
+    <operation name="processNewOrder">
+      <input message="tns:processNewOrder"/>
+      <output message="tns:processNewOrderResponse"/>
+    </operation>
+     <operation name="processBackOrder">
+      <input message="tns:processBackOrderRequest"/>
+      <output message="tns:processBackOrderResponse"/>
+    </operation>
+  </portType>  
+  <binding name="OMSCustomerOrderWebServicePortBinding" type="tns:OMSCustomerOrderWebService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="processNewOrder">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="processBackOrder">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="OMSCustomerOrderWebService">
+    <port name="OMSCustomerOrderWebService" binding="tns:OMSCustomerOrderWebServicePortBinding">
+      <soap:address location="http://localhost:7777/services/OMS/OMSCustomerOrder/OMSCustomerOrderWebService"/>
+    </port>
+  </service>
+ </definitions>

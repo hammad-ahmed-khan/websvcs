@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/ForpModVo/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/ForpModVo/v1">
+  <xs:element name="ForpItmMod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="fulfillment_order_line_id" type="xs:long"/>
+        <xs:element name="quantity" type="xs:decimal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForpModVo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reverse_pick_id" type="xs:long"/>
+        <xs:element ref="tns:ForpItmMod" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

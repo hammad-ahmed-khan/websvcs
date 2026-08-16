@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="Status" targetNamespace="http://www.extra.com/Services/OmsStatus" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="http://tempuri.org/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.extra.com/Services/OmsStatus" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing">
+  <wsp:Policy wsu:Id="NetTcpBinding_IStatus_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1"/>
+        <wsaw:UsingAddressing/>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.extra.com/Services/OmsStatus" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/eXtra.Services.Oms"/>
+      <xs:element name="UpdateOrderStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="orderStatus" nillable="true" type="q1:OrderStatus" xmlns:q1="http://schemas.datacontract.org/2004/07/eXtra.Services.Oms"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateOrderStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="UpdateOrderStatusResult" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/eXtra.Services.Oms" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/eXtra.Services.Oms">
+      <xs:complexType name="OrderStatus">
+        <xs:sequence>
+          <xs:element name="EnitityId" nillable="true" type="xs:string"/>
+          <xs:element name="ApplicationId" nillable="true" type="xs:string"/>
+          <xs:element name="OrderId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="SubOrderId" nillable="true" type="xs:string"/>
+          <xs:element name="OmsOrderId" nillable="true" type="xs:string"/>
+          <xs:element name="DeliveryDate" type="xs:dateTime"/>
+          <xs:element name="UpdateDate" type="xs:dateTime"/>
+          <xs:element name="OrderDetailStatuses" nillable="true" type="tns:ArrayOfOrderDetailStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrderStatus" nillable="true" type="tns:OrderStatus"/>
+      <xs:complexType name="ArrayOfOrderDetailStatus">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="OrderDetailStatus" nillable="true" type="tns:OrderDetailStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfOrderDetailStatus" nillable="true" type="tns:ArrayOfOrderDetailStatus"/>
+      <xs:complexType name="OrderDetailStatus">
+        <xs:sequence>
+          <xs:element name="OrderDetailId" type="xs:long"/>
+          <xs:element name="ProductSku" nillable="true" type="xs:string"/>
+          <xs:element name="Quantity" type="xs:int"/>
+          <xs:element name="SourceType" nillable="true" type="xs:string"/>
+          <xs:element name="SourceId" type="xs:int"/>
+          <xs:element name="FulfillType" nillable="true" type="xs:string"/>
+          <xs:element name="FulfillId" type="xs:int"/>
+          <xs:element name="EventId" nillable="true" type="xs:string"/>
+          <xs:element name="EventComment" nillable="true" type="xs:string"/>
+          <xs:element name="EventReferenceId" type="xs:long"/>
+          <xs:element name="UpdateDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="OrderDetailStatus" nillable="true" type="tns:OrderDetailStatus"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IStatus_UpdateOrderStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatus"/>
+  </wsdl:message>
+  <wsdl:message name="IStatus_UpdateOrderStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderStatusResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IStatus">
+    <wsdl:operation name="UpdateOrderStatus">
+      <wsdl:input wsaw:Action="http://www.extra.com/Services/OmsStatus/IStatus/UpdateOrderStatus" message="tns:IStatus_UpdateOrderStatus_InputMessage"/>
+      <wsdl:output wsaw:Action="http://www.extra.com/Services/OmsStatus/IStatus/UpdateOrderStatusResponse" message="tns:IStatus_UpdateOrderStatus_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IStatus" type="tns:IStatus">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap:operation soapAction="http://www.extra.com/Services/OmsStatus/IStatus/UpdateOrderStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IStatus" type="tns:IStatus">
+    <wsp:PolicyReference URI="#NetTcpBinding_IStatus_policy"/>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp"/>
+    <wsdl:operation name="UpdateOrderStatus">
+      <soap12:operation soapAction="http://www.extra.com/Services/OmsStatus/IStatus/UpdateOrderStatus" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Status">
+    <wsdl:port name="BasicHttpBinding_IStatus" binding="tns:BasicHttpBinding_IStatus">
+      <soap:address location="http://192.168.40.89/eXtra.Services.Oms/Status.svc"/>
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IStatus" binding="tns:NetTcpBinding_IStatus">
+      <soap12:address location="net.tcp://exvm-ecomsadadt.extrastores.com/eXtra.Services.Oms/Status.svc"/>
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://exvm-ecomsadadt.extrastores.com/eXtra.Services.Oms/Status.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

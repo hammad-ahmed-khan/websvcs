@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://com.logicinfo.oms/model/"
+            targetNamespace="http://com.logicinfo.oms/model/" elementFormDefault="qualified">
+    <xs:complexType name="CustomerOrderRMA">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+            <xs:element name="entity_id" nillable="false" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="30"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="application_id" nillable="false" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="SIEBEL_CRM"/>
+                        <xs:enumeration value="E-COMMERCE"/>
+                        <xs:enumeration value="ORPOS"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="comments"  minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="240"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="request_datetimestamp" type="xs:dateTime" nillable="false" minOccurs="1"/>
+           
+            <xs:element name="customer_order_no" nillable="false" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                       
+                        <xs:maxLength value="46"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="sub_customer_order_no"  minOccurs="0">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                       
+                        <xs:maxLength value="3"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="rma_request_id" nillable="false" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="physical_wh" nillable="false" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                        <xs:minExclusive value="0"/>
+                        <xs:totalDigits value="10"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="return_date" type="xs:dateTime" nillable="false" minOccurs="1"/>
+               <xs:element name="refund_preference" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="CLEARING"/>                       
+                        <xs:enumeration value="ORPOS"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>  
+             
+            <xs:element name="refund_amount" minOccurs="1">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                       <xs:fractionDigits value="04"/>
+                        <xs:totalDigits value="20"/>
+                    </xs:restriction>
+                </xs:simpleType>    
+            </xs:element>
+            
+            <xs:element name="reason_code" minOccurs="0" type="xs:int" default="0">
+                  
+            </xs:element>
+            
+            <xs:element name="reason" minOccurs="0" type="xs:string" default="" >
+                  
+            </xs:element>
+            <xs:element name="CustomerOrderRMAItem" type="CustomerOrderRMAItem" nillable="false" minOccurs="1" maxOccurs="100"/>
+       
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CustomerOrderRMAItem">
+        <xs:sequence>
+            <xs:element name="item" minOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="25"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>   
+            <xs:element name="line_no" minOccurs="1" maxOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:unsignedInt">
+                        
+                        <xs:totalDigits value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="return_qty_suom" minOccurs="1" nillable="false">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:minExclusive value="0"/>
+                        <xs:fractionDigits value="04"/>
+                        <xs:totalDigits value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="item_comments" minOccurs="0" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CustomerOrderRMAResponse">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+            <xs:element name="entity_id" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="application_id" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="customer_order_no" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="48"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="comments" minOccurs="0" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="240"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element> <xs:element name="message_status" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+		
+			<xs:element name="message_desc" minOccurs="1" nillable="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="200"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="request_datetimestamp" minOccurs="1"  nillable ="true" type="xs:dateTime"/>
+            <xs:element name="response_datetimestamp" minOccurs="1"  nillable ="true" type="xs:dateTime"/>
+            <xs:element name="rma_request_id" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="16"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="RMA_no" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                      <xs:restriction base="xs:unsignedInt">
+                        <xs:minExclusive value="0"/>
+                        <xs:totalDigits value="30"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="response_message" minOccurs="1"  nillable ="true">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:maxLength value="2000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="GenerateNewRMA" type="CustomerOrderRMA"/>
+    <xs:element name="GenerateNewRMAResponse" type="CustomerOrderRMAResponse"/>
+</xs:schema>

@@ -1,0 +1,175 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <hash n="component-versions">
+      <value n="oracle.ideimpl.model.TechnologyScopeUpdateMigrator" v="11.1.2.0.0.4"/>
+   </hash>
+   <list n="contentSets">
+      <string v="oracle.mds.internal.dt.ide.MDSLibraryCustCSProvider/mdsContentSet"/>
+      <string v="oracle.mds.internal.dt.ide.MDSADFLibVirtualNodeCSProvider/mdsLibVirtualNodeContentSet"/>
+      <string v="oracle.jdeveloper.model.PathsConfiguration/javaContentSet"/>
+      <string v="oracle.ide.model.ResourcePaths/resourcesContentSet"/>
+      <string v="oracle.jdeveloper.model.J2eeSettings/webContentSet"/>
+      <string v="oracle.jdeveloper.offlinedb.model.OfflineDBProjectSettings/offlineDBContentSet"/>
+      <string v="oracle.adfdtinternal.model.ide.settings.ADFMSettings/adfmContentSet"/>
+      <string v="oracle.bm.commonIde.data.project.ModelerProjectSettings/modelersContentSet"/>
+      <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
+   </list>
+   <hash n="oracle.ide.model.ResourcePaths">
+      <hash n="resourcesContentSet">
+         <list n="pattern-filters">
+            <string v="+*"/>
+         </list>
+         <list n="url-path">
+            <url path="."/>
+            <url path="src/main/resources/"/>
+            <url path="pom.xml"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.ide.model.TechnologyScopeConfiguration">
+      <list n="technologyScope">
+         <string v="JSP"/>
+         <string v="Java"/>
+         <string v="Maven"/>
+         <string v="WSDL"/>
+         <string v="WSPolicy"/>
+         <string v="XML"/>
+      </list>
+   </hash>
+   <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <value n="compiler.name" v="Javac"/>
+   </hash>
+   <hash n="oracle.jdeveloper.maven.compiler.MavenRunConfiguration">
+      <value n="defaultGoal" v="package"/>
+      <url n="pomfileURL" path="pom.xml"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.J2eeSettings">
+      <value n="j2eeWebAppName" v="ExtraServiceRest"/>
+      <value n="j2eeWebContextRoot" v="ExtraServiceRest-context-root"/>
+      <hash n="webContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/main/webapp/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="javaContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/main/java/"/>
+         </list>
+      </hash>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectLibraries">
+      <hash n="internalDefinitions">
+         <list n="libraryDefinitions">
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="/C:/Users/rcharlesgnanaraj/.m2/repository/org/springframework/spring-webmvc/4.3.1.RELEASE/spring-webmvc-4.3.1.RELEASE.jar"/>
+               </list>
+               <value n="description" v="org.springframework:spring-webmvc:4.3.1.RELEASE:jar"/>
+               <value n="id" v="org.springframework:spring-webmvc:4.3.1.RELEASE:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="/C:/Users/rcharlesgnanaraj/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.8.10/jackson-databind-2.8.10.jar"/>
+               </list>
+               <value n="description" v="com.fasterxml.jackson.core:jackson-databind:2.8.10:jar"/>
+               <value n="id" v="com.fasterxml.jackson.core:jackson-databind:2.8.10:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="/C:/Users/rcharlesgnanaraj/.m2/repository/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar"/>
+               </list>
+               <value n="description" v="javax.servlet:javax.servlet-api:3.0.1:jar"/>
+               <value n="id" v="javax.servlet:javax.servlet-api:3.0.1:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="/C:/Users/rcharlesgnanaraj/.m2/repository/org/apache/axis/axis/1.4/axis-1.4.jar"/>
+               </list>
+               <value n="description" v="org.apache.axis:axis:1.4:jar"/>
+               <value n="id" v="org.apache.axis:axis:1.4:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="/C:/Users/rcharlesgnanaraj/.m2/repository/javax/xml/jaxrpc-api/1.1/jaxrpc-api-1.1.jar"/>
+               </list>
+               <value n="description" v="javax.xml:jaxrpc-api:1.1:jar"/>
+               <value n="id" v="javax.xml:jaxrpc-api:1.1:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="/C:/Users/rcharlesgnanaraj/.m2/repository/org/springframework/spring-jdbc/4.3.21.RELEASE/spring-jdbc-4.3.21.RELEASE.jar"/>
+               </list>
+               <value n="description" v="org.springframework:spring-jdbc:4.3.21.RELEASE:jar"/>
+               <value n="id" v="org.springframework:spring-jdbc:4.3.21.RELEASE:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="/C:/Users/rcharlesgnanaraj/.m2/repository/com/oracle/ojdbc7/12.1.0/ojdbc7-12.1.0.jar"/>
+               </list>
+               <value n="description" v="com.oracle:ojdbc7:12.1.0:jar"/>
+               <value n="id" v="com.oracle:ojdbc7:12.1.0:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url protocol="file" path="/C:/Users/rcharlesgnanaraj/.m2/repository/wsdl4j/wsdl4j/1.6.2/wsdl4j-1.6.2.jar"/>
+               </list>
+               <value n="description" v="wsdl4j:wsdl4j:1.6.2:jar"/>
+               <value n="id" v="wsdl4j:wsdl4j:1.6.2:jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+         </list>
+      </hash>
+      <list n="libraryReferences">
+         <hash>
+            <value n="id" v="org.springframework:spring-webmvc:4.3.1.RELEASE:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="com.fasterxml.jackson.core:jackson-databind:2.8.10:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="javax.servlet:javax.servlet-api:3.0.1:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="org.apache.axis:axis:1.4:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="javax.xml:jaxrpc-api:1.1:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="org.springframework:spring-jdbc:4.3.21.RELEASE:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="com.oracle:ojdbc7:12.1.0:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="wsdl4j:wsdl4j:1.6.2:jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+      </list>
+   </hash>
+   <hash n="oracle.jdevimpl.config.JProjectPaths">
+      <url n="outputDirectory" path="target/classes/"/>
+   </hash>
+</jpr:project>

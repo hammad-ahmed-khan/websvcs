@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:tns="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1" xmlns:ns1="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.0" targetNamespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDesc/v1">
+  <xs:import namespace="http://www.oracle.com/retail/integration/base/bo/FulfilOrdCfmDtl/v1" schemaLocation="StoreFulfillmentOrderService10.xsd"/>
+  <xs:element name="FulfilOrdCfmDesc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="customer_order_no" type="xs:string"/>
+        <xs:element name="fulfill_order_no" type="xs:string"/>
+        <xs:element name="confirm_type" type="tns:confirm_type"/>
+        <xs:element name="confirm_no" type="xs:long" minOccurs="0"/>
+        <xs:element ref="ns1:FulfilOrdCfmDtl" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="confirm_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="P"/>
+      <xs:enumeration value="X"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
